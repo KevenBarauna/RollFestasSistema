@@ -1,0 +1,13 @@
+ Erro TelaDeErro = new Erro("001","Usuário não encontrado no Banco de Dados", "Verifique se você digitou usuário e senha corretamente.", "Verifique se o caps lock está ativado.", "Tente acessar outra conta.", "Reinicie o banco de dados","");
+                TelaDeErro.Show();
+
+000 - SEM ACESSO AO BANCO DE DADOS
+001 - USUAIOR NÃO ENCONTRADO
+003 - JÁ EXISTE ESSE NOME DE USUÁRIO
+004 - PARAMETRO INVALIDO
+CP01 - PARAMETRO INVALIDO - NOME OBRIGATORIO
+CP02 - PARAMETRO INVALIDO - PREÇO OBRIGATORIO
+CP03 - PARAMETRO INVALIDO - QUANTIDADE OBRIGATORIO
+CP04 - PARAMETRO INVALIDO - PARAMETRO INVALIDO r$ OU PONTO
+ERX - SEM ACESSO AO BANCO DE DADOS
+

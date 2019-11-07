@@ -1,0 +1,42 @@
+__________________________________
+
+COMANDOS BASICOS C#
+
+cmd.Parameters.Clear();
+
+MinhaString.Replace(".", ",");
+
+MinhaString.Contains(".")
+
+____________________________________
+
+LEMBRETES
+
+COR USUARIO: DodgerBlue
+
+____________________________________
+
+COMANDOS BANCO DE DADOS
+
+SELECT * FROM TB_PONTO
+
+SELECT * FROM TB_VENDA
+
+SELECT * FROM TB_PRODUTO
+
+SELECT * FROM TB_VENDA_TEMP
+
+____________________________________
+
+ALTERAR CAMINHO:
+
+CacheController  - 35
+CacheController  - 41
+PontoController  = 144
+PontoController  = 312
+ReciboController = 23
+NovaEncomenda    = 124
+NovaEncomenda    = 218
+ReciboPorId      = 54
+NovaVenda        = 220
+PagarDepois      = 100

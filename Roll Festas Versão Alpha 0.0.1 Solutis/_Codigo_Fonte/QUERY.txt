@@ -1,0 +1,88 @@
+CREATE TABLE TB_PRODUTO
+(
+    [id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [nome] VARCHAR(20) NOT NULL, 
+    [tema] VARCHAR(20)  NULL, 
+    [preco] VARCHAR(7) NOT NULL, 
+    [quantidade] VARCHAR(4) NOT NULL, 
+    [fornecedor] VARCHAR(50) NULL, 
+    [data] VARCHAR(11)NULL, 
+    [descricao] NVARCHAR(MAX) NULL 
+)
+
+CREATE TABLE TB_VENDA
+(
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[data] VARCHAR(20) NULL,
+	[usuario] VARCHAR(20) NOT NULL, 
+	[valortotal] VARCHAR(20) NOT NULL, 
+	[valorpago] VARCHAR(20) NULL, 
+	[troco] VARCHAR(20) NULL, 
+	[tipopagamento] VARCHAR(20) NULL,
+        [status_pagamento] VARCHAR(1) NULL,
+        [valor_pendente] VARCHAR(20) NULL
+)
+
+CREATE TABLE TB_VENDA_TEMP
+(
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[nome] VARCHAR(20) NULL, 
+	[quantidade] VARCHAR(20) NULL,
+	[decrementa_nome] VARCHAR(20) NULL,
+	[decrementa_quantidade] VARCHAR(20) NULL,
+	[acrescenta_nome] VARCHAR(20) NULL,
+	[acrescenta_quantidade] VARCHAR(20) NULL
+)
+
+CREATE TABLE TB_PONTO
+(
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[nome] VARCHAR(20) NOT NULL,
+	[data] VARCHAR(12) NOT NULL,  
+	[chegada] VARCHAR(20) NULL,
+	[saida_almoco] VARCHAR(20) NULL,
+	[chegada_almoco] VARCHAR(20) NULL,
+	[saida] VARCHAR(20) NULL
+)
+
+CREATE TABLE TB_ENCOMENDA
+(
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[tipo_servico] VARCHAR(20) NOT NULL,
+	[data_entrada] VARCHAR(11) NOT NULL, 
+	[data_entrega] VARCHAR(11) NOT NULL,
+	[tema] VARCHAR(20) NULL, 
+	[quantidade] VARCHAR(20) NULL, 
+	[valor] VARCHAR(20) NOT NULL,
+	[obs] VARCHAR(100) NULL
+)
+
+CREATE TABLE TB_CAIXA
+(
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[valor_total_dia] VARCHAR(20) NULL,
+        [data] VARCHAR(20) NULL,
+	[retirada] VARCHAR(11) NULL, 
+	[deposito] VARCHAR(11) NULL,
+        [dinheiro] VARCHAR(10) NULL,
+	[cartao] VARCHAR(10) NULL,
+	[outros] VARCHAR(10) NULL
+)
+
+CREATE TABLE TB_USUARIO
+(
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[nome] VARCHAR(20) NOT NULL,
+        [senha] VARCHAR(20) NOT NULL,
+	[logado] bit NULL
+)
+
+
+
+INSERT INTO TB_USUARIO (nome,senha) VALUES ('admin','admin')
+INSERT INTO TB_USUARIO (nome,senha) VALUES ('keven','123')
+
+UPDATE TB_USUARIO SET logado =0;
+--ALTER TABLE TB_USUARIO ADD logado bit NULL;
+
+
