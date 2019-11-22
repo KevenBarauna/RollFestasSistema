@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Model;
 using ClosedXML.Excel;
+using Loja.Model.DAO;
 
 namespace Loja.Controler
 {
@@ -105,6 +106,9 @@ namespace Loja.Controler
 
         public void GerarPDFPontoOriginal(String mes)
         {
+            DAOCaminho dao = new DAOCaminho();
+            string caminho = dao.CaminhoPonto();
+
             var wb = new XLWorkbook();
             var ws = wb.Worksheets.Add("Follha de ponto ");
 
@@ -141,7 +145,8 @@ namespace Loja.Controler
             //AJUSTAR A NUMERACAO
             linha--;
 
-            wb.SaveAs(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\PontoPlanilha.xlsx");
+            //wb.SaveAs(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\PontoPlanilha.xlsx");
+            wb.SaveAs(@"" + caminho + @"\PontoPlanilha.xlsx");
 
             //liberar objetos
             //ws.Dispose();
@@ -152,6 +157,10 @@ namespace Loja.Controler
 
         public void GerarPDFPonto(String mes)
         {
+
+            DAOCaminho daoCaminho = new DAOCaminho();
+            string caminho = daoCaminho.CaminhoPonto();
+
             //PADRÂO
             var wb = new XLWorkbook();
             var ws = wb.Worksheets.Add("Follha de ponto ");
@@ -309,8 +318,8 @@ namespace Loja.Controler
 
             
             //SALVAR PLANILHA
-            wb.SaveAs(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Ponto\PontoPlanilhaDePonto" + mes + ".xlsx");
-
+            //wb.SaveAs(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Ponto\PontoPlanilhaDePonto" + mes + ".xlsx");
+            wb.SaveAs(@"" + caminho + @"\PontoPlanilha.xlsx");
 
             wb.Dispose();
 

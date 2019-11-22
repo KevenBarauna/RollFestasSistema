@@ -375,6 +375,52 @@ namespace Loja.Model
         }//RETIRA VALOR VENDIDO DO PRODUTO
 
 
+        public List<ProdutoModel> ListarTodosOsProdutosPorQuantidade()
+        {
+            SqlDataReader dr;
+            List<ProdutoModel> ListadeProduto = new List<ProdutoModel>();
+
+            cmd.CommandText = "SELECT * FROM TB_PRODUTO ORDER BY quantidade";
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+
+                    foreach (var linhadobanco in dr)
+                    {
+                        ProdutoModel produtoL = new ProdutoModel();
+                        produtoL.Nome = Convert.ToString(dr["nome"]);
+                        produtoL.Tema = Convert.ToString(dr["tema"]);
+                        produtoL.Preco = Convert.ToString(dr["preco"]);
+                        produtoL.Quantidade = Convert.ToString(dr["quantidade"]);
+                        produtoL.Fornecedor = Convert.ToString(dr["fornecedor"]);
+                        produtoL.Data = Convert.ToString(dr["data"]);
+                        produtoL.Descricao = Convert.ToString(dr["descricao"]);
+                        produtoL.Id = Convert.ToInt32(dr["id"]);
+
+                        ListadeProduto.Add(produtoL);
+                    }
+
+
+                }
+
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Erro:  " + e);
+            }
+            cmd.Parameters.Clear();
+            conexao.Desconectar();
+
+            return ListadeProduto;
+        }//RETORNA TODOS OS PRODUTOS POR ID
+
+
+
         public List<ProdutoModel> ListarTodosOsProdutosPorCodigo()
         {
             SqlDataReader dr;

@@ -77,10 +77,24 @@ CREATE TABLE TB_USUARIO
 	[logado] bit NULL
 )
 
+CREATE TABLE TB_CAMINHOS
+(
+    [nome] VARCHAR(20) NOT NULL, 
+    [caminho] NVARCHAR(MAX) NULL,
+    [descricao] NVARCHAR(MAX) NULL 
+)
+
 
 
 INSERT INTO TB_USUARIO (nome,senha) VALUES ('admin','admin')
 INSERT INTO TB_USUARIO (nome,senha) VALUES ('keven','123')
+
+--INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('AAA','BBB','CCC')
+
+INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('ponto','C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\Ponto','Caminho para salvar a planilha de pontos')
+INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('cache','C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\Cache','Caminho para salvar o cache, que é um arquivo .txt')
+INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('comprovantes','C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\Comprovantes','Caminho para salvar o comprovante, que é um arquivo .PDF')
+
 
 UPDATE TB_USUARIO SET logado =0;
 --ALTER TABLE TB_USUARIO ADD logado bit NULL;

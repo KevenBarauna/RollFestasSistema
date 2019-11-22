@@ -150,11 +150,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(127, 32);
+            this.label2.Location = new System.Drawing.Point(112, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.Size = new System.Drawing.Size(109, 13);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Exibir po código:";
+            this.label2.Text = "Exibir por quantidade:";
             // 
             // BtnCodigo
             // 

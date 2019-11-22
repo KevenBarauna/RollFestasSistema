@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Loja.Model;
+using Loja.Model.DAO;
 
 namespace Loja.Controler
 {
@@ -31,14 +32,20 @@ namespace Loja.Controler
             ListaDeVenda = vendad.ListarVendas(data);
 
 
+            //CAMINHO PARA SALVAR
+            DAOCaminho daoCaminho = new DAOCaminho();
+            string caminho = daoCaminho.CaminhoCahce();
+
             //CRIAR PASTA
-            DirectoryInfo raiz = new DirectoryInfo(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Cache");
+            //DirectoryInfo raiz = new DirectoryInfo(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Cache");
+            DirectoryInfo raiz = new DirectoryInfo(@"" + caminho );
             raiz.CreateSubdirectory(dia);
 
             //GERAR ARQUIVO TXT
             StreamWriter STW_Arquivo;
         
-            STW_Arquivo = new StreamWriter(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Cache\" + dia + "\\Arq_Cache.txt");
+            //STW_Arquivo = new StreamWriter(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Cache\" + dia + "\\Arq_Cache.txt");
+            STW_Arquivo = new StreamWriter(@"" + caminho + @"\" + dia + @"\Arq_Cache.txt");
 
             STW_Arquivo.WriteLine(dia);
 

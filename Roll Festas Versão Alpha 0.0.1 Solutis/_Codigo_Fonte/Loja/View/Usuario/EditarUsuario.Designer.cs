@@ -82,6 +82,7 @@
             this.TxtSenha.Name = "TxtSenha";
             this.TxtSenha.Size = new System.Drawing.Size(158, 20);
             this.TxtSenha.TabIndex = 4;
+            this.TxtSenha.UseSystemPasswordChar = true;
             // 
             // label3
             // 

@@ -143,9 +143,9 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(11, 318);
+            this.label4.Location = new System.Drawing.Point(11, 334);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(209, 60);
+            this.label4.Size = new System.Drawing.Size(209, 44);
             this.label4.TabIndex = 40;
             this.label4.Text = "Informe qual o código do produto que o cliente está devolvendo. Pois o sistema ca" +
     "lcular o valor que deve ser devolvido";

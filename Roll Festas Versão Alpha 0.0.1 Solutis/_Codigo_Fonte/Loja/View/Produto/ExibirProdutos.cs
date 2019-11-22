@@ -58,7 +58,7 @@ namespace Loja.View.Produto
 
           ProdutoController produto = new ProdutoController();
             List<ProdutoModel> produtos = new List<ProdutoModel>();
-            produtos = produto.ListarTodosOsProdutosPorCodigo();
+            produtos = produto.ListarTodosOsProdutosPorQuantidade();
 
             try 
             { 

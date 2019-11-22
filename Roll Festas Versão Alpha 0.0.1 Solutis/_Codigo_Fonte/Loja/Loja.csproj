@@ -82,6 +82,7 @@
     <Compile Include="Controler\VendaController.cs" />
     <Compile Include="Model\CaixaModel.cs" />
     <Compile Include="Model\DAO\DAOCaixa.cs" />
+    <Compile Include="Model\DAO\DAOCaminho.cs" />
     <Compile Include="Model\DAO\DAOEncomenda.cs" />
     <Compile Include="Model\DAO\DAOPonto.cs" />
     <Compile Include="Model\DAO\DAOUsuario.cs" />

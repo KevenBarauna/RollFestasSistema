@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagarDepois));
             this.LblData = new System.Windows.Forms.Label();
             this.LblUsuario = new System.Windows.Forms.Label();
             this.LblValorTotal = new System.Windows.Forms.Label();
@@ -189,6 +190,7 @@
             this.Controls.Add(this.LblValorTotal);
             this.Controls.Add(this.LblUsuario);
             this.Controls.Add(this.LblData);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PagarDepois";

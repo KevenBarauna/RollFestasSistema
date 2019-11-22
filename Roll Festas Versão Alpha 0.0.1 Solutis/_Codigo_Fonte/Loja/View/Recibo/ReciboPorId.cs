@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
 using Loja.Model;
+using Loja.Model.DAO;
 
 namespace Loja.View.Recibo
 {
@@ -51,7 +52,11 @@ namespace Loja.View.Recibo
 
         private void BtnGerarPdf_Click_1(object sender, EventArgs e)
         {
-            String caminho = @"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Comprovantes\" + TxtId.Text + ".pdf";
+
+            DAOCaminho dao = new DAOCaminho();
+            string pasta = dao.CaminhoComprovante();
+
+            String caminho = @"" + pasta + @"\" + TxtId.Text + ".pdf";
 
             ReciboController recibo = new ReciboController();
             recibo.GerarReciboDeVendaPeloId(TxtId.Text, caminho);

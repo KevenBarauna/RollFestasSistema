@@ -159,6 +159,17 @@ namespace Loja.Controler
             return todososprodutos;
         }
 
+        public List<ProdutoModel> ListarTodosOsProdutosPorQuantidade()//LISTAR TODOS OS PRODUTOS
+        {
+            List<ProdutoModel> todososprodutos = new List<ProdutoModel>();
+            ProdutoModel produto = new ProdutoModel();
+
+            DAOProduto dao = new DAOProduto();
+            todososprodutos = dao.ListarTodosOsProdutosPorQuantidade();
+
+            return todososprodutos;
+        }
+
         public List<ProdutoModel> ListarTodosOsProdutosPorNome()//LISTAR TODOS OS PRODUTOS
         {
             List<ProdutoModel> todososprodutos = new List<ProdutoModel>();
