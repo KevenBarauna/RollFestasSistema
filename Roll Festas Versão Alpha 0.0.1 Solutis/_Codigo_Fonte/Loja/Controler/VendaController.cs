@@ -20,10 +20,10 @@ namespace Loja.Controler
             return VT;
         }//CALCULAR VALOR UNIDADE DO PRODUTO * QUANTIDADE
 
-        public void FinalizarVenda(String data, String usuario, String valortotal, String valorpago, String troco, String tipopagamento, int status_pagamento, String valor_pendente)
+        public void FinalizarVenda(String data, String usuario, String valortotal, String valorpago, String troco, String tipopagamento, int status_pagamento, String valor_pendente, String nome)
         {
             DAOVenda dao = new DAOVenda();
-            dao.NovaVenda(data, usuario, valortotal, valorpago, troco, tipopagamento, status_pagamento,valor_pendente);
+            dao.NovaVenda(data, usuario, valortotal, valorpago, troco, tipopagamento, status_pagamento,valor_pendente,nome);
         }//SALVAR NOVA VENDA
 
         public List<VendaModel> ListarVendas(String data)

@@ -20,7 +20,8 @@ CREATE TABLE TB_VENDA
 	[troco] VARCHAR(20) NULL, 
 	[tipopagamento] VARCHAR(20) NULL,
         [status_pagamento] VARCHAR(1) NULL,
-        [valor_pendente] VARCHAR(20) NULL
+        [valor_pendente] VARCHAR(20) NULL,
+	[nome] VARCHAR(20) NULL
 )
 
 CREATE TABLE TB_VENDA_TEMP

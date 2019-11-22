@@ -13,10 +13,10 @@ namespace Loja.Model
         _Conexao conexao = new _Conexao();
         SqlCommand cmd = new SqlCommand();
 
-        public void NovaVenda(String data, String usuario, String valortotal, String valorpago, String troco, String tipopagamento,int status_pagamento,String valor_pendente)
+        public void NovaVenda(String data, String usuario, String valortotal, String valorpago, String troco, String tipopagamento,int status_pagamento,String valor_pendente, String nome)
         {
 
-            cmd.CommandText = "INSERT INTO TB_VENDA (data,usuario,valortotal,valorpago,troco,tipopagamento,status_pagamento,valor_pendente) VALUES (@data,@usuario,@valortotal,@valorpago,@troco,@tipopagamento,@status_pagamento,@valor_pendente)";
+            cmd.CommandText = "INSERT INTO TB_VENDA (data,usuario,valortotal,valorpago,troco,tipopagamento,status_pagamento,valor_pendente,nome) VALUES (@data,@usuario,@valortotal,@valorpago,@troco,@tipopagamento,@status_pagamento,@valor_pendente,@nome)";
 
             cmd.Parameters.AddWithValue("@data", data);
             cmd.Parameters.AddWithValue("@usuario", usuario);
@@ -26,6 +26,7 @@ namespace Loja.Model
             cmd.Parameters.AddWithValue("@tipopagamento", tipopagamento); 
             cmd.Parameters.AddWithValue("@status_pagamento", status_pagamento);
             cmd.Parameters.AddWithValue("@valor_pendente", valor_pendente);
+            cmd.Parameters.AddWithValue("@nome", nome);
 
 
             try
@@ -68,6 +69,7 @@ namespace Loja.Model
                     var valorpagodoBanco = dr["valorpago"];
                     var trocodoBanco = dr["troco"];
                     var tipopagamentodoBanco = dr["tipopagamento"];
+                    var nomedoBanco = dr["nome"];
 
 
                     venda.Id = Convert.ToInt32(iddoBanco);
@@ -77,6 +79,7 @@ namespace Loja.Model
                     venda.ValorPago = Convert.ToString(valorpagodoBanco);
                     venda.Troco = Convert.ToString(trocodoBanco);
                     venda.TipoPagamento = Convert.ToString(tipopagamentodoBanco);
+                    venda.nome = Convert.ToString(nomedoBanco);
 
                 }
 
@@ -121,6 +124,7 @@ namespace Loja.Model
                         var valorpagodoBanco = Convert.ToString(dr["valorpago"]);
                         var trocodoBanco = Convert.ToString(dr["troco"]);
                         var tipopagamentodoBanco = Convert.ToString(dr["tipopagamento"]);
+                        var nomedoBanco = dr["nome"];
 
                         if (String.IsNullOrEmpty(trocodoBanco))
                         {
@@ -138,6 +142,7 @@ namespace Loja.Model
                         v.ValorPago = Convert.ToString(valorpagodoBanco);
                         v.Troco = Convert.ToString(trocodoBanco);
                         v.TipoPagamento = Convert.ToString(tipopagamentodoBanco);
+                        v.nome = Convert.ToString(nomedoBanco);
 
 
                         venda.Add(v);
@@ -188,6 +193,7 @@ namespace Loja.Model
                         var valorpagodoBanco = Convert.ToString(dr["valorpago"]);
                         var trocodoBanco = Convert.ToString(dr["troco"]);
                         var tipopagamentodoBanco = Convert.ToString(dr["tipopagamento"]);
+                        var nomedoBanco = dr["nome"];
 
                         if (String.IsNullOrEmpty(trocodoBanco))
                         {
@@ -205,6 +211,7 @@ namespace Loja.Model
                         v.ValorPago = Convert.ToString(valorpagodoBanco);
                         v.Troco = Convert.ToString(trocodoBanco);
                         v.TipoPagamento = Convert.ToString(tipopagamentodoBanco);
+                        v.nome = Convert.ToString(nomedoBanco);
 
 
                         venda.Add(v);
@@ -254,8 +261,9 @@ namespace Loja.Model
                         var trocodoBanco = Convert.ToString(dr["troco"]);
                         var tipopagamentodoBanco = Convert.ToString(dr["tipopagamento"]);
                         var valorpendentedoBanco = Convert.ToString(dr["valor_pendente"]);
+                        var nomedoBanco = dr["nome"];
 
-                        
+
                         if (String.IsNullOrEmpty(trocodoBanco))
                         {
                             trocodoBanco = "0";
@@ -273,6 +281,7 @@ namespace Loja.Model
                         v.Troco = Convert.ToString(trocodoBanco);
                         v.TipoPagamento = Convert.ToString(tipopagamentodoBanco);
                         v.ValorPendente = Convert.ToString(valorpendentedoBanco);
+                        v.nome = Convert.ToString(nomedoBanco);
 
                         venda.Add(v);
                     }
@@ -317,6 +326,7 @@ namespace Loja.Model
                         var trocodoBanco = Convert.ToString(dr["troco"]);
                         var tipopagamentodoBanco = Convert.ToString(dr["tipopagamento"]);
                         var valorpendentedoBanco = Convert.ToString(dr["valor_pendente"]);
+                          var nomedoBanco = Convert.ToString( dr["nome"]);
 
                     if (String.IsNullOrEmpty(trocodoBanco))
                     {
@@ -335,9 +345,10 @@ namespace Loja.Model
                     venda.Troco = Convert.ToString(trocodoBanco);
                     venda.TipoPagamento = Convert.ToString(tipopagamentodoBanco);
                     venda.ValorPendente = Convert.ToString(valorpendentedoBanco);
+                    venda.nome = Convert.ToString(nomedoBanco);
 
 
-                    }
+                }
 
                 
 
@@ -454,6 +465,7 @@ namespace Loja.Model
                     var valorpagodoBanco = dr["valorpago"];
                     var trocodoBanco = dr["troco"];
                     var tipopagamentodoBanco = dr["tipopagamento"];
+                    var nomedoBanco = dr["nome"];
 
 
                     venda.Id = Convert.ToInt32(iddoBanco);
@@ -463,6 +475,7 @@ namespace Loja.Model
                     venda.ValorPago = Convert.ToString(valorpagodoBanco);
                     venda.Troco = Convert.ToString(trocodoBanco);
                     venda.TipoPagamento = Convert.ToString(tipopagamentodoBanco);
+                    venda.nome = Convert.ToString(nomedoBanco);
 
                 }
 

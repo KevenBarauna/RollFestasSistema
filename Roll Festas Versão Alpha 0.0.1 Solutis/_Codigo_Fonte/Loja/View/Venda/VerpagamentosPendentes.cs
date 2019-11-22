@@ -33,6 +33,7 @@ namespace Loja.View.Venda
                     ListViewItem listP = new ListViewItem(Convert.ToString(p.Id));
                     listP.SubItems.Add(Convert.ToString(p.ValorPendente));
                     listP.SubItems.Add(Convert.ToString(p.Data));
+                    listP.SubItems.Add(Convert.ToString(p.nome));
 
                     listCodigo.Items.Add(listP);
 

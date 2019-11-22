@@ -18,5 +18,6 @@ namespace Loja.Model
         public String StatusPagamento { get; set; }
         public String ValorPendente { get; set; }
         public Decimal ValorParaCalcuar { get; set; }
+        public String nome { get; set; }
     }
 }

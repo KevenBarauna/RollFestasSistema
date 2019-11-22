@@ -76,6 +76,7 @@ namespace Loja.View.Venda
                 ListViewItem list = new ListViewItem(Convert.ToString(us.Id));
                 list.SubItems.Add(us.ValorPendente);
                 list.SubItems.Add(us.Data);
+                list.SubItems.Add(us.nome);
                 LvPesquisa.Items.Add(list);
             }
         }
@@ -155,7 +156,7 @@ namespace Loja.View.Venda
             {
                 //SALVAR VENDA
                 VendaController v = new VendaController();
-                v.FinalizarVenda(data, LblUsuario.Text, TxtTotal.Text, TxtValor.Text, TxtTroco.Text, TipoPagamento, 1, "");
+                v.FinalizarVenda(data, LblUsuario.Text, TxtTotal.Text, TxtValor.Text, TxtTroco.Text, TipoPagamento, 1, "","");
 
                 //RETIRAR VENDA PENDETE
                 VendaController venda = new VendaController();

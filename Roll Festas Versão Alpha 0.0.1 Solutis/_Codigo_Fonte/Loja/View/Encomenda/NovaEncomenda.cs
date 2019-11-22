@@ -97,7 +97,7 @@ namespace Loja.View.Encomenda
                 {
                     //SALVAR VENDA
                     VendaController v = new VendaController();
-                    v.FinalizarVenda(data , LblUsuario.Text , TxtValor.Text , TxtValorpago.Text , TxtTroco.Text , TipoPagamento , 1 , "");
+                    v.FinalizarVenda(data , LblUsuario.Text , TxtValor.Text , TxtValorpago.Text , TxtTroco.Text , TipoPagamento , 1 , "","");
                     //SALVAR NO CAIXA
                     Controler.CaixaController caixa = new Controler.CaixaController();
                     caixa.SalvarNoCaixa(data, TxtValor.Text, TipoPagamento, TxtDinCart.Text);
@@ -193,7 +193,7 @@ namespace Loja.View.Encomenda
 
             //FINALIZAR VENDA
             VendaController v = new VendaController();
-            v.FinalizarVenda(data, LblUsuario.Text, TxtValor.Text, TxtValorpago.Text, TxtTroco.Text, TipoPagamento, 2, TxtValorPendente.Text);
+            v.FinalizarVenda(data, LblUsuario.Text, TxtValor.Text, TxtValorpago.Text, TxtTroco.Text, TipoPagamento, 2, TxtValorPendente.Text,"");
 
             //DECREMENTA PRODUTO
             DAOVENDATEMP daotemp = new DAOVENDATEMP();

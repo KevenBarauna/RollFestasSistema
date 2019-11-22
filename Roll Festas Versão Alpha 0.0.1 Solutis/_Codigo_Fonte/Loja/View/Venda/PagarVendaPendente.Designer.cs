@@ -58,12 +58,13 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LblDinCart = new System.Windows.Forms.Label();
             this.BtnDuvida = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // TxtDinCart
             // 
             this.TxtDinCart.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.TxtDinCart.Location = new System.Drawing.Point(603, 299);
+            this.TxtDinCart.Location = new System.Drawing.Point(650, 299);
             this.TxtDinCart.Name = "TxtDinCart";
             this.TxtDinCart.ReadOnly = true;
             this.TxtDinCart.Size = new System.Drawing.Size(72, 20);
@@ -72,7 +73,7 @@
             // RbDinCart
             // 
             this.RbDinCart.AutoSize = true;
-            this.RbDinCart.Location = new System.Drawing.Point(493, 300);
+            this.RbDinCart.Location = new System.Drawing.Point(540, 300);
             this.RbDinCart.Name = "RbDinCart";
             this.RbDinCart.Size = new System.Drawing.Size(107, 17);
             this.RbDinCart.TabIndex = 74;
@@ -84,7 +85,7 @@
             // 
             this.BtnFinalizar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnFinalizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnFinalizar.Location = new System.Drawing.Point(546, 392);
+            this.BtnFinalizar.Location = new System.Drawing.Point(593, 392);
             this.BtnFinalizar.Name = "BtnFinalizar";
             this.BtnFinalizar.Size = new System.Drawing.Size(115, 29);
             this.BtnFinalizar.TabIndex = 72;
@@ -121,7 +122,7 @@
             this.LblUsuario.AutoSize = true;
             this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblUsuario.Location = new System.Drawing.Point(577, 19);
+            this.LblUsuario.Location = new System.Drawing.Point(624, 19);
             this.LblUsuario.Name = "LblUsuario";
             this.LblUsuario.Size = new System.Drawing.Size(57, 17);
             this.LblUsuario.TabIndex = 69;
@@ -151,7 +152,7 @@
             // 
             this.BtnCalcular.BackColor = System.Drawing.SystemColors.Highlight;
             this.BtnCalcular.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnCalcular.Location = new System.Drawing.Point(636, 161);
+            this.BtnCalcular.Location = new System.Drawing.Point(683, 161);
             this.BtnCalcular.Name = "BtnCalcular";
             this.BtnCalcular.Size = new System.Drawing.Size(79, 33);
             this.BtnCalcular.TabIndex = 65;
@@ -163,7 +164,7 @@
             // 
             this.LblTestedata.AutoSize = true;
             this.LblTestedata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTestedata.Location = new System.Drawing.Point(577, 42);
+            this.LblTestedata.Location = new System.Drawing.Point(624, 42);
             this.LblTestedata.Name = "LblTestedata";
             this.LblTestedata.Size = new System.Drawing.Size(33, 15);
             this.LblTestedata.TabIndex = 64;
@@ -172,7 +173,7 @@
             // RBOutros
             // 
             this.RBOutros.AutoSize = true;
-            this.RBOutros.Location = new System.Drawing.Point(625, 277);
+            this.RBOutros.Location = new System.Drawing.Point(672, 277);
             this.RBOutros.Name = "RBOutros";
             this.RBOutros.Size = new System.Drawing.Size(56, 17);
             this.RBOutros.TabIndex = 63;
@@ -183,7 +184,7 @@
             // RBCartao
             // 
             this.RBCartao.AutoSize = true;
-            this.RBCartao.Location = new System.Drawing.Point(563, 277);
+            this.RBCartao.Location = new System.Drawing.Point(610, 277);
             this.RBCartao.Name = "RBCartao";
             this.RBCartao.Size = new System.Drawing.Size(56, 17);
             this.RBCartao.TabIndex = 62;
@@ -195,7 +196,7 @@
             // 
             this.RBDinheiro.AutoSize = true;
             this.RBDinheiro.Checked = true;
-            this.RBDinheiro.Location = new System.Drawing.Point(493, 277);
+            this.RBDinheiro.Location = new System.Drawing.Point(540, 277);
             this.RBDinheiro.Name = "RBDinheiro";
             this.RBDinheiro.Size = new System.Drawing.Size(64, 17);
             this.RBDinheiro.TabIndex = 61;
@@ -207,7 +208,7 @@
             // TxtTroco
             // 
             this.TxtTroco.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.TxtTroco.Location = new System.Drawing.Point(546, 203);
+            this.TxtTroco.Location = new System.Drawing.Point(593, 203);
             this.TxtTroco.Name = "TxtTroco";
             this.TxtTroco.ReadOnly = true;
             this.TxtTroco.Size = new System.Drawing.Size(83, 20);
@@ -215,7 +216,7 @@
             // 
             // TxtValor
             // 
-            this.TxtValor.Location = new System.Drawing.Point(546, 168);
+            this.TxtValor.Location = new System.Drawing.Point(593, 168);
             this.TxtValor.Name = "TxtValor";
             this.TxtValor.Size = new System.Drawing.Size(83, 20);
             this.TxtValor.TabIndex = 59;
@@ -223,7 +224,7 @@
             // TxtTotal
             // 
             this.TxtTotal.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.TxtTotal.Location = new System.Drawing.Point(546, 131);
+            this.TxtTotal.Location = new System.Drawing.Point(593, 131);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.ReadOnly = true;
             this.TxtTotal.Size = new System.Drawing.Size(83, 20);
@@ -232,7 +233,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(502, 206);
+            this.label7.Location = new System.Drawing.Point(549, 206);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 57;
@@ -241,7 +242,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(543, 252);
+            this.label6.Location = new System.Drawing.Point(590, 252);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 13);
             this.label6.TabIndex = 56;
@@ -250,7 +251,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(468, 175);
+            this.label5.Location = new System.Drawing.Point(515, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 55;
@@ -259,7 +260,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(502, 134);
+            this.label4.Location = new System.Drawing.Point(549, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 54;
@@ -295,11 +296,12 @@
             this.LvPesquisa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader1});
             this.LvPesquisa.HideSelection = false;
-            this.LvPesquisa.Location = new System.Drawing.Point(198, 72);
+            this.LvPesquisa.Location = new System.Drawing.Point(193, 72);
             this.LvPesquisa.Name = "LvPesquisa";
-            this.LvPesquisa.Size = new System.Drawing.Size(264, 349);
+            this.LvPesquisa.Size = new System.Drawing.Size(316, 349);
             this.LvPesquisa.TabIndex = 76;
             this.LvPesquisa.UseCompatibleStateImageBehavior = false;
             this.LvPesquisa.View = System.Windows.Forms.View.Details;
@@ -316,14 +318,14 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Data:";
-            this.columnHeader3.Width = 100;
+            this.columnHeader3.Width = 80;
             // 
             // LblDinCart
             // 
             this.LblDinCart.BackColor = System.Drawing.Color.Orange;
             this.LblDinCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDinCart.ForeColor = System.Drawing.Color.Red;
-            this.LblDinCart.Location = new System.Drawing.Point(526, 338);
+            this.LblDinCart.Location = new System.Drawing.Point(573, 338);
             this.LblDinCart.Name = "LblDinCart";
             this.LblDinCart.Size = new System.Drawing.Size(155, 41);
             this.LblDinCart.TabIndex = 77;
@@ -337,7 +339,7 @@
             this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
             this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDuvida.Location = new System.Drawing.Point(683, 8);
+            this.BtnDuvida.Location = new System.Drawing.Point(730, 8);
             this.BtnDuvida.Name = "BtnDuvida";
             this.BtnDuvida.Size = new System.Drawing.Size(35, 35);
             this.BtnDuvida.TabIndex = 78;
@@ -345,11 +347,16 @@
             this.BtnDuvida.UseVisualStyleBackColor = false;
             this.BtnDuvida.Click += new System.EventHandler(this.BtnDuvida_Click);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Nome:";
+            this.columnHeader1.Width = 80;
+            // 
             // PagarVendaPendente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 450);
+            this.ClientSize = new System.Drawing.Size(791, 450);
             this.Controls.Add(this.BtnDuvida);
             this.Controls.Add(this.LblDinCart);
             this.Controls.Add(this.LvPesquisa);
@@ -417,5 +424,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Label LblDinCart;
         private System.Windows.Forms.Button BtnDuvida;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

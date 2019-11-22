@@ -77,6 +77,7 @@ namespace Loja.View.Venda
                 ListViewItem list = new ListViewItem(Convert.ToString(us.Id));
                 list.SubItems.Add(us.ValorPendente);
                 list.SubItems.Add(us.Data);
+                list.SubItems.Add(us.nome);
                 LvPesquisa.Items.Add(list);
             }
         }

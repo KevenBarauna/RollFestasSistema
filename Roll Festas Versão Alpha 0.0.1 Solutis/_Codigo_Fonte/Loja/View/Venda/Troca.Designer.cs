@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Troca));
             this.BtnFinalizar = new System.Windows.Forms.Button();
             this.BtnPesquisar = new System.Windows.Forms.Button();
             this.BtnLimpar = new System.Windows.Forms.Button();
@@ -392,6 +393,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtIdDevolvido);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Troca";

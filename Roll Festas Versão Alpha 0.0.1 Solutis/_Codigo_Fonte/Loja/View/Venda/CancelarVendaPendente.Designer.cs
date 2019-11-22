@@ -43,6 +43,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LvPesquisa = new System.Windows.Forms.ListView();
             this.BtnDuvida = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // BtnFinalizar
@@ -61,7 +62,7 @@
             // 
             this.BtnPesquisar.BackColor = System.Drawing.Color.DarkOrange;
             this.BtnPesquisar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnPesquisar.Location = new System.Drawing.Point(365, 72);
+            this.BtnPesquisar.Location = new System.Drawing.Point(435, 72);
             this.BtnPesquisar.Name = "BtnPesquisar";
             this.BtnPesquisar.Size = new System.Drawing.Size(90, 31);
             this.BtnPesquisar.TabIndex = 97;
@@ -86,7 +87,7 @@
             this.LblUsuario.AutoSize = true;
             this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblUsuario.Location = new System.Drawing.Point(372, 26);
+            this.LblUsuario.Location = new System.Drawing.Point(442, 26);
             this.LblUsuario.Name = "LblUsuario";
             this.LblUsuario.Size = new System.Drawing.Size(57, 17);
             this.LblUsuario.TabIndex = 95;
@@ -116,7 +117,7 @@
             // 
             this.LblTestedata.AutoSize = true;
             this.LblTestedata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTestedata.Location = new System.Drawing.Point(374, 51);
+            this.LblTestedata.Location = new System.Drawing.Point(444, 51);
             this.LblTestedata.Name = "LblTestedata";
             this.LblTestedata.Size = new System.Drawing.Size(33, 15);
             this.LblTestedata.TabIndex = 91;
@@ -159,18 +160,19 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Data:";
-            this.columnHeader3.Width = 100;
+            this.columnHeader3.Width = 80;
             // 
             // LvPesquisa
             // 
             this.LvPesquisa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader1});
             this.LvPesquisa.HideSelection = false;
             this.LvPesquisa.Location = new System.Drawing.Point(204, 118);
             this.LvPesquisa.Name = "LvPesquisa";
-            this.LvPesquisa.Size = new System.Drawing.Size(264, 264);
+            this.LvPesquisa.Size = new System.Drawing.Size(321, 264);
             this.LvPesquisa.TabIndex = 101;
             this.LvPesquisa.UseCompatibleStateImageBehavior = false;
             this.LvPesquisa.View = System.Windows.Forms.View.Details;
@@ -181,7 +183,7 @@
             this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
             this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDuvida.Location = new System.Drawing.Point(457, 8);
+            this.BtnDuvida.Location = new System.Drawing.Point(527, 8);
             this.BtnDuvida.Name = "BtnDuvida";
             this.BtnDuvida.Size = new System.Drawing.Size(35, 35);
             this.BtnDuvida.TabIndex = 102;
@@ -189,11 +191,16 @@
             this.BtnDuvida.UseVisualStyleBackColor = false;
             this.BtnDuvida.Click += new System.EventHandler(this.BtnDuvida_Click);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Nome:";
+            this.columnHeader1.Width = 80;
+            // 
             // CancelarVendaPendente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 450);
+            this.ClientSize = new System.Drawing.Size(581, 450);
             this.Controls.Add(this.BtnDuvida);
             this.Controls.Add(this.LvPesquisa);
             this.Controls.Add(this.BtnFinalizar);
@@ -232,5 +239,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ListView LvPesquisa;
         private System.Windows.Forms.Button BtnDuvida;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

@@ -42,6 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.LblTipoDePagamento = new System.Windows.Forms.Label();
+            this.TxtNome = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LblData
@@ -87,7 +89,7 @@
             // LblValorRestante
             // 
             this.LblValorRestante.AutoSize = true;
-            this.LblValorRestante.Location = new System.Drawing.Point(18, 232);
+            this.LblValorRestante.Location = new System.Drawing.Point(24, 229);
             this.LblValorRestante.Name = "LblValorRestante";
             this.LblValorRestante.Size = new System.Drawing.Size(75, 13);
             this.LblValorRestante.TabIndex = 4;
@@ -107,7 +109,7 @@
             // 
             this.BtnCalcular.BackColor = System.Drawing.SystemColors.Highlight;
             this.BtnCalcular.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnCalcular.Location = new System.Drawing.Point(72, 180);
+            this.BtnCalcular.Location = new System.Drawing.Point(72, 174);
             this.BtnCalcular.Name = "BtnCalcular";
             this.BtnCalcular.Size = new System.Drawing.Size(79, 33);
             this.BtnCalcular.TabIndex = 37;
@@ -117,7 +119,7 @@
             // 
             // TxtValorRestante
             // 
-            this.TxtValorRestante.Location = new System.Drawing.Point(99, 229);
+            this.TxtValorRestante.Location = new System.Drawing.Point(105, 226);
             this.TxtValorRestante.Name = "TxtValorRestante";
             this.TxtValorRestante.Size = new System.Drawing.Size(100, 20);
             this.TxtValorRestante.TabIndex = 38;
@@ -126,7 +128,7 @@
             // 
             this.BtnFinalizar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnFinalizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnFinalizar.Location = new System.Drawing.Point(72, 266);
+            this.BtnFinalizar.Location = new System.Drawing.Point(72, 344);
             this.BtnFinalizar.Name = "BtnFinalizar";
             this.BtnFinalizar.Size = new System.Drawing.Size(79, 29);
             this.BtnFinalizar.TabIndex = 44;
@@ -171,12 +173,30 @@
             this.LblTipoDePagamento.TabIndex = 48;
             this.LblTipoDePagamento.Text = "Aguardando info...";
             // 
+            // TxtNome
+            // 
+            this.TxtNome.Location = new System.Drawing.Point(105, 265);
+            this.TxtNome.Name = "TxtNome";
+            this.TxtNome.Size = new System.Drawing.Size(100, 20);
+            this.TxtNome.TabIndex = 50;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 268);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Nome do cliente:";
+            // 
             // PagarDepois
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(248, 320);
+            this.ClientSize = new System.Drawing.Size(248, 396);
+            this.Controls.Add(this.TxtNome);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.LblTipoDePagamento);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -216,5 +236,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label LblTipoDePagamento;
+        private System.Windows.Forms.TextBox TxtNome;
+        private System.Windows.Forms.Label label4;
     }
 }

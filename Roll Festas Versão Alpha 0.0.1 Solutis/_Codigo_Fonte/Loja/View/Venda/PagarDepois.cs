@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
 using Loja.Model;
+using Loja.Model.DAO;
 
 namespace Loja.View.Venda
 {
@@ -75,7 +76,7 @@ namespace Loja.View.Venda
 
             //FINALIZAR VENDA
             VendaController v = new VendaController();
-            v.FinalizarVenda(data, LblUsuario.Text, LblValorTotal.Text, LblValorPago.Text, "0", LblTipoDePagamento.Text, 2, TxtValorRestante.Text);
+            v.FinalizarVenda(data, LblUsuario.Text, LblValorTotal.Text, LblValorPago.Text, "0", LblTipoDePagamento.Text, 2, TxtValorRestante.Text, TxtNome.Text);
 
             //DECREMENTA PRODUTO
              DAOVENDATEMP daotemp = new DAOVENDATEMP();
@@ -97,7 +98,12 @@ namespace Loja.View.Venda
             String SaveData = tempo.DataparaSalvar();
 
             ReciboController recibo = new ReciboController();
-            recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Comprovantes\Recibo_" + SaveData + "_" + VendaM.Id + ".pdf");
+
+
+            DAOCaminho caminho = new DAOCaminho();
+            string caminhocomp = caminho.CaminhoComprovante();
+
+            recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"" + caminhocomp + @"\Recibo_" + SaveData + "_" + VendaM.Id + ".pdf");
 
             this.Hide();
 
