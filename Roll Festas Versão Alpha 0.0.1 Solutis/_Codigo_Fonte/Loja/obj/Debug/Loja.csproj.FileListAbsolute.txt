@@ -200,4 +200,3 @@ C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.
 C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.csproj.CopyComplete
 C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.exe
 C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.pdb
-C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.csprojAssemblyReference.cache

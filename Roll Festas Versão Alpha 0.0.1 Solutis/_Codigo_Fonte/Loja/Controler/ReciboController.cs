@@ -18,9 +18,11 @@ namespace Loja.Controler
         {
             try
             {
+                Controller CaminhoArquivo = new Controller();
+                string caminho = CaminhoArquivo.CaminhoComprovante();
 
                 Document doc = new Document(iTextSharp.text.PageSize.A6, 3, 3, 3, 3);
-                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Comprovantes\_Gerados_Manuaisomprovate.pdf", FileMode.Create));
+                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(@"" + caminho + ".pdf", FileMode.Create));
                 doc.Open();
 
 
@@ -212,58 +214,57 @@ namespace Loja.Controler
                 paragrafo.Add("                                                     ");
 
                 paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Bold);
-                paragrafo.Add("-----------------------------------------");
                 paragrafo.Add("                Roll Festas               ");
                 paragrafo.Add("-----------------------------------------");
 
 
-                paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Regular);
+
                 paragrafo.Add("     Endereço: Rua do Paraíso, n° 34      ");
                 paragrafo.Add("              Box 1 Salvador - BA         ");
                 paragrafo.Add("                                         ");
 
 
-                paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Regular);
-                paragrafo.Add("           CNPJ:  20.600.571/0001-74      ");
+
+                paragrafo.Add("CNPJ:  20.600.571/0001-74                ");
                 paragrafo.Add("                                         ");
-                paragrafo.Add("        E-mail: rollfestas@hotmail.com    ");
-                paragrafo.Add("              TEL: (71) 3321-5411         ");
-                paragrafo.Add("                 @lojarollfestas          ");
+                paragrafo.Add("E-mail: rollfestas@hotmail.com           ");
+                paragrafo.Add("Telefone: (71) 3321-5411                 ");
+                paragrafo.Add("@lojarollfestas                          ");
                 paragrafo.Add("                                         ");
 
 
-                paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Regular);
+
                 paragrafo.Add("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
                 paragrafo.Add("         ESSE CUPOM NÃO É VALIDO       ");
                 paragrafo.Add("             FORA DO ESTABELICIMENTO   ");
                 paragrafo.Add("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 
-                paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Regular);
                 paragrafo.Add("                                         ");
 
                 String DataDaVenda = Venda.Data;
                 String CodDaVenda = Convert.ToString(Venda.Id);
 
-                paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Regular);
-                paragrafo.Add("     Data: " + DataDaVenda + "     Código: " + CodDaVenda + "      ");
+
+                paragrafo.Add("Data: " + DataDaVenda + "                       ");
+                paragrafo.Add("Código: " + CodDaVenda + "                             ");
+                paragrafo.Add("                                         ");
 
                 String ValorTotalDaVenda = Venda.ValorTotal;
                 String ValorpagoDaVenda = Venda.ValorPago;
 
-                paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Regular);
-                paragrafo.Add("     Valor total: " + ValorTotalDaVenda + "     Valor pago: " + ValorpagoDaVenda + " ");
+
+                paragrafo.Add("Valor total: " + ValorTotalDaVenda + "                       ");
+                paragrafo.Add("Valor pago: " + ValorpagoDaVenda + "                       ");
 
                 String TrocoDaVenda = Venda.Troco;
                 String PendenciaDaVenda = Venda.ValorPendente;
 
-                paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Regular);
-                paragrafo.Add("         Troco: " + TrocoDaVenda + "            Pendencia: " + PendenciaDaVenda + "     ");
 
-                paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Regular);
-                paragrafo.Add("                                              ");
-                paragrafo.Add("-----------------------------------------");
+                paragrafo.Add("Troco: " + TrocoDaVenda + "                               ");
+                paragrafo.Add("Pendencia: " + PendenciaDaVenda + "                       ");
+
+
                 paragrafo.Add("         Obrigado pela preferência!!!      ");
-                paragrafo.Add("-----------------------------------------");
 
                 doc.Add(paragrafo);
 
