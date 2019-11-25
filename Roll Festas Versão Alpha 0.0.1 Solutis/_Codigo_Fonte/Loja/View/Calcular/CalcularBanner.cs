@@ -15,7 +15,7 @@ namespace Loja.View.Calcular
         public CalcularBanner()
         {
             InitializeComponent();
-            MessageBox.Show("Essa ferramenta está em manutenção, para adicionar essa função informa ao desenvolvedor como é feita o calculo do banner.");
+            MessageBox.Show("Essa ferramenta está em manutenção, para adicionar essa função informa ao desenvolvedor como é feito o calculo do banner.");
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)

@@ -63,6 +63,8 @@
             this.TxtValorPendente = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.BtnDuvida = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.TxtNome = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TxtDataEntrega
@@ -91,7 +93,7 @@
             this.txtDescricao.Location = new System.Drawing.Point(133, 231);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(142, 107);
+            this.txtDescricao.Size = new System.Drawing.Size(142, 69);
             this.txtDescricao.TabIndex = 28;
             // 
             // TxtValor
@@ -390,11 +392,29 @@
             this.BtnDuvida.UseVisualStyleBackColor = false;
             this.BtnDuvida.Click += new System.EventHandler(this.BtnDuvida_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(52, 309);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 13);
+            this.label13.TabIndex = 69;
+            this.label13.Text = "Nome cliente:";
+            // 
+            // TxtNome
+            // 
+            this.TxtNome.Location = new System.Drawing.Point(133, 306);
+            this.TxtNome.Name = "TxtNome";
+            this.TxtNome.Size = new System.Drawing.Size(142, 20);
+            this.TxtNome.TabIndex = 68;
+            // 
             // NovaEncomenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 660);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.TxtNome);
             this.Controls.Add(this.BtnDuvida);
             this.Controls.Add(this.TxtValorPendente);
             this.Controls.Add(this.label12);
@@ -475,5 +495,7 @@
         private System.Windows.Forms.TextBox TxtValorPendente;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button BtnDuvida;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox TxtNome;
     }
 }

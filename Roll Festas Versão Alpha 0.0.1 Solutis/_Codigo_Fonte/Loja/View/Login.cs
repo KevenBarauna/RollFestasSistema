@@ -27,6 +27,7 @@ namespace Loja
             daoTemp.ZerarTabela();
 
             MessageBox.Show("ESSE É UM SISTEMA QUE ESTÁ EM SUA VERSÃO DE TESTE, CONTINUE ANOTANDO SUAS VENDAS NO CADERNO AO FINAL DO DIA");
+ 
 
         }
 

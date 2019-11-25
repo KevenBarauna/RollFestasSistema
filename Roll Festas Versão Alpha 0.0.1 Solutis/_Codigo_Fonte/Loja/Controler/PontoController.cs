@@ -12,11 +12,14 @@ namespace Loja.Controler
 {
     class PontoController
     {
-        public void BaterPonto(String nome, String hora)
+        public void BaterPonto(String nome)
         {
+            //PEGA HORA E DATA ATUAL
             Controller tempo = new Controller();
-            String data = tempo.PegarDiaMesAnoAtual();
+            string data = tempo.PegarDiaMesAnoAtual();
+            string hora = tempo.PegarHoraMinutoAtual();
 
+            //VERIFICA SE JÁ BATEU PONTO HOJE
             int ordem = 0;
             int v1,v2,v3,v4;
 

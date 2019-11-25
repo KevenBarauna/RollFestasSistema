@@ -131,7 +131,6 @@ namespace Loja.Model
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
                 conexao.Desconectar();
-                MessageBox.Show("sucesso!");
             }
             catch (SqlException e)
             {
@@ -153,7 +152,6 @@ namespace Loja.Model
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
                 conexao.Desconectar();
-                MessageBox.Show("sucesso!");
             }
             catch (SqlException e)
             {
@@ -292,7 +290,6 @@ namespace Loja.Model
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
                 conexao.Desconectar();
-                MessageBox.Show("Sucesso!");
             }
             catch (SqlException e)
             {
@@ -522,7 +519,6 @@ namespace Loja.Model
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
                 conexao.Desconectar();
-                MessageBox.Show("sucesso!");
             }
             catch (SqlException e)
             {

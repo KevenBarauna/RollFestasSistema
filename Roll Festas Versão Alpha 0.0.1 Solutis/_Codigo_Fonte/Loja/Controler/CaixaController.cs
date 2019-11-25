@@ -172,36 +172,55 @@ namespace Loja.Controler
                 dao.RetirarDinheiroCaixa(Convert.ToString(ValorTotal), Data);
         }//CANCELAR VENDA
 
-        public void Retirada(String Data, String valor)
+        public void Retirada(String valor)
         {
-            DAOCaixa dao = new DAOCaixa();
-            Decimal ValorTotal = 0;
-
-            if (String.IsNullOrEmpty(valor))
+            //VERIFICA VALOR DIGITADO
+            Controller VerificaValor = new Controller();
+            if (VerificaValor.VerificaDinheiro(valor))
             {
-                valor = "0";
+                    
+                Controller tempo = new Controller();
+                String data = tempo.PegarDiaMesAnoAtual();
+
+                DAOCaixa dao = new DAOCaixa();
+                Decimal ValorTotal = 0;
+
+                if (String.IsNullOrEmpty(valor))
+                {
+                    valor = "0";
+                }
+
+                ValorTotal = dao.PegarValorDinheiro(data);
+                ValorTotal = ValorTotal - Convert.ToDecimal(valor);
+                dao.LarcarRetirada(Convert.ToString(valor), data);
+                dao.RetirarDinheiroCaixa(Convert.ToString(ValorTotal), data);
+                MessageBox.Show("sucesso!");
             }
+        }//REALIZAR RETIRADA
 
-            ValorTotal = dao.PegarValorDinheiro(Data);
-            ValorTotal = ValorTotal - Convert.ToDecimal(valor);
-            dao.LarcarRetirada(Convert.ToString(valor), Data);
-            dao.RetirarDinheiroCaixa(Convert.ToString(ValorTotal), Data);
-        }//REAliZaR RETIRADA
-
-        public void Deposito(String Data, String valor)
+        public void Deposito(String valor)
         {
-            DAOCaixa dao = new DAOCaixa();
-            Decimal ValorTotal = 0;
 
-            if (String.IsNullOrEmpty(valor))
+            Controller VerificaValor = new Controller();
+            if (VerificaValor.VerificaDinheiro(valor))
             {
-                valor = "0";
-            }
+                Controller tempo = new Controller();
+                String data = tempo.PegarDiaMesAnoAtual();
 
-            ValorTotal = dao.PegarValorDinheiro(Data);
-            ValorTotal = ValorTotal + Convert.ToDecimal(valor);
-            dao.LarcarDeposito(Convert.ToString(valor), Data);
-            dao.RetirarDinheiroCaixa(Convert.ToString(ValorTotal), Data);
+                DAOCaixa dao = new DAOCaixa();
+                Decimal ValorTotal = 0;
+
+                if (String.IsNullOrEmpty(valor))
+                {
+                    valor = "0";
+                }
+
+                ValorTotal = dao.PegarValorDinheiro(data);
+                ValorTotal = ValorTotal + Convert.ToDecimal(valor);
+                dao.LarcarDeposito(Convert.ToString(valor), data);
+                dao.RetirarDinheiroCaixa(Convert.ToString(ValorTotal), data);
+                MessageBox.Show("Sucesso!");
+            }
         }//REalIZAR DEPOSITO
 
         public String MostrarTotalVendaDia(String dia)

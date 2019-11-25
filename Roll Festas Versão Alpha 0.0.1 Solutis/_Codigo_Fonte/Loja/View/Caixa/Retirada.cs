@@ -20,12 +20,8 @@ namespace Loja.View.Caixa
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-
-            Controller tempo = new Controller();
-            String data = tempo.PegarDiaMesAnoAtual();
-
             CaixaController caixa = new CaixaController();
-            caixa.Retirada(data,TxtValor.Text);
+            caixa.Retirada(TxtValor.Text);
             this.Hide();
         }
     }

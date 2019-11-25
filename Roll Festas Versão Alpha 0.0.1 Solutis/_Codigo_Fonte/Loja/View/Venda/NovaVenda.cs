@@ -215,7 +215,7 @@ namespace Loja.View.Venda
                 VendaController venda = new VendaController();
                 VendaM = venda.PegarIdDaUltimaVenda();
 
-                String SaveData = tempo.DataparaSalvar();
+                String SaveData = tempo.PegarDiaMesAnoAtual();
 
                 ReciboController recibo = new ReciboController();
 

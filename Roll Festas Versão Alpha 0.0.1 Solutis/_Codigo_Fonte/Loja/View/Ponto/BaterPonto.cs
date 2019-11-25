@@ -29,23 +29,13 @@ namespace Loja.View.Ponto
             if (UsuarioExiste == true)
             {
 
-                string h = DateTime.Now.Hour.ToString();
-                string m = DateTime.Now.Minute.ToString();
-
-                string hora = h + ":" + m;
-                string dia = DateTime.Now.Day.ToString();
-                string mes = DateTime.Now.Month.ToString();
-                string ano = DateTime.Now.Year.ToString();
-
-
-
-                ponto.BaterPonto(TxtNome.Text, hora);
+                ponto.BaterPonto(TxtNome.Text);
 
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("usuário não encontrado");
+                MessageBox.Show("Usuário não encontrado");
             }
 
         }

@@ -52,7 +52,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(263, 9);
+            this.label1.Location = new System.Drawing.Point(251, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 22);
             this.label1.TabIndex = 5;
@@ -92,8 +92,8 @@
             // 
             // H3
             // 
-            this.H3.Text = "Volta do almoço";
-            this.H3.Width = 100;
+            this.H3.Text = "Chegada do almoço";
+            this.H3.Width = 120;
             // 
             // H4
             // 
@@ -103,7 +103,7 @@
             // dia
             // 
             this.dia.Text = "Data:";
-            this.dia.Width = 120;
+            this.dia.Width = 100;
             // 
             // button1
             // 

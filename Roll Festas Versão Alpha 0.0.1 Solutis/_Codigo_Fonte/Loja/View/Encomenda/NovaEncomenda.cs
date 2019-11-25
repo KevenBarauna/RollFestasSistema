@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Loja.Controler;
 using Loja.Model;
 using Loja.View.Duvida;
+using Loja.View.Venda;
 
 namespace Loja.View.Encomenda
 {
@@ -42,87 +43,67 @@ namespace Loja.View.Encomenda
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            bool tudocerto = true;
-
-            if (TxtValor.Text.Contains("."))
+            
+            EncomendaController encomenda = new EncomendaController();
+           if ( encomenda.ValidarEncomenda(TxtTipo.Text, TxtDataEntrada.Text, TxtDataEntrega.Text, TxtTema.Text, TxtQuantidade.Text, TxtValor.Text, txtDescricao.Text))
             {
-                MessageBox.Show("O campo preço não pode conter PONTO, substitua por virgula");
-                tudocerto = false;
-            }
-            else if (tudocerto == true)
-            {
-                EncomendaController encomenda = new EncomendaController();
+                
                 encomenda.NovaEncomenda(TxtTipo.Text, TxtDataEntrada.Text, TxtDataEntrega.Text, TxtTema.Text, TxtQuantidade.Text, TxtValor.Text, txtDescricao.Text);
 
-                //SALVAR VENDA
-
-                //1 = PAGO
-                //2 = PAGAR DEPOIS
-                Controller tempo = new Controller();
-                String data = tempo.PegarDiaMesAnoAtual();
-
+                //SALVAR VENDA | 1 = PAGO | 2 = PAGAR DEPOIS
                 String TipoPagamento = "Não selecionado";
-                bool TodasAsInformacoes = false;
 
                 if (RBDinheiro.Checked)
                 {
                     TipoPagamento = "Dinheiro";
-                    TodasAsInformacoes = true;
                 }
                 else if (RBCartao.Checked)
                 {
                     TipoPagamento = "Cartão";
-                    TodasAsInformacoes = true;
                 }
                 else if (RbDinCart.Checked)
                 {
                     TipoPagamento = "Dinheiro e Cartão";
-                    TodasAsInformacoes = true;
-
                 }
                 else if (RBOutros.Checked)
                 {
                     TipoPagamento = "Outros";
-                    TodasAsInformacoes = true;
-                }
-                else if (!RBDinheiro.Checked && !RBCartao.Checked && !RbDinCart.Checked && !RBOutros.Checked)
-                {
-                    MessageBox.Show("Informe a forma de pagamento");
                 }
 
+                Controller tempo = new Controller();
+                String data = tempo.PegarDiaMesAnoAtual();
 
+                //SALVAR VENDA
+                VendaController v = new VendaController();
+                v.FinalizarVenda(data, LblUsuario.Text, TxtValor.Text, TxtValorpago.Text, TxtTroco.Text, TipoPagamento, 1, "", TxtNome.Text);
 
+                //SALVAR NO CAIXA
+                Controler.CaixaController caixa = new Controler.CaixaController();
+                caixa.SalvarNoCaixa(data, TxtValor.Text, TipoPagamento, TxtDinCart.Text);
 
-                if (TodasAsInformacoes == true)
-                {
-                    //SALVAR VENDA
-                    VendaController v = new VendaController();
-                    v.FinalizarVenda(data , LblUsuario.Text , TxtValor.Text , TxtValorpago.Text , TxtTroco.Text , TipoPagamento , 1 , "","");
-                    //SALVAR NO CAIXA
-                    Controler.CaixaController caixa = new Controler.CaixaController();
-                    caixa.SalvarNoCaixa(data, TxtValor.Text, TipoPagamento, TxtDinCart.Text);
+                //LIMPA TUDO
+                TxtTipo.Text = "";
+                TxtQuantidade.Text = "";
+                TxtValor.Text = "";
+                TxtTema.Text = "";
+                txtDescricao.Text = "";
+                TxtValorpago.Text = "";
+                TxtTroco.Text = "";
 
-                    //LIMPA TUDO
-                    TxtTipo.Text = "";
-                    TxtQuantidade.Text = "";
-                    TxtValor.Text = "";
-                    TxtTema.Text = "";
-                    txtDescricao.Text = "";
-                    TxtValorpago.Text = "";
-                    TxtTroco.Text = "";
+                //GERAR RECIBO
 
+                Controller PegarCaminho = new Controller();
+                string caminho = PegarCaminho.CaminhoComprovante();
 
-                    //GERAR RECIBO
-                    VendaModel VendaM = new VendaModel();
+                VendaModel VendaM = new VendaModel();
 
-                    VendaController venda = new VendaController();
-                    VendaM = venda.PegarIdDaUltimaVenda();
+                VendaController venda = new VendaController();
+                VendaM = venda.PegarIdDaUltimaVenda();
 
-                    String SaveData = tempo.DataparaSalvar();
+                String SaveData = tempo.DataPararCriarPasta();
 
-                    ReciboController recibo = new ReciboController();
-                    recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Comprovantes\Recibo_" + SaveData + "_" + VendaM.Id + ".pdf");
-                }
+                ReciboController recibo = new ReciboController();
+                recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"" + caminho + @"\" + SaveData + "_" + VendaM.Id + ".pdf");
 
 
             }
@@ -132,10 +113,6 @@ namespace Loja.View.Encomenda
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
             if (TxtValor.Text.Contains("."))
-            {
-                MessageBox.Show("Para calcular substitua o ponto por virgula");
-            }
-            else if (TxtValor.Text.Contains("."))
             {
                 MessageBox.Show("Para calcular substitua o ponto por virgula");
             }
@@ -163,61 +140,70 @@ namespace Loja.View.Encomenda
 
         private void BtnPagarDepos_Click(object sender, EventArgs e)
         {
-            //FINALIZAR
 
-            Controller tempo = new Controller();
-            String data = tempo.PegarDiaMesAnoAtual();
+            //VALIDAR ENCOEMNDA
 
-            String TipoPagamento="";
-
-            if (RBDinheiro.Checked)
+            EncomendaController encomenda = new EncomendaController();
+            if (encomenda.ValidarEncomenda(TxtTipo.Text, TxtDataEntrada.Text, TxtDataEntrega.Text, TxtTema.Text, TxtQuantidade.Text, TxtValor.Text, txtDescricao.Text))
             {
-                TipoPagamento = "Dinheiro";
+                //DATA DA ENCOMENDA
+                Controller tempo = new Controller();
+                String data = tempo.PegarDiaMesAnoAtual();
+
+                //TIPO DE PAGAMENTO
+                String TipoPagamento = "";
+
+                if (RBDinheiro.Checked)
+                {
+                    TipoPagamento = "Dinheiro";
+                }
+                else if (RBCartao.Checked)
+                {
+                    TipoPagamento = "Cartão";
+                }
+                else if (RbDinCart.Checked)
+                {
+                    TipoPagamento = "Dinheiro e Cartão";
+                }
+                else if (RBOutros.Checked)
+                {
+                    TipoPagamento = "Outros";
+                }
+
+                //SALVAR VENDA
+                VendaController v = new VendaController();
+                v.FinalizarVenda(data, LblUsuario.Text, TxtValor.Text, TxtValorpago.Text, TxtTroco.Text, TipoPagamento, 2, TxtValorPendente.Text, TxtNome.Text);
+
+                //MANDAR VALOR PAGO PARA O CAIXA
+                Controler.CaixaController caixa = new Controler.CaixaController();
+                caixa.SalvarNoCaixa(data, TxtValorpago.Text, TipoPagamento, TxtDinCart.Text);
+
+                //LIMPA TUDO
+                TxtTipo.Text = "";
+                TxtQuantidade.Text = "";
+                TxtValor.Text = "";
+                TxtTema.Text = "";
+                txtDescricao.Text = "";
+                TxtValorpago.Text = "";
+                TxtTroco.Text = "";
+
+                //GERAR RECIBO
+
+                Controller PegarCaminho = new Controller();
+                string caminho = PegarCaminho.CaminhoComprovante();
+
+                VendaModel VendaM = new VendaModel();
+
+                VendaController venda = new VendaController();
+                VendaM = venda.PegarIdDaUltimaVenda();
+
+                String SaveData = tempo.DataPararCriarPasta();
+
+                ReciboController recibo = new ReciboController();
+                recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"" + caminho + @"\" + SaveData + "_" + VendaM.Id + ".pdf");
+
+                this.Hide();
             }
-            else if (RBCartao.Checked)
-            {
-                TipoPagamento = "Cartão";
-            }
-            else if (RbDinCart.Checked)
-            {
-                TipoPagamento = "Dinheiro e Cartão";
-            }
-            else if (RBOutros.Checked)
-            {
-                TipoPagamento = "Outros";
-            }
-
-
-            //1 = PAGO
-            //2 = PAGAR DEPOIS
-
-            //FINALIZAR VENDA
-            VendaController v = new VendaController();
-            v.FinalizarVenda(data, LblUsuario.Text, TxtValor.Text, TxtValorpago.Text, TxtTroco.Text, TipoPagamento, 2, TxtValorPendente.Text,"");
-
-            //DECREMENTA PRODUTO
-            DAOVENDATEMP daotemp = new DAOVENDATEMP();
-            List<ProdutoModel> lpm = new List<ProdutoModel>();
-            lpm = daotemp.PegadoBanco();
-            daotemp.DecrementaBanco(lpm);
-
-            //MANDAR VALOR PAGO PARA O CAIXA
-            Controler.CaixaController caixa = new Controler.CaixaController();
-            caixa.SalvarNoCaixa(data, TxtValorpago.Text, TipoPagamento, "");
-
-
-            //GERAR RECIBO
-            VendaModel VendaM = new VendaModel();
-
-            VendaController venda = new VendaController();
-            VendaM = venda.PegarIdDaUltimaVenda();
-
-            String SaveData = tempo.DataparaSalvar();
-
-            ReciboController recibo = new ReciboController();
-            recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Comprovantes\Recibo_" + SaveData + "_" + VendaM.Id + ".pdf");
-
-            this.Hide();
 
         }
 

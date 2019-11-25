@@ -41,7 +41,7 @@
             // 
             this.BtnSalvar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnSalvar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnSalvar.Location = new System.Drawing.Point(78, 241);
+            this.BtnSalvar.Location = new System.Drawing.Point(83, 240);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(82, 31);
             this.BtnSalvar.TabIndex = 16;
@@ -59,11 +59,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(103, 176);
+            this.label3.Location = new System.Drawing.Point(110, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "*Valor:";
+            this.label3.Text = "Valor:";
             // 
             // label1
             // 
