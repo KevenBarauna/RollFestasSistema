@@ -432,7 +432,7 @@
             this.MinimizeBox = false;
             this.Name = "NovaVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NovaVendaDois";
+            this.Text = "Nova Venda";
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumQuant)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

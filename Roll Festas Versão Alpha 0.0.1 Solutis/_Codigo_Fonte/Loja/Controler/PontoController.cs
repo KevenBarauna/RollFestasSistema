@@ -107,58 +107,155 @@ namespace Loja.Controler
             return p;
         }
 
-        public void GerarPDFPontoOriginal(String mes)
+        public void GerarPDFPonto(String mes)
         {
-            DAOCaminho dao = new DAOCaminho();
-            string caminho = dao.CaminhoPonto();
 
+            DAOCaminho daoCaminho = new DAOCaminho();
+            string caminho = daoCaminho.CaminhoPonto();
+
+            //PADRÂO
             var wb = new XLWorkbook();
             var ws = wb.Worksheets.Add("Follha de ponto ");
 
+            var rngTable = ws.Range("B2:G5");
+
+
             //TITULO
-            ws.Cell("B2").Value = "Follha de ponto " + mes;
-            var range = ws.Range("B2: I2");
-          //  range.Merge().Style.Font.SetBold().Font.FontSize = 10;
+            ws.Cell("B3").Value = "Folha de ponto do mês " + mes;//TITULO
 
-            //LINHAS
-            ws.Cell("B3").Value = "Dia";
-            ws.Cell("C3").Value = "Mês";
-            ws.Cell("D3").Value = "Título 1";
-            ws.Cell("E3").Value = "Título 1";
-            ws.Cell("F3").Value = "Título 1";
-            ws.Cell("G3").Value = "Título 1";
-            ws.Cell("H3").Value = "Título 1";
+            //PRIMEIRAS LINHAS
+            ws.Cell("B5").Value = "Data";
+            ws.Cell("C5").Value = "Chegada";
+            ws.Cell("D5").Value = "Saída almoço";
+            ws.Cell("E5").Value = "Volta almoço";
+            ws.Cell("F5").Value = "Saída";
+            ws.Cell("G5").Value = "Nome";
 
-            //corpo
-            var linha = 4;
+            //BORDA NOS TITULOS
+            rngTable = ws.Range("B5");
+            rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
 
-            for (int i = 0; i < 20; i++)
+            rngTable = ws.Range("C5");
+            rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+
+            rngTable = ws.Range("D5");
+            rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+
+            rngTable = ws.Range("E5");
+            rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+
+            rngTable = ws.Range("F5");
+            rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+
+            rngTable = ws.Range("G5");
+            rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+
+            //AJUSTAR A NUMERACAO
+            var linha = 6;
+
+
+            //PEGAR PONTO DO BANCO
+            DAOPonto dao = new DAOPonto();
+            List<PontoModel> ListaPonto = new List<PontoModel>();
+            ListaPonto = dao.ListarPorMes(mes);
+
+            //COLOCAR DATA
+            linha = 6;
+            foreach (var item in ListaPonto)
             {
-                ws.Cell("B" + linha.ToString()).Value = "B" + i.ToString();
-                ws.Cell("C" + linha.ToString()).Value = "C" + i.ToString();
-                ws.Cell("D" + linha.ToString()).Value = "D" + i.ToString();
-                ws.Cell("E" + linha.ToString()).Value = "E" + i.ToString();
-                ws.Cell("F" + linha.ToString()).Value = "F" + i.ToString();
-                ws.Cell("G" + linha.ToString()).Value = "G" + i.ToString();
-                ws.Cell("H" + linha.ToString()).Value = "H" + i.ToString();
-                ws.Cell("I" + linha.ToString()).Value = "I" + i.ToString();
+                ws.Cell("B" + linha.ToString()).Value = item.Data.ToString();
+                string borda = "B" + linha;
+                rngTable = ws.Range(borda);
+                rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;//BORDA FINA
                 linha++;
             }
 
-            //AJUSTAR A NUMERACAO
-            linha--;
 
-            //wb.SaveAs(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\PontoPlanilha.xlsx");
-            wb.SaveAs(@"" + caminho + @"\PontoPlanilha.xlsx");
+            //COLOCAR HORA1 (CHEGADA)
+            linha = 6;
+            foreach (var item in ListaPonto)
+            {
+                ws.Cell("C" + linha.ToString()).Value = item.Hora1.ToString();
+                string borda = "C" + linha;
+                rngTable = ws.Range(borda);
+                rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;//BORDA FINA
+                linha++;
+            }
 
-            //liberar objetos
-            //ws.Dispose();
+            //COLOCAR HORA2
+            linha = 6;
+            foreach (var item in ListaPonto)
+            {
+                ws.Cell("D" + linha.ToString()).Value = item.Hora2.ToString();
+                string borda = "D" + linha;
+                rngTable = ws.Range(borda);
+                rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;//BORDA FINA
+                linha++;
+            }
+
+            //COLOCAR HORA3
+            linha = 6;
+            foreach (var item in ListaPonto)
+            {
+                ws.Cell("E" + linha.ToString()).Value = item.Hora3.ToString();
+                string borda = "E" + linha;
+                rngTable = ws.Range(borda);
+                rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;//BORDA FINA
+                linha++;
+            }
+
+            //COLOCAR HORA4
+            linha = 6;
+            foreach (var item in ListaPonto)
+            {
+                ws.Cell("F" + linha.ToString()).Value = item.Hora4.ToString();
+                string borda = "F" + linha;
+                rngTable = ws.Range(borda);
+                rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;//BORDA FINA
+                linha++;
+            }
+
+            //COLOCAR HORA4
+            linha = 6;
+            foreach (var item in ListaPonto)
+            {
+                ws.Cell("G" + linha.ToString()).Value = item.Nome.ToString();
+                string borda = "G" + linha;
+                rngTable = ws.Range(borda);
+                rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;//BORDA FINA
+                linha++;
+            }
+
+
+
+            //TITULO
+            rngTable = ws.Range("B2:G4");//SELECIONAR
+            rngTable.Row(2).Merge(); //JUNTAR
+            rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;//BORDA fina
+            rngTable.Style.Fill.BackgroundColor = XLColor.FromTheme(XLThemeColor.Accent1);//COR FUNDO
+            rngTable.Style.Font.FontColor = XLColor.White;//COR FONTE
+            rngTable.Style.Font.Bold = true;//FONT BOLD
+            rngTable.Style.Font.FontSize = 15;//FONT TAmANHO
+            rngTable.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;//ALINHAR CENTRO
+            rngTable.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;//ALINHAR CENTRO
+
+            ws.Columns(2, 6).AdjustToContents();//AJUSTAR LARGURA CELULA
+            //LINHAS CIMA
+            rngTable = ws.Range("B4:G4");
+            rngTable.Style.Fill.BackgroundColor = XLColor.FromTheme(XLThemeColor.Accent1);
+            rngTable.Style.Font.FontColor = XLColor.White;
+            rngTable.Style.Font.Bold = true;
+            rngTable.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+
+            //SALVAR PLANILHA
+            wb.SaveAs(@"" + caminho + @"\PontoPlanilha" + mes +".xlsx");
+
             wb.Dispose();
 
 
         }
 
-        public void GerarPDFPonto(String mes)
+        public void GerarPDFPontoo(String mes)
         {
 
             DAOCaminho daoCaminho = new DAOCaminho();

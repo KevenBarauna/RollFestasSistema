@@ -58,7 +58,7 @@
             this.label2.Size = new System.Drawing.Size(287, 64);
             this.label2.TabIndex = 1;
             this.label2.Text = "É muito importante fazer o fechamento de caixa TODOS OS DIAS, para poder salvar o" +
-    " valor total de vendas no banco de daods, caso contrario o sistema pode aprezent" +
+    " valor total de vendas no banco de dados, caso contrario o sistema pode apresent" +
     "ar problemas.\r\n";
             // 
             // label3
@@ -89,8 +89,8 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(287, 47);
             this.label5.TabIndex = 3;
-            this.label5.Text = "O recibbo que pode ser gerado pelo código da venda não tem qualquer valor fiscal," +
-    " é somente feito para o controle maior da loja.";
+            this.label5.Text = "O recibo que pode ser gerado pelo código da venda não tem qualquer valor fiscal, " +
+    "é somente feito para o controle maior da loja.";
             // 
             // label7
             // 

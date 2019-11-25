@@ -60,6 +60,8 @@ namespace Loja.View.Recibo
 
             ReciboController recibo = new ReciboController();
             recibo.GerarReciboDeVendaPeloId(TxtId.Text, caminho);
+
+            TxtId.Text = "";
         }
     }
 }

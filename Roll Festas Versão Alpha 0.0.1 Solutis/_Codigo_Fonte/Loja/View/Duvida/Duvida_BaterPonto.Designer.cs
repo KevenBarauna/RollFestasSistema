@@ -73,15 +73,15 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(220, 65);
             this.label9.TabIndex = 84;
-            this.label9.Text = "Assim que chegar na loja, ligue o computador e bata o ponto. O sisema vai salvar " +
-    "seu nome e a hora que você bateu o ponto no banco de dados.";
+            this.label9.Text = "Assim que chegar na loja, ligue o computador e bata o ponto. O sistema vai salvar" +
+    " seu nome e a hora que você bateu o ponto no banco de dados.";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 84);
+            this.label10.Location = new System.Drawing.Point(12, 90);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 15);
             this.label10.TabIndex = 83;
@@ -93,15 +93,15 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(220, 48);
             this.label11.TabIndex = 86;
-            this.label11.Text = "Antes de sair para o almoço, bata o ponto. O sisema vai salvar seu nome e a hora " +
-    "que você bateu o ponto no banco de dados.";
+            this.label11.Text = "Antes de sair para o almoço, bata o ponto. O sistema vai salvar seu nome e a hora" +
+    " que você bateu o ponto no banco de dados.";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(12, 176);
+            this.label12.Location = new System.Drawing.Point(12, 182);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(89, 15);
             this.label12.TabIndex = 85;
@@ -113,15 +113,15 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(220, 66);
             this.label13.TabIndex = 88;
-            this.label13.Text = "Assim que voltar do almoço e for começar a trabalhar, bata o ponto. O sisema vai " +
-    "salvar seu nome e a hora que você bateu o ponto no banco de dados.";
+            this.label13.Text = "Assim que voltar do almoço e for começar a trabalhar, bata o ponto. O sistema vai" +
+    " salvar seu nome e a hora que você bateu o ponto no banco de dados.";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(12, 251);
+            this.label14.Location = new System.Drawing.Point(12, 257);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(85, 15);
             this.label14.TabIndex = 87;
@@ -133,15 +133,15 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(220, 66);
             this.label15.TabIndex = 90;
-            this.label15.Text = "Antes de desligar o computador para fechar a loja, bata o ponto. O sisema vai sal" +
-    "var seu nome e a hora que você bateu o ponto no banco de dados.";
+            this.label15.Text = "Antes de desligar o computador para fechar a loja, bata o ponto. O sistema vai sa" +
+    "lvar seu nome e a hora que você bateu o ponto no banco de dados.";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 341);
+            this.label16.Location = new System.Drawing.Point(12, 347);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(75, 15);
             this.label16.TabIndex = 89;
@@ -153,7 +153,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(220, 37);
             this.label3.TabIndex = 92;
-            this.label3.Text = "Só digite seu nome de usuário e aprte no botão verde.";
+            this.label3.Text = "Só digite seu nome de usuário e aperte no botão verde.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
@@ -180,7 +180,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(273, 84);
+            this.label7.Location = new System.Drawing.Point(273, 90);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 15);
             this.label7.TabIndex = 94;
