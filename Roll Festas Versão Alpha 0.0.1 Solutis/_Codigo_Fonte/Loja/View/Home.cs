@@ -239,6 +239,7 @@ namespace Loja.View
         {
             Troca tela = new Troca();
             tela.Show();
+            this.Hide();
         }
 
         private void registrarRetiradaToolStripMenuItem_Click(object sender, EventArgs e)

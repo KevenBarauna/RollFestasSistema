@@ -193,10 +193,10 @@ namespace Loja.View
             // 
             this.vendaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novaVendaToolStripMenuItem,
+            this.trocaToolStripMenuItem,
             this.cancelarVendaToolStripMenuItem,
             this.editarVendaToolStripMenuItem,
-            this.verTodasAsVendasToolStripMenuItem,
-            this.trocaToolStripMenuItem});
+            this.verTodasAsVendasToolStripMenuItem});
             this.vendaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vendaToolStripMenuItem.Image")));
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
             this.vendaToolStripMenuItem.Size = new System.Drawing.Size(67, 20);

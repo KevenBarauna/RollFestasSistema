@@ -29,8 +29,6 @@ namespace Loja.View.Venda
 
             //DATA
             Controller tempo = new Controller();
-            String hora = tempo.PegarDiaeHora();
-            LblTestedata.Text = Convert.ToString(hora);
 
             //INICAR TABELA CAIXA
             String data = tempo.PegarDiaMesAnoAtual();
@@ -184,6 +182,13 @@ namespace Loja.View.Venda
         {
             Duvida_Troca tela = new Duvida_Troca();
             tela.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home tela = new Home();
+            tela.Show();
+            this.Hide();
         }
     }
 }
