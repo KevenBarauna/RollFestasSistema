@@ -71,8 +71,10 @@ namespace Loja.View
 
         private void novaVendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //this.Hide();
             NovaVenda tela = new NovaVenda();
             tela.Show();
+            this.Hide();
         }
 
         private void novoUsuárioToolStripMenuItem_Click(object sender, EventArgs e)

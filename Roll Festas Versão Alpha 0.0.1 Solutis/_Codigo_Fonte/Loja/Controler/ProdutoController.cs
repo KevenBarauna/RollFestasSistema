@@ -77,6 +77,13 @@ namespace Loja.Controler
 
             produto = dao.ExibirDetalhesdoProduto(id);
 
+
+            if (produto.Nome == null)
+            {
+                Erro TelaDeErro = new Erro("007", "Produto não encontrado", "Verifique se o o código do produto está correto", "", "", "", "");
+                TelaDeErro.Show();
+            }
+
             return produto;
 
         }

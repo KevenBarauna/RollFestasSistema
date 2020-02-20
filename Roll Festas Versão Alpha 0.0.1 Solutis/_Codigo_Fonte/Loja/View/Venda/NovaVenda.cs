@@ -52,11 +52,8 @@ namespace Loja.View.Venda
             ProdutoModel produtoM = new ProdutoModel();
             
             produtoM = produto.ExibirProduto(TxtId.Text);
-            if (produtoM.Nome == null)
-            {
-                MessageBox.Show("Produto não encontrado");
-            }
-            else
+
+            if (produtoM.Id != 0)
             {
                 LBITEM.Items.Add(produtoM.Nome);
 
@@ -71,8 +68,9 @@ namespace Loja.View.Venda
                 //MANDA PRO BANCO TEMP
                 produto.PreparaBanco(produtoM.Nome, TxtNumQuant.Value);
 
+                TxtNumQuant.Value = 1;
             }
-
+           
 
         }
 
@@ -88,6 +86,7 @@ namespace Loja.View.Venda
             TxtId.Text = "";
             TxtNumQuant.Value = 1;
             TxtDinCart.Text = "";
+            RBDinheiro.Checked = true;
 
             //ZERAR TABELA TEMP
             DAOVENDATEMP temp = new DAOVENDATEMP();
@@ -208,6 +207,7 @@ namespace Loja.View.Venda
                 TxtId.Text = "";
                 TxtNumQuant.Value = 1;
                 TxtDinCart.Text = "";
+                TxtNumQuant.Value = 1;
 
                 //GERAR RECIBO
                 VendaModel VendaM = new VendaModel();
@@ -342,6 +342,7 @@ namespace Loja.View.Venda
                 this.TxtDinCart.ReadOnly = false;
                 this.TxtDinCart.BackColor = System.Drawing.SystemColors.ButtonHighlight;
                 this.LblDinCart.Visible = true;
+                this.ImgAtencao.Visible = true;
             }
         }
 
@@ -351,6 +352,7 @@ namespace Loja.View.Venda
             this.TxtDinCart.ReadOnly = true;
             this.TxtDinCart.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.LblDinCart.Visible = false;
+            this.ImgAtencao.Visible = false;
         }
 
         private void RBCartao_CheckedChanged(object sender, EventArgs e)
@@ -359,6 +361,7 @@ namespace Loja.View.Venda
             this.TxtDinCart.ReadOnly = true;
             this.TxtDinCart.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.LblDinCart.Visible = false;
+            this.ImgAtencao.Visible = false;
         }
 
         private void RBOutros_CheckedChanged(object sender, EventArgs e)
@@ -367,12 +370,35 @@ namespace Loja.View.Venda
             this.TxtDinCart.ReadOnly = true;
             this.TxtDinCart.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.LblDinCart.Visible = false;
+            this.ImgAtencao.Visible = false;
         }
 
         private void BtnDuvida_Click(object sender, EventArgs e)
         {
             Duvida_NovaVenda_01 tela = new Duvida_NovaVenda_01();
             tela.Show();
+        }
+
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            //LIMPA TUDO
+            VT = 0;
+            LVPesquisa.Items.Clear();
+            LBITEM.Items.Clear();
+
+            TxtTotal.Text = "";
+            TxtTroco.Text = "";
+            TxtValor.Text = "";
+            TxtPesquisa.Text = "";
+            TxtId.Text = "";
+            TxtNumQuant.Value = 1;
+            TxtDinCart.Text = "";
+            TxtNumQuant.Value = 1;
+
+            //Voltar Home
+            Home tela = new Home();
+            tela.Show();
+            this.Hide();
         }
     }
 }

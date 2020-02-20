@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagarDepois));
-            this.LblData = new System.Windows.Forms.Label();
             this.LblUsuario = new System.Windows.Forms.Label();
             this.LblValorTotal = new System.Windows.Forms.Label();
             this.LblValorPago = new System.Windows.Forms.Label();
@@ -44,24 +43,31 @@
             this.LblTipoDePagamento = new System.Windows.Forms.Label();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LblData
-            // 
-            this.LblData.AutoSize = true;
-            this.LblData.Location = new System.Drawing.Point(15, 62);
-            this.LblData.Name = "LblData";
-            this.LblData.Size = new System.Drawing.Size(36, 13);
-            this.LblData.TabIndex = 0;
-            this.LblData.Text = "Data: ";
             // 
             // LblUsuario
             // 
             this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblUsuario.Location = new System.Drawing.Point(12, 44);
+            this.LblUsuario.Location = new System.Drawing.Point(12, 85);
             this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(49, 13);
+            this.LblUsuario.Size = new System.Drawing.Size(64, 16);
             this.LblUsuario.TabIndex = 1;
             this.LblUsuario.Text = "Usuário: ";
             // 
@@ -69,27 +75,28 @@
             // 
             this.LblValorTotal.AutoSize = true;
             this.LblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblValorTotal.Location = new System.Drawing.Point(69, 119);
+            this.LblValorTotal.Location = new System.Drawing.Point(121, 209);
             this.LblValorTotal.Name = "LblValorTotal";
-            this.LblValorTotal.Size = new System.Drawing.Size(159, 13);
+            this.LblValorTotal.Size = new System.Drawing.Size(51, 13);
             this.LblValorTotal.TabIndex = 2;
-            this.LblValorTotal.Text = "Aguardando informações...";
+            this.LblValorTotal.Text = "###,##";
             this.LblValorTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LblValorPago
             // 
             this.LblValorPago.AutoSize = true;
             this.LblValorPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblValorPago.Location = new System.Drawing.Point(75, 146);
+            this.LblValorPago.Location = new System.Drawing.Point(118, 285);
             this.LblValorPago.Name = "LblValorPago";
-            this.LblValorPago.Size = new System.Drawing.Size(159, 13);
+            this.LblValorPago.Size = new System.Drawing.Size(51, 13);
             this.LblValorPago.TabIndex = 3;
-            this.LblValorPago.Text = "Aguardando informações...";
+            this.LblValorPago.Text = "###,##";
             // 
             // LblValorRestante
             // 
             this.LblValorRestante.AutoSize = true;
-            this.LblValorRestante.Location = new System.Drawing.Point(24, 229);
+            this.LblValorRestante.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.LblValorRestante.Location = new System.Drawing.Point(112, 400);
             this.LblValorRestante.Name = "LblValorRestante";
             this.LblValorRestante.Size = new System.Drawing.Size(75, 13);
             this.LblValorRestante.TabIndex = 4;
@@ -97,40 +104,42 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 9);
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(97, 19);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(201, 17);
+            this.label6.Size = new System.Drawing.Size(126, 40);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Venda com pagamento adiado";
+            this.label6.Text = "Pagar em outro momento";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnCalcular
             // 
             this.BtnCalcular.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BtnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCalcular.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnCalcular.Location = new System.Drawing.Point(72, 174);
+            this.BtnCalcular.Location = new System.Drawing.Point(14, 343);
             this.BtnCalcular.Name = "BtnCalcular";
-            this.BtnCalcular.Size = new System.Drawing.Size(79, 33);
+            this.BtnCalcular.Size = new System.Drawing.Size(229, 33);
             this.BtnCalcular.TabIndex = 37;
-            this.BtnCalcular.Text = "Calcular";
+            this.BtnCalcular.Text = "Calcular valor restante";
             this.BtnCalcular.UseVisualStyleBackColor = false;
             this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
             // TxtValorRestante
             // 
-            this.TxtValorRestante.Location = new System.Drawing.Point(105, 226);
+            this.TxtValorRestante.Location = new System.Drawing.Point(115, 416);
             this.TxtValorRestante.Name = "TxtValorRestante";
-            this.TxtValorRestante.Size = new System.Drawing.Size(100, 20);
+            this.TxtValorRestante.Size = new System.Drawing.Size(84, 20);
             this.TxtValorRestante.TabIndex = 38;
             // 
             // BtnFinalizar
             // 
             this.BtnFinalizar.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFinalizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnFinalizar.Location = new System.Drawing.Point(72, 344);
+            this.BtnFinalizar.Location = new System.Drawing.Point(9, 523);
             this.BtnFinalizar.Name = "BtnFinalizar";
-            this.BtnFinalizar.Size = new System.Drawing.Size(79, 29);
+            this.BtnFinalizar.Size = new System.Drawing.Size(227, 29);
             this.BtnFinalizar.TabIndex = 44;
             this.BtnFinalizar.Text = "Finalizar";
             this.BtnFinalizar.UseVisualStyleBackColor = false;
@@ -139,7 +148,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 120);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(121, 186);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 45;
@@ -148,7 +158,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 146);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(111, 267);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 46;
@@ -157,7 +168,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 96);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(97, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 13);
             this.label3.TabIndex = 47;
@@ -167,34 +179,128 @@
             // 
             this.LblTipoDePagamento.AutoSize = true;
             this.LblTipoDePagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTipoDePagamento.Location = new System.Drawing.Point(111, 96);
+            this.LblTipoDePagamento.Location = new System.Drawing.Point(118, 134);
             this.LblTipoDePagamento.Name = "LblTipoDePagamento";
-            this.LblTipoDePagamento.Size = new System.Drawing.Size(112, 13);
+            this.LblTipoDePagamento.Size = new System.Drawing.Size(51, 13);
             this.LblTipoDePagamento.TabIndex = 48;
-            this.LblTipoDePagamento.Text = "Aguardando info...";
+            this.LblTipoDePagamento.Text = "###,##";
             // 
             // TxtNome
             // 
-            this.TxtNome.Location = new System.Drawing.Point(105, 265);
+            this.TxtNome.Location = new System.Drawing.Point(112, 480);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(100, 20);
+            this.TxtNome.Size = new System.Drawing.Size(87, 20);
             this.TxtNome.TabIndex = 50;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 268);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(112, 464);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 13);
             this.label4.TabIndex = 49;
             this.label4.Text = "Nome do cliente:";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(27, 15);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(64, 50);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 51;
+            this.pictureBox5.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel4.Location = new System.Drawing.Point(9, 165);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(227, 1);
+            this.panel4.TabIndex = 56;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(9, 109);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 57;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 186);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 61;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel1.Location = new System.Drawing.Point(12, 242);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(227, 1);
+            this.panel1.TabIndex = 60;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(16, 261);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(64, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 65;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel2.Location = new System.Drawing.Point(16, 317);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(227, 1);
+            this.panel2.TabIndex = 64;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(42, 388);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(64, 58);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 66;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(39, 454);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(64, 58);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 67;
+            this.pictureBox6.TabStop = false;
             // 
             // PagarDepois
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(248, 396);
+            this.ClientSize = new System.Drawing.Size(267, 564);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.TxtNome);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.LblTipoDePagamento);
@@ -209,21 +315,24 @@
             this.Controls.Add(this.LblValorPago);
             this.Controls.Add(this.LblValorTotal);
             this.Controls.Add(this.LblUsuario);
-            this.Controls.Add(this.LblData);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PagarDepois";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PagarDepois";
+            this.Text = "Venda com pagamento adiado";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label LblData;
         private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.Label LblValorTotal;
         private System.Windows.Forms.Label LblValorPago;
@@ -238,5 +347,14 @@
         private System.Windows.Forms.Label LblTipoDePagamento;
         private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

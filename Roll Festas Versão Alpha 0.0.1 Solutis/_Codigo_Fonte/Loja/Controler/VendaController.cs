@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Loja.Model;
+using Loja.View;
 
 namespace Loja.Controler
 {
@@ -11,19 +12,35 @@ namespace Loja.Controler
     {
         public Decimal CalcularPorQuantidade(String nome, Decimal quantidadeDecimal)
         {
-            DAOVenda dao = new DAOVenda();
             Decimal VT = 0;
 
-            VT = dao.PegarValorPorNome(nome);
-            VT = VT * quantidadeDecimal;
-
+            try
+            {
+                DAOVenda dao = new DAOVenda();
+                VT = dao.PegarValorPorNome(nome);
+                VT = VT * quantidadeDecimal;
+            }
+            catch (Exception e)
+            {
+                Erro TelaDeErro = new Erro("005", "Erro ao converter valor" + e, "Verifique se o valor do produto foi salvo corretamente", "Verifique se o banco de dados está ativo", "","","");
+                TelaDeErro.Show();
+            }
             return VT;
         }//CALCULAR VALOR UNIDADE DO PRODUTO * QUANTIDADE
 
         public void FinalizarVenda(String data, String usuario, String valortotal, String valorpago, String troco, String tipopagamento, int status_pagamento, String valor_pendente, String nome)
         {
-            DAOVenda dao = new DAOVenda();
-            dao.NovaVenda(data, usuario, valortotal, valorpago, troco, tipopagamento, status_pagamento,valor_pendente,nome);
+            try
+            {
+                DAOVenda dao = new DAOVenda();
+                dao.NovaVenda(data, usuario, valortotal, valorpago, troco, tipopagamento, status_pagamento, valor_pendente, nome);
+            }
+            catch (Exception e)
+            {
+                Erro TelaDeErro = new Erro("006", "Erro ao salvar venda " + e, "Verifique se todos os campos foram preenchidos corretamente", "Verifique se o banco de dados está ativo", "", "", "");
+                TelaDeErro.Show();
+            }
+
         }//SALVAR NOVA VENDA
 
         public List<VendaModel> ListarVendas(String data)

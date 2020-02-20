@@ -70,15 +70,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ImgAtencao = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.Cancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumQuant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgAtencao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -121,7 +122,7 @@
             this.LVPesquisa.HideSelection = false;
             this.LVPesquisa.Location = new System.Drawing.Point(268, 111);
             this.LVPesquisa.Name = "LVPesquisa";
-            this.LVPesquisa.Size = new System.Drawing.Size(241, 342);
+            this.LVPesquisa.Size = new System.Drawing.Size(251, 342);
             this.LVPesquisa.TabIndex = 4;
             this.LVPesquisa.UseCompatibleStateImageBehavior = false;
             this.LVPesquisa.View = System.Windows.Forms.View.Details;
@@ -146,7 +147,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(338, 51);
+            this.label3.Location = new System.Drawing.Point(341, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(171, 16);
             this.label3.TabIndex = 5;
@@ -154,16 +155,17 @@
             // 
             // TxtPesquisa
             // 
-            this.TxtPesquisa.Location = new System.Drawing.Point(341, 79);
+            this.TxtPesquisa.Location = new System.Drawing.Point(336, 51);
             this.TxtPesquisa.Name = "TxtPesquisa";
-            this.TxtPesquisa.Size = new System.Drawing.Size(102, 20);
+            this.TxtPesquisa.Size = new System.Drawing.Size(183, 20);
             this.TxtPesquisa.TabIndex = 6;
             // 
             // BtnCalcular
             // 
             this.BtnCalcular.BackColor = System.Drawing.Color.Turquoise;
+            this.BtnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCalcular.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnCalcular.Location = new System.Drawing.Point(654, 136);
+            this.BtnCalcular.Location = new System.Drawing.Point(669, 135);
             this.BtnCalcular.Name = "BtnCalcular";
             this.BtnCalcular.Size = new System.Drawing.Size(84, 33);
             this.BtnCalcular.TabIndex = 36;
@@ -175,7 +177,7 @@
             // 
             this.LblTestedata.AutoSize = true;
             this.LblTestedata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTestedata.Location = new System.Drawing.Point(543, 44);
+            this.LblTestedata.Location = new System.Drawing.Point(558, 43);
             this.LblTestedata.Name = "LblTestedata";
             this.LblTestedata.Size = new System.Drawing.Size(33, 15);
             this.LblTestedata.TabIndex = 35;
@@ -184,7 +186,7 @@
             // RBOutros
             // 
             this.RBOutros.AutoSize = true;
-            this.RBOutros.Location = new System.Drawing.Point(687, 260);
+            this.RBOutros.Location = new System.Drawing.Point(702, 259);
             this.RBOutros.Name = "RBOutros";
             this.RBOutros.Size = new System.Drawing.Size(56, 17);
             this.RBOutros.TabIndex = 34;
@@ -195,7 +197,7 @@
             // RBCartao
             // 
             this.RBCartao.AutoSize = true;
-            this.RBCartao.Location = new System.Drawing.Point(625, 260);
+            this.RBCartao.Location = new System.Drawing.Point(640, 259);
             this.RBCartao.Name = "RBCartao";
             this.RBCartao.Size = new System.Drawing.Size(56, 17);
             this.RBCartao.TabIndex = 33;
@@ -207,7 +209,7 @@
             // 
             this.RBDinheiro.AutoSize = true;
             this.RBDinheiro.Checked = true;
-            this.RBDinheiro.Location = new System.Drawing.Point(555, 260);
+            this.RBDinheiro.Location = new System.Drawing.Point(570, 259);
             this.RBDinheiro.Name = "RBDinheiro";
             this.RBDinheiro.Size = new System.Drawing.Size(64, 17);
             this.RBDinheiro.TabIndex = 31;
@@ -220,7 +222,7 @@
             // 
             this.TxtTroco.BackColor = System.Drawing.Color.White;
             this.TxtTroco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtTroco.Location = new System.Drawing.Point(547, 156);
+            this.TxtTroco.Location = new System.Drawing.Point(562, 155);
             this.TxtTroco.Name = "TxtTroco";
             this.TxtTroco.ReadOnly = true;
             this.TxtTroco.Size = new System.Drawing.Size(84, 13);
@@ -230,7 +232,7 @@
             // 
             this.TxtValor.BackColor = System.Drawing.Color.White;
             this.TxtValor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtValor.Location = new System.Drawing.Point(653, 99);
+            this.TxtValor.Location = new System.Drawing.Point(668, 98);
             this.TxtValor.Name = "TxtValor";
             this.TxtValor.Size = new System.Drawing.Size(83, 13);
             this.TxtValor.TabIndex = 29;
@@ -239,7 +241,7 @@
             // 
             this.TxtTotal.BackColor = System.Drawing.Color.White;
             this.TxtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtTotal.Location = new System.Drawing.Point(545, 100);
+            this.TxtTotal.Location = new System.Drawing.Point(560, 99);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.ReadOnly = true;
             this.TxtTotal.Size = new System.Drawing.Size(84, 13);
@@ -248,7 +250,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(567, 134);
+            this.label7.Location = new System.Drawing.Point(582, 133);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 27;
@@ -258,7 +260,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(581, 235);
+            this.label6.Location = new System.Drawing.Point(609, 231);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 15);
             this.label6.TabIndex = 26;
@@ -267,7 +269,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(658, 79);
+            this.label5.Location = new System.Drawing.Point(673, 78);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 13);
             this.label5.TabIndex = 25;
@@ -276,7 +278,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(571, 79);
+            this.label4.Location = new System.Drawing.Point(586, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 24;
@@ -307,6 +309,7 @@
             this.BtnAdicionar.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnAdicionar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdicionar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnAdicionar.Location = new System.Drawing.Point(16, 75);
             this.BtnAdicionar.Name = "BtnAdicionar";
@@ -321,7 +324,7 @@
             this.LblUsuario.AutoSize = true;
             this.LblUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblUsuario.Location = new System.Drawing.Point(541, 19);
+            this.LblUsuario.Location = new System.Drawing.Point(556, 18);
             this.LblUsuario.Name = "LblUsuario";
             this.LblUsuario.Size = new System.Drawing.Size(56, 16);
             this.LblUsuario.TabIndex = 40;
@@ -330,6 +333,7 @@
             // BtnLimpar
             // 
             this.BtnLimpar.BackColor = System.Drawing.Color.Red;
+            this.BtnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpar.ForeColor = System.Drawing.SystemColors.Info;
             this.BtnLimpar.Location = new System.Drawing.Point(880, 124);
             this.BtnLimpar.Name = "BtnLimpar";
@@ -342,10 +346,11 @@
             // BtnPesquisar
             // 
             this.BtnPesquisar.BackColor = System.Drawing.Color.DarkOrange;
+            this.BtnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPesquisar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnPesquisar.Location = new System.Drawing.Point(449, 75);
+            this.BtnPesquisar.Location = new System.Drawing.Point(268, 75);
             this.BtnPesquisar.Name = "BtnPesquisar";
-            this.BtnPesquisar.Size = new System.Drawing.Size(60, 26);
+            this.BtnPesquisar.Size = new System.Drawing.Size(251, 32);
             this.BtnPesquisar.TabIndex = 42;
             this.BtnPesquisar.Text = "Buscar";
             this.BtnPesquisar.UseVisualStyleBackColor = false;
@@ -354,6 +359,7 @@
             // BtnFinalizar
             // 
             this.BtnFinalizar.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFinalizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnFinalizar.Location = new System.Drawing.Point(880, 282);
             this.BtnFinalizar.Name = "BtnFinalizar";
@@ -365,7 +371,8 @@
             // 
             // BtnPagarDepos
             // 
-            this.BtnPagarDepos.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnPagarDepos.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.BtnPagarDepos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPagarDepos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnPagarDepos.Location = new System.Drawing.Point(880, 177);
             this.BtnPagarDepos.Name = "BtnPagarDepos";
@@ -378,7 +385,7 @@
             // RbDinCart
             // 
             this.RbDinCart.AutoSize = true;
-            this.RbDinCart.Location = new System.Drawing.Point(555, 283);
+            this.RbDinCart.Location = new System.Drawing.Point(570, 282);
             this.RbDinCart.Name = "RbDinCart";
             this.RbDinCart.Size = new System.Drawing.Size(107, 17);
             this.RbDinCart.TabIndex = 45;
@@ -389,7 +396,7 @@
             // TxtDinCart
             // 
             this.TxtDinCart.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.TxtDinCart.Location = new System.Drawing.Point(665, 282);
+            this.TxtDinCart.Location = new System.Drawing.Point(680, 281);
             this.TxtDinCart.Name = "TxtDinCart";
             this.TxtDinCart.ReadOnly = true;
             this.TxtDinCart.Size = new System.Drawing.Size(78, 20);
@@ -400,7 +407,7 @@
             this.LblDinCart.BackColor = System.Drawing.Color.White;
             this.LblDinCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDinCart.ForeColor = System.Drawing.Color.Red;
-            this.LblDinCart.Location = new System.Drawing.Point(625, 324);
+            this.LblDinCart.Location = new System.Drawing.Point(640, 323);
             this.LblDinCart.Name = "LblDinCart";
             this.LblDinCart.Size = new System.Drawing.Size(142, 50);
             this.LblDinCart.TabIndex = 47;
@@ -424,7 +431,8 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.LimeGreen;
+            this.button1.BackColor = System.Drawing.Color.Orange;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(880, 231);
             this.button1.Name = "button1";
@@ -436,7 +444,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(268, 51);
+            this.pictureBox5.Location = new System.Drawing.Point(263, 23);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(64, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -464,7 +472,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Orange;
-            this.panel1.Location = new System.Drawing.Point(525, 9);
+            this.panel1.Location = new System.Drawing.Point(537, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 447);
             this.panel1.TabIndex = 53;
@@ -472,7 +480,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel2.Location = new System.Drawing.Point(545, 115);
+            this.panel2.Location = new System.Drawing.Point(560, 114);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(84, 1);
             this.panel2.TabIndex = 54;
@@ -480,7 +488,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Orange;
-            this.panel3.Location = new System.Drawing.Point(652, 115);
+            this.panel3.Location = new System.Drawing.Point(667, 114);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(84, 1);
             this.panel3.TabIndex = 55;
@@ -488,20 +496,21 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel4.Location = new System.Drawing.Point(547, 174);
+            this.panel4.Location = new System.Drawing.Point(562, 173);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(84, 1);
             this.panel4.TabIndex = 55;
             // 
-            // pictureBox3
+            // ImgAtencao
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(558, 319);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(61, 61);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 63;
-            this.pictureBox3.TabStop = false;
+            this.ImgAtencao.Image = ((System.Drawing.Image)(resources.GetObject("ImgAtencao.Image")));
+            this.ImgAtencao.Location = new System.Drawing.Point(573, 318);
+            this.ImgAtencao.Name = "ImgAtencao";
+            this.ImgAtencao.Size = new System.Drawing.Size(61, 61);
+            this.ImgAtencao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ImgAtencao.TabIndex = 63;
+            this.ImgAtencao.TabStop = false;
+            this.ImgAtencao.Visible = false;
             // 
             // pictureBox4
             // 
@@ -543,17 +552,31 @@
             this.pictureBox10.TabIndex = 67;
             this.pictureBox10.TabStop = false;
             // 
+            // Cancelar
+            // 
+            this.Cancelar.BackColor = System.Drawing.Color.Red;
+            this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cancelar.ForeColor = System.Drawing.SystemColors.Info;
+            this.Cancelar.Location = new System.Drawing.Point(880, 414);
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(92, 35);
+            this.Cancelar.TabIndex = 68;
+            this.Cancelar.Text = "Cancelar";
+            this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
+            // 
             // NovaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.ImgAtencao);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -601,7 +624,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumQuant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgAtencao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -654,10 +677,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox ImgAtencao;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Button Cancelar;
     }
 }

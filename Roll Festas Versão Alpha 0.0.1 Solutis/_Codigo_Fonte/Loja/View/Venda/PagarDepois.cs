@@ -22,7 +22,6 @@ namespace Loja.View.Venda
             Controller tempo = new Controller();
             String data = tempo.PegarDiaMesAnoAtual();
 
-            LblData.Text = LblData.Text + data;
             LblUsuario.Text =  usuario;
 
             LblValorTotal.Text =  valortotal;
