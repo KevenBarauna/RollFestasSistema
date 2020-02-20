@@ -17,7 +17,7 @@ namespace Loja.View
             InitializeComponent();
             LblNumeroErro.Text = LblNumeroErro.Text + NumeroErro;
             TxtErro.Text = TxtErro.Text + MensagemErro;
-            LblSolucao01.Text = LblSolucao01.Text + Solucao;
+            LblSolucao.Text = LblSolucao.Text + Solucao;
 
             LblSolucao02.Text = s2;
             LblSolucao03.Text = s3;
