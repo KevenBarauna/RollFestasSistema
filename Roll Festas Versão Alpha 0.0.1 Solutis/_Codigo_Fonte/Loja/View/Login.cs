@@ -26,22 +26,22 @@ namespace Loja
             DAOVENDATEMP daoTemp = new DAOVENDATEMP();
             daoTemp.ZerarTabela();
 
-            MessageBox.Show("ESSE É UM SISTEMA QUE ESTÁ EM SUA VERSÃO DE TESTE, CONTINUE ANOTANDO SUAS VENDAS NO CADERNO AO FINAL DO DIA");
+           // MessageBox.Show("ESSE É UM SISTEMA QUE ESTÁ EM SUA VERSÃO DE TESTE, CONTINUE ANOTANDO SUAS VENDAS NO CADERNO AO FINAL DO DIA");
  
 
         }
 
-        private void BtnEntrar_Click(object sender, EventArgs e)
+
+        private void BtnEntrar_Click_1(object sender, EventArgs e)
         {
-            bool acesso = false;
+            bool AcessoLiberado = false;
             UsuarioController usuario = new UsuarioController();
-            acesso = usuario.Login(TxtUsuario.Text, TxtSenha.Text);
-            if (acesso == true)
+            AcessoLiberado = usuario.Login(TxtUsuario.Text, TxtSenha.Text);
+            if (AcessoLiberado == true)
             {
                 this.Hide();
             }
 
-            
         }
     }
 }
