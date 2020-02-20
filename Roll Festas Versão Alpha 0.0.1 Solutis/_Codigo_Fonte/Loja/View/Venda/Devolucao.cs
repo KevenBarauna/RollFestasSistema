@@ -172,5 +172,22 @@ namespace Loja.View.Venda
             }
 
         }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+
+            //LIMPA TUDO
+            VT = 0;
+            LVPesquisa.Items.Clear();
+            LBITEM.Items.Clear();
+            TxtTotal.Text = "";
+            TxtPesquisa.Text = "";
+            TxtId.Text = "";
+            TxtNumQuant.Value = 1;
+
+            Home tela = new Home();
+            tela.Show();
+            this.Hide();
+        }
     }
 }

@@ -69,6 +69,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TxtDataVenda = new System.Windows.Forms.MaskedTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BtnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumQuant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -458,12 +459,26 @@
             this.panel5.Size = new System.Drawing.Size(1, 447);
             this.panel5.TabIndex = 100;
             // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.BackColor = System.Drawing.Color.Red;
+            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.Info;
+            this.BtnCancelar.Location = new System.Drawing.Point(774, 442);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(106, 35);
+            this.BtnCancelar.TabIndex = 108;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
             // Devolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(892, 520);
+            this.ClientSize = new System.Drawing.Size(892, 489);
+            this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.TxtDataVenda);
             this.Controls.Add(this.pictureBox6);
@@ -560,5 +575,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.MaskedTextBox TxtDataVenda;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button BtnCancelar;
     }
 }

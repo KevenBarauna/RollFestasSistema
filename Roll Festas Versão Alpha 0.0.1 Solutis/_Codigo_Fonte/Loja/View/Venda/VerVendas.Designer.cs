@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerVendas));
             this.listCodigo = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,6 +38,9 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.BtnDuvida = new System.Windows.Forms.Button();
+            this.Logo = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // listCodigo
@@ -49,9 +53,9 @@
             this.columnHeader11,
             this.columnHeader12});
             this.listCodigo.HideSelection = false;
-            this.listCodigo.Location = new System.Drawing.Point(27, 63);
+            this.listCodigo.Location = new System.Drawing.Point(27, 98);
             this.listCodigo.Name = "listCodigo";
-            this.listCodigo.Size = new System.Drawing.Size(554, 359);
+            this.listCodigo.Size = new System.Drawing.Size(554, 324);
             this.listCodigo.TabIndex = 4;
             this.listCodigo.UseCompatibleStateImageBehavior = false;
             this.listCodigo.View = System.Windows.Forms.View.Details;
@@ -90,7 +94,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 24);
+            this.label1.Location = new System.Drawing.Point(138, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(332, 22);
             this.label1.TabIndex = 9;
@@ -110,19 +114,48 @@
             this.BtnDuvida.UseVisualStyleBackColor = false;
             this.BtnDuvida.Click += new System.EventHandler(this.BtnDuvida_Click);
             // 
+            // Logo
+            // 
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.Location = new System.Drawing.Point(46, 12);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(75, 67);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo.TabIndex = 50;
+            this.Logo.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(15)))), ((int)(((byte)(60)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(264, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 30);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "Voltar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // VerVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(615, 472);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Logo);
             this.Controls.Add(this.BtnDuvida);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listCodigo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VerVendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VerVendas";
+            this.Text = "Vendas do dia";
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +172,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.Button BtnDuvida;
+        private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.Button button1;
     }
 }

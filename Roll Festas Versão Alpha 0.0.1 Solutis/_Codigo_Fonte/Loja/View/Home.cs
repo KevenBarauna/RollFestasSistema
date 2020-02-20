@@ -183,6 +183,7 @@ namespace Loja.View
         {
             VerVendas tela = new VerVendas();
             tela.Show();
+            this.Hide();
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
@@ -231,6 +232,7 @@ namespace Loja.View
         {
             Devolucao tela = new Devolucao();
             tela.Show();
+            this.Hide();
         }
 
         private void trocaToolStripMenuItem_Click(object sender, EventArgs e)
