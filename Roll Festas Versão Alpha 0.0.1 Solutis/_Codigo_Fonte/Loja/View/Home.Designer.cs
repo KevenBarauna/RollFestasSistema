@@ -582,6 +582,7 @@ namespace Loja.View
             this.BtnVenda.Text = "Nova venda";
             this.BtnVenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnVenda.UseVisualStyleBackColor = false;
+            this.BtnVenda.Click += new System.EventHandler(this.BtnVenda_Click);
             // 
             // BtnEncomenda
             // 

@@ -71,7 +71,6 @@ namespace Loja.View
 
         private void novaVendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //this.Hide();
             NovaVenda tela = new NovaVenda();
             tela.Show();
             this.Hide();
@@ -299,6 +298,13 @@ namespace Loja.View
             CacheController cache = new CacheController();
             cache.SalvarPontoTxt();
             Application.Exit();
+        }
+
+        private void BtnVenda_Click(object sender, EventArgs e)
+        {
+            NovaVenda tela = new NovaVenda();
+            tela.Show();
+            this.Hide();
         }
     }
 }

@@ -20,6 +20,7 @@ namespace Loja.View.Venda
         {
             InitializeComponent();
 
+
             // USUARIO
             DAOUsuario usuario = new DAOUsuario();
             UsuarioModel usuarioLogado = new UsuarioModel();
@@ -29,14 +30,16 @@ namespace Loja.View.Venda
 
             //DATA
             Controller tempo = new Controller();
-            String hora = tempo.PegarDiaeHora();
-            LblTestedata.Text = Convert.ToString(hora);
 
             //INICAR TABELA CAIXA
             String data = tempo.PegarDiaMesAnoAtual();
 
             DAOCaixa daocaixa = new DAOCaixa();
             daocaixa.IniciarCaixa(Convert.ToString(data));
+
+            //CARREGAR VALOR DATA
+            TxtDataVenda.Text = data;
+            TxtDatVenda.Text = data;
 
         }
 
@@ -61,6 +64,7 @@ namespace Loja.View.Venda
         {
             VT = 0;
             LVPesquisa.Items.Clear();
+            ListVenda.Items.Clear();
             LBITEM.Items.Clear();
             TxtTotal.Text = "";
             TxtPesquisa.Text = "";
@@ -151,6 +155,22 @@ namespace Loja.View.Venda
         {
             Duvida_Devolucao tela = new Duvida_Devolucao();
             tela.Show();
+        }
+
+        private void BtnPesquisarVenda_Click(object sender, EventArgs e)
+        {
+            VendaController venda = new VendaController();
+            var TodasAsVendas = venda.ListarVendas(TxtDataVenda.Text);
+
+            ListVenda.Items.Clear();
+
+            foreach (var us in TodasAsVendas)
+            {
+                ListViewItem list = new ListViewItem(Convert.ToString(us.Id));
+                list.SubItems.Add(us.ValorTotal);
+                ListVenda.Items.Add(list);
+            }
+
         }
     }
 }

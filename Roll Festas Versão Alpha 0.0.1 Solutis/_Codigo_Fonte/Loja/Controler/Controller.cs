@@ -23,13 +23,17 @@ namespace Loja.Controler
 
         public String PegarDiaMesAnoAtual()
         {
-            string dia = DateTime.Now.Day.ToString();
-            string mes = DateTime.Now.Month.ToString();
-            string ano = DateTime.Now.Year.ToString();
 
-            string data = dia + "/" + mes + "/" + ano;
 
-            return data;
+            DateTime data = DateTime.Now;
+
+            //string dia = DateTime.Now.Day.ToString();
+           //var mes = DateTime.Now.Month;
+            //string ano = DateTime.Now.Year.ToString();
+
+           // string data = dia + "/" + mes + "/" + ano;
+
+            return data.ToShortDateString();
         }//dd/mm/aa
 
         public String PegarDiaeHora()
