@@ -184,13 +184,6 @@ namespace Loja.View
             tela.Show();
         }
 
-        private void BtnSair_Click(object sender, EventArgs e)
-        {
-            CacheController cache = new CacheController();
-            cache.SalvarPontoTxt();
-            Application.Exit();
-        }
-
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -297,6 +290,13 @@ namespace Loja.View
         {
             PesquisarPorTema tela = new PesquisarPorTema();
             tela.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CacheController cache = new CacheController();
+            cache.SalvarPontoTxt();
+            Application.Exit();
         }
     }
 }
