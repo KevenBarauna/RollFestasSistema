@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.View;
 
@@ -48,6 +49,19 @@ namespace Loja.Controler
             List<VendaModel> venda = new List<VendaModel>();
             DAOVenda dao = new DAOVenda();
             venda  = dao.ListarVendas(data);
+
+            return venda;
+        }//LISTAR VENDAS POR DIA
+
+        public List<VendaModel> ListarVendasPorVendedor(String vendedor)
+        {
+            var ano = Data.PegarAno();
+            List<VendaModel> venda = new List<VendaModel>();
+            DAOVenda dao = new DAOVenda();
+            Controller tempo = new Controller();
+            venda = dao.ListarVendasPorVendedor(vendedor, ano);
+
+           
 
             return venda;
         }//LISTAR VENDAS POR DIA

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using Loja.Model;
 using Loja.Model.DAO;
+using Loja.Controler.Utils;
 
 namespace Loja.Controler
 {
@@ -15,9 +16,10 @@ namespace Loja.Controler
         {
 
             //PEGAR DATA
+
             Controller tempo = new Controller();
             String dia = tempo.DataPararCriarPasta();
-            String data = tempo.PegarDiaMesAnoAtual();
+            String data = Data.PegarDiaMesAnoAtual();
 
             //ACESSAR BANCO PONTO
             List<PontoModel> ListaDePonto = new List<PontoModel>();

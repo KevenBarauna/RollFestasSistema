@@ -39,7 +39,16 @@
             this.BtnSalvar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Linha = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 120);
+            this.label2.Location = new System.Drawing.Point(129, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
@@ -64,7 +73,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(106, 168);
+            this.label3.Location = new System.Drawing.Point(126, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 2;
@@ -73,7 +82,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(84, 221);
+            this.label4.Location = new System.Drawing.Point(104, 224);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 3;
@@ -81,30 +90,36 @@
             // 
             // TxtNome
             // 
-            this.TxtNome.Location = new System.Drawing.Point(52, 136);
+            this.TxtNome.BackColor = System.Drawing.Color.White;
+            this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtNome.Location = new System.Drawing.Point(72, 139);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(160, 20);
+            this.TxtNome.Size = new System.Drawing.Size(160, 13);
             this.TxtNome.TabIndex = 4;
             // 
             // TxtSenha
             // 
-            this.TxtSenha.Location = new System.Drawing.Point(52, 184);
+            this.TxtSenha.BackColor = System.Drawing.Color.White;
+            this.TxtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtSenha.Location = new System.Drawing.Point(72, 187);
             this.TxtSenha.Name = "TxtSenha";
-            this.TxtSenha.Size = new System.Drawing.Size(160, 20);
+            this.TxtSenha.Size = new System.Drawing.Size(160, 13);
             this.TxtSenha.TabIndex = 5;
             this.TxtSenha.UseSystemPasswordChar = true;
             // 
             // TxtConfSenha
             // 
-            this.TxtConfSenha.Location = new System.Drawing.Point(52, 237);
+            this.TxtConfSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtConfSenha.Location = new System.Drawing.Point(72, 240);
             this.TxtConfSenha.Name = "TxtConfSenha";
-            this.TxtConfSenha.Size = new System.Drawing.Size(160, 20);
+            this.TxtConfSenha.Size = new System.Drawing.Size(160, 13);
             this.TxtConfSenha.TabIndex = 6;
             this.TxtConfSenha.UseSystemPasswordChar = true;
             // 
             // BtnSalvar
             // 
             this.BtnSalvar.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalvar.ForeColor = System.Drawing.SystemColors.Control;
             this.BtnSalvar.Location = new System.Drawing.Point(12, 326);
             this.BtnSalvar.Name = "BtnSalvar";
@@ -117,8 +132,9 @@
             // BtnCancelar
             // 
             this.BtnCancelar.BackColor = System.Drawing.Color.Red;
+            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnCancelar.Location = new System.Drawing.Point(174, 326);
+            this.BtnCancelar.Location = new System.Drawing.Point(163, 326);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(82, 31);
             this.BtnCancelar.TabIndex = 8;
@@ -136,11 +152,72 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // Linha
+            // 
+            this.Linha.BackColor = System.Drawing.Color.Orange;
+            this.Linha.Location = new System.Drawing.Point(72, 159);
+            this.Linha.Name = "Linha";
+            this.Linha.Size = new System.Drawing.Size(160, 1);
+            this.Linha.TabIndex = 24;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Orange;
+            this.panel1.Location = new System.Drawing.Point(72, 206);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(160, 1);
+            this.panel1.TabIndex = 25;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Orange;
+            this.panel2.Location = new System.Drawing.Point(72, 259);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(160, 1);
+            this.panel2.TabIndex = 26;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(23, 120);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(43, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 27;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(23, 171);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(43, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 28;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(23, 220);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(43, 40);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 29;
+            this.pictureBox4.TabStop = false;
+            // 
             // AdicionarNovoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(268, 369);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Linha);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
@@ -159,6 +236,9 @@
             this.Text = "AdicionarNovoUsuario";
             this.Load += new System.EventHandler(this.AdicionarNovoUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +256,11 @@
         private System.Windows.Forms.Button BtnSalvar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Linha;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

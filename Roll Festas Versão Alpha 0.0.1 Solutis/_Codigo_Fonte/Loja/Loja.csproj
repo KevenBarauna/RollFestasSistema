@@ -79,6 +79,7 @@
     <Compile Include="Controler\ProdutoController.cs" />
     <Compile Include="Controler\ReciboController.cs" />
     <Compile Include="Controler\UsuarioController.cs" />
+    <Compile Include="Controler\Utils\Data.cs" />
     <Compile Include="Controler\VendaController.cs" />
     <Compile Include="Model\CaixaModel.cs" />
     <Compile Include="Model\DAO\DAOCaixa.cs" />

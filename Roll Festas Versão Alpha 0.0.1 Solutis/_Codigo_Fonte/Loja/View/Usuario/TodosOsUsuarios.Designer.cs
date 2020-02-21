@@ -40,8 +40,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(113, 43);
+            this.button1.Location = new System.Drawing.Point(124, 43);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 39);
             this.button1.TabIndex = 0;
@@ -54,9 +55,9 @@
             this.listViewUs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.C1Nome});
             this.listViewUs.HideSelection = false;
-            this.listViewUs.Location = new System.Drawing.Point(44, 111);
+            this.listViewUs.Location = new System.Drawing.Point(25, 111);
             this.listViewUs.Name = "listViewUs";
-            this.listViewUs.Size = new System.Drawing.Size(184, 265);
+            this.listViewUs.Size = new System.Drawing.Size(223, 282);
             this.listViewUs.TabIndex = 1;
             this.listViewUs.UseCompatibleStateImageBehavior = false;
             this.listViewUs.View = System.Windows.Forms.View.Details;

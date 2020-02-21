@@ -36,14 +36,16 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.BtnDuvida = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Linha = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnSalvar
             // 
             this.BtnSalvar.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalvar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnSalvar.Location = new System.Drawing.Point(77, 249);
+            this.BtnSalvar.Location = new System.Drawing.Point(80, 247);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(105, 31);
             this.BtnSalvar.TabIndex = 16;
@@ -53,9 +55,10 @@
             // 
             // TxtNome
             // 
+            this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtNome.Location = new System.Drawing.Point(52, 181);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(160, 20);
+            this.TxtNome.Size = new System.Drawing.Size(160, 13);
             this.TxtNome.TabIndex = 13;
             // 
             // label2
@@ -79,9 +82,9 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(34, 296);
+            this.dateTimePicker1.Location = new System.Drawing.Point(21, 296);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(228, 20);
             this.dateTimePicker1.TabIndex = 17;
             // 
             // BtnDuvida
@@ -108,11 +111,20 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // Linha
+            // 
+            this.Linha.BackColor = System.Drawing.Color.Orange;
+            this.Linha.Location = new System.Drawing.Point(52, 200);
+            this.Linha.Name = "Linha";
+            this.Linha.Size = new System.Drawing.Size(160, 1);
+            this.Linha.TabIndex = 34;
+            // 
             // BaterPonto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(276, 328);
+            this.Controls.Add(this.Linha);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnDuvida);
             this.Controls.Add(this.dateTimePicker1);
@@ -140,5 +152,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button BtnDuvida;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Linha;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.View.Caixa;
 using Loja.View.Calcular;
@@ -29,7 +30,7 @@ namespace Loja.View
             DAOUsuario usuario = new DAOUsuario();
             UsuarioModel us = new UsuarioModel();
             us = usuario.PegarUsuarioLogado();
-            LblUsuario.Text = "Olá " + us.Nome;
+            LblUsuario.Text = us.Nome;
 
             //LISTAR ENCOMENDAS
 
@@ -147,8 +148,7 @@ namespace Loja.View
         private void gerarPDFToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            Controller tempo = new Controller();
-            String mes = tempo.PegarMes();
+            String mes = Data.PegarMes();
 
             PontoController ponto = new PontoController();
             ponto.GerarPDFPonto(mes);

@@ -25,11 +25,13 @@ namespace Loja.Model
             }
             catch (SqlException)
             {
-                MessageBox.Show("Erro ao zerar tabela de vendas, reinicie o programa.");
-            }
+                throw new Exception("Erro, reinicie o programa."); 
+                           }
             conexao.Desconectar();
 
+
         }//ZERAR TABELA TEMPORAIA DE VENDAS
+
         public void PreparaBanco(String nome, String quantidade)
         {
 

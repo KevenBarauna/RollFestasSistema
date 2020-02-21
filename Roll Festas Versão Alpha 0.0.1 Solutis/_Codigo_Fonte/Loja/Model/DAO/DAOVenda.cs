@@ -163,6 +163,54 @@ namespace Loja.Model
 
         }//EXIBIR TODAS AS VENDAS DO DIA
 
+        public List<VendaModel> ListarVendasPorVendedor(String vendedor, String ano)
+        {
+            SqlDataReader dr;
+            List<VendaModel> venda = new List<VendaModel>();
+
+
+
+            cmd.CommandText = "SELECT * FROM TB_VENDA WHERE usuario = @usuario AND ";
+
+            cmd.Parameters.AddWithValue("@usuario", vendedor);
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+
+                    foreach (var linhadobanco in dr)
+                    {
+                        VendaModel v = new VendaModel();
+
+                        var datadoBanco = Convert.ToString(dr["data"]);
+                        var valortotaldoBanco = Convert.ToString(dr["valortotal"]);
+
+                        v.Data = Convert.ToString(datadoBanco);
+                        v.ValorTotal = Convert.ToString(valortotaldoBanco);
+
+                        venda.Add(v);
+                    }
+
+
+                }
+
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Erro:  " + e);
+            }
+
+            cmd.Parameters.Clear();
+            conexao.Desconectar();
+
+            return venda;
+
+        }//EXIBIR TODAS AS VENDAS DO DIA
+
         public List<VendaModel> ListarVendasPagas(String data)
         {
             SqlDataReader dr;

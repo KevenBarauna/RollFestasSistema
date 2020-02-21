@@ -43,13 +43,13 @@ namespace Loja.View
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novaVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trocaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verTodosOsPagamentosPendetesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelarPagamentoPendenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagarPagamentoPendenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verTodasAsVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trocaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -209,6 +209,13 @@ namespace Loja.View
             this.novaVendaToolStripMenuItem.Text = "Nova venda";
             this.novaVendaToolStripMenuItem.Click += new System.EventHandler(this.novaVendaToolStripMenuItem_Click);
             // 
+            // trocaToolStripMenuItem
+            // 
+            this.trocaToolStripMenuItem.Name = "trocaToolStripMenuItem";
+            this.trocaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.trocaToolStripMenuItem.Text = "Troca";
+            this.trocaToolStripMenuItem.Click += new System.EventHandler(this.trocaToolStripMenuItem_Click);
+            // 
             // cancelarVendaToolStripMenuItem
             // 
             this.cancelarVendaToolStripMenuItem.Name = "cancelarVendaToolStripMenuItem";
@@ -253,13 +260,6 @@ namespace Loja.View
             this.verTodasAsVendasToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.verTodasAsVendasToolStripMenuItem.Text = "Ver vendas do dia";
             this.verTodasAsVendasToolStripMenuItem.Click += new System.EventHandler(this.verTodasAsVendasToolStripMenuItem_Click);
-            // 
-            // trocaToolStripMenuItem
-            // 
-            this.trocaToolStripMenuItem.Name = "trocaToolStripMenuItem";
-            this.trocaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.trocaToolStripMenuItem.Text = "Troca";
-            this.trocaToolStripMenuItem.Click += new System.EventHandler(this.trocaToolStripMenuItem_Click);
             // 
             // usuárioToolStripMenuItem
             // 

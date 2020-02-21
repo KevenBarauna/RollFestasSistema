@@ -11,7 +11,7 @@ namespace Loja.Controler
     class Controller
     {
 
-        public String PegarHoraMinutoAtual()
+        public string PegarHoraMinutoAtual()
         {
             string h = DateTime.Now.Hour.ToString();
             string m = DateTime.Now.Minute.ToString();
@@ -21,22 +21,21 @@ namespace Loja.Controler
             return hora;
         }//hh:mm
 
-        public String PegarDiaMesAnoAtual()
+        public string PegarDiaMesAnoAtual()
         {
 
 
             DateTime data = DateTime.Now;
 
             //string dia = DateTime.Now.Day.ToString();
-           //var mes = DateTime.Now.Month;
+            //var mes = DateTime.Now.Month;
             //string ano = DateTime.Now.Year.ToString();
-
-           // string data = dia + "/" + mes + "/" + ano;
+            // string data = dia + "/" + mes + "/" + ano;
 
             return data.ToShortDateString();
         }//dd/mm/aa
 
-        public String PegarDiaeHora()
+        public string PegarDiaeHora()
         {
             string dia = DateTime.Now.Day.ToString();
             string mes = DateTime.Now.Month.ToString();
@@ -52,13 +51,13 @@ namespace Loja.Controler
             return data + " " + hora;
         } //dd/mm/aa hj:mm
 
-        public String PegarAno()
+        public string PegarAno()
         {
             string ano = DateTime.Now.Year.ToString();
             return ano;
         }//AA
 
-        public String PegarMes()
+        public string PegarMes()
         {
 
             string mes = DateTime.Now.Month.ToString();
@@ -66,12 +65,12 @@ namespace Loja.Controler
             return mes;
         }//MM
 
-        public String PegarMesAno()
+        public string PegarMesAno()
         {
             string mes = DateTime.Now.Month.ToString();
             string ano = DateTime.Now.Year.ToString();
 
-            string data =  mes + "/" + ano;
+            string data = mes + "/" + ano;
 
             return data;
         }//MM/AA

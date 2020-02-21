@@ -35,14 +35,17 @@
             this.BtnApagar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Linha = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(105, 28);
+            this.label1.Location = new System.Drawing.Point(86, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 22);
             this.label1.TabIndex = 0;
@@ -51,7 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(108, 106);
+            this.label2.Location = new System.Drawing.Point(99, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
@@ -59,16 +62,18 @@
             // 
             // TxtPesquisa
             // 
-            this.TxtPesquisa.Location = new System.Drawing.Point(54, 122);
+            this.TxtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtPesquisa.Location = new System.Drawing.Point(47, 124);
             this.TxtPesquisa.Name = "TxtPesquisa";
-            this.TxtPesquisa.Size = new System.Drawing.Size(154, 20);
+            this.TxtPesquisa.Size = new System.Drawing.Size(154, 13);
             this.TxtPesquisa.TabIndex = 2;
             // 
             // BtnApagar
             // 
             this.BtnApagar.BackColor = System.Drawing.Color.Red;
+            this.BtnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnApagar.ForeColor = System.Drawing.Color.Gold;
-            this.BtnApagar.Location = new System.Drawing.Point(81, 210);
+            this.BtnApagar.Location = new System.Drawing.Point(71, 209);
             this.BtnApagar.Name = "BtnApagar";
             this.BtnApagar.Size = new System.Drawing.Size(90, 32);
             this.BtnApagar.TabIndex = 3;
@@ -90,16 +95,36 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 61);
+            this.pictureBox1.Size = new System.Drawing.Size(68, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            // 
+            // Linha
+            // 
+            this.Linha.BackColor = System.Drawing.Color.Orange;
+            this.Linha.Location = new System.Drawing.Point(45, 141);
+            this.Linha.Name = "Linha";
+            this.Linha.Size = new System.Drawing.Size(160, 1);
+            this.Linha.TabIndex = 25;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(5, 99);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(43, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
             // 
             // ApagarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(266, 303);
+            this.ClientSize = new System.Drawing.Size(247, 303);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.Linha);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BtnApagar);
@@ -113,6 +138,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApagarUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +152,7 @@
         private System.Windows.Forms.Button BtnApagar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Linha;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

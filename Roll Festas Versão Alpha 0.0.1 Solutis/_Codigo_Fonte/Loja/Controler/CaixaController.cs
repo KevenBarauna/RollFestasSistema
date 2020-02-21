@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Loja.Controler.Utils;
 using Loja.Model;
 
 namespace Loja.Controler
@@ -179,8 +180,7 @@ namespace Loja.Controler
             if (VerificaValor.VerificaDinheiro(valor))
             {
                     
-                Controller tempo = new Controller();
-                String data = tempo.PegarDiaMesAnoAtual();
+                String data = Data.PegarDiaMesAnoAtual();
 
                 DAOCaixa dao = new DAOCaixa();
                 Decimal ValorTotal = 0;
@@ -204,8 +204,8 @@ namespace Loja.Controler
             Controller VerificaValor = new Controller();
             if (VerificaValor.VerificaDinheiro(valor))
             {
-                Controller tempo = new Controller();
-                String data = tempo.PegarDiaMesAnoAtual();
+
+                String data = Data.PegarDiaMesAnoAtual();
 
                 DAOCaixa dao = new DAOCaixa();
                 Decimal ValorTotal = 0;
