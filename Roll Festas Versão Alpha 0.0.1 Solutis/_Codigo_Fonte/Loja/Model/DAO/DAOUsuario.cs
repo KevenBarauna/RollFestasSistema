@@ -31,8 +31,8 @@ namespace Loja.Model
 
             cmd.Parameters.AddWithValue("@usuario", usuario);
 
-                cmd.Connection = conexao.Conectar();
-                cmd.ExecuteNonQuery();
+            cmd.Connection = conexao.Conectar();
+            cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
             conexao.Desconectar();
 
@@ -55,11 +55,17 @@ namespace Loja.Model
                 {
                     dr.Read();
 
+                    var iddoBanco = dr["id"];
                     var nomedoBanco = dr["nome"];
                     var senhadoBanco = dr["senha"];
+                    var emaildoBanco = dr["email"];
+                    var data_admissaodoBanco = dr["data_admissao"];
 
+                    usuario.Id = Convert.ToInt32(iddoBanco);
                     usuario.Nome = Convert.ToString(nomedoBanco);
                     usuario.Senha = Convert.ToString(senhadoBanco);
+                    usuario.Email = Convert.ToString(emaildoBanco);
+                    usuario.Data_admissao = Convert.ToString(data_admissaodoBanco);
 
                 }
 
@@ -105,13 +111,15 @@ namespace Loja.Model
             return UsuarioExiste;
         }//VERIFICA SE USUARIO E SENHAS ESTÃO CORRETOS
 
-        public void InserirUsuario(String nome, String senha)
+        public void InserirUsuario(String nome, String senha, string email, string data_admissao)
         {
 
-            cmd.CommandText = "INSERT INTO TB_USUARIO (nome,senha) VALUES (@nomeInserir,@senhaInserir)";
+            cmd.CommandText = "INSERT INTO TB_USUARIO (nome,senha,email,data_admissao) VALUES (@nomeInserir,@senhaInserir, @emailInserir, @data_admissaoInserir)";
 
             cmd.Parameters.AddWithValue("@nomeInserir", nome);
             cmd.Parameters.AddWithValue("@senhaInserir", senha);
+            cmd.Parameters.AddWithValue("@emailInserir", email);
+            cmd.Parameters.AddWithValue("@data_admissaoInserir", data_admissao);
 
             try
             {
@@ -128,7 +136,7 @@ namespace Loja.Model
 
         }//INSERIR NOVO USUARIO
 
-        public bool ValidaNomeUsuario(String nome)
+        public bool ValidaNomeUsuario(string nome)
         {
             SqlDataReader dr;
             bool UsuarioExiste = false;
@@ -158,7 +166,7 @@ namespace Loja.Model
             return UsuarioExiste;
         }//VERIFICA SE EXISTE USUARIO COM ESSE NOME
 
-        public UsuarioModel ExibirDetalhesdoUsuario(String nome)
+        public UsuarioModel ExibirDetalhesdoUsuario(string nome)
         {
             SqlDataReader dr;
             UsuarioModel usuario = new UsuarioModel();
@@ -178,10 +186,15 @@ namespace Loja.Model
 
                     var nomedoBanco = dr["nome"];
                     var senhadoBanco = dr["senha"];
+                    var emaildoBanco = dr["email"];
+                    var data_admissaodoBanco = dr["data_admissao"];
+
 
                     usuario.Nome = Convert.ToString(nomedoBanco) ;
                     usuario.Senha = Convert.ToString(senhadoBanco);
-                   
+                    usuario.Email = Convert.ToString(emaildoBanco);
+                    usuario.Data_admissao = Convert.ToString(data_admissaodoBanco);
+
                 }
 
             }
@@ -195,13 +208,15 @@ namespace Loja.Model
             return usuario;
         }//EXIBIR DETALHES DE UM USUARIO
 
-        public void EditarUsuario(String nome, String senha, String nomeoriginal)
+        public void EditarUsuario(string nome, string senha, string email, string data_admissao, string nomeoriginal)
         {
 
-            cmd.CommandText = "UPDATE TB_USUARIO SET nome = @nomeEditar, senha = @senhaEditar WHERE nome = @nomeoriginal";
+            cmd.CommandText = "UPDATE TB_USUARIO SET nome = @nomeEditar, senha = @senhaEditar, email = @emailEditar, data_admissao = @data_admissaoEditar WHERE nome = @nomeoriginal";
 
             cmd.Parameters.AddWithValue("@nomeEditar", nome);
             cmd.Parameters.AddWithValue("@senhaEditar", senha);
+            cmd.Parameters.AddWithValue("@emailEditar", email);
+            cmd.Parameters.AddWithValue("@data_admissaoEditar", data_admissao);
             cmd.Parameters.AddWithValue("@nomeoriginal", nomeoriginal);
 
 
@@ -265,6 +280,8 @@ namespace Loja.Model
                         UsuarioModel usuarioL = new UsuarioModel();
                         usuarioL.Nome = Convert.ToString( dr["nome"]);
                         usuarioL.Senha = Convert.ToString(dr["senha"]);
+                        usuarioL.Email = Convert.ToString(dr["email"]);
+                        usuarioL.Data_admissao = Convert.ToString(dr["data_admissao"]);
 
                         ListadeUsuario.Add(usuarioL);
                     }
@@ -282,6 +299,87 @@ namespace Loja.Model
 
             return ListadeUsuario;
         }//RETORNA TODOS OS USUARIOS
+
+        public UsuarioModel VerificaAdmin(string nome, string senha)
+        {
+            SqlDataReader dr;
+            UsuarioModel usuario = new UsuarioModel();
+
+            cmd.CommandText = "SELECT * FROM TB_USUARIO WHERE nome = @nome AND senha = @senha";
+
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@senha", senha);
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    dr.Read();
+
+                    var iddoBanco = dr["id"];
+                    var nomedoBanco = dr["nome"];
+                    var senhadoBanco = dr["senha"];
+                    var emaildoBanco = dr["email"];
+                    var data_admissaodoBanco = dr["data_admissao"];
+
+                    usuario.Id = Convert.ToInt32( iddoBanco );
+                    usuario.Nome = Convert.ToString(nomedoBanco);
+                    usuario.Senha = Convert.ToString(senhadoBanco);
+                    usuario.Email = Convert.ToString(emaildoBanco);
+                    usuario.Data_admissao = Convert.ToString(data_admissaodoBanco);
+
+                }
+
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Erro:  " + e);
+            }
+            cmd.Parameters.Clear();
+            conexao.Desconectar();
+
+            return usuario;
+        }//EXIBIR DETALHES DE UM USUARIO
+
+        public string VerificaFerias(int id)
+        {
+            SqlDataReader dr;
+            string Data_admissao = null;
+
+
+            cmd.CommandText = "SELECT * FROM TB_USUARIO WHERE id = @id";
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    dr.Read();
+
+                    var data_admissaodoBanco = dr["data_admissao"];
+
+                    Data_admissao = Convert.ToString(data_admissaodoBanco);
+
+                }
+
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Erro:  " + e);
+            }
+            cmd.Parameters.Clear();
+            conexao.Desconectar();
+
+            return Data_admissao;
+        }//EXIBIR FERIas
+
 
     }
 }

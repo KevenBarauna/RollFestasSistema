@@ -73,5 +73,17 @@ namespace Loja.Controler.Utils
             return data;
         }//MM/AA
 
+        public static string DataPararCriarPasta()
+        {
+            string dia = DateTime.Now.Day.ToString();
+            string mes = DateTime.Now.Month.ToString();
+            string ano = DateTime.Now.Year.ToString();
+
+            string data = dia + "." + mes + "." + ano;
+
+
+            return data;
+        } //dd.mm.aa
+
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.View.Duvida;
 
@@ -28,8 +29,8 @@ namespace Loja.View.Venda
             LblUsuario.Text = usuarioLogado.Nome;
 
             //DATA
-            Controller tempo = new Controller();
-            String hora = tempo.PegarDiaeHora();
+
+            String hora = Data.PegarDiaeHora();
             LblTestedata.Text = Convert.ToString(hora);
 
         }
@@ -117,8 +118,7 @@ namespace Loja.View.Venda
             //1 = PAGO
             //2 = PAGAR DEPOIS
 
-            Controller tempo = new Controller();
-            String data = tempo.PegarDiaMesAnoAtual();
+            String data = Data.PegarDiaMesAnoAtual();
 
             String TipoPagamento = "Não selecionado";
             bool TodasAsInformacoes = false;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.Model;
 
 namespace Loja.View.Ponto
@@ -18,10 +19,10 @@ namespace Loja.View.Ponto
         {
             InitializeComponent();
 
-            Controller tempo = new Controller();
-            TxtAnoPesquisa.Text = tempo.PegarDiaMesAnoAtual();
-            TxtMes.Text = tempo.PegarMesAno();
-            TxtAno.Text = tempo.PegarAno();
+
+            TxtAnoPesquisa.Text = Data.PegarDiaMesAnoAtual();
+            TxtMes.Text = Data.PegarMesAno();
+            TxtAno.Text = Data.PegarAno();
 
         }
 

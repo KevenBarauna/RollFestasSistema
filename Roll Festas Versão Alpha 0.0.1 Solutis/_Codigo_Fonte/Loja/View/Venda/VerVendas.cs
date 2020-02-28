@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.View.Duvida;
 
@@ -22,9 +23,7 @@ namespace Loja.View.Venda
 
             try
             {
-                String data;
-                Controller tempo = new Controller();
-                data = tempo.PegarDiaMesAnoAtual();
+                var data = Data.PegarDiaMesAnoAtual();
 
                 VendaController venda = new VendaController();
                 List<VendaModel> vendas = new List<VendaModel>();

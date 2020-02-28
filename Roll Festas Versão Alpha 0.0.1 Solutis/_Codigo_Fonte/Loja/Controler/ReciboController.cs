@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Loja.Controler.Utils;
 using Loja.Model;
 
 namespace Loja.Controler
@@ -18,8 +19,7 @@ namespace Loja.Controler
         {
             try
             {
-                Controller CaminhoArquivo = new Controller();
-                string caminho = CaminhoArquivo.CaminhoComprovante();
+                string caminho = Caminhos.CaminhoComprovante();
 
                 Document doc = new Document(iTextSharp.text.PageSize.A6, 3, 3, 3, 3);
                 PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(@"" + caminho + ".pdf", FileMode.Create));
@@ -186,22 +186,20 @@ namespace Loja.Controler
 
         //}
 
-        public void GerarReciboDeVendaPeloId(String id, String caminho)
+        public bool GerarReciboDeVendaPeloId(String id, String NomeArquivo)
         {
-            //DAO
+            var data = Data.DataPararCriarPasta();
+            var vendaModel = new VendaModel();
+            var daoVenda = new DAOVenda();
 
-            VendaModel Venda = new VendaModel();
-
-
-            DAOVenda dao = new DAOVenda();
-            Venda = dao.ExibirDetalhesdaVenda(id);
+            vendaModel = daoVenda.ExibirDetalhesdaVenda(id);
 
 
             try
             {
 
                 Document doc = new Document(iTextSharp.text.PageSize.A6);
-                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
+                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(NomeArquivo, FileMode.Create));
                 doc.Open();
 
 
@@ -241,23 +239,23 @@ namespace Loja.Controler
 
                 paragrafo.Add("                                         ");
 
-                String DataDaVenda = Venda.Data;
-                String CodDaVenda = Convert.ToString(Venda.Id);
+                String DataDaVenda = vendaModel.Data;
+                String CodDaVenda = Convert.ToString(vendaModel.Id);
 
 
                 paragrafo.Add("Data: " + DataDaVenda + "                       ");
                 paragrafo.Add("Código: " + CodDaVenda + "                             ");
                 paragrafo.Add("                                         ");
 
-                String ValorTotalDaVenda = Venda.ValorTotal;
-                String ValorpagoDaVenda = Venda.ValorPago;
+                String ValorTotalDaVenda = vendaModel.ValorTotal;
+                String ValorpagoDaVenda = vendaModel.ValorPago;
 
 
                 paragrafo.Add("Valor total: " + ValorTotalDaVenda + "                       ");
                 paragrafo.Add("Valor pago: " + ValorpagoDaVenda + "                       ");
 
-                String TrocoDaVenda = Venda.Troco;
-                String PendenciaDaVenda = Venda.ValorPendente;
+                String TrocoDaVenda = vendaModel.Troco;
+                String PendenciaDaVenda = vendaModel.ValorPendente;
 
 
                 paragrafo.Add("Troco: " + TrocoDaVenda + "                               ");
@@ -270,12 +268,14 @@ namespace Loja.Controler
 
                 doc.Close();
 
-                MessageBox.Show("Compravante salvo em: " + caminho);
+                return true;
+                //MessageBox.Show("Compravante salvo em: " + caminho);
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Comprovante aberto, feche!");
+                return false;
+                //MessageBox.Show("Comprovante aberto, feche!");
             }
 
         }

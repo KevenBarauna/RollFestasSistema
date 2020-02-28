@@ -322,6 +322,48 @@ namespace Loja.Model
             return ListadePonto;
         }//RETORNA TODOS OS USUARIOS
 
+        public List<PontoModel> ListarPorMes(string mes, string usuario)
+        {
+            SqlDataReader dr;
+            List<PontoModel> ListadePonto = new List<PontoModel>();
+
+            cmd.CommandText = "SELECT * FROM TB_PONTO where nome = @usuario AND data LIKE '%/" + mes + "%'";
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+
+                    foreach (var linhadobanco in dr)
+                    {
+                        PontoModel PontoL = new PontoModel();
+                        PontoL.Data = Convert.ToString(dr["data"]);
+                        PontoL.Nome = Convert.ToString(dr["nome"]);
+                        PontoL.Hora1 = Convert.ToString(dr["chegada"]);
+                        PontoL.Hora2 = Convert.ToString(dr["saida_almoco"]);
+                        PontoL.Hora3 = Convert.ToString(dr["chegada_almoco"]);
+                        PontoL.Hora4 = Convert.ToString(dr["saida"]);
+
+                        ListadePonto.Add(PontoL);
+                    }
+
+
+                }
+
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Erro:  " + e);
+            }
+            cmd.Parameters.Clear();
+            conexao.Desconectar();
+
+            return ListadePonto;
+        }//RETORNA TODOS OS USUARIOS
+
         public List<PontoModel> ListarPorAno(String mes)
         {
             SqlDataReader dr;
@@ -363,6 +405,8 @@ namespace Loja.Model
 
             return ListadePonto;
         }//RETORNA TODOS OS USUARIOS
+
+
 
 
     }

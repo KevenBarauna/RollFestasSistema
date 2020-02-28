@@ -23,7 +23,7 @@ namespace Loja.View
             bool sucesso = false;
 
             UsuarioController usuario = new UsuarioController();
-            sucesso = usuario.Cadastrar(TxtNome.Text,TxtSenha.Text,TxtConfSenha.Text);
+            sucesso = usuario.Cadastrar(TxtNome.Text,TxtSenha.Text,TxtEmail.Text,TxtDataAdmissao.Text,TxtConfSenha.Text);
 
             if (sucesso == true)
             {
@@ -37,9 +37,5 @@ namespace Loja.View
             this.Hide();
         }
 
-        private void AdicionarNovoUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

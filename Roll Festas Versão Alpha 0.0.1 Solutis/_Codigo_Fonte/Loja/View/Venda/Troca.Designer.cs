@@ -32,10 +32,8 @@
             this.BtnFinalizar = new System.Windows.Forms.Button();
             this.BtnPesquisar = new System.Windows.Forms.Button();
             this.BtnLimpar = new System.Windows.Forms.Button();
-            this.LblUsuario = new System.Windows.Forms.Label();
             this.BtnAdicionarDevolvido = new System.Windows.Forms.Button();
             this.TxtNumQuantDevolvido = new System.Windows.Forms.NumericUpDown();
-            this.LBITEMDevolvido = new System.Windows.Forms.ListBox();
             this.TxtValorNovos = new System.Windows.Forms.TextBox();
             this.TxtValorDevolvidos = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,15 +62,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.LblUsuario = new System.Windows.Forms.Label();
+            this.LblData = new System.Windows.Forms.Label();
+            this.ListItensAntigos = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumQuantDevolvido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumQuantNovo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnFinalizar
@@ -114,17 +116,6 @@
             this.BtnLimpar.UseVisualStyleBackColor = false;
             this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
             // 
-            // LblUsuario
-            // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblUsuario.Location = new System.Drawing.Point(783, 90);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(57, 17);
-            this.LblUsuario.TabIndex = 109;
-            this.LblUsuario.Text = "Usuário";
-            // 
             // BtnAdicionarDevolvido
             // 
             this.BtnAdicionarDevolvido.BackColor = System.Drawing.Color.DodgerBlue;
@@ -150,18 +141,11 @@
             0,
             0});
             // 
-            // LBITEMDevolvido
-            // 
-            this.LBITEMDevolvido.FormattingEnabled = true;
-            this.LBITEMDevolvido.Location = new System.Drawing.Point(12, 139);
-            this.LBITEMDevolvido.Name = "LBITEMDevolvido";
-            this.LBITEMDevolvido.Size = new System.Drawing.Size(230, 303);
-            this.LBITEMDevolvido.TabIndex = 106;
-            // 
             // TxtValorNovos
             // 
+            this.TxtValorNovos.BackColor = System.Drawing.Color.White;
             this.TxtValorNovos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtValorNovos.Location = new System.Drawing.Point(762, 198);
+            this.TxtValorNovos.Location = new System.Drawing.Point(756, 147);
             this.TxtValorNovos.Name = "TxtValorNovos";
             this.TxtValorNovos.ReadOnly = true;
             this.TxtValorNovos.Size = new System.Drawing.Size(100, 13);
@@ -171,7 +155,7 @@
             // 
             this.TxtValorDevolvidos.BackColor = System.Drawing.Color.White;
             this.TxtValorDevolvidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtValorDevolvidos.Location = new System.Drawing.Point(762, 147);
+            this.TxtValorDevolvidos.Location = new System.Drawing.Point(756, 198);
             this.TxtValorDevolvidos.Name = "TxtValorDevolvidos";
             this.TxtValorDevolvidos.ReadOnly = true;
             this.TxtValorDevolvidos.Size = new System.Drawing.Size(100, 13);
@@ -180,6 +164,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label5.Location = new System.Drawing.Point(753, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 13);
@@ -189,6 +174,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.Location = new System.Drawing.Point(760, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 13);
@@ -330,6 +316,7 @@
             // 
             // TxtCredito
             // 
+            this.TxtCredito.BackColor = System.Drawing.Color.White;
             this.TxtCredito.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtCredito.Location = new System.Drawing.Point(762, 250);
             this.TxtCredito.Name = "TxtCredito";
@@ -340,6 +327,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(783, 234);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 13);
@@ -417,30 +405,6 @@
             this.label11.TabIndex = 127;
             this.label11.Text = "Pesquisar produto por nome";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Orange;
-            this.panel3.Location = new System.Drawing.Point(763, 166);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(100, 1);
-            this.panel3.TabIndex = 129;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Orange;
-            this.panel2.Location = new System.Drawing.Point(762, 217);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(100, 1);
-            this.panel2.TabIndex = 130;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Orange;
-            this.panel4.Location = new System.Drawing.Point(763, 269);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(100, 1);
-            this.panel4.TabIndex = 131;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
@@ -454,16 +418,72 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(756, 67);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(44, 53);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 135;
+            this.pictureBox3.TabStop = false;
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.LblUsuario.Location = new System.Drawing.Point(806, 76);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(56, 16);
+            this.LblUsuario.TabIndex = 134;
+            this.LblUsuario.Text = "Usuário";
+            // 
+            // LblData
+            // 
+            this.LblData.AutoSize = true;
+            this.LblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblData.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.LblData.Location = new System.Drawing.Point(806, 96);
+            this.LblData.Name = "LblData";
+            this.LblData.Size = new System.Drawing.Size(33, 15);
+            this.LblData.TabIndex = 133;
+            this.LblData.Text = "Data";
+            // 
+            // ListItensAntigos
+            // 
+            this.ListItensAntigos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.ListItensAntigos.HideSelection = false;
+            this.ListItensAntigos.Location = new System.Drawing.Point(12, 139);
+            this.ListItensAntigos.Name = "ListItensAntigos";
+            this.ListItensAntigos.Size = new System.Drawing.Size(230, 303);
+            this.ListItensAntigos.TabIndex = 136;
+            this.ListItensAntigos.UseCompatibleStateImageBehavior = false;
+            this.ListItensAntigos.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Produto";
+            this.columnHeader1.Width = 130;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Quantidade";
+            this.columnHeader2.Width = 70;
+            // 
             // Troca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(882, 474);
+            this.Controls.Add(this.ListItensAntigos);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.LblUsuario);
+            this.Controls.Add(this.LblData);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel1);
@@ -484,10 +504,8 @@
             this.Controls.Add(this.BtnFinalizar);
             this.Controls.Add(this.BtnPesquisar);
             this.Controls.Add(this.BtnLimpar);
-            this.Controls.Add(this.LblUsuario);
             this.Controls.Add(this.BtnAdicionarDevolvido);
             this.Controls.Add(this.TxtNumQuantDevolvido);
-            this.Controls.Add(this.LBITEMDevolvido);
             this.Controls.Add(this.TxtValorNovos);
             this.Controls.Add(this.TxtValorDevolvidos);
             this.Controls.Add(this.label5);
@@ -508,6 +526,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,10 +536,8 @@
         private System.Windows.Forms.Button BtnFinalizar;
         private System.Windows.Forms.Button BtnPesquisar;
         private System.Windows.Forms.Button BtnLimpar;
-        private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.Button BtnAdicionarDevolvido;
         private System.Windows.Forms.NumericUpDown TxtNumQuantDevolvido;
-        private System.Windows.Forms.ListBox LBITEMDevolvido;
         private System.Windows.Forms.TextBox TxtValorNovos;
         private System.Windows.Forms.TextBox TxtValorDevolvidos;
         private System.Windows.Forms.Label label5;
@@ -549,9 +566,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label LblUsuario;
+        private System.Windows.Forms.Label LblData;
+        private System.Windows.Forms.ListView ListItensAntigos;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

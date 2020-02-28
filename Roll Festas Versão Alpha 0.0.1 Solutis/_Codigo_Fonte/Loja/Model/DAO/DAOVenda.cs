@@ -538,5 +538,51 @@ namespace Loja.Model
             return venda;
         }//EXIBIR DETALHES DA VENDA
 
+        public double PegarVendaPorUsuarior(string nome , string data)
+        {
+            SqlDataReader dr;
+            double ValorTotal = 0;
+
+            cmd.CommandText = @"SELECT * FROM TB_VENDA WHERE usuario = @nome AND data LIKE '%/" + data + "%'";
+
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+            try
+            {
+                cmd.Connection = conexao.Conectar();
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+
+                    foreach (var linhadobanco in dr)
+                    {
+
+                        string ValorDoBanco = Convert.ToString( dr["valortotal"] );
+                        if (string.IsNullOrEmpty(ValorDoBanco))
+                        {
+                            ValorDoBanco = "0";
+                        }
+                        
+                        var ValorVenda = Convert.ToDouble(ValorDoBanco);
+
+                        ValorTotal = ValorTotal + ValorVenda;
+                    }
+
+
+                }
+
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Erro:  " + e);
+            }
+            cmd.Parameters.Clear();
+            conexao.Desconectar();
+
+            return ValorTotal;
+
+        }//PEGAR VENDA DO VENDEDOR POR ANO
+
     }
 }

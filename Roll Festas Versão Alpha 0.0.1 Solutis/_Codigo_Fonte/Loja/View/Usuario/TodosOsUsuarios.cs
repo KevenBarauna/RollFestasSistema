@@ -18,10 +18,7 @@ namespace Loja.View.Usuario
         public TodosOsUsuarios()
         {
                 InitializeComponent();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
             List<UsuarioModel> usuarios = new List<UsuarioModel>();
             UsuarioController usuario = new UsuarioController();
 
@@ -30,13 +27,15 @@ namespace Loja.View.Usuario
             foreach (var us in usuarios)
             {
                 ListViewItem list = new ListViewItem(us.Nome);
+                list.SubItems.Add(us.Email);
+                list.SubItems.Add(us.Data_admissao);
 
                 listViewUs.Items.Add(list);
             }
 
-            
-            
-            
+
+
+
 
         }
 

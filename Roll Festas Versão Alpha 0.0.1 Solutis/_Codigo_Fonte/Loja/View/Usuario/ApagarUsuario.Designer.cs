@@ -63,7 +63,7 @@
             // TxtPesquisa
             // 
             this.TxtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtPesquisa.Location = new System.Drawing.Point(47, 124);
+            this.TxtPesquisa.Location = new System.Drawing.Point(54, 122);
             this.TxtPesquisa.Name = "TxtPesquisa";
             this.TxtPesquisa.Size = new System.Drawing.Size(154, 13);
             this.TxtPesquisa.TabIndex = 2;
@@ -122,7 +122,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(247, 303);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(259, 303);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Linha);
             this.Controls.Add(this.pictureBox1);

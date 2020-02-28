@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.View;
 
@@ -51,7 +52,7 @@ namespace Loja.Controler
             }
         }//NA TELA DE LOGIN - QUANDO O USUÁRO CLICA EM LOGIN
 
-        public bool Cadastrar(String nome, String senha, String confSenha)
+        public bool Cadastrar(string nome, string senha, string email, string data_admissao, string confSenha)
         {
 
             if (senha != confSenha) 
@@ -75,7 +76,7 @@ namespace Loja.Controler
                 }
                 else
                 {
-                    dao.InserirUsuario(nome,senha);
+                    dao.InserirUsuario(nome,senha,email,data_admissao);
                     return true;//CADASTROU
                 }
             }
@@ -97,13 +98,13 @@ namespace Loja.Controler
             return usuario;
         }
 
-        public bool EditarUsuario(String nome, String senha, String nomeoriginal)
+        public bool EditarUsuario(string nome, string senha, string email, string data_admissao ,string nomeoriginal)
         {
             DAOUsuario dao = new DAOUsuario();
 
             try
             {
-            dao.EditarUsuario(nome,senha,nomeoriginal);
+            dao.EditarUsuario(nome,senha,email, data_admissao,nomeoriginal);
                 return true;
 
             }catch (Exception e)
@@ -154,6 +155,55 @@ namespace Loja.Controler
             
 
             return todososusuarios;
+        }
+
+        public bool VerificaAdmin(string nome, string senha)
+        {
+            var dao = new DAOUsuario();
+            var usuario = new UsuarioModel();
+
+            usuario = dao.VerificaAdmin(nome, senha);
+
+            if (usuario.Id == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }//VERIFiCAR ADM
+
+        public string VerificaFerias(int id)
+        {
+            try
+            {
+
+            var DAO = new DAOUsuario();
+
+            var Data_admissao = DAO.VerificaFerias(id);
+            var Data_atual = Data.PegarDiaMesAnoAtual();
+
+            Data_admissao = Data_admissao.Replace('/', '.');
+            Data_atual = Data_atual.Replace('/', '.');
+
+            double Admissao = Convert.ToDouble(Data_admissao);
+            double Atual = Convert.ToDouble(Data_atual);
+
+            var Ferias = Admissao - Atual;
+
+
+            return Convert.ToString( Ferias );
+
+            }
+            catch (Exception)
+            {
+
+                return "ERRO";
+            }
+
         }
 
 

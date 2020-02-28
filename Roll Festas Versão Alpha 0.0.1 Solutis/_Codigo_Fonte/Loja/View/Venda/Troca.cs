@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.View.Duvida;
 
@@ -17,6 +18,7 @@ namespace Loja.View.Venda
     {
         Decimal VTAntigo = 0;
         Decimal VTNovo= 0;
+        List<ProdutoModel> _ListaProdutos = new List<ProdutoModel>();//LISTA DE PRODUTOS
         public Troca()
         {
             InitializeComponent();
@@ -28,10 +30,10 @@ namespace Loja.View.Venda
             LblUsuario.Text = usuarioLogado.Nome;
 
             //DATA
-            Controller tempo = new Controller();
+            LblData.Text = Data.PegarDiaMesAnoAtual();
 
             //INICAR TABELA CAIXA
-            String data = tempo.PegarDiaMesAnoAtual();
+            String data = Data.PegarDiaMesAnoAtual();
 
             DAOCaixa daocaixa = new DAOCaixa();
             daocaixa.IniciarCaixa(Convert.ToString(data));
@@ -39,29 +41,31 @@ namespace Loja.View.Venda
 
         private void BtnAdicionarDevolvido_Click(object sender, EventArgs e)//ANTIGO
         {
-            //OK ADICIONANDO NA LISTA
-            ProdutoController produto = new ProdutoController();
-            ProdutoModel produtoM = new ProdutoModel();
+            var ProdutoModel = new ProdutoModel();
+            var ProdutoController = new ProdutoController();
 
-            produtoM = produto.ExibirProduto(TxtIdDevolvido.Text);
-            if (produtoM.Nome == null)
+            ProdutoModel = ProdutoController.ExibirProduto(TxtIdDevolvido.Text);
+
+            if (ProdutoModel.Id != 0)
             {
-                MessageBox.Show("Produto não encontrado");
-            }
-            else
-            {
-                LBITEMDevolvido.Items.Add(produtoM.Nome);
+                //ADICIONAR NA LISTA
+                ListViewItem list = new ListViewItem(ProdutoModel.Nome);
+                list.SubItems.Add(TxtNumQuantDevolvido.Value.ToString());
+                ListItensAntigos.Items.Add(list);
 
                 //CALCUAR POR QUANTIDADE
-                VendaController v = new VendaController();
-                VTAntigo += v.CalcularPorQuantidade(produtoM.Nome, TxtNumQuantDevolvido.Value);
-                TxtValorNovos.Text = Convert.ToString(VTAntigo);
+                VendaController VendaController = new VendaController();
+                VTAntigo += VendaController.CalcularPorQuantidade(ProdutoModel.Nome, TxtNumQuantDevolvido.Value);
+                TxtValorDevolvidos.Text = Convert.ToString(VTAntigo);
 
+                //LIMPANDO DADOS
+                TxtNumQuantDevolvido.Value = 1;
                 TxtIdDevolvido.Text = "";
                 TxtIdDevolvido.Focus();
 
-                //MANDA PRO BANCO TEMP
-                produto.PreparaBancoItemAntigo(produtoM.Nome, TxtNumQuantDevolvido.Value);
+                //SALVA => QUANTIDADE - VALOR
+
+                _ListaProdutos.Add(ProdutoModel);
 
             }
         }
@@ -124,7 +128,7 @@ namespace Loja.View.Venda
             TxtValorNovos.Text = "";
 
             VTAntigo = 0;
-            LBITEMDevolvido.Items.Clear();
+            ListItensAntigos.Items.Clear();
             TxtIdDevolvido.Text = "";
             TxtNumQuantDevolvido.Value = 1;
 
@@ -137,16 +141,18 @@ namespace Loja.View.Venda
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
 
-            Controller tempo = new Controller();
-            String data = tempo.PegarDiaMesAnoAtual();
-            bool TodasAsInformacoes = true;
+            String data = Data.PegarDiaMesAnoAtual();
 
- 
-            if (TodasAsInformacoes == true)
-            {
 
-                //ACRESCENTA PRODUTOS //ITENS ANTIGOS
-                DAOVENDATEMP daotemp = new DAOVENDATEMP();
+            ////DECREMENTAR PRODUTOS
+            //var produtoDAO = new DAOProduto();
+            //foreach (var produto in _ListaProdutos)
+            //{
+            //    produtoDAO.DecrementaQuantidade(produto.Nome, produto.Quantidade);
+            //}
+
+            //ACRESCENTA PRODUTOS //ITENS ANTIGOS
+            DAOVENDATEMP daotemp = new DAOVENDATEMP();
                 List<ProdutoModel> lpm = new List<ProdutoModel>();
                 lpm = daotemp.PegadoBancoItemAntigo();
                 daotemp.AcrescentaBanco(lpm);
@@ -167,7 +173,7 @@ namespace Loja.View.Venda
                 TxtValorNovos.Text = "";
 
                 VTAntigo = 0;
-                LBITEMDevolvido.Items.Clear();
+            ListItensAntigos.Items.Clear();
                 TxtIdDevolvido.Text = "";
                 TxtNumQuantDevolvido.Value = 1;
 
@@ -175,7 +181,7 @@ namespace Loja.View.Venda
                 LBITEMNovo.Items.Clear();
                 TxtIdnovo.Text = "";
                 TxtNumQuantNovo.Value = 1;
-            }
+            
         }
 
         private void BtnDuvida_Click(object sender, EventArgs e)

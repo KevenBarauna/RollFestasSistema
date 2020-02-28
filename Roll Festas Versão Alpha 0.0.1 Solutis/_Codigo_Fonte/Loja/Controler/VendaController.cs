@@ -108,5 +108,16 @@ namespace Loja.Controler
 
             return venda;
         }
+
+        public double VendaPorUsuario(string nome)
+        {
+
+            var dao = new DAOVenda();
+            var Ano = Data.PegarAno();
+
+            double ValorTotal = dao.PegarVendaPorUsuarior(nome,Ano);
+
+            return ValorTotal;
+        }
     }
 }

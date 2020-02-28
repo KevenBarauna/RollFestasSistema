@@ -32,7 +32,6 @@ namespace Loja.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.LblUsuario = new System.Windows.Forms.Label();
             this.LVEntregas = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -90,6 +89,9 @@ namespace Loja.View
             this.BtnEncomenda = new System.Windows.Forms.Button();
             this.BtnPonto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.LblUsuario = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.BtnTrocarUsuario = new System.Windows.Forms.Button();
             this.LblHoraExtra = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -103,30 +105,17 @@ namespace Loja.View
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Linha = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LblUsuario
-            // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.LblUsuario.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.ForeColor = System.Drawing.Color.CadetBlue;
-            this.LblUsuario.Location = new System.Drawing.Point(42, 91);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(59, 16);
-            this.LblUsuario.TabIndex = 5;
-            this.LblUsuario.Text = "#Usuáio";
             // 
             // LVEntregas
             // 
@@ -618,6 +607,9 @@ namespace Loja.View
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.LblUsuario);
+            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.BtnTrocarUsuario);
             this.panel1.Controls.Add(this.LblHoraExtra);
             this.panel1.Controls.Add(this.label9);
@@ -633,14 +625,43 @@ namespace Loja.View
             this.panel1.Controls.Add(this.BtnPonto);
             this.panel1.Controls.Add(this.Linha);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.BtnEncomenda);
-            this.panel1.Controls.Add(this.LblUsuario);
             this.panel1.Controls.Add(this.BtnVenda);
             this.panel1.Location = new System.Drawing.Point(1, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(166, 535);
             this.panel1.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(25, 327);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 16);
+            this.label5.TabIndex = 119;
+            this.label5.Text = "R$";
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.LblUsuario.Location = new System.Drawing.Point(11, 96);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(56, 16);
+            this.LblUsuario.TabIndex = 117;
+            this.LblUsuario.Text = "Usuário";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(42, 10);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(65, 82);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 118;
+            this.pictureBox4.TabStop = false;
             // 
             // BtnTrocarUsuario
             // 
@@ -654,35 +675,36 @@ namespace Loja.View
             this.BtnTrocarUsuario.TabIndex = 44;
             this.BtnTrocarUsuario.Text = "Trocar de usuário";
             this.BtnTrocarUsuario.UseVisualStyleBackColor = false;
+            this.BtnTrocarUsuario.Click += new System.EventHandler(this.BtnTrocarUsuario_Click);
             // 
             // LblHoraExtra
             // 
             this.LblHoraExtra.AutoSize = true;
             this.LblHoraExtra.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblHoraExtra.Location = new System.Drawing.Point(25, 439);
+            this.LblHoraExtra.Location = new System.Drawing.Point(35, 442);
             this.LblHoraExtra.Name = "LblHoraExtra";
-            this.LblHoraExtra.Size = new System.Drawing.Size(109, 16);
+            this.LblHoraExtra.Size = new System.Drawing.Size(84, 16);
             this.LblHoraExtra.TabIndex = 36;
-            this.LblHoraExtra.Text = "#HorasExtras";
+            this.LblHoraExtra.Text = "##:##:##";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(41, 417);
+            this.label9.Location = new System.Drawing.Point(23, 418);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 13);
+            this.label9.Size = new System.Drawing.Size(116, 13);
             this.label9.TabIndex = 35;
-            this.label9.Text = "Hora extra:";
+            this.label9.Text = "Horas trabalhadas:";
             // 
             // LblNumeroFerias
             // 
             this.LblNumeroFerias.AutoSize = true;
             this.LblNumeroFerias.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNumeroFerias.Location = new System.Drawing.Point(11, 379);
+            this.LblNumeroFerias.Location = new System.Drawing.Point(62, 386);
             this.LblNumeroFerias.Name = "LblNumeroFerias";
-            this.LblNumeroFerias.Size = new System.Drawing.Size(140, 16);
+            this.LblNumeroFerias.Size = new System.Drawing.Size(19, 16);
             this.LblNumeroFerias.TabIndex = 34;
-            this.LblNumeroFerias.Text = "#NúmeroDeFérias";
+            this.LblNumeroFerias.Text = "#";
             // 
             // label7
             // 
@@ -697,11 +719,11 @@ namespace Loja.View
             // 
             this.LblVendas.AutoSize = true;
             this.LblVendas.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVendas.Location = new System.Drawing.Point(25, 329);
+            this.LblVendas.Location = new System.Drawing.Point(48, 327);
             this.LblVendas.Name = "LblVendas";
-            this.LblVendas.Size = new System.Drawing.Size(30, 16);
+            this.LblVendas.Size = new System.Drawing.Size(68, 16);
             this.LblVendas.TabIndex = 32;
-            this.LblVendas.Text = "R$ ";
+            this.LblVendas.Text = "###,##";
             // 
             // label4
             // 
@@ -772,16 +794,6 @@ namespace Loja.View
             this.Linha.Size = new System.Drawing.Size(130, 1);
             this.Linha.TabIndex = 23;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(44, 8);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(60, 72);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 22;
-            this.pictureBox5.TabStop = false;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(15)))), ((int)(((byte)(60)))));
@@ -834,9 +846,9 @@ namespace Loja.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -844,7 +856,6 @@ namespace Loja.View
         }
 
         #endregion
-        private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.ListView LVEntregas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -902,7 +913,6 @@ namespace Loja.View
         private System.Windows.Forms.Button BtnEncomenda;
         private System.Windows.Forms.Button BtnPonto;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel Linha;
         private System.Windows.Forms.Label LblHoraExtra;
         private System.Windows.Forms.Label label9;
@@ -918,5 +928,8 @@ namespace Loja.View
         private System.Windows.Forms.Button BtnTrocarUsuario;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label LblUsuario;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 
 namespace Loja.View.Caixa
 {
@@ -18,8 +19,7 @@ namespace Loja.View.Caixa
             InitializeComponent();
 
             //DATA
-            Controller tempo = new Controller();
-            TxtData.Text = tempo.PegarMesAno();
+            TxtData.Text = Data.PegarMesAno();
         }
 
         private void BtnEntrar_Click(object sender, EventArgs e)

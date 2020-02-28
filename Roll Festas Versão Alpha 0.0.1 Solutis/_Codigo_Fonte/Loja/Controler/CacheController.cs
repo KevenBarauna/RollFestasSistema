@@ -17,8 +17,7 @@ namespace Loja.Controler
 
             //PEGAR DATA
 
-            Controller tempo = new Controller();
-            String dia = tempo.DataPararCriarPasta();
+            String dia = Data.DataPararCriarPasta();
             String data = Data.PegarDiaMesAnoAtual();
 
             //ACESSAR BANCO PONTO

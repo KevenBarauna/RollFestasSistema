@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.Model.DAO;
 
@@ -20,8 +21,7 @@ namespace Loja.View.Recibo
             InitializeComponent();
 
             //DATA
-            Controller tempo = new Controller();
-            TxtData.Text = tempo.PegarDiaMesAnoAtual();
+            TxtData.Text = Data.PegarDiaMesAnoAtual();
         }
 
 

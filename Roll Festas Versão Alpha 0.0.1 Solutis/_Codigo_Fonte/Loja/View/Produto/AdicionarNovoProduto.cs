@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.View.Duvida;
 
 namespace Loja.View.Produto
@@ -17,8 +18,7 @@ namespace Loja.View.Produto
         public AdicionarNovoProduto()
         {
             InitializeComponent();
-            Controller tempo = new Controller();
-            TxtData.Text = tempo.PegarDiaMesAnoAtual();
+            TxtData.Text = Data.PegarDiaMesAnoAtual();
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace Loja.View.Produto
             }
             else
             {
-            TudoCerto = produto.Cadastrar(TxtNome.Text, TxtTema.Text ,TxtQuantidade.Text, TxtQuantidade.Text, TxtFornecedor.Text, TxtData.Text, txtDescricao.Text);
+            TudoCerto = produto.Cadastrar(TxtNome.Text, TxtTema.Text ,Txtpreco.Text, TxtQuantidade.Text, TxtFornecedor.Text, TxtData.Text, txtDescricao.Text);
 
             if (TudoCerto == true)
             {
@@ -48,7 +48,7 @@ namespace Loja.View.Produto
                 TxtTema.Text = "";
 
                 Controller tempo = new Controller();
-                TxtData.Text = tempo.PegarDiaMesAnoAtual();
+                TxtData.Text = Data.PegarDiaMesAnoAtual();
             }
 
             }

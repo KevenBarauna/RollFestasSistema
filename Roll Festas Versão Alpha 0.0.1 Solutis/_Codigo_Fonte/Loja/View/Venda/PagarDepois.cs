@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.Model.DAO;
 
@@ -15,14 +16,15 @@ namespace Loja.View.Venda
 {
     public partial class PagarDepois : Form
     {
-        public PagarDepois(String usuario, String valortotal, String valorpago, String TipoPagamento, String troco)
+        List<ProdutoModel> _ListaProdutos;
+        public PagarDepois(String usuario, String valortotal, String valorpago, String TipoPagamento, String troco, List<ProdutoModel> ListaProdutos)
         {
             InitializeComponent();
 
-            Controller tempo = new Controller();
-            String data = tempo.PegarDiaMesAnoAtual();
+            String data = Data.PegarDiaMesAnoAtual();
 
             LblUsuario.Text =  usuario;
+            LblData.Text = data;
 
             LblValorTotal.Text =  valortotal;
             LblValorPago.Text =  valorpago;
@@ -43,6 +45,8 @@ namespace Loja.View.Venda
             {
                 TxtValorRestante.Text = "0";
             }
+
+            _ListaProdutos = ListaProdutos;
 
         }
 
@@ -65,47 +69,49 @@ namespace Loja.View.Venda
 
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
-            //FINALIZAR
+            if (_ListaProdutos.Count == 0)
+            {
+                Erro tela = new Erro("NPL", "Nenhum produto adicionado na lista", "Adicione pelo menos um produto para realizar a venda", "", "", "", "");
+                tela.Show();
+                //throw new Exception("Nenhum produto adicionado na lista");
+            }
+            else
+            {
+                //INFO => 1 = PAGO | 2 = PAGAR DEPOIS
 
-            Controller tempo = new Controller();
-            String data = tempo.PegarDiaMesAnoAtual();
+                string data = Data.PegarDiaMesAnoAtual();
 
-            //1 = PAGO
-            //2 = PAGAR DEPOIS
+                //FINALIZAR VENDA
+                var vendaController = new VendaController();
+                vendaController.FinalizarVenda(data, LblUsuario.Text, LblValorTotal.Text, LblValorPago.Text, "", LblTipoDePagamento.Text, 2, TxtValorRestante.Text, TxtNome.Text);
 
-            //FINALIZAR VENDA
-            VendaController v = new VendaController();
-            v.FinalizarVenda(data, LblUsuario.Text, LblValorTotal.Text, LblValorPago.Text, "0", LblTipoDePagamento.Text, 2, TxtValorRestante.Text, TxtNome.Text);
+                //DECREMENTAR PRODUTOS
+                var produtoDAO = new DAOProduto();
+                foreach (var produto in _ListaProdutos)
+                {
+                    produtoDAO.DecrementaQuantidade(produto.Nome, produto.Quantidade);
+                }
 
-            //DECREMENTA PRODUTO
-             DAOVENDATEMP daotemp = new DAOVENDATEMP();
-             List<ProdutoModel> lpm = new List<ProdutoModel>();
-             lpm = daotemp.PegadoBanco();
-             daotemp.DecrementaBanco(lpm);
-
-            //MANDAR VALOR PAGO PARA O CAIXA
-            Controler.CaixaController caixa = new Controler.CaixaController();
-            caixa.SalvarNoCaixa(data, LblValorPago.Text, LblTipoDePagamento.Text, "");
-
-
-            //GERAR RECIBO
-            VendaModel VendaM = new VendaModel();
-
-            VendaController venda = new VendaController();
-            VendaM = venda.PegarIdDaUltimaVenda();
-
-            String SaveData = tempo.PegarDiaMesAnoAtual();
-
-            ReciboController recibo = new ReciboController();
+                //MANDAR VALOR PAGO PARA O CAIXA
+                var caixaController = new CaixaController();
+                caixaController.SalvarNoCaixa(data, LblValorPago.Text, LblTipoDePagamento.Text, "");
 
 
-            DAOCaminho caminho = new DAOCaminho();
-            string caminhocomp = caminho.CaminhoComprovante();
+                //GERAR RECIBO
+                var vendaModel = new VendaModel();
+                var reciboController = new ReciboController();
+                var SaveData = Data.DataPararCriarPasta();
 
-            recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"" + caminhocomp + @"\Recibo_" + SaveData + "_" + VendaM.Id + ".pdf");
+                vendaModel = vendaController.PegarIdDaUltimaVenda();
 
-            this.Hide();
+                var local = Caminhos.CaminhoComprovante();
 
-        }
+
+                var NomeArquivo = $@"{local}\Recibo_{SaveData}_{vendaModel.Id}.pdf";
+                reciboController.GerarReciboDeVendaPeloId(Convert.ToString(vendaModel.Id), NomeArquivo);
+
+                this.Hide();
+            }
+        }//FINALIZAR PAGAR DEPOIS
     }
 }

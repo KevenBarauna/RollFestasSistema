@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.View.Duvida;
 using Loja.View.Venda;
@@ -22,7 +23,7 @@ namespace Loja.View.Encomenda
 
             //DATA
             Controller tempo = new Controller();
-            String hora = tempo.PegarDiaeHora();
+            String hora = Data.PegarDiaeHora();
             TxtDataEntrada.Text = Convert.ToString(hora);
             TxtDataEntrega.Text = Convert.ToString(hora);
             LblTestedata.Text = Convert.ToString(hora);
@@ -35,7 +36,7 @@ namespace Loja.View.Encomenda
 
 
             //INICAR TABELA CAIXA
-            String data = tempo.PegarDiaMesAnoAtual();
+            String data = Data.PegarDiaMesAnoAtual();
 
             DAOCaixa daocaixa = new DAOCaixa();
             daocaixa.IniciarCaixa(Convert.ToString(data));
@@ -70,8 +71,7 @@ namespace Loja.View.Encomenda
                     TipoPagamento = "Outros";
                 }
 
-                Controller tempo = new Controller();
-                String data = tempo.PegarDiaMesAnoAtual();
+                String data = Data.PegarDiaMesAnoAtual();
 
                 //SALVAR VENDA
                 VendaController v = new VendaController();
@@ -92,15 +92,14 @@ namespace Loja.View.Encomenda
 
                 //GERAR RECIBO
 
-                Controller PegarCaminho = new Controller();
-                string caminho = PegarCaminho.CaminhoComprovante();
+                string caminho = Caminhos.CaminhoComprovante();
 
                 VendaModel VendaM = new VendaModel();
 
                 VendaController venda = new VendaController();
                 VendaM = venda.PegarIdDaUltimaVenda();
 
-                String SaveData = tempo.DataPararCriarPasta();
+                String SaveData = Data.DataPararCriarPasta();
 
                 ReciboController recibo = new ReciboController();
                 recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"" + caminho + @"\" + SaveData + "_" + VendaM.Id + ".pdf");
@@ -147,8 +146,7 @@ namespace Loja.View.Encomenda
             if (encomenda.ValidarEncomenda(TxtTipo.Text, TxtDataEntrada.Text, TxtDataEntrega.Text, TxtTema.Text, TxtQuantidade.Text, TxtValor.Text, txtDescricao.Text))
             {
                 //DATA DA ENCOMENDA
-                Controller tempo = new Controller();
-                String data = tempo.PegarDiaMesAnoAtual();
+                String data = Data.PegarDiaMesAnoAtual();
 
                 //TIPO DE PAGAMENTO
                 String TipoPagamento = "";
@@ -189,15 +187,15 @@ namespace Loja.View.Encomenda
 
                 //GERAR RECIBO
 
-                Controller PegarCaminho = new Controller();
-                string caminho = PegarCaminho.CaminhoComprovante();
+
+                string caminho = Caminhos.CaminhoComprovante();
 
                 VendaModel VendaM = new VendaModel();
 
                 VendaController venda = new VendaController();
                 VendaM = venda.PegarIdDaUltimaVenda();
 
-                String SaveData = tempo.DataPararCriarPasta();
+                String SaveData = Data.DataPararCriarPasta();
 
                 ReciboController recibo = new ReciboController();
                 recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"" + caminho + @"\" + SaveData + "_" + VendaM.Id + ".pdf");

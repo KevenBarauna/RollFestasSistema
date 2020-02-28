@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.View.Duvida;
 
@@ -32,7 +33,7 @@ namespace Loja.View.Venda
             Controller tempo = new Controller();
 
             //INICAR TABELA CAIXA
-            String data = tempo.PegarDiaMesAnoAtual();
+            String data = Data.PegarDiaMesAnoAtual();
 
             DAOCaixa daocaixa = new DAOCaixa();
             daocaixa.IniciarCaixa(Convert.ToString(data));
@@ -106,8 +107,8 @@ namespace Loja.View.Venda
         {
             //1 = PAGO
             //2 = PAGAR DEPOIS
-            Controller tempo = new Controller();
-            String data = tempo.PegarDiaMesAnoAtual();
+
+            String data = Data.PegarDiaMesAnoAtual();
             bool TodasAsInformacoes = true;
 
             if (TxtDatVenda.Text == "__/__/____")

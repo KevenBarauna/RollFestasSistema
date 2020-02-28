@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 
 namespace Loja.View.Caixa
 {
@@ -18,7 +19,7 @@ namespace Loja.View.Caixa
             InitializeComponent();
 
             Controller tempo = new Controller();
-            TxtData.Text = tempo.PegarDiaMesAnoAtual();
+            TxtData.Text = Data.PegarDiaMesAnoAtual();
         }
 
         private void BtnEntrar_Click(object sender, EventArgs e)

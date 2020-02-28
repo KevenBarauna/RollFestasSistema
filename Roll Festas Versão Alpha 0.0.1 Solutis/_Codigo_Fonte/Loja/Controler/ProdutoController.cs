@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.View;
 
@@ -17,8 +18,7 @@ namespace Loja.Controler
             
             if (string.IsNullOrEmpty(data) || data == "  /  /    ")
             {
-                Controller tempo = new Controller();
-                data = tempo.PegarDiaMesAnoAtual();
+                data = Data.PegarDiaMesAnoAtual();
             }
 
             if (string.IsNullOrEmpty(nome))

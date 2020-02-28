@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 using Loja.Model;
 using Loja.Model.DAO;
 using Loja.View.Duvida;
@@ -17,7 +18,9 @@ namespace Loja.View.Venda
     public partial class NovaVenda : Form
     {
 
-        Decimal VT = 0;//VARIAVEL GLOBAL PARA CALCULAR VALOR TOTAL DOS PRODUTOS POR QUANITDADE
+        Decimal _VT = 0;//VARIAVEL GLOBAL PARA CALCULAR VALOR TOTAL DOS PRODUTOS POR QUANITDADE
+        List<ProdutoModel> _ListaProdutos = new List<ProdutoModel>();//LISTA DE PRODUTOS
+        
         public NovaVenda()
         {
             InitializeComponent();
@@ -30,12 +33,10 @@ namespace Loja.View.Venda
             LblUsuario.Text = usuarioLogado.Nome;
 
             //DATA
-            Controller tempo = new Controller();
-            String hora = tempo.PegarDiaeHora();
-            LblTestedata.Text = Convert.ToString(hora);
+            String data = Data.PegarDiaMesAnoAtual();
+            LblTestedata.Text = Convert.ToString(data);
 
             //INICAR TABELA CAIXA
-            String data = tempo.PegarDiaMesAnoAtual();
 
             DAOCaixa daocaixa = new DAOCaixa();
             daocaixa.IniciarCaixa(Convert.ToString(data));
@@ -47,40 +48,44 @@ namespace Loja.View.Venda
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
-            //OK ADICIONANDO NA LISTA
-            ProdutoController produto = new ProdutoController();
-            ProdutoModel produtoM = new ProdutoModel();
             
-            produtoM = produto.ExibirProduto(TxtId.Text);
+            var ProdutoModel = new ProdutoModel();
+            var ProdutoController = new ProdutoController();
 
-            if (produtoM.Id != 0)
+            ProdutoModel = ProdutoController.ExibirProduto(TxtId.Text);
+
+            if (ProdutoModel.Id != 0)
             {
-                LBITEM.Items.Add(produtoM.Nome);
+                //ADICIONAR NA LISTA
+                ListViewItem list = new ListViewItem(ProdutoModel.Nome);
+                list.SubItems.Add(TxtNumQuant.Value.ToString());
+                ListItens.Items.Add(list);
 
                 //CALCUAR POR QUANTIDADE
-                VendaController v = new VendaController();
-                VT += v.CalcularPorQuantidade(produtoM.Nome, TxtNumQuant.Value);
-                TxtTotal.Text = Convert.ToString(VT);
+                VendaController VendaController = new VendaController();
+                _VT += VendaController.CalcularPorQuantidade(ProdutoModel.Nome, TxtNumQuant.Value);
+                TxtTotal.Text = Convert.ToString(_VT);
 
+                //LIMPANDO DADOS
+                TxtNumQuant.Value = 1;
                 TxtId.Text = "";
                 TxtId.Focus();
 
-                //MANDA PRO BANCO TEMP
-                produto.PreparaBanco(produtoM.Nome, TxtNumQuant.Value);
-
-                TxtNumQuant.Value = 1;
+                //SALVA => QUANTIDADE - VALOR
+                
+                _ListaProdutos.Add(ProdutoModel);
+               
             }
-           
 
         }
 
         private void BtnCalcularValorItem_Click(object sender, EventArgs e)
         {
-            VT = 0;
-            LVPesquisa.Items.Clear();
-            LBITEM.Items.Clear();
+            _VT = 0;
+            ListPesquisa.Items.Clear();
+            //LBITEM.Items.Clear();
             TxtTotal.Text = "";
-            TxtTroco.Text = "";
+            LblTroco.Text = "";
             TxtValor.Text = "";
             TxtPesquisa.Text = "";
             TxtId.Text = "";
@@ -96,7 +101,7 @@ namespace Loja.View.Venda
 
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
-            LVPesquisa.Items.Clear();
+            ListPesquisa.Items.Clear();
             List<ProdutoModel> PM = new List<ProdutoModel>();
             ProdutoController p = new ProdutoController();
 
@@ -107,7 +112,7 @@ namespace Loja.View.Venda
                 ListViewItem list = new ListViewItem(Convert.ToString( us.Id ));
                 list.SubItems.Add(us.Nome);
                 list.SubItems.Add(us.Preco);
-                LVPesquisa.Items.Add(list);
+                ListPesquisa.Items.Add(list);
             }
 
         }
@@ -125,214 +130,36 @@ namespace Loja.View.Venda
                     Decimal total = Convert.ToDecimal(TxtTotal.Text);
                     Decimal pagamento = Convert.ToDecimal(TxtValor.Text);
                     Decimal troco = total - pagamento;
-                    TxtTroco.Text = Convert.ToString(troco * -1);
+                    LblTroco.Text = Convert.ToString(troco * -1);
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Erro ao calcular, digite os valores corretos");
                 }
 
-                if (TxtTroco.Text.Contains("-"))
+                if (LblTroco.Text.Contains("-"))
                 {
-                    TxtTroco.Text = TxtTroco.Text;
+                    LblTroco.Text = LblTroco.Text;
                     MessageBox.Show(" O Valor é Negativo");
                 }
             }
         }
 
-        private void BtnFinalizar_Click(object sender, EventArgs e)
-        {
-            //1 = PAGO
-            //2 = PAGAR DEPOIS
-            Controller tempo = new Controller();
-            String data = tempo.PegarDiaMesAnoAtual();
-
-            String TipoPagamento = "Não selecionado";
-            bool TodasAsInformacoes = false;
-
-            if (RBDinheiro.Checked)
-            {
-                TipoPagamento = "Dinheiro";
-                TodasAsInformacoes = true;
-            }
-            else if (RBCartao.Checked)
-            {
-                TipoPagamento = "Cartão";
-                TodasAsInformacoes = true;
-            }
-            else if (RbDinCart.Checked)
-            {
-                TipoPagamento = "Dinheiro e Cartão";
-                TodasAsInformacoes = true;
-
-            }
-            else if (RBOutros.Checked)
-            {
-                TipoPagamento = "Outros";
-                TodasAsInformacoes = true;
-            }
-            else if (!RBDinheiro.Checked && !RBCartao.Checked && !RbDinCart.Checked && !RBOutros.Checked)
-            {
-                MessageBox.Show("Informe a forma de pagamento");
-            }
-            
-                
-            
-
-            if (TodasAsInformacoes == true)
-            {
-                //SALVAR VENDA
-                VendaController v = new VendaController();
-                v.FinalizarVenda(data, LblUsuario.Text, TxtTotal.Text, TxtValor.Text, TxtTroco.Text, TipoPagamento,1,"","");
-
-                //DECREMENTAR PRODUTOS
-                DAOVENDATEMP daotemp = new DAOVENDATEMP();
-                List<ProdutoModel> lpm = new List<ProdutoModel>();
-                lpm = daotemp.PegadoBanco();
-                daotemp.DecrementaBanco(lpm);
-
-                //SALVAR NO CAIXA
-                CaixaController caixa = new CaixaController();
-                caixa.SalvarNoCaixa(data, TxtTotal.Text, TipoPagamento,TxtDinCart.Text);
-
-                //LIMPA TUDO
-                VT = 0;
-                LVPesquisa.Items.Clear();
-                LBITEM.Items.Clear();
-
-                TxtTotal.Text = "";
-                TxtTroco.Text = "";
-                TxtValor.Text = "";
-                TxtPesquisa.Text = "";
-                TxtId.Text = "";
-                TxtNumQuant.Value = 1;
-                TxtDinCart.Text = "";
-                TxtNumQuant.Value = 1;
-
-                //GERAR RECIBO
-                VendaModel VendaM = new VendaModel();
-
-                VendaController venda = new VendaController();
-                VendaM = venda.PegarIdDaUltimaVenda();
-
-                String SaveData = tempo.DataPararCriarPasta();
-
-                ReciboController recibo = new ReciboController();
-
-                DAOCaminho caminho = new DAOCaminho();
-                string caminhocomp = caminho.CaminhoComprovante();
-
-                recibo.GerarReciboDeVendaPeloId(Convert.ToString( VendaM.Id ), @"" + caminhocomp + @"\Recibo_" + SaveData + "_" + VendaM.Id + ".pdf");
-
-            }
-
-            
-            
-        }
+  
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String TipoPagamento = "Não selecionado";
-            bool TodasAsInformacoes = false;
 
-            if (RBDinheiro.Checked)
-            {
-                TipoPagamento = "Dinheiro";
-                TodasAsInformacoes = true;
-            }
-            else if (RBCartao.Checked)
-            {
-                TipoPagamento = "Cartão";
-                TodasAsInformacoes = true;
-            }
-            else if (RbDinCart.Checked)
-            {
-                TipoPagamento = "Dinheiro e Cartão";
-                TodasAsInformacoes = true;
-            }
-            else if (RBOutros.Checked)
-            {
-                TipoPagamento = "Outros";
-                TodasAsInformacoes = true;
-            }
-            else if (!RBDinheiro.Checked && !RBCartao.Checked && !RbDinCart.Checked && !RBOutros.Checked)
-            {
-                MessageBox.Show("Informe a forma de pagamento");
-            }
-            if (TodasAsInformacoes == true)
-            {
-                PagarDepois tela = new PagarDepois(LblUsuario.Text, TxtTotal.Text, TxtValor.Text, TipoPagamento, TxtTroco.Text);
-                tela.Show();
-            }
+            //Forma de pagamento
+            string TipoPagamento = null;
+            if (RBDinheiro.Checked) TipoPagamento = RBDinheiro.Text;
+            else if (RBCartao.Checked) TipoPagamento = RBCartao.Text;
+            else if (RBOutros.Checked) TipoPagamento = RBOutros.Text;
+            else if (RbDinCart.Checked) TipoPagamento = RbDinCart.Text;
+           
+            PagarDepois tela = new PagarDepois(LblUsuario.Text, TxtTotal.Text, TxtValor.Text, TipoPagamento, LblTroco.Text, _ListaProdutos);
+            tela.Show();
             
-
-            ////FINALIZAR
-
-            ////1 = PAGO
-            ////2 = PAGAR DEPOIS
-
-            //String TipoPagamento = "Não selecionado";
-            //bool TodasAsInformacoes = false;
-
-            //if (RBDinheiro.Checked)
-            //{
-            //    TipoPagamento = "Dinheiro";
-            //    TodasAsInformacoes = true;
-            //}
-            //else if (RBCartao.Checked)
-            //{
-            //    TipoPagamento = "Cartão";
-            //    TodasAsInformacoes = true;
-            //}
-            //else if (RbDinCart.Checked)
-            //{
-            //    this.TxtDinCart.ReadOnly = false;
-            //    TipoPagamento = "Dinheiro e Cartão";
-            //    if (!String.IsNullOrEmpty(TxtDinCart.Text))
-            //    {
-            //        TodasAsInformacoes = true;
-            //    }
-            //    TodasAsInformacoes = false;
-            //}
-            //else if (RBOutros.Checked)
-            //{
-            //    TipoPagamento = "Outros";
-            //    TodasAsInformacoes = true;
-            //}
-            //else if (!RBDinheiro.Checked && !RBCartao.Checked && !RbDinCart.Checked && !RBOutros.Checked)
-            //{
-            //    MessageBox.Show("Informe a forma de pagamento");
-            //}
-
-
-
-
-            //if (TodasAsInformacoes == true)
-            //{
-            //    //FINALIZAR VENDA
-            //    VendaController v = new VendaController();
-            //    v.FinalizarVEnda(LblTestedata.Text, LblUsuario.Text, TxtTotal.Text, TxtValor.Text, TxtTroco.Text, TipoPagamento,2);
-
-            //    //DECREMENTA PRODUTO
-            //    DAOVENDATEMP daotemp = new DAOVENDATEMP();
-            //    List<ProdutoModel> lpm = new List<ProdutoModel>();
-            //    lpm = daotemp.PegadoBanco();
-            //    daotemp.DecrementaBanco(lpm);
-
-            //    //LIMPA TUDO
-            //    VT = 0;
-            //    LVPesquisa.Items.Clear();
-            //    LBITEM.Items.Clear();
-            //    TxtTotal.Text = "";
-            //    TxtTroco.Text = "";
-            //    TxtValor.Text = "";
-            //    TxtPesquisa.Text = "";
-            //    TxtId.Text = "";
-            //    TxtNumQuant.Value = 1;
-            //    TxtDinCart.Text = "";
-
-            //}
-
         }
 
         private void RbDinCart_CheckedChanged(object sender, EventArgs e)
@@ -343,6 +170,7 @@ namespace Loja.View.Venda
                 this.TxtDinCart.BackColor = System.Drawing.SystemColors.ButtonHighlight;
                 this.LblDinCart.Visible = true;
                 this.ImgAtencao.Visible = true;
+                this.TxtDinCart.Visible = true;
             }
         }
 
@@ -353,6 +181,7 @@ namespace Loja.View.Venda
             this.TxtDinCart.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.LblDinCart.Visible = false;
             this.ImgAtencao.Visible = false;
+            this.TxtDinCart.Visible = false;
         }
 
         private void RBCartao_CheckedChanged(object sender, EventArgs e)
@@ -362,6 +191,7 @@ namespace Loja.View.Venda
             this.TxtDinCart.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.LblDinCart.Visible = false;
             this.ImgAtencao.Visible = false;
+            this.TxtDinCart.Visible = false;
         }
 
         private void RBOutros_CheckedChanged(object sender, EventArgs e)
@@ -371,6 +201,7 @@ namespace Loja.View.Venda
             this.TxtDinCart.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.LblDinCart.Visible = false;
             this.ImgAtencao.Visible = false;
+            this.TxtDinCart.Visible = false;
         }
 
         private void BtnDuvida_Click(object sender, EventArgs e)
@@ -382,12 +213,12 @@ namespace Loja.View.Venda
         private void Cancelar_Click(object sender, EventArgs e)
         {
             //LIMPA TUDO
-            VT = 0;
-            LVPesquisa.Items.Clear();
-            LBITEM.Items.Clear();
+            _VT = 0;
+            ListPesquisa.Items.Clear();
+            //LBITEM.Items.Clear();
 
             TxtTotal.Text = "";
-            TxtTroco.Text = "";
+            LblTroco.Text = "";
             TxtValor.Text = "";
             TxtPesquisa.Text = "";
             TxtId.Text = "";
@@ -397,6 +228,89 @@ namespace Loja.View.Venda
 
             //Voltar Home
             Home tela = new Home();
+            tela.Show();
+            this.Hide();
+        }
+
+        private void BtnFinalizar_Click(object sender, EventArgs e)
+        {
+          
+                //INFO => 1 = PAGO | 2 = PAGAR DEPOIS
+
+                String data = Data.PegarDiaMesAnoAtual();
+
+                //Forma de pagamento
+                string TipoPagamento = null;
+                if (RBDinheiro.Checked) TipoPagamento = RBDinheiro.Text;
+                else if (RBCartao.Checked) TipoPagamento = RBCartao.Text;
+                else if (RBOutros.Checked) TipoPagamento = RBOutros.Text;
+                else if (RbDinCart.Checked) TipoPagamento = RbDinCart.Text;
+
+                if (_ListaProdutos.Count == 0)
+                {
+                    Erro tela = new Erro("NPL", "Nenhum produto adicionado na lista", "Adicione pelo menos um produto para realizar a venda", "", "", "", "");
+                    tela.Show();
+                     //throw new Exception("Nenhum produto adicionado na lista");
+                }
+                else { 
+                //SALVAR VENDA
+                var vendaController = new VendaController();
+                vendaController.FinalizarVenda(data, LblUsuario.Text, TxtTotal.Text, TxtValor.Text, LblTroco.Text, TipoPagamento, 1, "", "");
+
+                //DECREMENTAR PRODUTOS
+                var produtoDAO = new DAOProduto();
+                foreach (var produto in _ListaProdutos)
+                {
+                    produtoDAO.DecrementaQuantidade(produto.Nome, produto.Quantidade);
+                }
+
+                //SALVAR NO CAIXA
+                CaixaController caixaController = new CaixaController();
+                caixaController.SalvarNoCaixa(data, TxtTotal.Text, TipoPagamento, TxtDinCart.Text);
+
+                //LIMPAR
+                _VT = 0;
+                _ListaProdutos.Clear();
+                ListPesquisa.Items.Clear();
+                ListItens.Items.Clear();
+
+                TxtTotal.Text = "";
+                LblTroco.Text = "";
+                TxtValor.Text = "";
+                TxtPesquisa.Text = "";
+                TxtId.Text = "";
+                TxtNumQuant.Value = 1;
+                TxtDinCart.Text = "";
+
+
+                //GERAR RECIBO
+                var vendaModel = new VendaModel();
+                var reciboController = new ReciboController();
+                var SaveData = Data.DataPararCriarPasta();
+
+                vendaModel = vendaController.PegarIdDaUltimaVenda();
+
+                var local = Caminhos.CaminhoComprovante();
+
+
+                var NomeArquivo = $@"{local}\Recibo_{SaveData}_{vendaModel.Id}.pdf";
+                reciboController.GerarReciboDeVendaPeloId(Convert.ToString(vendaModel.Id), NomeArquivo);
+            }
+
+        }//FINALIZAR VENDA
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            //Forma de pagamento
+            string TipoPagamento = null;
+            if (RBDinheiro.Checked) TipoPagamento = RBDinheiro.Text;
+            else if (RBCartao.Checked) TipoPagamento = RBCartao.Text;
+            else if (RBOutros.Checked) TipoPagamento = RBOutros.Text;
+            else if (RbDinCart.Checked) TipoPagamento = RbDinCart.Text;
+
+            
+            DescontoCompra tela = new DescontoCompra(LblUsuario.Text, TxtTotal.Text, TipoPagamento, _ListaProdutos);
             tela.Show();
             this.Hide();
         }

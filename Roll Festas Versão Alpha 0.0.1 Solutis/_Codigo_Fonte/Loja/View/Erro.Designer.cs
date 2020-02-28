@@ -38,6 +38,7 @@
             this.TxtErro = new System.Windows.Forms.TextBox();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,11 +57,10 @@
             // 
             this.LblSolucao.AutoSize = true;
             this.LblSolucao.BackColor = System.Drawing.Color.White;
-            this.LblSolucao.Location = new System.Drawing.Point(7, 63);
+            this.LblSolucao.Location = new System.Drawing.Point(12, 101);
             this.LblSolucao.Name = "LblSolucao";
-            this.LblSolucao.Size = new System.Drawing.Size(100, 14);
+            this.LblSolucao.Size = new System.Drawing.Size(0, 14);
             this.LblSolucao.TabIndex = 3;
-            this.LblSolucao.Text = "Possíveis soluções";
             // 
             // LblSolucao02
             // 
@@ -129,12 +129,23 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 14);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Possíveis soluções";
+            // 
             // Erro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(568, 277);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.TxtErro);
@@ -169,5 +180,6 @@
         private System.Windows.Forms.TextBox TxtErro;
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

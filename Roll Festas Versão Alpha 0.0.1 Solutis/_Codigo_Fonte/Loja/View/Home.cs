@@ -29,8 +29,21 @@ namespace Loja.View
             InitializeComponent();
             DAOUsuario usuario = new DAOUsuario();
             UsuarioModel us = new UsuarioModel();
+            UsuarioController usuarioController = new UsuarioController();
+            VendaController vendaController = new VendaController();
+            PontoController pontoController = new PontoController();
+
             us = usuario.PegarUsuarioLogado();
             LblUsuario.Text = us.Nome;
+
+            //FERIAS
+            LblNumeroFerias.Text = usuarioController.VerificaFerias(us.Id);
+
+            //VENDAS
+            LblVendas.Text = Convert.ToString( vendaController.VendaPorUsuario(us.Nome) );
+
+            //HORA EXTRA
+            LblHoraExtra.Text = pontoController.VerificarHoraExtra(us.Nome);
 
             //LISTAR ENCOMENDAS
 
@@ -48,10 +61,8 @@ namespace Loja.View
 
                     ListViewItem listE = new ListViewItem(Convert.ToString(p.Id));
                     listE.SubItems.Add(p.TipoServico);
-                   // listE.SubItems.Add(p.Data_Entrada);
                     listE.SubItems.Add(p.DataEntrega);
                     listE.SubItems.Add(p.Tema);
-                  //  listE.SubItems.Add(p.valor);
                     listE.SubItems.Add(p.Descricao);
 
                     LVEntregas.Items.Add(listE);
@@ -79,27 +90,29 @@ namespace Loja.View
 
         private void novoUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdicionarNovoUsuario tela = new AdicionarNovoUsuario();
+            //PERMISSÂO ADM
+            PermissaoAdm tela = new PermissaoAdm(1);
             tela.Show();
         }
 
         private void editarUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditarUsuario tela = new EditarUsuario();
+            PermissaoAdm tela = new PermissaoAdm(2);
             tela.Show();
         }
 
         private void apagarUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ApagarUsuario tela = new ApagarUsuario();
+            //VERIFICA ADM
+            PermissaoAdm tela = new PermissaoAdm(3);
             tela.Show();
         }
 
         private void verTodosOsUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //PERMISSÂO ADM
-              TodosOsUsuarios tela = new TodosOsUsuarios();
-              tela.Show();
+            PermissaoAdm tela = new PermissaoAdm(4);
+            tela.Show();
         }
 
         private void novoProdutoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,7 +237,7 @@ namespace Loja.View
 
         private void cancelarPagamentoPendenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CancelarVendaPendente tela = new CancelarVendaPendente();
+            PermissaoAdm tela = new PermissaoAdm(5);
             tela.Show();
         }
 
@@ -306,6 +319,13 @@ namespace Loja.View
         private void BtnVenda_Click(object sender, EventArgs e)
         {
             NovaVenda tela = new NovaVenda();
+            tela.Show();
+            this.Hide();
+        }
+
+        private void BtnTrocarUsuario_Click(object sender, EventArgs e)
+        {
+            Login tela = new Login();
             tela.Show();
             this.Hide();
         }

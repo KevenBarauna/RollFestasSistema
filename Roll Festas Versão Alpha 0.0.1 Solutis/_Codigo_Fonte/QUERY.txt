@@ -75,6 +75,8 @@ CREATE TABLE TB_USUARIO
 	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
 	[nome] VARCHAR(20) NOT NULL,
         [senha] VARCHAR(20) NOT NULL,
+	[email] VARCHAR(30) NOT NULL,
+	[data_admissao] VARCHAR(11) NOT NULL,
 	[logado] bit NULL
 )
 
@@ -99,5 +101,6 @@ INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('comprovantes','C:\User
 
 UPDATE TB_USUARIO SET logado =0;
 --ALTER TABLE TB_USUARIO ADD logado bit NULL;
+
 
 

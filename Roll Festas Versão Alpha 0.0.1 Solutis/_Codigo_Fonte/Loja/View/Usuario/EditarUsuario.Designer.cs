@@ -46,10 +46,20 @@
             this.Linha = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.TxtDataAdmissao = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -133,7 +143,7 @@
             this.BtnSalvar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalvar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnSalvar.Location = new System.Drawing.Point(13, 322);
+            this.BtnSalvar.Location = new System.Drawing.Point(18, 449);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(75, 29);
             this.BtnSalvar.TabIndex = 8;
@@ -146,7 +156,7 @@
             this.BtnFechar.BackColor = System.Drawing.Color.Red;
             this.BtnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnFechar.Location = new System.Drawing.Point(151, 322);
+            this.BtnFechar.Location = new System.Drawing.Point(156, 449);
             this.BtnFechar.Name = "BtnFechar";
             this.BtnFechar.Size = new System.Drawing.Size(75, 29);
             this.BtnFechar.TabIndex = 9;
@@ -218,12 +228,90 @@
             this.panel2.Size = new System.Drawing.Size(160, 1);
             this.panel2.TabIndex = 35;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(13, 361);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(43, 40);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 45;
+            this.pictureBox6.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Orange;
+            this.panel4.Location = new System.Drawing.Point(62, 400);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(160, 1);
+            this.panel4.TabIndex = 44;
+            // 
+            // TxtEmail
+            // 
+            this.TxtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtEmail.Location = new System.Drawing.Point(62, 381);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(160, 13);
+            this.TxtEmail.TabIndex = 43;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(116, 365);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "E-mail:";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(13, 304);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(43, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 41;
+            this.pictureBox5.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Orange;
+            this.panel3.Location = new System.Drawing.Point(62, 343);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(160, 1);
+            this.panel3.TabIndex = 40;
+            // 
+            // TxtDataAdmissao
+            // 
+            this.TxtDataAdmissao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtDataAdmissao.Location = new System.Drawing.Point(62, 324);
+            this.TxtDataAdmissao.Name = "TxtDataAdmissao";
+            this.TxtDataAdmissao.Size = new System.Drawing.Size(160, 13);
+            this.TxtDataAdmissao.TabIndex = 39;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(94, 308);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Data de admissão:";
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(251, 370);
+            this.ClientSize = new System.Drawing.Size(251, 496);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.TxtEmail);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.TxtDataAdmissao);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Linha);
@@ -251,6 +339,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +365,13 @@
         private System.Windows.Forms.Panel Linha;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox TxtEmail;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox TxtDataAdmissao;
+        private System.Windows.Forms.Label label5;
     }
 }

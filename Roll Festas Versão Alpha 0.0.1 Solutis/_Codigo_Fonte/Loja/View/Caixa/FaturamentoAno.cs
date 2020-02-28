@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 
 namespace Loja.View.Caixa
 {
@@ -17,8 +18,7 @@ namespace Loja.View.Caixa
         {
             InitializeComponent();
 
-            Controller tempo = new Controller();
-            TxtData.Text = tempo.PegarAno();
+            TxtData.Text = Data.PegarAno();
 
 
         }

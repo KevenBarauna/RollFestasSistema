@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Loja.Controler;
+using Loja.Controler.Utils;
 
 namespace Loja.View.Caixa
 {
@@ -18,9 +19,8 @@ namespace Loja.View.Caixa
             InitializeComponent();
 
             String data;
-            Controller tempo = new Controller();
-            data = tempo.PegarDiaMesAnoAtual();
-            lblData.Text = tempo.PegarDiaMesAnoAtual();
+            data = Data.PegarDiaMesAnoAtual();
+            lblData.Text = Data.PegarDiaMesAnoAtual();
 
             //SOMAR TOTAL:
             CaixaController caixaC = new CaixaController();

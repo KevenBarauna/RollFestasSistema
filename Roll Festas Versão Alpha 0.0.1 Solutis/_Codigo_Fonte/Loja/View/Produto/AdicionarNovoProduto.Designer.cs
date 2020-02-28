@@ -46,14 +46,17 @@
             this.TxtQuantidade = new System.Windows.Forms.NumericUpDown();
             this.Txtpreco = new System.Windows.Forms.TextBox();
             this.BtnDuvida = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Linha = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.TxtQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 9);
+            this.label1.Location = new System.Drawing.Point(121, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 22);
             this.label1.TabIndex = 0;
@@ -62,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 58);
+            this.label2.Location = new System.Drawing.Point(153, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 1;
@@ -71,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 84);
+            this.label3.Location = new System.Drawing.Point(149, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 2;
@@ -80,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 112);
+            this.label4.Location = new System.Drawing.Point(122, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 3;
@@ -89,7 +92,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 212);
+            this.label5.Location = new System.Drawing.Point(133, 266);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 4;
@@ -98,7 +101,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 164);
+            this.label6.Location = new System.Drawing.Point(127, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 5;
@@ -107,7 +110,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 190);
+            this.label7.Location = new System.Drawing.Point(102, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 13);
             this.label7.TabIndex = 6;
@@ -115,21 +118,22 @@
             // 
             // TxtNome
             // 
-            this.TxtNome.Location = new System.Drawing.Point(106, 55);
+            this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtNome.Location = new System.Drawing.Point(197, 109);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(142, 20);
+            this.TxtNome.Size = new System.Drawing.Size(142, 13);
             this.TxtNome.TabIndex = 7;
             // 
             // TxtFornecedor
             // 
-            this.TxtFornecedor.Location = new System.Drawing.Point(106, 157);
+            this.TxtFornecedor.Location = new System.Drawing.Point(197, 211);
             this.TxtFornecedor.Name = "TxtFornecedor";
             this.TxtFornecedor.Size = new System.Drawing.Size(142, 20);
             this.TxtFornecedor.TabIndex = 10;
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(106, 209);
+            this.txtDescricao.Location = new System.Drawing.Point(197, 263);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(142, 134);
@@ -138,8 +142,9 @@
             // BtnSalvar
             // 
             this.BtnSalvar.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalvar.ForeColor = System.Drawing.Color.White;
-            this.BtnSalvar.Location = new System.Drawing.Point(106, 377);
+            this.BtnSalvar.Location = new System.Drawing.Point(197, 431);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(84, 28);
             this.BtnSalvar.TabIndex = 13;
@@ -149,7 +154,7 @@
             // 
             // TxtData
             // 
-            this.TxtData.Location = new System.Drawing.Point(106, 183);
+            this.TxtData.Location = new System.Drawing.Point(197, 237);
             this.TxtData.Mask = "00/00/0000";
             this.TxtData.Name = "TxtData";
             this.TxtData.Size = new System.Drawing.Size(142, 20);
@@ -158,7 +163,7 @@
             // 
             // TxtTema
             // 
-            this.TxtTema.Location = new System.Drawing.Point(106, 131);
+            this.TxtTema.Location = new System.Drawing.Point(197, 185);
             this.TxtTema.Name = "TxtTema";
             this.TxtTema.Size = new System.Drawing.Size(142, 20);
             this.TxtTema.TabIndex = 16;
@@ -166,7 +171,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(63, 138);
+            this.label8.Location = new System.Drawing.Point(154, 192);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 15;
@@ -174,7 +179,7 @@
             // 
             // TxtQuantidade
             // 
-            this.TxtQuantidade.Location = new System.Drawing.Point(106, 107);
+            this.TxtQuantidade.Location = new System.Drawing.Point(197, 161);
             this.TxtQuantidade.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -186,7 +191,7 @@
             // 
             // Txtpreco
             // 
-            this.Txtpreco.Location = new System.Drawing.Point(106, 81);
+            this.Txtpreco.Location = new System.Drawing.Point(197, 135);
             this.Txtpreco.Name = "Txtpreco";
             this.Txtpreco.Size = new System.Drawing.Size(142, 20);
             this.Txtpreco.TabIndex = 18;
@@ -197,7 +202,7 @@
             this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
             this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDuvida.Location = new System.Drawing.Point(250, 3);
+            this.BtnDuvida.Location = new System.Drawing.Point(368, 12);
             this.BtnDuvida.Name = "BtnDuvida";
             this.BtnDuvida.Size = new System.Drawing.Size(35, 35);
             this.BtnDuvida.TabIndex = 49;
@@ -205,11 +210,32 @@
             this.BtnDuvida.UseVisualStyleBackColor = false;
             this.BtnDuvida.Click += new System.EventHandler(this.BtnDuvida_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 61);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 50;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Linha
+            // 
+            this.Linha.BackColor = System.Drawing.Color.Orange;
+            this.Linha.Location = new System.Drawing.Point(179, 91);
+            this.Linha.Name = "Linha";
+            this.Linha.Size = new System.Drawing.Size(160, 1);
+            this.Linha.TabIndex = 51;
+            // 
             // AdicionarNovoProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 417);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(504, 475);
+            this.Controls.Add(this.Linha);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TxtNome);
             this.Controls.Add(this.Txtpreco);
             this.Controls.Add(this.TxtQuantidade);
@@ -234,6 +260,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdicionarNovoProduto";
             ((System.ComponentModel.ISupportInitialize)(this.TxtQuantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +285,7 @@
         private System.Windows.Forms.NumericUpDown TxtQuantidade;
         private System.Windows.Forms.TextBox Txtpreco;
         private System.Windows.Forms.Button BtnDuvida;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Linha;
     }
 }

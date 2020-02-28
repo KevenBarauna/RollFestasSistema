@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Loja.Model;
 using ClosedXML.Excel;
 using Loja.Model.DAO;
+using Loja.Controler.Utils;
 
 namespace Loja.Controler
 {
@@ -15,13 +16,13 @@ namespace Loja.Controler
         public void BaterPonto(String nome)
         {
             //PEGA HORA E DATA ATUAL
-            Controller tempo = new Controller();
-            string data = tempo.PegarDiaMesAnoAtual();
-            string hora = tempo.PegarHoraMinutoAtual();
+
+            string data = Data.PegarDiaMesAnoAtual();
+            string hora = Data.PegarHoraMinutoAtual();
 
             //VERIFICA SE JÁ BATEU PONTO HOJE
             int ordem = 0;
-            int v1,v2,v3,v4;
+            int v1, v2, v3, v4;
 
             DAOPonto dao = new DAOPonto();
 
@@ -248,7 +249,7 @@ namespace Loja.Controler
             rngTable.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
 
             //SALVAR PLANILHA
-            wb.SaveAs(@"" + caminho + @"\PontoPlanilha" + mes +".xlsx");
+            wb.SaveAs(@"" + caminho + @"\PontoPlanilha" + mes + ".xlsx");
 
             wb.Dispose();
 
@@ -416,7 +417,7 @@ namespace Loja.Controler
             //rngTable = ws.Range("B2:G35");
             //rngTable.Style.Border.OutsideBorder = XLBorderStyleValues.Medium;
 
-            
+
             //SALVAR PLANILHA
             //wb.SaveAs(@"C:\Users\keven.barauna\Desktop\Roll Festas Versão Alpha Solutis\Ponto\PontoPlanilhaDePonto" + mes + ".xlsx");
             wb.SaveAs(@"" + caminho + @"\PontoPlanilha.xlsx");
@@ -431,6 +432,97 @@ namespace Loja.Controler
             DAOUsuario dao = new DAOUsuario();
             usuario = dao.ValidaNomeUsuario(nome);
             return usuario;
+
+        }
+
+        public string VerificarHoraExtra(string nome)
+        {
+
+            DAOPonto dao = new DAOPonto();
+            var listaPonto = new List<PontoModel>();
+
+            //PEGA O MÊS ATUAL PARA CALCULAR HORA EXTRA DO MÊS
+            string MesAtual = Data.PegarMes();
+                       
+            //TODOS OS PONTOS DO USUARIO NESSE MÊS
+            listaPonto = dao.ListarPorMes(MesAtual,nome);
+
+            //HORATOTAL <= HORA CALCULADA
+            //HORAMES <= HORA QUE É RETORNADA FORMATADA
+            TimeSpan HoraTotal = new TimeSpan(0,0,0);
+            string HoraMes = null;
+
+            try
+            {
+                int Hora1 = 0;
+                int Minutos1 = 0;
+                int Hora2;
+                int Minutos2;
+                int Hora3;
+                int Minutos3;
+                int Hora4;
+                int Minutos4;
+
+                foreach (var linha in listaPonto)
+                {
+                    //FORMULA DE CALCULO DE HORA DIARIA = ((B28-C28)+(D28-E28))*-1
+
+                    if (string.IsNullOrEmpty(linha.Hora2))
+                    {
+                        linha.Hora2 = linha.Hora1;
+                    }
+                    if (string.IsNullOrEmpty(linha.Hora3))
+                    {
+                        linha.Hora3 = linha.Hora2;
+                    }
+                    if (string.IsNullOrEmpty(linha.Hora4))
+                    {
+                        linha.Hora4 = linha.Hora3;
+                    }
+
+
+                    if (linha.Hora1.Length < 4)
+                    {
+                        Hora1 = Convert.ToInt32(linha.Hora1.Substring(0, 1));
+                        Minutos1 = Convert.ToInt32(linha.Hora1.Substring(2, 2));
+                    }
+                    else if (linha.Hora1.Length > 4)
+                    {
+                        Hora1 = Convert.ToInt32(linha.Hora1.Substring(0, 2));
+                        Minutos1 = Convert.ToInt32(linha.Hora1.Substring(3, 2));
+                    }
+                    
+                    Hora2 = Convert.ToInt32(linha.Hora2.Substring(0, 2));
+                    Minutos2 = Convert.ToInt32(linha.Hora2.Substring(3, 2));
+
+                    Hora3 = Convert.ToInt32(linha.Hora3.Substring(0, 2));
+                    Minutos3 = Convert.ToInt32(linha.Hora3.Substring(3, 2));
+
+                    Hora4 = Convert.ToInt32(linha.Hora4.Substring(0, 2));
+                    Minutos4 = Convert.ToInt32(linha.Hora4.Substring(3, 2));
+
+                    var h1 = new TimeSpan(Hora1, Minutos1, 0);
+                    var h2 = new TimeSpan(Hora2, Minutos2, 0);
+                    var h3 = new TimeSpan(Hora3, Minutos3, 0);
+                    var h4 = new TimeSpan(Hora4, Minutos4, 0);
+                    
+                    var Turno1 = h1-h2;
+                    var Turno2 = h3-h4;
+                    var TotalDia = Turno1.Add(Turno2);
+                    HoraTotal = HoraTotal + TotalDia;
+
+                }
+
+                HoraMes = Convert.ToString(HoraTotal);
+                HoraMes = HoraMes.Replace("-", " ");
+
+                return HoraMes;
+            }
+            catch (Exception e)
+            {
+
+                return "Erro";
+            }
 
         }
 

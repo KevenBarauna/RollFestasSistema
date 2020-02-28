@@ -28,6 +28,8 @@ namespace Loja.View.Usuario
 
             TxtNome.Text = usuarioeditavel.Nome;
             TxtSenha.Text = usuarioeditavel.Senha;
+            TxtEmail.Text = usuarioeditavel.Email;
+            TxtDataAdmissao.Text = usuarioeditavel.Data_admissao;
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace Loja.View.Usuario
             bool sucesso = false;
 
             UsuarioController usuario = new UsuarioController();
-            sucesso = usuario.EditarUsuario(TxtNome.Text, TxtSenha.Text ,txtPesquisa.Text);
+            sucesso = usuario.EditarUsuario(TxtNome.Text, TxtSenha.Text, TxtEmail.Text, TxtDataAdmissao.Text , txtPesquisa.Text);
 
             if (sucesso == true)
             {

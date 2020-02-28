@@ -79,6 +79,7 @@
     <Compile Include="Controler\ProdutoController.cs" />
     <Compile Include="Controler\ReciboController.cs" />
     <Compile Include="Controler\UsuarioController.cs" />
+    <Compile Include="Controler\Utils\Caminhos.cs" />
     <Compile Include="Controler\Utils\Data.cs" />
     <Compile Include="Controler\VendaController.cs" />
     <Compile Include="Model\CaixaModel.cs" />
@@ -244,6 +245,12 @@
     <Compile Include="View\Erro.Designer.cs">
       <DependentUpon>Erro.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PermissaoAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PermissaoAdm.Designer.cs">
+      <DependentUpon>PermissaoAdm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Ponto\BaterPonto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +350,12 @@
     </Compile>
     <Compile Include="View\Venda\CancelarVendaPendente.Designer.cs">
       <DependentUpon>CancelarVendaPendente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Venda\DescontoCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\DescontoCompra.Designer.cs">
+      <DependentUpon>DescontoCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Venda\Devolucao.cs">
       <SubType>Form</SubType>
@@ -461,6 +474,9 @@
     <EmbeddedResource Include="View\Erro.resx">
       <DependentUpon>Erro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\PermissaoAdm.resx">
+      <DependentUpon>PermissaoAdm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Ponto\BaterPonto.resx">
       <DependentUpon>BaterPonto.cs</DependentUpon>
     </EmbeddedResource>
@@ -519,6 +535,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Venda\CancelarVendaPendente.resx">
       <DependentUpon>CancelarVendaPendente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\DescontoCompra.resx">
+      <DependentUpon>DescontoCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Venda\Devolucao.resx">
       <DependentUpon>Devolucao.cs</DependentUpon>
