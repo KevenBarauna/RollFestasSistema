@@ -18,7 +18,7 @@ namespace Loja.View.Caixa
         {
             InitializeComponent();
 
-            TxtData.Text = Data.PegarAno();
+            TxtData.Text = Date.PegarAno();
 
 
         }

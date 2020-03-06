@@ -21,7 +21,7 @@ namespace Loja.View.Recibo
             InitializeComponent();
 
             //DATA
-            TxtData.Text = Data.PegarDiaMesAnoAtual();
+            TxtData.Text = Date.PegarDiaMesAnoAtual();
         }
 
 

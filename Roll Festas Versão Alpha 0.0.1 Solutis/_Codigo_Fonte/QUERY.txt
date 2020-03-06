@@ -1,39 +1,33 @@
 CREATE TABLE TB_PRODUTO
 (
     [id] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [nome] VARCHAR(20) NOT NULL, 
-    [tema] VARCHAR(20)  NULL, 
+    [nome] VARCHAR(30) NOT NULL, 
+    [tema] VARCHAR(25)  NULL, 
     [preco] VARCHAR(7) NOT NULL, 
-    [quantidade] VARCHAR(4) NOT NULL, 
+    [quantidade] VARCHAR(4) NULL, 
     [fornecedor] VARCHAR(50) NULL, 
-    [data] VARCHAR(11)NULL, 
-    [descricao] NVARCHAR(MAX) NULL 
+    [data] VARCHAR(11) NULL, 
+    [descricao] NVARCHAR(150) NULL 
 )
+
+GO
 
 CREATE TABLE TB_VENDA
 (
 	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
-	[data] VARCHAR(20) NULL,
+	[data] VARCHAR(11) NOT NULL,
 	[usuario] VARCHAR(20) NOT NULL, 
 	[valortotal] VARCHAR(20) NOT NULL, 
 	[valorpago] VARCHAR(20) NULL, 
 	[troco] VARCHAR(20) NULL, 
 	[tipopagamento] VARCHAR(20) NULL,
-        [status_pagamento] VARCHAR(1) NULL,
-        [valor_pendente] VARCHAR(20) NULL,
-	[nome] VARCHAR(20) NULL
+    [status_pagamento] VARCHAR(1) NULL,
+    [valor_pendente] VARCHAR(20) NULL,
+	[nome] VARCHAR(20) NULL,
+[devolucao] VARCHAR(20) NULL,
 )
 
-CREATE TABLE TB_VENDA_TEMP
-(
-	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
-	[nome] VARCHAR(20) NULL, 
-	[quantidade] VARCHAR(20) NULL,
-	[decrementa_nome] VARCHAR(20) NULL,
-	[decrementa_quantidade] VARCHAR(20) NULL,
-	[acrescenta_nome] VARCHAR(20) NULL,
-	[acrescenta_quantidade] VARCHAR(20) NULL
-)
+GO
 
 CREATE TABLE TB_PONTO
 (
@@ -46,61 +40,79 @@ CREATE TABLE TB_PONTO
 	[saida] VARCHAR(20) NULL
 )
 
+GO
+
 CREATE TABLE TB_ENCOMENDA
 (
 	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
 	[tipo_servico] VARCHAR(20) NOT NULL,
 	[data_entrada] VARCHAR(11) NOT NULL, 
 	[data_entrega] VARCHAR(11) NOT NULL,
+	[entregue] VARCHAR(1) NOT NULL,
 	[tema] VARCHAR(20) NULL, 
 	[quantidade] VARCHAR(20) NULL, 
 	[valor] VARCHAR(20) NOT NULL,
-	[obs] VARCHAR(100) NULL
+	[descricao] VARCHAR(100) NULL,
+	[nomecliente] VARCHAR(100) NULL,
 )
+
+GO
 
 CREATE TABLE TB_CAIXA
 (
 	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
 	[valor_total_dia] VARCHAR(20) NULL,
-        [data] VARCHAR(20) NULL,
+    [data] VARCHAR(20) NULL,
 	[retirada] VARCHAR(11) NULL, 
 	[deposito] VARCHAR(11) NULL,
-        [dinheiro] VARCHAR(10) NULL,
+    [dinheiro] VARCHAR(10) NULL,
 	[cartao] VARCHAR(10) NULL,
 	[outros] VARCHAR(10) NULL
 )
+
+GO
 
 CREATE TABLE TB_USUARIO
 (
 	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
 	[nome] VARCHAR(20) NOT NULL,
-        [senha] VARCHAR(20) NOT NULL,
+    [senha] VARCHAR(20) NOT NULL,
 	[email] VARCHAR(30) NOT NULL,
 	[data_admissao] VARCHAR(11) NOT NULL,
-	[logado] bit NULL
 )
+
+GO
 
 CREATE TABLE TB_CAMINHOS
 (
     [nome] VARCHAR(20) NOT NULL, 
-    [caminho] NVARCHAR(MAX) NULL,
-    [descricao] NVARCHAR(MAX) NULL 
+    [caminho] NVARCHAR(200) NULL,
+    [descricao] NVARCHAR(150) NULL 
 )
 
+GO
 
 
-INSERT INTO TB_USUARIO (nome,senha) VALUES ('admin','admin')
-INSERT INTO TB_USUARIO (nome,senha) VALUES ('keven','123')
+INSERT INTO TB_USUARIO (nome,senha,email,data_admissao) VALUES ('admin','admin','kevenbarauna@gmail.com','11/08/2019')
+GO
+INSERT INTO TB_USUARIO (nome,senha,email,data_admissao) VALUES ('keven','123','kevenbarauna@gmail.com','11/08/2019')
 
 --INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('AAA','BBB','CCC')
 
-INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('ponto','C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\Ponto','Caminho para salvar a planilha de pontos')
-INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('cache','C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\Cache','Caminho para salvar o cache, que é um arquivo .txt')
-INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('comprovantes','C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\Comprovantes','Caminho para salvar o comprovante, que é um arquivo .PDF')
+--INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('ponto','C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\Ponto','Caminho para salvar a planilha de pontos')
+--INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('cache','C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\Cache','Caminho para salvar o cache, que é um arquivo .txt')
+--INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('comprovantes','C:\Users\keven.barauna\Desktop\RF\RollFestasSistema\Roll Festas Versão Alpha 0.0.1 Solutis\Comprovantes','Caminho para salvar o comprovante, que é um arquivo .PDF')
 
 
-UPDATE TB_USUARIO SET logado =0;
+--UPDATE TB_USUARIO SET logado =0;
 --ALTER TABLE TB_USUARIO ADD logado bit NULL;
 
 
 
+SELECT * FROM TB_CAIXA
+SELECT * FROM TB_CAMINHOS
+SELECT * FROM TB_ENCOMENDA
+SELECT * FROM TB_PONTO
+SELECT * FROM TB_PRODUTO
+SELECT * FROM TB_VENDA
+SELECT * FROM TB_USUARIO

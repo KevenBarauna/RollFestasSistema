@@ -34,7 +34,7 @@ namespace Loja.View.Produto
             txtDescricao.Text = produtoeditavel.Descricao;
             TxtFornecedor.Text = produtoeditavel.Fornecedor;
             TxtPreco.Text = produtoeditavel.Preco;
-            TxtQuantidade.Text = produtoeditavel.Quantidade;
+            TxtQuantidade.Text = produtoeditavel.Quantidade_Estoque;
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)

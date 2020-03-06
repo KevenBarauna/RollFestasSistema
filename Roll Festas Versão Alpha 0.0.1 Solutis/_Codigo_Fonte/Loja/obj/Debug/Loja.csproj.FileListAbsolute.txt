@@ -268,5 +268,6 @@ C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Fest
 C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.exe
 C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.pdb
 C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.View.Venda.DescontoCompra.resources
-C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.csprojAssemblyReference.cache
 C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.View.PermissaoAdm.resources
+C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.View.Venda.DescontoProduto.resources
+C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\Loja\obj\Debug\Loja.csprojAssemblyReference.cache

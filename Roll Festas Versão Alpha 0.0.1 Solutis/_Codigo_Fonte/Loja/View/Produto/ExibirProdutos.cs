@@ -32,7 +32,7 @@ namespace Loja.View.Produto
                     listP.SubItems.Add(p.Nome);
                     listP.SubItems.Add(p.Tema);
                     listP.SubItems.Add(p.Preco);
-                    listP.SubItems.Add(p.Quantidade);
+                    listP.SubItems.Add(p.Quantidade_Estoque);
                     listP.SubItems.Add(p.Fornecedor);
                     listP.SubItems.Add(p.Descricao);
                     listP.SubItems.Add(p.Data);
@@ -70,7 +70,7 @@ namespace Loja.View.Produto
                     listP.SubItems.Add(p.Nome);
                     listP.SubItems.Add(p.Tema);
                     listP.SubItems.Add(p.Preco);
-                    listP.SubItems.Add(p.Quantidade);
+                    listP.SubItems.Add(p.Quantidade_Estoque);
                     listP.SubItems.Add(p.Fornecedor);
                     listP.SubItems.Add(p.Descricao);
                     listP.SubItems.Add(p.Data);
@@ -106,7 +106,7 @@ namespace Loja.View.Produto
                     listP.SubItems.Add(p.Nome);
                     listP.SubItems.Add(p.Tema);
                     listP.SubItems.Add(p.Preco);
-                    listP.SubItems.Add(p.Quantidade);
+                    listP.SubItems.Add(p.Quantidade_Estoque);
                     listP.SubItems.Add(p.Fornecedor);
                     listP.SubItems.Add(p.Descricao);
                     listP.SubItems.Add(p.Data);
@@ -141,7 +141,7 @@ namespace Loja.View.Produto
                     listP.SubItems.Add(p.Nome);
                     listP.SubItems.Add(p.Tema);
                     listP.SubItems.Add(p.Preco);
-                    listP.SubItems.Add(p.Quantidade);
+                    listP.SubItems.Add(p.Quantidade_Estoque);
                     listP.SubItems.Add(p.Fornecedor);
                     listP.SubItems.Add(p.Descricao);
                     listP.SubItems.Add(p.Data);
@@ -176,7 +176,7 @@ namespace Loja.View.Produto
                     listP.SubItems.Add(p.Nome);
                     listP.SubItems.Add(p.Tema);
                     listP.SubItems.Add(p.Preco);
-                    listP.SubItems.Add(p.Quantidade);
+                    listP.SubItems.Add(p.Quantidade_Estoque);
                     listP.SubItems.Add(p.Fornecedor);
                     listP.SubItems.Add(p.Descricao);
                     listP.SubItems.Add(p.Data);

@@ -19,7 +19,7 @@ namespace Loja.View.Caixa
             InitializeComponent();
 
             //DATA
-            TxtData.Text = Data.PegarMesAno();
+            TxtData.Text = Date.PegarMesAno();
         }
 
         private void BtnEntrar_Click(object sender, EventArgs e)

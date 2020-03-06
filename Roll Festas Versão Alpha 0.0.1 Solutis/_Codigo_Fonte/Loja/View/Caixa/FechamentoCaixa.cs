@@ -19,8 +19,8 @@ namespace Loja.View.Caixa
             InitializeComponent();
 
             String data;
-            data = Data.PegarDiaMesAnoAtual();
-            lblData.Text = Data.PegarDiaMesAnoAtual();
+            data = Date.PegarDiaMesAnoAtual();
+            lblData.Text = Date.PegarDiaMesAnoAtual();
 
             //SOMAR TOTAL:
             CaixaController caixaC = new CaixaController();

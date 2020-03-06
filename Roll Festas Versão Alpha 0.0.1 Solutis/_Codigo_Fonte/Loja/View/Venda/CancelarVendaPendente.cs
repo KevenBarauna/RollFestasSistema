@@ -29,7 +29,7 @@ namespace Loja.View.Venda
             LblUsuario.Text = usuarioLogado.Nome;
 
             //DATA
-            String hora = Data.PegarDiaeHora();
+            String hora = Date.PegarDiaeHora();
             LblTestedata.Text = Convert.ToString(hora);
         }
 
@@ -88,7 +88,7 @@ namespace Loja.View.Venda
             //2 = PAGAR DEPOIS
 
 
-            String data = Data.PegarDiaMesAnoAtual();
+            String data = Date.PegarDiaMesAnoAtual();
 
                 //RETIRAR VENDA PENDETE
                 VendaController venda = new VendaController();

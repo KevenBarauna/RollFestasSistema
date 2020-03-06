@@ -33,7 +33,7 @@ namespace Loja.View.Venda
             Controller tempo = new Controller();
 
             //INICAR TABELA CAIXA
-            String data = Data.PegarDiaMesAnoAtual();
+            String data = Date.PegarDiaMesAnoAtual();
 
             DAOCaixa daocaixa = new DAOCaixa();
             daocaixa.IniciarCaixa(Convert.ToString(data));
@@ -108,7 +108,7 @@ namespace Loja.View.Venda
             //1 = PAGO
             //2 = PAGAR DEPOIS
 
-            String data = Data.PegarDiaMesAnoAtual();
+            String data = Date.PegarDiaMesAnoAtual();
             bool TodasAsInformacoes = true;
 
             if (TxtDatVenda.Text == "__/__/____")

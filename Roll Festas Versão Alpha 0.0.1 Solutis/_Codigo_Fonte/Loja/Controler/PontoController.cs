@@ -17,8 +17,8 @@ namespace Loja.Controler
         {
             //PEGA HORA E DATA ATUAL
 
-            string data = Data.PegarDiaMesAnoAtual();
-            string hora = Data.PegarHoraMinutoAtual();
+            string data = Date.PegarDiaMesAnoAtual();
+            string hora = Date.PegarHoraMinutoAtual();
 
             //VERIFICA SE JÁ BATEU PONTO HOJE
             int ordem = 0;
@@ -442,7 +442,7 @@ namespace Loja.Controler
             var listaPonto = new List<PontoModel>();
 
             //PEGA O MÊS ATUAL PARA CALCULAR HORA EXTRA DO MÊS
-            string MesAtual = Data.PegarMes();
+            string MesAtual = Date.PegarMes();
                        
             //TODOS OS PONTOS DO USUARIO NESSE MÊS
             listaPonto = dao.ListarPorMes(MesAtual,nome);
@@ -518,7 +518,7 @@ namespace Loja.Controler
 
                 return HoraMes;
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
                 return "Erro";

@@ -80,7 +80,7 @@
     <Compile Include="Controler\ReciboController.cs" />
     <Compile Include="Controler\UsuarioController.cs" />
     <Compile Include="Controler\Utils\Caminhos.cs" />
-    <Compile Include="Controler\Utils\Data.cs" />
+    <Compile Include="Controler\Utils\Date.cs" />
     <Compile Include="Controler\VendaController.cs" />
     <Compile Include="Model\CaixaModel.cs" />
     <Compile Include="Model\DAO\DAOCaixa.cs" />
@@ -357,6 +357,12 @@
     <Compile Include="View\Venda\DescontoCompra.Designer.cs">
       <DependentUpon>DescontoCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Venda\DescontoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\DescontoProduto.Designer.cs">
+      <DependentUpon>DescontoProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Venda\Devolucao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -538,6 +544,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Venda\DescontoCompra.resx">
       <DependentUpon>DescontoCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\DescontoProduto.resx">
+      <DependentUpon>DescontoProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Venda\Devolucao.resx">
       <DependentUpon>Devolucao.cs</DependentUpon>

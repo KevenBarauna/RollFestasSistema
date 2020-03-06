@@ -188,7 +188,7 @@ namespace Loja.Controler
 
         public bool GerarReciboDeVendaPeloId(String id, String NomeArquivo)
         {
-            var data = Data.DataPararCriarPasta();
+            var data = Date.DataPararCriarPasta();
             var vendaModel = new VendaModel();
             var daoVenda = new DAOVenda();
 

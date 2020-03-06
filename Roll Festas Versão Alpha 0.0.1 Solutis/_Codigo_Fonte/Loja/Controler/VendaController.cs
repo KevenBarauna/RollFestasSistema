@@ -55,7 +55,7 @@ namespace Loja.Controler
 
         public List<VendaModel> ListarVendasPorVendedor(String vendedor)
         {
-            var ano = Data.PegarAno();
+            var ano = Date.PegarAno();
             List<VendaModel> venda = new List<VendaModel>();
             DAOVenda dao = new DAOVenda();
             Controller tempo = new Controller();
@@ -113,7 +113,7 @@ namespace Loja.Controler
         {
 
             var dao = new DAOVenda();
-            var Ano = Data.PegarAno();
+            var Ano = Date.PegarAno();
 
             double ValorTotal = dao.PegarVendaPorUsuarior(nome,Ano);
 

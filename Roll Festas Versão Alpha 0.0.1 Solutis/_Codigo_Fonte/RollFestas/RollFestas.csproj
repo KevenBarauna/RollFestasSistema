@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04617EAA-4266-43F1-AF0C-7E85A63B0169}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RollFestas</RootNamespace>
+    <AssemblyName>RollFestas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CaixaController.cs" />
+    <Compile Include="Controllers\EncomendaController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VendaController.cs" />
+    <Compile Include="Data\CaixaDAO.cs" />
+    <Compile Include="Data\EncomendaDAO.cs" />
+    <Compile Include="Data\ProdutoDAO.cs" />
+    <Compile Include="Data\UsuarioDAO.cs" />
+    <Compile Include="Data\VendaDAO.cs" />
+    <Compile Include="Models\CaixaModel.cs" />
+    <Compile Include="Models\EncomendaModel.cs" />
+    <Compile Include="Models\ProdutoModel.cs" />
+    <Compile Include="Utils\GerarPDF.cs" />
+    <Compile Include="View\Avisos\MensagemAlerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Avisos\MensagemAlerta.Designer.cs">
+      <DependentUpon>MensagemAlerta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Avisos\Permissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Avisos\Permissao.Designer.cs">
+      <DependentUpon>Permissao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Caixa\Deposito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Caixa\Deposito.Designer.cs">
+      <DependentUpon>Deposito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Caixa\Faturamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Caixa\Faturamento.Designer.cs">
+      <DependentUpon>Faturamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Caixa\FechametoCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Caixa\FechametoCaixa.Designer.cs">
+      <DependentUpon>FechametoCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Caixa\Retirada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Caixa\Retirada.Designer.cs">
+      <DependentUpon>Retirada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Calculo\CalcularBanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Calculo\CalcularBanner.Designer.cs">
+      <DependentUpon>CalcularBanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Encomenda\EditarEncomenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Encomenda\EditarEncomenda.Designer.cs">
+      <DependentUpon>EditarEncomenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Encomenda\EncomendaPagamentoPendente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Encomenda\EncomendaPagamentoPendente.Designer.cs">
+      <DependentUpon>EncomendaPagamentoPendente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Encomenda\NovaEncomenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Encomenda\NovaEncomenda.Designer.cs">
+      <DependentUpon>NovaEncomenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuarioModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Conexao.cs" />
+    <Compile Include="Utils\GetDate.cs" />
+    <Compile Include="View\Avisos\MensagemErro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Avisos\MensagemErro.Designer.cs">
+      <DependentUpon>MensagemErro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Avisos\ErroConexao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Avisos\ErroConexao.Designer.cs">
+      <DependentUpon>ErroConexao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Avisos\ErroController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Avisos\ErroController.Designer.cs">
+      <DependentUpon>ErroController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Avisos\Sucesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Avisos\Sucesso.Designer.cs">
+      <DependentUpon>Sucesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mercadoria\ApagarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Mercadoria\ApagarProduto.Designer.cs">
+      <DependentUpon>ApagarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mercadoria\PesquisarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Mercadoria\PesquisarProduto.Designer.cs">
+      <DependentUpon>PesquisarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mercadoria\EditarMercadoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Mercadoria\EditarMercadoria.Designer.cs">
+      <DependentUpon>EditarMercadoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mercadoria\NovaMercadoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Mercadoria\NovaMercadoria.Designer.cs">
+      <DependentUpon>NovaMercadoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuario\ApagarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuario\ApagarUsuario.Designer.cs">
+      <DependentUpon>ApagarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuario\EditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuario\EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuario\NovoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuario\NovoUsuario.Designer.cs">
+      <DependentUpon>NovoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuario\TodosUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuario\TodosUsuarios.Designer.cs">
+      <DependentUpon>TodosUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Venda\PagamentoPendente\CancelarVendaPendente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\PagamentoPendente\CancelarVendaPendente.Designer.cs">
+      <DependentUpon>CancelarVendaPendente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Venda\PagamentoPendente\Pagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\PagamentoPendente\Pagamento.Designer.cs">
+      <DependentUpon>Pagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Venda\PagamentoPendente\VerTodos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\PagamentoPendente\VerTodos.Designer.cs">
+      <DependentUpon>VerTodos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Venda\PesquisarDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\PesquisarDia.Designer.cs">
+      <DependentUpon>PesquisarDia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Venda\VendaDescontoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\VendaDescontoProduto.Designer.cs">
+      <DependentUpon>VendaDescontoProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Venda\VendaDescontoTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\VendaDescontoTotal.Designer.cs">
+      <DependentUpon>VendaDescontoTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Venda\VendaNova.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\VendaNova.Designer.cs">
+      <DependentUpon>VendaNova.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Venda\Troca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\Troca.Designer.cs">
+      <DependentUpon>Troca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Venda\VendaSemPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\VendaSemPagamento.Designer.cs">
+      <DependentUpon>VendaSemPagamento.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Avisos\MensagemAlerta.resx">
+      <DependentUpon>MensagemAlerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Avisos\Permissao.resx">
+      <DependentUpon>Permissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Caixa\Deposito.resx">
+      <DependentUpon>Deposito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Caixa\Faturamento.resx">
+      <DependentUpon>Faturamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Caixa\FechametoCaixa.resx">
+      <DependentUpon>FechametoCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Caixa\Retirada.resx">
+      <DependentUpon>Retirada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Calculo\CalcularBanner.resx">
+      <DependentUpon>CalcularBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Encomenda\EditarEncomenda.resx">
+      <DependentUpon>EditarEncomenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Encomenda\EncomendaPagamentoPendente.resx">
+      <DependentUpon>EncomendaPagamentoPendente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Encomenda\NovaEncomenda.resx">
+      <DependentUpon>NovaEncomenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Avisos\MensagemErro.resx">
+      <DependentUpon>MensagemErro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Avisos\ErroConexao.resx">
+      <DependentUpon>ErroConexao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Avisos\ErroController.resx">
+      <DependentUpon>ErroController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Avisos\Sucesso.resx">
+      <DependentUpon>Sucesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Mercadoria\ApagarProduto.resx">
+      <DependentUpon>ApagarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Mercadoria\PesquisarProduto.resx">
+      <DependentUpon>PesquisarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Mercadoria\EditarMercadoria.resx">
+      <DependentUpon>EditarMercadoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Mercadoria\NovaMercadoria.resx">
+      <DependentUpon>NovaMercadoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuario\ApagarUsuario.resx">
+      <DependentUpon>ApagarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuario\EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuario\NovoUsuario.resx">
+      <DependentUpon>NovoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuario\TodosUsuarios.resx">
+      <DependentUpon>TodosUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\PagamentoPendente\CancelarVendaPendente.resx">
+      <DependentUpon>CancelarVendaPendente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\PagamentoPendente\Pagamento.resx">
+      <DependentUpon>Pagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\PagamentoPendente\VerTodos.resx">
+      <DependentUpon>VerTodos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\PesquisarDia.resx">
+      <DependentUpon>PesquisarDia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\VendaDescontoProduto.resx">
+      <DependentUpon>VendaDescontoProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\VendaDescontoTotal.resx">
+      <DependentUpon>VendaDescontoTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\VendaNova.resx">
+      <DependentUpon>VendaNova.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\Troca.resx">
+      <DependentUpon>Troca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\VendaSemPagamento.resx">
+      <DependentUpon>VendaSemPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\VendaModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

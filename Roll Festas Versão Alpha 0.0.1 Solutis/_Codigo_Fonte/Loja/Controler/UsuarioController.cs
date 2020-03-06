@@ -184,7 +184,7 @@ namespace Loja.Controler
             var DAO = new DAOUsuario();
 
             var Data_admissao = DAO.VerificaFerias(id);
-            var Data_atual = Data.PegarDiaMesAnoAtual();
+            var Data_atual = Date.PegarDiaMesAnoAtual();
 
             Data_admissao = Data_admissao.Replace('/', '.');
             Data_atual = Data_atual.Replace('/', '.');

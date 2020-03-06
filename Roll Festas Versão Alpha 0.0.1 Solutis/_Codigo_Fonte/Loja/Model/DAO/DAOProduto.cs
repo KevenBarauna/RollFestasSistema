@@ -73,7 +73,7 @@ namespace Loja.Model
                     produto.Nome = Convert.ToString(nomedoBanco);
                     produto.Tema = Convert.ToString(temadoBanco);
                     produto.Preco = Convert.ToString(precodoBanco);
-                    produto.Quantidade = Convert.ToString(quantidadedoBanco);
+                    produto.Quantidade_Estoque = Convert.ToString(quantidadedoBanco);
                     produto.Fornecedor = Convert.ToString(fornecedordoBanco);
                     produto.Data = Convert.ToString(datadoBanco);
                     produto.Descricao = Convert.ToString(descricaodoBanco);
@@ -293,7 +293,7 @@ namespace Loja.Model
                         produtoL.Nome = Convert.ToString(dr["nome"]);
                         produtoL.Tema = Convert.ToString(dr["tema"]);
                         produtoL.Preco = Convert.ToString(dr["preco"]);
-                        produtoL.Quantidade = Convert.ToString(dr["quantidade"]);
+                        produtoL.Quantidade_Estoque = Convert.ToString(dr["quantidade"]);
                         produtoL.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoL.Data = Convert.ToString(dr["data"]);
                         produtoL.Descricao = Convert.ToString(dr["descricao"]);
@@ -337,7 +337,7 @@ namespace Loja.Model
                     var quantidadedoBanco = dr["quantidade"];
 
 
-                    produto.Quantidade = Convert.ToString(quantidadedoBanco);
+                    produto.Quantidade_Estoque = Convert.ToString(quantidadedoBanco);
 
 
                 }
@@ -396,7 +396,7 @@ namespace Loja.Model
                         produtoL.Nome = Convert.ToString(dr["nome"]);
                         produtoL.Tema = Convert.ToString(dr["tema"]);
                         produtoL.Preco = Convert.ToString(dr["preco"]);
-                        produtoL.Quantidade = Convert.ToString(dr["quantidade"]);
+                        produtoL.Quantidade_Estoque = Convert.ToString(dr["quantidade"]);
                         produtoL.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoL.Data = Convert.ToString(dr["data"]);
                         produtoL.Descricao = Convert.ToString(dr["descricao"]);
@@ -442,7 +442,7 @@ namespace Loja.Model
                         produtoL.Nome = Convert.ToString(dr["nome"]);
                         produtoL.Tema = Convert.ToString(dr["tema"]);
                         produtoL.Preco = Convert.ToString(dr["preco"]);
-                        produtoL.Quantidade = Convert.ToString(dr["quantidade"]);
+                        produtoL.Quantidade_Estoque = Convert.ToString(dr["quantidade"]);
                         produtoL.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoL.Data = Convert.ToString(dr["data"]);
                         produtoL.Descricao = Convert.ToString(dr["descricao"]);
@@ -486,7 +486,7 @@ namespace Loja.Model
                         produtoL.Nome = Convert.ToString(dr["nome"]);
                         produtoL.Tema = Convert.ToString(dr["tema"]);
                         produtoL.Preco = Convert.ToString(dr["preco"]);
-                        produtoL.Quantidade = Convert.ToString(dr["quantidade"]);
+                        produtoL.Quantidade_Estoque = Convert.ToString(dr["quantidade"]);
                         produtoL.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoL.Data = Convert.ToString(dr["data"]);
                         produtoL.Descricao = Convert.ToString(dr["descricao"]);
@@ -530,7 +530,7 @@ namespace Loja.Model
                         produtoL.Nome = Convert.ToString(dr["nome"]);
                         produtoL.Tema = Convert.ToString(dr["tema"]);
                         produtoL.Preco = Convert.ToString(dr["preco"]);
-                        produtoL.Quantidade = Convert.ToString(dr["quantidade"]);
+                        produtoL.Quantidade_Estoque = Convert.ToString(dr["quantidade"]);
                         produtoL.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoL.Data = Convert.ToString(dr["data"]);
                         produtoL.Descricao = Convert.ToString(dr["descricao"]);
@@ -574,7 +574,7 @@ namespace Loja.Model
                         produtoL.Nome = Convert.ToString(dr["nome"]);
                         produtoL.Tema = Convert.ToString(dr["tema"]);
                         produtoL.Preco = Convert.ToString(dr["preco"]);
-                        produtoL.Quantidade = Convert.ToString(dr["quantidade"]);
+                        produtoL.Quantidade_Estoque = Convert.ToString(dr["quantidade"]);
                         produtoL.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoL.Data = Convert.ToString(dr["data"]);
                         produtoL.Descricao = Convert.ToString(dr["descricao"]);

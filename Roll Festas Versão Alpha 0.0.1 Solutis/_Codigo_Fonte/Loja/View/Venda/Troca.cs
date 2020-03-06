@@ -30,10 +30,10 @@ namespace Loja.View.Venda
             LblUsuario.Text = usuarioLogado.Nome;
 
             //DATA
-            LblData.Text = Data.PegarDiaMesAnoAtual();
+            LblData.Text = Date.PegarDiaMesAnoAtual();
 
             //INICAR TABELA CAIXA
-            String data = Data.PegarDiaMesAnoAtual();
+            String data = Date.PegarDiaMesAnoAtual();
 
             DAOCaixa daocaixa = new DAOCaixa();
             daocaixa.IniciarCaixa(Convert.ToString(data));
@@ -141,7 +141,7 @@ namespace Loja.View.Venda
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
 
-            String data = Data.PegarDiaMesAnoAtual();
+            String data = Date.PegarDiaMesAnoAtual();
 
 
             ////DECREMENTAR PRODUTOS

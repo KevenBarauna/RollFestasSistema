@@ -23,7 +23,7 @@ namespace Loja.View.Encomenda
 
             //DATA
             Controller tempo = new Controller();
-            String hora = Data.PegarDiaeHora();
+            String hora = Date.PegarDiaeHora();
             TxtDataEntrada.Text = Convert.ToString(hora);
             TxtDataEntrega.Text = Convert.ToString(hora);
             LblTestedata.Text = Convert.ToString(hora);
@@ -36,7 +36,7 @@ namespace Loja.View.Encomenda
 
 
             //INICAR TABELA CAIXA
-            String data = Data.PegarDiaMesAnoAtual();
+            String data = Date.PegarDiaMesAnoAtual();
 
             DAOCaixa daocaixa = new DAOCaixa();
             daocaixa.IniciarCaixa(Convert.ToString(data));
@@ -71,7 +71,7 @@ namespace Loja.View.Encomenda
                     TipoPagamento = "Outros";
                 }
 
-                String data = Data.PegarDiaMesAnoAtual();
+                String data = Date.PegarDiaMesAnoAtual();
 
                 //SALVAR VENDA
                 VendaController v = new VendaController();
@@ -99,7 +99,7 @@ namespace Loja.View.Encomenda
                 VendaController venda = new VendaController();
                 VendaM = venda.PegarIdDaUltimaVenda();
 
-                String SaveData = Data.DataPararCriarPasta();
+                String SaveData = Date.DataPararCriarPasta();
 
                 ReciboController recibo = new ReciboController();
                 recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"" + caminho + @"\" + SaveData + "_" + VendaM.Id + ".pdf");
@@ -146,7 +146,7 @@ namespace Loja.View.Encomenda
             if (encomenda.ValidarEncomenda(TxtTipo.Text, TxtDataEntrada.Text, TxtDataEntrega.Text, TxtTema.Text, TxtQuantidade.Text, TxtValor.Text, txtDescricao.Text))
             {
                 //DATA DA ENCOMENDA
-                String data = Data.PegarDiaMesAnoAtual();
+                String data = Date.PegarDiaMesAnoAtual();
 
                 //TIPO DE PAGAMENTO
                 String TipoPagamento = "";
@@ -195,7 +195,7 @@ namespace Loja.View.Encomenda
                 VendaController venda = new VendaController();
                 VendaM = venda.PegarIdDaUltimaVenda();
 
-                String SaveData = Data.DataPararCriarPasta();
+                String SaveData = Date.DataPararCriarPasta();
 
                 ReciboController recibo = new ReciboController();
                 recibo.GerarReciboDeVendaPeloId(Convert.ToString(VendaM.Id), @"" + caminho + @"\" + SaveData + "_" + VendaM.Id + ".pdf");

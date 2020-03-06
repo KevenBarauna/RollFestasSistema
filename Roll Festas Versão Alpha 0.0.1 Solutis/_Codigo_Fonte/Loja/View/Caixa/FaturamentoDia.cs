@@ -19,7 +19,7 @@ namespace Loja.View.Caixa
             InitializeComponent();
 
             Controller tempo = new Controller();
-            TxtData.Text = Data.PegarDiaMesAnoAtual();
+            TxtData.Text = Date.PegarDiaMesAnoAtual();
         }
 
         private void BtnEntrar_Click(object sender, EventArgs e)

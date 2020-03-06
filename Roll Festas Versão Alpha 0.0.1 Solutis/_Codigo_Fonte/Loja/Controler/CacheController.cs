@@ -17,8 +17,8 @@ namespace Loja.Controler
 
             //PEGAR DATA
 
-            String dia = Data.DataPararCriarPasta();
-            String data = Data.PegarDiaMesAnoAtual();
+            String dia = Date.DataPararCriarPasta();
+            String data = Date.PegarDiaMesAnoAtual();
 
             //ACESSAR BANCO PONTO
             List<PontoModel> ListaDePonto = new List<PontoModel>();

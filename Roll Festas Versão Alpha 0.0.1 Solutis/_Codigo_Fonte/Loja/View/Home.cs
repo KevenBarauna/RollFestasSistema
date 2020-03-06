@@ -161,7 +161,7 @@ namespace Loja.View
         private void gerarPDFToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            String mes = Data.PegarMes();
+            String mes = Date.PegarMes();
 
             PontoController ponto = new PontoController();
             ponto.GerarPDFPonto(mes);

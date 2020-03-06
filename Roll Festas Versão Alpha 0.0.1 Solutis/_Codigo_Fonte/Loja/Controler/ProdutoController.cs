@@ -18,7 +18,7 @@ namespace Loja.Controler
             
             if (string.IsNullOrEmpty(data) || data == "  /  /    ")
             {
-                data = Data.PegarDiaMesAnoAtual();
+                data = Date.PegarDiaMesAnoAtual();
             }
 
             if (string.IsNullOrEmpty(nome))

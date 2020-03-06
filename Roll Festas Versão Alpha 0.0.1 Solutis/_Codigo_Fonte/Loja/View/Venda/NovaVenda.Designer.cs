@@ -583,6 +583,7 @@
             this.button2.TabIndex = 70;
             this.button2.Text = "Desc. produto";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // LblTroco
             // 

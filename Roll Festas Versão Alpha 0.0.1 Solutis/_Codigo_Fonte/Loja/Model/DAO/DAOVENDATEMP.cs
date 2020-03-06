@@ -115,7 +115,7 @@ namespace Loja.Model
 
 
                         produto.Nome = Convert.ToString(nomedoBanco);
-                        produto.Quantidade = Convert.ToString(quantidadedoBanco);
+                        produto.Quantidade_Estoque = Convert.ToString(quantidadedoBanco);
 
                         list.Add(produto);
                     }
@@ -145,7 +145,7 @@ namespace Loja.Model
                 pm = daop.PegaQuantidadePeloNome(p.Nome);
 
                 int novaquatidade = 0;
-                novaquatidade = Convert.ToInt32(pm.Quantidade) - Convert.ToInt32(p.Quantidade);
+                novaquatidade = Convert.ToInt32(pm.Quantidade_Estoque) - Convert.ToInt32(p.Quantidade_Venda);
 
                 daop.DecrementaQuantidade(p.Nome, Convert.ToString(novaquatidade));
 
@@ -163,7 +163,7 @@ namespace Loja.Model
 
 
                 int novaquatidade = 0;
-                novaquatidade = Convert.ToInt32(pm.Quantidade) + Convert.ToInt32(p.Quantidade);
+                novaquatidade = Convert.ToInt32(pm.Quantidade_Estoque) + Convert.ToInt32(p.Quantidade_Estoque);
 
                 daop.DecrementaQuantidade(p.Nome, Convert.ToString(novaquatidade));
 
@@ -196,7 +196,7 @@ namespace Loja.Model
                         if (!String.IsNullOrEmpty(nomedoBanco) && !String.IsNullOrEmpty(quantidadedoBanco))
                         {
                             produto.Nome = Convert.ToString(nomedoBanco);
-                            produto.Quantidade = Convert.ToString(quantidadedoBanco);
+                            produto.Quantidade_Estoque = Convert.ToString(quantidadedoBanco);
 
                             list.Add(produto);
                         }
@@ -245,7 +245,7 @@ namespace Loja.Model
                         if (!String.IsNullOrEmpty(nomedoBanco) && !String.IsNullOrEmpty(quantidadedoBanco))
                         {
                             produto.Nome = Convert.ToString(nomedoBanco);
-                            produto.Quantidade = Convert.ToString(quantidadedoBanco);
+                            produto.Quantidade_Estoque = Convert.ToString(quantidadedoBanco);
 
                             list.Add(produto);
                         }

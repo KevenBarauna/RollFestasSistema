@@ -30,7 +30,7 @@ namespace Loja.View.Venda
 
             //DATA
 
-            String hora = Data.PegarDiaeHora();
+            String hora = Date.PegarDiaeHora();
             LblTestedata.Text = Convert.ToString(hora);
 
         }
@@ -118,7 +118,7 @@ namespace Loja.View.Venda
             //1 = PAGO
             //2 = PAGAR DEPOIS
 
-            String data = Data.PegarDiaMesAnoAtual();
+            String data = Date.PegarDiaMesAnoAtual();
 
             String TipoPagamento = "Não selecionado";
             bool TodasAsInformacoes = false;

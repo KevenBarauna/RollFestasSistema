@@ -33,7 +33,7 @@ namespace Loja.View.Venda
             LblUsuario.Text = usuarioLogado.Nome;
 
             //DATA
-            String data = Data.PegarDiaMesAnoAtual();
+            String data = Date.PegarDiaMesAnoAtual();
             LblTestedata.Text = Convert.ToString(data);
 
             //INICAR TABELA CAIXA
@@ -237,7 +237,7 @@ namespace Loja.View.Venda
           
                 //INFO => 1 = PAGO | 2 = PAGAR DEPOIS
 
-                String data = Data.PegarDiaMesAnoAtual();
+                String data = Date.PegarDiaMesAnoAtual();
 
                 //Forma de pagamento
                 string TipoPagamento = null;
@@ -261,7 +261,7 @@ namespace Loja.View.Venda
                 var produtoDAO = new DAOProduto();
                 foreach (var produto in _ListaProdutos)
                 {
-                    produtoDAO.DecrementaQuantidade(produto.Nome, produto.Quantidade);
+                    produtoDAO.DecrementaQuantidade(produto.Nome, produto.Quantidade_Estoque);
                 }
 
                 //SALVAR NO CAIXA
@@ -286,7 +286,7 @@ namespace Loja.View.Venda
                 //GERAR RECIBO
                 var vendaModel = new VendaModel();
                 var reciboController = new ReciboController();
-                var SaveData = Data.DataPararCriarPasta();
+                var SaveData = Date.DataPararCriarPasta();
 
                 vendaModel = vendaController.PegarIdDaUltimaVenda();
 
@@ -311,6 +311,13 @@ namespace Loja.View.Venda
 
             
             DescontoCompra tela = new DescontoCompra(LblUsuario.Text, TxtTotal.Text, TipoPagamento, _ListaProdutos);
+            tela.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DescontoProduto tela = new DescontoProduto(LblUsuario.Text, TxtTotal.Text, "", _ListaProdutos);
             tela.Show();
             this.Hide();
         }

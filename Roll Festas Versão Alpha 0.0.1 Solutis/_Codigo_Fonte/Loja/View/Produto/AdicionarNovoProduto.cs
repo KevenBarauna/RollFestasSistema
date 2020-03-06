@@ -18,7 +18,7 @@ namespace Loja.View.Produto
         public AdicionarNovoProduto()
         {
             InitializeComponent();
-            TxtData.Text = Data.PegarDiaMesAnoAtual();
+            TxtData.Text = Date.PegarDiaMesAnoAtual();
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace Loja.View.Produto
                 TxtTema.Text = "";
 
                 Controller tempo = new Controller();
-                TxtData.Text = Data.PegarDiaMesAnoAtual();
+                TxtData.Text = Date.PegarDiaMesAnoAtual();
             }
 
             }

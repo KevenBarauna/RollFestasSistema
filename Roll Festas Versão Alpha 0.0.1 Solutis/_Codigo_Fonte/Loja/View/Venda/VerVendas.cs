@@ -23,7 +23,7 @@ namespace Loja.View.Venda
 
             try
             {
-                var data = Data.PegarDiaMesAnoAtual();
+                var data = Date.PegarDiaMesAnoAtual();
 
                 VendaController venda = new VendaController();
                 List<VendaModel> vendas = new List<VendaModel>();

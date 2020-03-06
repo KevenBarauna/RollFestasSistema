@@ -180,7 +180,7 @@ namespace Loja.Controler
             if (VerificaValor.VerificaDinheiro(valor))
             {
                     
-                String data = Data.PegarDiaMesAnoAtual();
+                String data = Date.PegarDiaMesAnoAtual();
 
                 DAOCaixa dao = new DAOCaixa();
                 Decimal ValorTotal = 0;
@@ -205,7 +205,7 @@ namespace Loja.Controler
             if (VerificaValor.VerificaDinheiro(valor))
             {
 
-                String data = Data.PegarDiaMesAnoAtual();
+                String data = Date.PegarDiaMesAnoAtual();
 
                 DAOCaixa dao = new DAOCaixa();
                 Decimal ValorTotal = 0;

@@ -20,9 +20,9 @@ namespace Loja.View.Ponto
             InitializeComponent();
 
 
-            TxtAnoPesquisa.Text = Data.PegarDiaMesAnoAtual();
-            TxtMes.Text = Data.PegarMesAno();
-            TxtAno.Text = Data.PegarAno();
+            TxtAnoPesquisa.Text = Date.PegarDiaMesAnoAtual();
+            TxtMes.Text = Date.PegarMesAno();
+            TxtAno.Text = Date.PegarAno();
 
         }
 

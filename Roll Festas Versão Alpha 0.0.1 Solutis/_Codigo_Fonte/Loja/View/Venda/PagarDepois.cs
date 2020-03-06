@@ -21,7 +21,7 @@ namespace Loja.View.Venda
         {
             InitializeComponent();
 
-            String data = Data.PegarDiaMesAnoAtual();
+            String data = Date.PegarDiaMesAnoAtual();
 
             LblUsuario.Text =  usuario;
             LblData.Text = data;
@@ -79,7 +79,7 @@ namespace Loja.View.Venda
             {
                 //INFO => 1 = PAGO | 2 = PAGAR DEPOIS
 
-                string data = Data.PegarDiaMesAnoAtual();
+                string data = Date.PegarDiaMesAnoAtual();
 
                 //FINALIZAR VENDA
                 var vendaController = new VendaController();
@@ -89,7 +89,7 @@ namespace Loja.View.Venda
                 var produtoDAO = new DAOProduto();
                 foreach (var produto in _ListaProdutos)
                 {
-                    produtoDAO.DecrementaQuantidade(produto.Nome, produto.Quantidade);
+                    produtoDAO.DecrementaQuantidade(produto.Nome, produto.Quantidade_Estoque);
                 }
 
                 //MANDAR VALOR PAGO PARA O CAIXA
@@ -100,7 +100,7 @@ namespace Loja.View.Venda
                 //GERAR RECIBO
                 var vendaModel = new VendaModel();
                 var reciboController = new ReciboController();
-                var SaveData = Data.DataPararCriarPasta();
+                var SaveData = Date.DataPararCriarPasta();
 
                 vendaModel = vendaController.PegarIdDaUltimaVenda();
 

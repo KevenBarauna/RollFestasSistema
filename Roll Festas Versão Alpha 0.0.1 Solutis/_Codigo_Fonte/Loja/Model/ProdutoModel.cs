@@ -9,12 +9,13 @@ namespace Loja.Model
     public class ProdutoModel
     {
         public int Id { get; set; }
-        public String Nome { get; set; }
-        public String Tema { get; set; }
-        public String Preco { get; set; }
-        public String Quantidade { get; set; }
-        public String Fornecedor { get; set; }
-        public String Data { get; set; }
-        public String Descricao { get; set; }
+        public string Nome { get; set; }
+        public string Tema { get; set; }
+        public string Preco { get; set; }
+        public string Quantidade_Estoque { get; set; }
+        public string Quantidade_Venda { get; set; }
+        public string Fornecedor { get; set; }
+        public string Data { get; set; }
+        public string Descricao { get; set; }
     }
 }
