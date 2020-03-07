@@ -66,5 +66,12 @@ namespace RollFestas.View.Mercadoria
                 txtDescricao.Text = "";
             }
         }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            var Tela = new Home();
+            Tela.Show();
+            this.Close();
+        }
     }
 }

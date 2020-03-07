@@ -43,7 +43,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Linha = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
             this.TxtConfSenha = new System.Windows.Forms.TextBox();
             this.TxtSenha = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtDataAdmissao = new System.Windows.Forms.MaskedTextBox();
+            this.BtnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -187,19 +187,6 @@
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
             // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.Red;
-            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnCancelar.Location = new System.Drawing.Point(175, 466);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(82, 31);
-            this.BtnCancelar.TabIndex = 46;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
             // BtnSalvar
             // 
             this.BtnSalvar.BackColor = System.Drawing.Color.LimeGreen;
@@ -288,12 +275,27 @@
             this.TxtDataAdmissao.TabIndex = 89;
             this.TxtDataAdmissao.ValidatingType = typeof(System.DateTime);
             // 
+            // BtnSair
+            // 
+            this.BtnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(15)))), ((int)(((byte)(60)))));
+            this.BtnSair.FlatAppearance.BorderSize = 0;
+            this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSair.ForeColor = System.Drawing.Color.White;
+            this.BtnSair.Location = new System.Drawing.Point(187, 465);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.Size = new System.Drawing.Size(70, 30);
+            this.BtnSair.TabIndex = 92;
+            this.BtnSair.Text = "Voltar";
+            this.BtnSair.UseVisualStyleBackColor = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
+            // 
             // NovoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(278, 507);
+            this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.TxtDataAdmissao);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.panel4);
@@ -309,7 +311,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Linha);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.TxtConfSenha);
             this.Controls.Add(this.TxtSenha);
@@ -351,7 +352,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel Linha;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnSalvar;
         private System.Windows.Forms.TextBox TxtConfSenha;
         private System.Windows.Forms.TextBox TxtSenha;
@@ -361,5 +361,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox TxtDataAdmissao;
+        private System.Windows.Forms.Button BtnSair;
     }
 }

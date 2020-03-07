@@ -84,7 +84,7 @@
             this.BtnSalvar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalvar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnSalvar.Location = new System.Drawing.Point(92, 263);
+            this.BtnSalvar.Location = new System.Drawing.Point(96, 263);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(105, 31);
             this.BtnSalvar.TabIndex = 38;
@@ -113,7 +113,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 9);
+            this.label1.Location = new System.Drawing.Point(63, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 22);
             this.label1.TabIndex = 35;
@@ -125,7 +125,7 @@
             this.BtnSair.FlatAppearance.BorderSize = 0;
             this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSair.ForeColor = System.Drawing.Color.White;
-            this.BtnSair.Location = new System.Drawing.Point(112, 300);
+            this.BtnSair.Location = new System.Drawing.Point(113, 300);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Size = new System.Drawing.Size(70, 30);
             this.BtnSair.TabIndex = 43;

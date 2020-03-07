@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarMercadoria));
-            this.BtnFechar = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -58,22 +57,19 @@
             this.txtPesquisaCodigo = new System.Windows.Forms.TextBox();
             this.LblId = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.BtnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtQuantidade)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BtnFechar
-            // 
-            this.BtnFechar.BackColor = System.Drawing.Color.Red;
-            this.BtnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnFechar.Location = new System.Drawing.Point(325, 522);
-            this.BtnFechar.Name = "BtnFechar";
-            this.BtnFechar.Size = new System.Drawing.Size(75, 29);
-            this.BtnFechar.TabIndex = 100;
-            this.BtnFechar.Text = "Fechar";
-            this.BtnFechar.UseVisualStyleBackColor = false;
-            this.BtnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
             // 
             // panel5
             // 
@@ -201,9 +197,9 @@
             this.BtnSalvar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalvar.ForeColor = System.Drawing.Color.White;
-            this.BtnSalvar.Location = new System.Drawing.Point(23, 523);
+            this.BtnSalvar.Location = new System.Drawing.Point(16, 518);
             this.BtnSalvar.Name = "BtnSalvar";
-            this.BtnSalvar.Size = new System.Drawing.Size(84, 28);
+            this.BtnSalvar.Size = new System.Drawing.Size(84, 30);
             this.BtnSalvar.TabIndex = 87;
             this.BtnSalvar.Text = "Salvar";
             this.BtnSalvar.UseVisualStyleBackColor = false;
@@ -212,6 +208,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label8.Location = new System.Drawing.Point(247, 262);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
@@ -221,6 +218,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label7.Location = new System.Drawing.Point(247, 314);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 13);
@@ -230,6 +228,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label6.Location = new System.Drawing.Point(20, 314);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 13);
@@ -239,6 +238,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label5.Location = new System.Drawing.Point(177, 385);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
@@ -248,6 +248,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.Location = new System.Drawing.Point(247, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
@@ -257,6 +258,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(17, 258);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
@@ -266,6 +268,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(17, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
@@ -275,10 +278,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(140, 38);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(111, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 22);
+            this.label1.Size = new System.Drawing.Size(184, 31);
             this.label1.TabIndex = 77;
             this.label1.Text = "Editar produto";
             // 
@@ -287,7 +290,7 @@
             this.BtnPesquisar.BackColor = System.Drawing.Color.DarkOrange;
             this.BtnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPesquisar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnPesquisar.Location = new System.Drawing.Point(161, 151);
+            this.BtnPesquisar.Location = new System.Drawing.Point(160, 147);
             this.BtnPesquisar.Name = "BtnPesquisar";
             this.BtnPesquisar.Size = new System.Drawing.Size(89, 27);
             this.BtnPesquisar.TabIndex = 103;
@@ -298,7 +301,8 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(141, 109);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label9.Location = new System.Drawing.Point(140, 105);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(132, 13);
             this.label9.TabIndex = 102;
@@ -307,7 +311,7 @@
             // txtPesquisaCodigo
             // 
             this.txtPesquisaCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPesquisaCodigo.Location = new System.Drawing.Point(131, 128);
+            this.txtPesquisaCodigo.Location = new System.Drawing.Point(130, 124);
             this.txtPesquisaCodigo.Name = "txtPesquisaCodigo";
             this.txtPesquisaCodigo.Size = new System.Drawing.Size(155, 13);
             this.txtPesquisaCodigo.TabIndex = 101;
@@ -323,10 +327,75 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Orange;
-            this.panel6.Location = new System.Drawing.Point(134, 144);
+            this.panel6.Location = new System.Drawing.Point(133, 140);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(150, 1);
             this.panel6.TabIndex = 98;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Tan;
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Location = new System.Drawing.Point(16, 87);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(391, 1);
+            this.panel7.TabIndex = 285;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Tan;
+            this.panel8.Location = new System.Drawing.Point(0, -92);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(288, 1);
+            this.panel8.TabIndex = 283;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Tan;
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Location = new System.Drawing.Point(16, 193);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(391, 1);
+            this.panel9.TabIndex = 286;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Tan;
+            this.panel10.Location = new System.Drawing.Point(0, -92);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(288, 1);
+            this.panel10.TabIndex = 283;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Tan;
+            this.panel11.Controls.Add(this.panel12);
+            this.panel11.Location = new System.Drawing.Point(16, 502);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(391, 1);
+            this.panel11.TabIndex = 287;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Tan;
+            this.panel12.Location = new System.Drawing.Point(0, -92);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(288, 1);
+            this.panel12.TabIndex = 283;
+            // 
+            // BtnSair
+            // 
+            this.BtnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(15)))), ((int)(((byte)(60)))));
+            this.BtnSair.FlatAppearance.BorderSize = 0;
+            this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSair.ForeColor = System.Drawing.Color.White;
+            this.BtnSair.Location = new System.Drawing.Point(313, 518);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.Size = new System.Drawing.Size(94, 30);
+            this.BtnSair.TabIndex = 284;
+            this.BtnSair.Text = "Cancelar";
+            this.BtnSair.UseVisualStyleBackColor = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // EditarMercadoria
             // 
@@ -335,12 +404,15 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(423, 563);
             this.ControlBox = false;
+            this.Controls.Add(this.BtnSair);
+            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.txtPesquisaCodigo);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.LblId);
             this.Controls.Add(this.BtnPesquisar);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.BtnFechar);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -374,14 +446,15 @@
             this.Text = "EditarMercadoria";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtQuantidade)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button BtnFechar;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
@@ -410,5 +483,12 @@
         private System.Windows.Forms.TextBox txtPesquisaCodigo;
         private System.Windows.Forms.Label LblId;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Button BtnSair;
     }
 }

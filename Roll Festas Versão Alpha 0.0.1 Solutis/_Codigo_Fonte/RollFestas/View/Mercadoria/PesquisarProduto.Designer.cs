@@ -34,7 +34,6 @@
             this.LblId = new System.Windows.Forms.Label();
             this.BtnPesquisarCod = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.BtnFechar = new System.Windows.Forms.Button();
             this.TxtPesquisaNome = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.BtnPesquisarNome = new System.Windows.Forms.Button();
@@ -51,12 +50,13 @@
             this.ListViewProduto = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button2 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgProximasEncomendas)).BeginInit();
             this.SuspendLayout();
@@ -101,24 +101,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label9.Location = new System.Drawing.Point(31, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(132, 13);
             this.label9.TabIndex = 131;
             this.label9.Text = "Digite o código do produto";
-            // 
-            // BtnFechar
-            // 
-            this.BtnFechar.BackColor = System.Drawing.Color.Red;
-            this.BtnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnFechar.Location = new System.Drawing.Point(566, 509);
-            this.BtnFechar.Name = "BtnFechar";
-            this.BtnFechar.Size = new System.Drawing.Size(75, 29);
-            this.BtnFechar.TabIndex = 129;
-            this.BtnFechar.Text = "Fechar";
-            this.BtnFechar.UseVisualStyleBackColor = false;
-            this.BtnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
             // 
             // TxtPesquisaNome
             // 
@@ -152,6 +140,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(264, 20);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(126, 13);
@@ -161,7 +150,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label11.Location = new System.Drawing.Point(199, 20);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(19, 13);
@@ -200,6 +189,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(496, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 13);
@@ -209,7 +199,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label3.Location = new System.Drawing.Point(438, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(19, 13);
@@ -276,6 +266,10 @@
             this.columnHeader6.Text = "Nome:";
             this.columnHeader6.Width = 90;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Preço:";
+            // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Tema:";
@@ -301,9 +295,19 @@
             this.columnHeader3.Text = "Descrição:";
             this.columnHeader3.Width = 120;
             // 
-            // columnHeader4
+            // button2
             // 
-            this.columnHeader4.Text = "Preço:";
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(15)))), ((int)(((byte)(60)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(592, 508);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 30);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "Voltar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // PesquisarProduto
             // 
@@ -311,6 +315,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(676, 550);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.ListViewProduto);
             this.Controls.Add(this.label3);
@@ -328,7 +333,7 @@
             this.Controls.Add(this.LblId);
             this.Controls.Add(this.BtnPesquisarCod);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.BtnFechar);
+            this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PesquisarProduto";
@@ -349,7 +354,6 @@
         private System.Windows.Forms.Label LblId;
         private System.Windows.Forms.Button BtnPesquisarCod;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button BtnFechar;
         private System.Windows.Forms.TextBox TxtPesquisaNome;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button BtnPesquisarNome;
@@ -372,5 +376,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button button2;
     }
 }

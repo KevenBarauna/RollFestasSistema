@@ -52,8 +52,6 @@
             this.BtnPesquisarData = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPesquisaHoje = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.LblId = new System.Windows.Forms.Label();
             this.BtnPesquisarHoje = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -199,6 +197,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(518, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 13);
@@ -248,6 +247,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(284, 11);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 13);
@@ -256,6 +256,7 @@
             // 
             // txtPesquisaHoje
             // 
+            this.txtPesquisaHoje.BackColor = System.Drawing.Color.White;
             this.txtPesquisaHoje.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPesquisaHoje.Location = new System.Drawing.Point(31, 31);
             this.txtPesquisaHoje.Name = "txtPesquisaHoje";
@@ -263,22 +264,6 @@
             this.txtPesquisaHoje.Size = new System.Drawing.Size(155, 13);
             this.txtPesquisaHoje.TabIndex = 148;
             this.txtPesquisaHoje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Orange;
-            this.panel6.Location = new System.Drawing.Point(34, 47);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(150, 1);
-            this.panel6.TabIndex = 146;
-            // 
-            // LblId
-            // 
-            this.LblId.AutoSize = true;
-            this.LblId.Location = new System.Drawing.Point(415, 11);
-            this.LblId.Name = "LblId";
-            this.LblId.Size = new System.Drawing.Size(0, 13);
-            this.LblId.TabIndex = 151;
             // 
             // BtnPesquisarHoje
             // 
@@ -296,6 +281,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label9.Location = new System.Drawing.Point(58, 11);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 13);
@@ -345,6 +331,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label5.Location = new System.Drawing.Point(733, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 13);
@@ -390,8 +377,6 @@
             this.Controls.Add(this.BtnPesquisarData);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtPesquisaHoje);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.LblId);
             this.Controls.Add(this.BtnPesquisarHoje);
             this.Controls.Add(this.label9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -431,8 +416,6 @@
         private System.Windows.Forms.Button BtnPesquisarData;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPesquisaHoje;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label LblId;
         private System.Windows.Forms.Button BtnPesquisarHoje;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;

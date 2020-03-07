@@ -43,7 +43,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnFechar = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
             this.BtnPesquisar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.TxtSenhaConf = new System.Windows.Forms.TextBox();
             this.TxtDataAdmissao = new System.Windows.Forms.MaskedTextBox();
+            this.BtnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -192,19 +192,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
-            // 
-            // BtnFechar
-            // 
-            this.BtnFechar.BackColor = System.Drawing.Color.Red;
-            this.BtnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnFechar.Location = new System.Drawing.Point(155, 503);
-            this.BtnFechar.Name = "BtnFechar";
-            this.BtnFechar.Size = new System.Drawing.Size(75, 29);
-            this.BtnFechar.TabIndex = 55;
-            this.BtnFechar.Text = "Fechar";
-            this.BtnFechar.UseVisualStyleBackColor = false;
-            this.BtnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
             // 
             // BtnSalvar
             // 
@@ -341,12 +328,27 @@
             this.TxtDataAdmissao.TabIndex = 90;
             this.TxtDataAdmissao.ValidatingType = typeof(System.DateTime);
             // 
+            // BtnSair
+            // 
+            this.BtnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(15)))), ((int)(((byte)(60)))));
+            this.BtnSair.FlatAppearance.BorderSize = 0;
+            this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSair.ForeColor = System.Drawing.Color.White;
+            this.BtnSair.Location = new System.Drawing.Point(164, 502);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.Size = new System.Drawing.Size(70, 30);
+            this.BtnSair.TabIndex = 91;
+            this.BtnSair.Text = "Voltar";
+            this.BtnSair.UseVisualStyleBackColor = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(257, 544);
+            this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.TxtDataAdmissao);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.pictureBox7);
@@ -366,7 +368,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.BtnFechar);
             this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.BtnPesquisar);
             this.Controls.Add(this.label4);
@@ -410,7 +411,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button BtnFechar;
         private System.Windows.Forms.Button BtnSalvar;
         private System.Windows.Forms.Button BtnPesquisar;
         private System.Windows.Forms.Label label4;
@@ -425,5 +425,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtSenhaConf;
         private System.Windows.Forms.MaskedTextBox TxtDataAdmissao;
+        private System.Windows.Forms.Button BtnSair;
     }
 }

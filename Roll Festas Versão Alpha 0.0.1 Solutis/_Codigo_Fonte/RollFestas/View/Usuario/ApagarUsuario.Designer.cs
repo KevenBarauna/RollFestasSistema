@@ -83,7 +83,7 @@
             this.BtnApagar.BackColor = System.Drawing.Color.Red;
             this.BtnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnApagar.ForeColor = System.Drawing.Color.Gold;
-            this.BtnApagar.Location = new System.Drawing.Point(82, 212);
+            this.BtnApagar.Location = new System.Drawing.Point(94, 212);
             this.BtnApagar.Name = "BtnApagar";
             this.BtnApagar.Size = new System.Drawing.Size(90, 32);
             this.BtnApagar.TabIndex = 32;

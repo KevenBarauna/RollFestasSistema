@@ -131,5 +131,12 @@ namespace RollFestas.View.Mercadoria
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var Tela = new Home();
+            Tela.Show();
+            this.Close();
+        }
     }
 }

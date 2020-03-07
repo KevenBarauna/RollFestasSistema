@@ -35,11 +35,8 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -126,14 +123,6 @@
             this.pictureBox3.TabIndex = 96;
             this.pictureBox3.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel2.Location = new System.Drawing.Point(66, 244);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(227, 1);
-            this.panel2.TabIndex = 95;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -144,14 +133,6 @@
             this.pictureBox2.TabIndex = 94;
             this.pictureBox2.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel1.Location = new System.Drawing.Point(66, 319);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 1);
-            this.panel1.TabIndex = 93;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -161,14 +142,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 92;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel4.Location = new System.Drawing.Point(63, 162);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(227, 1);
-            this.panel4.TabIndex = 91;
             // 
             // pictureBox5
             // 
@@ -338,11 +311,8 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.TxtNome);
             this.Controls.Add(this.label4);
@@ -382,11 +352,8 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.Label label4;

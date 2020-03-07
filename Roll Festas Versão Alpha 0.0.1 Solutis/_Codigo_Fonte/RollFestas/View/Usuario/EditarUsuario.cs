@@ -54,5 +54,12 @@ namespace RollFestas.View.Usuario
             TxtEmail.Text = usuarioM.Email;
             TxtDataAdmissao.Text = usuarioM.Data_Admissao;
         }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            var Tela = new Home();
+            Tela.Show();
+            this.Close();
+        }
     }
 }
