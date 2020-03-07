@@ -56,12 +56,12 @@
             this.LblId = new System.Windows.Forms.Label();
             this.BtnPesquisarHoje = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.BtnFechar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtPesquisaAno = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnPesquisarAno = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.BtnFechar = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgProximasEncomendas)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +91,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Amiri Quran", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(247, 0);
+            this.label4.Location = new System.Drawing.Point(249, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(273, 54);
             this.label4.TabIndex = 27;
@@ -302,19 +302,6 @@
             this.label9.TabIndex = 149;
             this.label9.Text = "Faturamento hoje";
             // 
-            // BtnFechar
-            // 
-            this.BtnFechar.BackColor = System.Drawing.Color.Red;
-            this.BtnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnFechar.Location = new System.Drawing.Point(784, 500);
-            this.BtnFechar.Name = "BtnFechar";
-            this.BtnFechar.Size = new System.Drawing.Size(75, 29);
-            this.BtnFechar.TabIndex = 147;
-            this.BtnFechar.Text = "Fechar";
-            this.BtnFechar.UseVisualStyleBackColor = false;
-            this.BtnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -364,12 +351,27 @@
             this.label5.TabIndex = 166;
             this.label5.Text = "Faturamento por ano";
             // 
+            // BtnFechar
+            // 
+            this.BtnFechar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(15)))), ((int)(((byte)(60)))));
+            this.BtnFechar.FlatAppearance.BorderSize = 0;
+            this.BtnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnFechar.ForeColor = System.Drawing.Color.White;
+            this.BtnFechar.Location = new System.Drawing.Point(807, 499);
+            this.BtnFechar.Name = "BtnFechar";
+            this.BtnFechar.Size = new System.Drawing.Size(70, 30);
+            this.BtnFechar.TabIndex = 169;
+            this.BtnFechar.Text = "Fechar";
+            this.BtnFechar.UseVisualStyleBackColor = false;
+            this.BtnFechar.Click += new System.EventHandler(this.BtnFechar_Click_1);
+            // 
             // Faturamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(889, 541);
+            this.Controls.Add(this.BtnFechar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtPesquisaAno);
             this.Controls.Add(this.panel2);
@@ -392,7 +394,6 @@
             this.Controls.Add(this.LblId);
             this.Controls.Add(this.BtnPesquisarHoje);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.BtnFechar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Faturamento";
@@ -434,12 +435,12 @@
         private System.Windows.Forms.Label LblId;
         private System.Windows.Forms.Button BtnPesquisarHoje;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button BtnFechar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtPesquisaAno;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnPesquisarAno;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button BtnFechar;
     }
 }

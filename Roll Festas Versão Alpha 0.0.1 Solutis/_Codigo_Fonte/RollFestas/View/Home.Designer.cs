@@ -176,7 +176,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 377);
+            this.label5.Location = new System.Drawing.Point(33, 383);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 16);
             this.label5.TabIndex = 119;
@@ -187,7 +187,7 @@
             this.LblUsuario.AutoSize = true;
             this.LblUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblUsuario.Location = new System.Drawing.Point(11, 96);
+            this.LblUsuario.Location = new System.Drawing.Point(46, 96);
             this.LblUsuario.Name = "LblUsuario";
             this.LblUsuario.Size = new System.Drawing.Size(56, 16);
             this.LblUsuario.TabIndex = 117;
@@ -221,7 +221,7 @@
             // 
             this.LblVendas.AutoSize = true;
             this.LblVendas.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVendas.Location = new System.Drawing.Point(49, 377);
+            this.LblVendas.Location = new System.Drawing.Point(56, 383);
             this.LblVendas.Name = "LblVendas";
             this.LblVendas.Size = new System.Drawing.Size(68, 16);
             this.LblVendas.TabIndex = 32;
@@ -230,7 +230,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 357);
+            this.label4.Location = new System.Drawing.Point(61, 363);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 22;
@@ -242,7 +242,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SlateGray;
-            this.label2.Location = new System.Drawing.Point(12, 332);
+            this.label2.Location = new System.Drawing.Point(19, 338);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 14);
             this.label2.TabIndex = 31;
@@ -640,14 +640,14 @@
             // bannerToolStripMenuItem
             // 
             this.bannerToolStripMenuItem.Name = "bannerToolStripMenuItem";
-            this.bannerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bannerToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.bannerToolStripMenuItem.Text = "Banner";
             this.bannerToolStripMenuItem.Click += new System.EventHandler(this.bannerToolStripMenuItem_Click);
             // 
             // mDFToolStripMenuItem
             // 
             this.mDFToolStripMenuItem.Name = "mDFToolStripMenuItem";
-            this.mDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mDFToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.mDFToolStripMenuItem.Text = "MDF";
             // 
             // caixaToolStripMenuItem

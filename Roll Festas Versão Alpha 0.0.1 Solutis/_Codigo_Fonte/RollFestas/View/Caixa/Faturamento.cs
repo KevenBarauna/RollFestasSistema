@@ -117,6 +117,13 @@ namespace RollFestas.View.Caixa
             }
 
         }
+
+        private void BtnFechar_Click_1(object sender, EventArgs e)
+        {
+            var Tela = new Home();
+            Tela.Show();
+            this.Close();
+        }
     }
 }
 

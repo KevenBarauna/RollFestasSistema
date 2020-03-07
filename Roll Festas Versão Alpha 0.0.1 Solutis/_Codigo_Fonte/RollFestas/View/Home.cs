@@ -22,6 +22,8 @@ namespace RollFestas.View
         {
             InitializeComponent();
 
+            
+
             //NOME USUÁRIO
             LblUsuario.Text = Program._Usuario.Nome;
             string Data = GetDate.PegarDiaMesAnoAtual();
@@ -50,9 +52,11 @@ namespace RollFestas.View
 
                     if (item.DataEntrega == Data)
                     {
+                        this.Hide();
                         var Tela = new MensagemAlerta("Hoje tem entrega da encomenda do tipo " + item.TipoServico +" do(a) cliente " + item.NomeCliente);
                         Tela.Show();
                         Tela.Focus();
+                        this.Show();
                     }
                 }
             }
@@ -60,6 +64,7 @@ namespace RollFestas.View
 
 
         }
+
         private void BtnTrocarUsuario_Click(object sender, System.EventArgs e)
         {
             var Tela = new Login();
@@ -205,17 +210,19 @@ namespace RollFestas.View
             
         }
 
-        private void verVendaDoDiaToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            var Tela = new Faturamento();
-            Tela.Show();
-            this.Close();
-        }
-        #endregion
-
         private void fechamentoDoCaixaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new FechametoCaixa();
+            Tela.Show();
+            this.Close();
+        }
+
+        #endregion
+
+        #region VENDA
+        private void verVendaDoDiaToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var Tela = new Faturamento();
             Tela.Show();
             this.Close();
         }
@@ -265,7 +272,7 @@ namespace RollFestas.View
                 this.Close();
             }
 
-          
+
         }
 
         private void verTodasAsVendasToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -275,6 +282,9 @@ namespace RollFestas.View
             this.Close();
         }
 
+        #endregion
+
+        #region ENCOMENDA
         private void novaEncomendaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new NovaEncomenda();
@@ -302,7 +312,9 @@ namespace RollFestas.View
             Tela.Show();
             this.Close();
         }
+        #endregion
 
+        #region PONTO
         private void baterPontoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Tela = new BaterPonto();
@@ -321,12 +333,16 @@ namespace RollFestas.View
         {
             GerarPlanilha.GerarPlanilhaPonto(GetDate.PegarMesAno());
         }
+        #endregion
 
+        #region CALCULO
         private void bannerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Tela = new CalcularBanner();
             Tela.Show();
             this.Close();
         }
+        #endregion
+
     }
 }
