@@ -84,6 +84,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TxtDataEntrega = new System.Windows.Forms.MaskedTextBox();
             this.CbAviso = new System.Windows.Forms.CheckBox();
+            this.BtnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgAtencao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -647,12 +648,27 @@
             this.CbAviso.UseVisualStyleBackColor = true;
             this.CbAviso.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // BtnSair
+            // 
+            this.BtnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(15)))), ((int)(((byte)(60)))));
+            this.BtnSair.FlatAppearance.BorderSize = 0;
+            this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSair.ForeColor = System.Drawing.Color.White;
+            this.BtnSair.Location = new System.Drawing.Point(12, 583);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.Size = new System.Drawing.Size(70, 30);
+            this.BtnSair.TabIndex = 238;
+            this.BtnSair.Text = "Sair";
+            this.BtnSair.UseVisualStyleBackColor = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
+            // 
             // NovaEncomenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(554, 625);
+            this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.CbAviso);
             this.Controls.Add(this.TxtDataEntrega);
             this.Controls.Add(this.LblTroco);
@@ -787,5 +803,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox TxtDataEntrega;
         private System.Windows.Forms.CheckBox CbAviso;
+        private System.Windows.Forms.Button BtnSair;
     }
 }

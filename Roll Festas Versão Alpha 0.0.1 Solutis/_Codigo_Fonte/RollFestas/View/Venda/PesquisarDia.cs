@@ -27,7 +27,8 @@ namespace RollFestas.View.Venda
 
         private void BtnPesquisarData_Click(object sender, EventArgs e)
         {
-            var vendaC = new VendaController();
+            listCodigo.Items.Clear();
+           var vendaC = new VendaController();
             List<VendaModel> ListaVenda = vendaC.ListarVendas(TxtPesquisaData.Text);
 
             foreach (var item in ListaVenda)
@@ -40,7 +41,14 @@ namespace RollFestas.View.Venda
                 listP.SubItems.Add(Convert.ToString(item.ValorPago));
                 listP.SubItems.Add(Convert.ToString(item.Troco));
                 listP.SubItems.Add(Convert.ToString(item.TipoPagamento));
-                listP.SubItems.Add(Convert.ToString(item.StatusPagamento));
+                if (item.StatusPagamento == "2")
+                {
+                    listP.SubItems.Add(Convert.ToString("PENDENTE"));
+                }
+                else
+                {
+                    listP.SubItems.Add(Convert.ToString("PAGO"));
+                }
                 listP.SubItems.Add(Convert.ToString(item.ValorPendente));
                 listP.SubItems.Add(Convert.ToString(item.NomeCliente));
                 listCodigo.Items.Add(listP);
@@ -52,7 +60,7 @@ namespace RollFestas.View.Venda
         {
             var Tela = new Home();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -90,8 +90,6 @@
             this.registrarDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verVendaDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fechamentoDoCaixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reciboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gerarTodosOsRecibosDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pontoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baterPontoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verPontoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -438,7 +436,6 @@
             this.encomendaToolStripMenuItem,
             this.calcularToolStripMenuItem,
             this.caixaToolStripMenuItem,
-            this.reciboToolStripMenuItem,
             this.pontoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -621,12 +618,14 @@
             this.cancelarEncomendaToolStripMenuItem.Name = "cancelarEncomendaToolStripMenuItem";
             this.cancelarEncomendaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.cancelarEncomendaToolStripMenuItem.Text = "Cancelar encomenda";
+            this.cancelarEncomendaToolStripMenuItem.Click += new System.EventHandler(this.cancelarEncomendaToolStripMenuItem_Click);
             // 
             // verEmcomendaToolStripMenuItem
             // 
             this.verEmcomendaToolStripMenuItem.Name = "verEmcomendaToolStripMenuItem";
             this.verEmcomendaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.verEmcomendaToolStripMenuItem.Text = "Ver encomenda";
+            this.verEmcomendaToolStripMenuItem.Click += new System.EventHandler(this.verEmcomendaToolStripMenuItem_Click);
             // 
             // calcularToolStripMenuItem
             // 
@@ -641,13 +640,14 @@
             // bannerToolStripMenuItem
             // 
             this.bannerToolStripMenuItem.Name = "bannerToolStripMenuItem";
-            this.bannerToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.bannerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bannerToolStripMenuItem.Text = "Banner";
+            this.bannerToolStripMenuItem.Click += new System.EventHandler(this.bannerToolStripMenuItem_Click);
             // 
             // mDFToolStripMenuItem
             // 
             this.mDFToolStripMenuItem.Name = "mDFToolStripMenuItem";
-            this.mDFToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.mDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mDFToolStripMenuItem.Text = "MDF";
             // 
             // caixaToolStripMenuItem
@@ -690,21 +690,6 @@
             this.fechamentoDoCaixaToolStripMenuItem.Text = "Fechamento do caixa";
             this.fechamentoDoCaixaToolStripMenuItem.Click += new System.EventHandler(this.fechamentoDoCaixaToolStripMenuItem_Click);
             // 
-            // reciboToolStripMenuItem
-            // 
-            this.reciboToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gerarTodosOsRecibosDoDiaToolStripMenuItem});
-            this.reciboToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reciboToolStripMenuItem.Image")));
-            this.reciboToolStripMenuItem.Name = "reciboToolStripMenuItem";
-            this.reciboToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.reciboToolStripMenuItem.Text = "Recibo";
-            // 
-            // gerarTodosOsRecibosDoDiaToolStripMenuItem
-            // 
-            this.gerarTodosOsRecibosDoDiaToolStripMenuItem.Name = "gerarTodosOsRecibosDoDiaToolStripMenuItem";
-            this.gerarTodosOsRecibosDoDiaToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.gerarTodosOsRecibosDoDiaToolStripMenuItem.Text = "Gerar recibo por código";
-            // 
             // pontoToolStripMenuItem
             // 
             this.pontoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -721,18 +706,21 @@
             this.baterPontoToolStripMenuItem.Name = "baterPontoToolStripMenuItem";
             this.baterPontoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.baterPontoToolStripMenuItem.Text = "Bater ponto";
+            this.baterPontoToolStripMenuItem.Click += new System.EventHandler(this.baterPontoToolStripMenuItem_Click);
             // 
             // verPontoToolStripMenuItem
             // 
             this.verPontoToolStripMenuItem.Name = "verPontoToolStripMenuItem";
             this.verPontoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.verPontoToolStripMenuItem.Text = "Pesquisar ponto";
+            this.verPontoToolStripMenuItem.Click += new System.EventHandler(this.verPontoToolStripMenuItem_Click);
             // 
             // gerarPDFToolStripMenuItem
             // 
             this.gerarPDFToolStripMenuItem.Name = "gerarPDFToolStripMenuItem";
             this.gerarPDFToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.gerarPDFToolStripMenuItem.Text = "Gerar planilha do mês";
+            this.gerarPDFToolStripMenuItem.Click += new System.EventHandler(this.gerarPDFToolStripMenuItem_Click);
             // 
             // panel3
             // 
@@ -840,8 +828,6 @@
         private System.Windows.Forms.ToolStripMenuItem registrarRetiradaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verVendaDoDiaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reciboToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gerarTodosOsRecibosDoDiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pontoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem baterPontoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verPontoToolStripMenuItem;

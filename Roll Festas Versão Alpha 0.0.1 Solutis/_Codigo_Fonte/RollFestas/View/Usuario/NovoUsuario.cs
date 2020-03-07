@@ -20,7 +20,7 @@ namespace RollFestas.View.Usuario
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)

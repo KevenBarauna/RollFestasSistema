@@ -25,7 +25,7 @@ namespace RollFestas.View.MensagemErro
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }

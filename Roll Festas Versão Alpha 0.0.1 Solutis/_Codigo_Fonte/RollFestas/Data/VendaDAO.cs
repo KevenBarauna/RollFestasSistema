@@ -136,7 +136,10 @@ namespace RollFestas.Data
                         var VALORPAGO = dr["valorpago"];
                         var TROCO = dr["troco"];
                         var TIPOPAGAMENTO = dr["tipopagamento"];
+                        var STATUS = dr["status_pagamento"];
+                        var VALORPENDENTE = dr["valor_pendente"];
                         var NOME = dr["nome"];
+ 
 
                         if (TROCO == null)
                         {
@@ -154,6 +157,8 @@ namespace RollFestas.Data
                         vendaM.ValorPago = Convert.ToString(VALORPAGO);
                         vendaM.Troco = Convert.ToString(TROCO);
                         vendaM.TipoPagamento = Convert.ToString(TIPOPAGAMENTO);
+                        vendaM.StatusPagamento = Convert.ToString(STATUS);
+                        vendaM.ValorPendente = Convert.ToString(VALORPENDENTE);
                         vendaM.NomeCliente = Convert.ToString(NOME);
 
 

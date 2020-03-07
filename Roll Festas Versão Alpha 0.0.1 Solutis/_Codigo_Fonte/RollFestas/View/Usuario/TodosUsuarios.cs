@@ -34,7 +34,7 @@ namespace RollFestas.View.Usuario
 
         private void BtnFechar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }

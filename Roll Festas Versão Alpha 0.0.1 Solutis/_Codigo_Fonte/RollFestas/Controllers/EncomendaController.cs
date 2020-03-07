@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RollFestas.Data;
 using RollFestas.Models;
+using RollFestas.View.Avisos;
 using RollFestas.View.MensagemErro;
 
 namespace RollFestas.Controllers
@@ -18,55 +19,70 @@ namespace RollFestas.Controllers
         {
             List<EncomendaModel> ListadeEncomenda = new List<EncomendaModel>();
 
-           
             ListadeEncomenda = DAO.ListarTodasAsEncomendasPorData();
 
             return ListadeEncomenda;
         }
 
+        //LISTA ENCOMENDA
+        public List<EncomendaModel> ListraEncomendas()
+        {
+            List<EncomendaModel> ListadeEncomenda = new List<EncomendaModel>();
+
+            ListadeEncomenda = DAO.ListarTodasAsEncomendas();
+
+            return ListadeEncomenda;
+        }
+
         //NOVA ENCOMENDA
-        public bool NovaEncomenda(string Tipo, string DataEntrada, string DataEntrega, string Tema, int Entregue, string Quantidade, string Valor, string Descricao,string NomeCliente)
+        public bool NovaEncomenda(string Tipo, string DataEntrada, string DataEntrega, string Tema, int Entregue, string Quantidade, string Valor, string Descricao, string NomeCliente)
         {
             if (string.IsNullOrEmpty(Tipo))
             {
-                var TelaErro = new ErroController("ERN01E","Informe o tipo da encomenda","","","");
+                var TelaErro = new Erro("Informe o tipo da encomenda");
                 TelaErro.Show();
                 return false;
             }
             if (string.IsNullOrEmpty(DataEntrada))
             {
-                var TelaErro = new ErroController("ER01E", "Informe a data que o pedido foi realizado", "", "", "");
+                var TelaErro = new Erro("Informe a data que o pedido foi realizado");
                 TelaErro.Show();
                 return false;
             }
             if (string.IsNullOrEmpty(DataEntrega))
             {
-                var TelaErro = new ErroController("ER01E", "Informe a data da entrega da encomenda", "", "", "");
+                var TelaErro = new Erro("Informe a data da entrega da encomenda");
                 TelaErro.Show();
                 return false;
             }
             if (string.IsNullOrEmpty(Quantidade))
             {
-                var TelaErro = new ErroController("ER01E", "Informe a quantidade da encomenda", "", "", "");
+                var TelaErro = new Erro("Informe a quantidade da encomenda");
                 TelaErro.Show();
                 return false;
             }
             if (string.IsNullOrEmpty(Valor))
             {
-                var TelaErro = new ErroController("ER01E", "Informe o valor total da encomenda", "", "", "");
+                var TelaErro = new Erro("Informe o valor total da encomenda");
                 TelaErro.Show();
                 return false;
             }
             if (string.IsNullOrEmpty(NomeCliente))
             {
-                var TelaErro = new ErroController("ER01E", "Informe o nome do cliente", "", "", "");
+                var TelaErro = new Erro("Informe o nome do cliente");
                 TelaErro.Show();
                 return false;
             }
 
 
-            return DAO.NovaEncomenda(Tipo, DataEntrada, DataEntrega, Tema, Entregue ,Quantidade, Valor, Descricao, NomeCliente);
+            bool Sucesso = DAO.NovaEncomenda(Tipo, DataEntrada, DataEntrega, Tema, Entregue, Quantidade, Valor, Descricao, NomeCliente);
 
+            if (Sucesso == true)
+            {
+                var Tela = new Sucesso("Encomenda cadastrada");
+                Tela.Show();
+            }
+            return Sucesso;
 
         }
 
@@ -75,6 +91,11 @@ namespace RollFestas.Controllers
         {
 
             EncomendaModel EncomendaModel = DAO.ExibirDetalhesdoDaEncomenda(Id);
+
+            if (EncomendaModel.Id == 0)
+            {
+                var Tela = new Erro("Encomenda não encontrada");
+            }
 
             return EncomendaModel;
         }
@@ -85,32 +106,52 @@ namespace RollFestas.Controllers
 
             if (string.IsNullOrEmpty(Tipo))
             {
-                var TelaErro = new ErroController("CDB01","","","","");
+                var TelaErro = new Erro("Informe o tipo da encomenda");
                 TelaErro.Show();
                 return false;
             }
-            else if (string.IsNullOrEmpty(DataEntrada) || string.IsNullOrEmpty(DataEntrega))
+            if (string.IsNullOrEmpty(DataEntrada))
             {
-                var TelaErro = new ErroController("CDB01", "", "", "", "");
+                var TelaErro = new Erro("Informe a data que o pedido foi realizado");
                 TelaErro.Show();
                 return false;
             }
-            else if (string.IsNullOrEmpty(Quantidade))
+            if (string.IsNullOrEmpty(DataEntrega))
             {
-                var TelaErro = new ErroController("CDB01", "", "", "", "");
+                var TelaErro = new Erro("Informe a data da entrega da encomenda");
                 TelaErro.Show();
                 return false;
             }
-            else if (string.IsNullOrEmpty(Valor))
+            if (string.IsNullOrEmpty(Quantidade))
             {
-                var TelaErro = new ErroController("CDB01", "", "", "", "");
+                var TelaErro = new Erro("Informe a quantidade da encomenda");
+                TelaErro.Show();
+                return false;
+            }
+            if (string.IsNullOrEmpty(Valor))
+            {
+                var TelaErro = new Erro("Informe o valor total da encomenda");
+                TelaErro.Show();
+                return false;
+            }
+            if (string.IsNullOrEmpty(NomeCliente))
+            {
+                var TelaErro = new Erro("Informe o nome do cliente");
                 TelaErro.Show();
                 return false;
             }
 
-            return DAO.EditarEncomenda(Tipo, DataEntrada, DataEntrega, Tema, Quantidade, Valor, Descricao, Id);
-            
-             
+            bool Sucesso = DAO.EditarEncomenda(Tipo, DataEntrada, DataEntrega, Tema, Quantidade, Valor, Descricao, Entregue, Id);
+
+            if (Sucesso == true)
+            {
+                var Tela = new Sucesso("Encomenda editada com sucesso");
+                Tela.Show();
+            }
+
+            return Sucesso;
+
+
 
         }//EDITAR ENCOMENDA
 
@@ -121,15 +162,19 @@ namespace RollFestas.Controllers
             Encomenda = ExibirDetalhesdoDaEncomenda(Id);
             if (Encomenda.Id == 0)
             {
-                var TelaErro = new ErroController("ECE", "Encomenda não encontrada", "","","");
+                var TelaErro = new ErroController("ECE", "Encomenda não encontrada", "", "", "");
                 TelaErro.Show();
                 return false;
             }
-            else
+
+            bool Sucesso = DAO.ApagarEncomenda(Id);
+            if (Sucesso == true)
             {
-                return DAO.ApagarEncomenda(Id);
+                var Tela = new Sucesso("Encomenda apagada");
+                Tela.Show();
             }
-            
+            return Sucesso;
+
 
         }
 

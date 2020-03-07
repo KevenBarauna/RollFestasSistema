@@ -6,8 +6,10 @@ using RollFestas.Models;
 using RollFestas.Utils;
 using RollFestas.View.Avisos;
 using RollFestas.View.Caixa;
+using RollFestas.View.Calculo;
 using RollFestas.View.Encomenda;
 using RollFestas.View.Mercadoria;
+using RollFestas.View.Ponto;
 using RollFestas.View.Usuario;
 using RollFestas.View.Venda;
 using RollFestas.View.Venda.PagamentoPendente;
@@ -62,7 +64,7 @@ namespace RollFestas.View
         {
             var Tela = new Login();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button1_Click(object sender, System.EventArgs e)
@@ -83,6 +85,7 @@ namespace RollFestas.View
             {
                 var tela = new Permissao(1);
                 tela.Show();
+                this.Close();
             }
         }
 
@@ -98,6 +101,7 @@ namespace RollFestas.View
             {
                 var tela = new Permissao(2);
                 tela.Show();
+                this.Close();
             }
         }
 
@@ -113,6 +117,7 @@ namespace RollFestas.View
             {
                 var tela = new Permissao(3);
                 tela.Show();
+                this.Close();
             }
         }
 
@@ -128,41 +133,40 @@ namespace RollFestas.View
             {
                 var tela = new Permissao(4);
                 tela.Show();
+                this.Close();
             }
         }
 
 
         #endregion
 
-        #region MERCADORIO
+        #region PRODUTO
         private void novoProdutoToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new NovaMercadoria();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
-        #endregion
-
-        #region PRODUTO
+       
         private void editarProdutoToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new EditarMercadoria();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void apagarProdutoToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new ApagarProduto();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void detalhesDoProdutoToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new PesquisarProduto();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         #endregion
@@ -170,23 +174,42 @@ namespace RollFestas.View
         #region CAIXA
         private void registrarRetiradaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            var Tela = new Retirada();
-            Tela.Show();
-            this.Hide();
+            if (Program._Usuario.Id == 1)
+            {
+                var Tela = new Retirada();
+                Tela.Show();
+                this.Close();
+            }
+            else
+            {
+                var tela = new Permissao(7);
+                tela.Show();
+                this.Close();
+            }
         }
 
         private void registrarDeToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            var Tela = new Deposito();
-            Tela.Show();
-            this.Hide();
+            if (Program._Usuario.Id == 1)
+            {
+                var Tela = new Deposito();
+                Tela.Show();
+                this.Close();
+            }
+            else
+            {
+                var tela = new Permissao(6);
+                tela.Show();
+                this.Close();
+            }
+            
         }
 
         private void verVendaDoDiaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new Faturamento();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
         #endregion
 
@@ -194,35 +217,35 @@ namespace RollFestas.View
         {
             var Tela = new FechametoCaixa();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void novaVendaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new Venda.VendaNova();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void trocaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new Troca(LblUsuario.Text);
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void verTodosOsPagamentosPendetesToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new VerTodos();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void pagarPagamentoPendenteToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new Pagamento(LblUsuario.Text);
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void cancelarPagamentoPendenteToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -233,12 +256,13 @@ namespace RollFestas.View
             {
                 var Tela = new CancelarVendaPendente(LblUsuario.Text);
                 Tela.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {
                 var tela = new Permissao(5);
                 tela.Show();
+                this.Close();
             }
 
           
@@ -248,21 +272,61 @@ namespace RollFestas.View
         {
             var Tela = new PesquisarDia();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void novaEncomendaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var Tela = new NovaEncomenda();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void editarEncomendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Tela = new EditarEncomenda();
             Tela.Show();
-            this.Hide();
+            this.Close();
+        }
+
+        private void cancelarEncomendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Tela = new CancelarEncomenda();
+            Tela.Show();
+            this.Close();
+        }
+
+        private void verEmcomendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Tela = new VerEncomendas();
+            Tela.Show();
+            this.Close();
+        }
+
+        private void baterPontoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Tela = new BaterPonto();
+            Tela.Show();
+            this.Close();
+        }
+
+        private void verPontoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Tela = new PesquisarPonto();
+            Tela.Show();
+            this.Close();
+        }
+
+        private void gerarPDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GerarPlanilha.GerarPlanilhaPonto(GetDate.PegarMesAno());
+        }
+
+        private void bannerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Tela = new CalcularBanner();
+            Tela.Show();
+            this.Close();
         }
     }
 }

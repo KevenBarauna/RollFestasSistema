@@ -182,7 +182,7 @@ namespace RollFestas.View.Venda
                 {
                     var Tela = new VendaSemPagamento(LblTotal.Text, TxtValorRecebido.Text, TipoPagamento, LblTroco.Text);
                     Tela.Show();
-                    this.Hide();
+                    this.Close();
                 }
                 
             }
@@ -208,7 +208,7 @@ namespace RollFestas.View.Venda
         {
             var Tela = new Home();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void BtnPagarDepos_Click(object sender, EventArgs e)
@@ -230,7 +230,7 @@ namespace RollFestas.View.Venda
             {
                 var Tela = new VendaSemPagamento(LblTotal.Text, TxtValorRecebido.Text, TipoPagamento, LblTroco.Text);
                 Tela.Show();
-                this.Hide();
+                this.Close();
             }
 
             
@@ -247,7 +247,7 @@ namespace RollFestas.View.Venda
             Program._Produtos = _ListaProdutos;
             var Tela = new VendaDescontoTotal(LblUsuario.Text,LblData.Text,LblTotal.Text,TipoPagamento);
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -256,7 +256,7 @@ namespace RollFestas.View.Venda
             Program._Produtos = _ListaProdutos;
             var Tela = new VendaDescontoProduto(LblUsuario.Text, LblData.Text, LblTotal.Text, TipoPagamento);
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -44,7 +44,7 @@ namespace RollFestas.View.Mercadoria
         {
             var Tela = new Home();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void BtnPesquisarCod_Click(object sender, EventArgs e)

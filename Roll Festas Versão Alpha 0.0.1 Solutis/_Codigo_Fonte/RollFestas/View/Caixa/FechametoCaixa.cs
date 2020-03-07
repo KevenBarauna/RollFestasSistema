@@ -39,7 +39,7 @@ namespace RollFestas.View.Caixa
         {
             var Tela = new Home();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

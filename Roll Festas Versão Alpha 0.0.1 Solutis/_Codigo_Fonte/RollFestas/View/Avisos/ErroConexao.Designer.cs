@@ -89,10 +89,10 @@
             // 
             this.LblErro.Location = new System.Drawing.Point(12, 140);
             this.LblErro.Name = "LblErro";
-            this.LblErro.Size = new System.Drawing.Size(416, 264);
+            this.LblErro.Size = new System.Drawing.Size(416, 254);
             this.LblErro.TabIndex = 22;
             this.LblErro.Text = "Erro";
-            this.LblErro.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LblErro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnOk
             // 

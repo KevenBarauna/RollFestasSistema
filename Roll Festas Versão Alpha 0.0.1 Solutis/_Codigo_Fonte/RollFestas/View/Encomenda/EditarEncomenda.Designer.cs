@@ -73,6 +73,7 @@
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.BtnVerCodigo = new System.Windows.Forms.Button();
             this.CbEntregue = new System.Windows.Forms.CheckBox();
+            this.BtnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -504,12 +505,27 @@
             this.CbEntregue.UseVisualStyleBackColor = true;
             this.CbEntregue.CheckedChanged += new System.EventHandler(this.CbEntregue_CheckedChanged);
             // 
+            // BtnSair
+            // 
+            this.BtnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(15)))), ((int)(((byte)(60)))));
+            this.BtnSair.FlatAppearance.BorderSize = 0;
+            this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSair.ForeColor = System.Drawing.Color.White;
+            this.BtnSair.Location = new System.Drawing.Point(33, 578);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.Size = new System.Drawing.Size(70, 30);
+            this.BtnSair.TabIndex = 237;
+            this.BtnSair.Text = "Sair";
+            this.BtnSair.UseVisualStyleBackColor = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
+            // 
             // EditarEncomenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(498, 620);
+            this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.CbEntregue);
             this.Controls.Add(this.BtnVerCodigo);
             this.Controls.Add(this.panel7);
@@ -621,5 +637,6 @@
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Button BtnVerCodigo;
         private System.Windows.Forms.CheckBox CbEntregue;
+        private System.Windows.Forms.Button BtnSair;
     }
 }

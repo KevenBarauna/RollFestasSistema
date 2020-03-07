@@ -25,7 +25,7 @@ namespace RollFestas.Utils
                 VendaModel vendaModel = DAO.ExibirDetalhesdaVenda(Id);
 
                 Document doc = new Document(iTextSharp.text.PageSize.A6);
-                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(Program._CaminhoReciboVenda, FileMode.Create));
+                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(Program._CaminhoReciboVenda + @"\" + Id + ".pdf", FileMode.Create));
 
                 doc.Open();
 

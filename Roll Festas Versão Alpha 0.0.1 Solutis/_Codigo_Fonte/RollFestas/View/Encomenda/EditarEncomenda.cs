@@ -14,8 +14,8 @@ namespace RollFestas.View.Encomenda
 {
     public partial class EditarEncomenda : Form
     {
-        string Id;
-        int Entregue;
+        string Id = "0";
+        int Entregue = 1;
         public EditarEncomenda()
         {
             InitializeComponent();
@@ -88,13 +88,26 @@ namespace RollFestas.View.Encomenda
 
                 if (Sucesso == true)
                 {
-                    //TxtValor.Text = "";
-                    //TxtValorRecebido.Text = "";
-                    //LblTroco.Text = "";
-                    //TxtDinCart.Text = "";
-                    //TxtNomeCliente.Text = "";
+                    TxtTipo.Text = "";
+                    TxtQuantidade.Text = "";
+                    TxtDataPedido.Text = "";
+                    TxtDataEntrega.Text = "";
+                    TxtValor.Text = "";
+                    TxtTema.Text = "";
+                    TxtNomeCliente.Text = "";
+                    txtDescricao.Text = "";
+                    CbAviso.Checked = false;
+                    CbEntregue.Checked = false;
+
                 }
             }
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            var Tela = new Home();
+            Tela.Show();
+            this.Close();
         }
     }
 }

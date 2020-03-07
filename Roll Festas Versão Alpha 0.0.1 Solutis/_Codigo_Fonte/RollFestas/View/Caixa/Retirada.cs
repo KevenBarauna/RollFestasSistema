@@ -22,7 +22,7 @@ namespace RollFestas.View.Caixa
         {
             var Tela = new Home();
             Tela.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace RollFestas.View.Caixa
             if (Sucesso == true)
             {
                 
-                this.Hide();
+                this.Close();
                 TxtValor.Text = "";
             }
         }

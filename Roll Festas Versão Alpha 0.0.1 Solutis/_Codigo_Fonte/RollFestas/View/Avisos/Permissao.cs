@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using RollFestas.Controllers;
+using RollFestas.View.Caixa;
 using RollFestas.View.Usuario;
 using RollFestas.View.Venda.PagamentoPendente;
 
@@ -22,7 +23,7 @@ namespace RollFestas.View.Avisos
 
             if (AcessoLiberado == true)
             {
-                this.Hide();
+                this.Close();
 
                 if (TipoTelaEncaminhas == 1)
                 {
@@ -49,13 +50,25 @@ namespace RollFestas.View.Avisos
                     CancelarVendaPendente Tela = new CancelarVendaPendente(Program._Usuario.Nome);
                     Tela.Show();
                 }
+                else if (TipoTelaEncaminhas == 6)
+                {
+                    Deposito Tela = new Deposito();
+                    Tela.Show();
+                }
+                else if (TipoTelaEncaminhas == 7)
+                {
+                    Retirada Tela = new Retirada();
+                    Tela.Show();
+                }
 
             }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            var Tela = new Home();
+            Tela.Show();
+            this.Close();
         }
     }
 }

@@ -77,7 +77,7 @@ namespace RollFestas.Data
                     var QUANTIDADE = dr["quantidade"];
                     var VALOR = dr["valor"];
                     var DESCRICAO = dr["descricao"];
-                    var NOMECLIENTE = dr["descricao"];
+                    var NOMECLIENTE = dr["nomecliente"];
 
                     encomendaM.Id = Convert.ToInt32(ID);
                     encomendaM.TipoServico = Convert.ToString(TIPO);
@@ -105,12 +105,12 @@ namespace RollFestas.Data
         }
 
         //EDITAR ENCOMENDA
-        public bool EditarEncomenda(string Tipo, string DataEntrada, string DataEntrega, string Tema, string Quantidade, string Valor, string Descricao, string Id)
+        public bool EditarEncomenda(string Tipo, string DataEntrada, string DataEntrega, string Tema, string Quantidade, string Valor, string Descricao,int Entregue, string Id)
         {
             try
             {
 
-                cmd.CommandText = "UPDATE TB_ENCOMENDA SET tipo_servico = @tipo, data_entrada = @data_entrada, data_entrega = @data_entrega, tema = @tema, quantidade = @quantidade, valor = @valor, descricao = @descricao  WHERE id = @id";
+                cmd.CommandText = "UPDATE TB_ENCOMENDA SET tipo_servico = @tipo, data_entrada = @data_entrada, data_entrega = @data_entrega, tema = @tema, quantidade = @quantidade, valor = @valor, descricao = @descricao, entregue = @entregue  WHERE id = @id";
 
                 cmd.Parameters.AddWithValue("@tipo", Tipo);
                 cmd.Parameters.AddWithValue("@data_entrada", DataEntrada);
@@ -119,6 +119,7 @@ namespace RollFestas.Data
                 cmd.Parameters.AddWithValue("@quantidade", Quantidade);
                 cmd.Parameters.AddWithValue("@valor", Valor);
                 cmd.Parameters.AddWithValue("@descricao", Descricao);
+                cmd.Parameters.AddWithValue("@entregue", Entregue);
                 cmd.Parameters.AddWithValue("@id", Id);
 
                 cmd.Connection = conexao.Conectar();
@@ -167,7 +168,7 @@ namespace RollFestas.Data
             SqlDataReader dr;
             List<EncomendaModel> ListadeEncomenda = new List<EncomendaModel>();
 
-            cmd.CommandText = "SELECT * FROM TB_ENCOMENDAS";
+            cmd.CommandText = "SELECT * FROM TB_ENCOMENDA";
 
             try
             {
@@ -227,7 +228,7 @@ namespace RollFestas.Data
             SqlDataReader dr;
             List<EncomendaModel> ListadeEncomenda = new List<EncomendaModel>();
 
-            cmd.CommandText = "SELECT * FROM TB_ENCOMENDA ORDER BY data_entrega";
+            cmd.CommandText = "SELECT * FROM TB_ENCOMENDA  where entregue = 1 ORDER BY data_entrega";
 
             try
             {
@@ -250,7 +251,7 @@ namespace RollFestas.Data
                         var QUANTIDADE = dr["quantidade"];
                         var VALOR = dr["valor"];
                         var DESCRICAO = dr["descricao"];
-                        var NOMECLIENTE = dr["descricao"];
+                        var NOMECLIENTE = dr["nomecliente"];
 
                         encomendaM.Id = Convert.ToInt32(ID);
                         encomendaM.TipoServico = Convert.ToString(TIPO);

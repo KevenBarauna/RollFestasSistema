@@ -51,7 +51,7 @@ namespace RollFestas.View.Encomenda
             {
                 var Tela = new VendaSemPagamento(TxtValor.Text, TxtValorRecebido.Text, TipoPagamento, LblTroco.Text);
                 Tela.Show();
-                this.Hide();
+                this.Close();
 
             }
         }
@@ -147,7 +147,7 @@ namespace RollFestas.View.Encomenda
                 Program._Encomenda = encomendaM;
                 var Tela = new VendaSemPagamento(TxtValor.Text, TxtValorRecebido.Text, TipoPagamento, LblTroco.Text);
                 Tela.Show();
-                this.Hide();
+                this.Close();
 
             }
             catch (Exception)
@@ -172,6 +172,13 @@ namespace RollFestas.View.Encomenda
                 LembrarEncomenda = 1;
             }
             
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            var Tela = new Home();
+            Tela.Show();
+            this.Close();
         }
     }
 }
