@@ -8,81 +8,101 @@ namespace RollFestas.Utils
 {
     public static class GetDate
     {
-         public static string PegarHoraMinutoAtual()
-    {
-        string h = System.DateTime.Now.Hour.ToString();
-        string m = System.DateTime.Now.Minute.ToString();
+        public static string PegarHoraMinutoAtual()
+        {
+            string h = System.DateTime.Now.Hour.ToString();
+            string m = System.DateTime.Now.Minute.ToString();
 
-        string hora = h + ":" + m;
+            if (h.Length == 1)
+            {
+                h = "0" + h;
+            }
+            if (m.Length == 1)
+            {
+                m = "0" + m;
+            }
 
-        return hora;
-    }//hh:mm
+            string hora = h + ":" + m;
 
-    public static string PegarDiaMesAnoAtual()
-    {
+            return hora;
+        }//hh:mm
+
+        public static string PegarDiaMesAnoAtual()
+        {
 
 
             System.DateTime data = System.DateTime.Now;
 
-        //string dia = DateTime.Now.Day.ToString();
-        //var mes = DateTime.Now.Month;
-        //string ano = DateTime.Now.Year.ToString();
-        // string data = dia + "/" + mes + "/" + ano;
+            //string dia = DateTime.Now.Day.ToString();
+            //var mes = DateTime.Now.Month;
+            //string ano = DateTime.Now.Year.ToString();
+            // string data = dia + "/" + mes + "/" + ano;
 
-        return data.ToShortDateString();
-    }//dd/mm/aa
+            return data.ToShortDateString();
+        }//dd/mm/aa
 
-    public static string PegarDiaeHora()
-    {
-        string dia = System.DateTime.Now.Day.ToString();
-        string mes = System.DateTime.Now.Month.ToString();
-        string ano = System.DateTime.Now.Year.ToString();
+        public static string PegarDiaeHora()
+        {
+            string data = PegarDiaMesAnoAtual();
 
-        string data = dia + "/" + mes + "/" + ano;
+            string hora = PegarHoraMinutoAtual();
 
-        string h = System.DateTime.Now.Hour.ToString();
-        string m = System.DateTime.Now.Minute.ToString();
+            return data + " " + hora;
+        } //dd/mm/aa hj:mm
 
-        string hora = h + ":" + m;
+        public static string PegarAno()
+        {
+            string ano = System.DateTime.Now.Year.ToString();
+            return ano;
+        }//AA
 
-        return data + " " + hora;
-    } //dd/mm/aa hj:mm
+        public static string PegarMes()
+        {
 
-    public static string PegarAno()
-    {
-        string ano = System.DateTime.Now.Year.ToString();
-        return ano;
-    }//AA
+           string mes = DateTime.Now.Month.ToString();
 
-    public static string PegarMes()
-    {
+            if (mes.Length == 1)
+            {
+                mes = "0" + mes;
+            }
+            return mes.ToString();
+        }//MM
 
-        string mes = System.DateTime.Now.Month.ToString();
+        public static string PegarMesAno()
+        {
+            string mes = System.DateTime.Now.Month.ToString();
+            string ano = System.DateTime.Now.Year.ToString();
 
-        return mes;
-    }//MM
+            if (mes.Length == 1)
+            {
+                mes = "0" + mes;
+            }
 
-    public static string PegarMesAno()
-    {
-        string mes = System.DateTime.Now.Month.ToString();
-        string ano = System.DateTime.Now.Year.ToString();
+            string data = mes + "/" + ano;
 
-        string data = mes + "/" + ano;
+            return data;
+        }//MM/AA
 
-        return data;
-    }//MM/AA
+        public static string DataPararCriarPasta()
+        {
+            string dia = System.DateTime.Now.Day.ToString();
+            string mes = System.DateTime.Now.Month.ToString();
+            string ano = System.DateTime.Now.Year.ToString();
 
-    public static string DataPararCriarPasta()
-    {
-        string dia = System.DateTime.Now.Day.ToString();
-        string mes = System.DateTime.Now.Month.ToString();
-        string ano = System.DateTime.Now.Year.ToString();
+            if (dia.Length == 1)
+            {
+                dia = "0" + dia;
+            }
+            if (mes.Length == 1)
+            {
+                mes = "0" + mes;
+            }
 
-        string data = dia + "." + mes + "." + ano;
+            string data = dia + "." + mes + "." + ano;
 
 
-        return data;
-    } //dd.mm.aa
+            return data;
+        } //dd.mm.aa
 
-}
+    }
 }

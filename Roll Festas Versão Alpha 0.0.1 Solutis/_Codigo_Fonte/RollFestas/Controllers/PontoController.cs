@@ -16,6 +16,14 @@ namespace RollFestas.Controllers
         PontoDAO DAO = new PontoDAO();
         public bool BaterPonto(string Nome)
         {
+            //VERIFICA SE USUÁRIO EXISTE
+            var usuarioC = new UsuarioController();
+            UsuarioModel usuario = usuarioC.ExibirUsuario(Nome);
+            if (usuario.Id == 0)
+            {
+                return false;
+            }
+
             //PEGA HORA E DATA ATUAL
 
             string Data = GetDate.PegarDiaMesAnoAtual();
@@ -24,67 +32,52 @@ namespace RollFestas.Controllers
             //VERIFICA SE JÁ BATEU PONTO HOJE
             var pontoC = new PontoController();
             List<PontoModel> ListaPonto = pontoC.ListarPorData(Data);
-            bool Sucesso = false;
 
             if (ListaPonto.Count == 0)
             {
-                Sucesso = DAO.SalvarHoraNoBancoH1(Nome, Hora, Data);
+                return DAO.SalvarHoraNoBancoH1(Nome, Hora, Data);
             }
-            else
-            {
-
-                int HoraFalta = 0;
+           
 
                 foreach (var ponto in ListaPonto)
                 {
-                    if (ponto.Nome == Nome && string.IsNullOrEmpty(ponto.Hora1))
+                    if (ponto.Nome == Nome)
                     {
-                        HoraFalta = 1;
+                        if (string.IsNullOrEmpty(ponto.Hora1))
+                        {
+                            return DAO.SalvarHoraNoBancoH1(Nome, Hora, Data);
+                        }
+                        else if (string.IsNullOrEmpty(ponto.Hora2))
+                        {
+                            return DAO.SalvarHoraNoBancoH2(Nome, Hora, Data);
+                        }
+                        else if (string.IsNullOrEmpty(ponto.Hora3))
+                        {
+                            return DAO.SalvarHoraNoBancoH3(Nome, Hora, Data);
+                        }
+                        else if (string.IsNullOrEmpty(ponto.Hora4))
+                        {
+                            return DAO.SalvarHoraNoBancoH4(Nome, Hora, Data);
+                        }
+                        else
+                        {
+                            var TelaErro = new Erro("Todas as horas de hoje já foram preenchidas");
+                            TelaErro.Show();
+                            return false;
+                        }
                     }
-                    if (ponto.Nome == Nome && string.IsNullOrEmpty(ponto.Hora2))
-                    {
-                        HoraFalta = 2;
-                    }
-                    if (ponto.Nome == Nome && string.IsNullOrEmpty(ponto.Hora3))
-                    {
-                        HoraFalta = 3;
-                    }
-                    if (ponto.Nome == Nome && string.IsNullOrEmpty(ponto.Hora4))
-                    {
-                        HoraFalta = 4;
-                    }
+
                 }
-                switch (HoraFalta)
-                {
-                    case 1:
-                        Sucesso = DAO.SalvarHoraNoBancoH1(Nome, Hora, Data);
-                        break;
 
-                    case 2:
-                        Sucesso = DAO.SalvarHoraNoBancoH2(Nome, Hora, Data);
-                        break;
+    
+                return DAO.SalvarHoraNoBancoH1(Nome, Hora, Data);
+            
 
-                    case 3:
-                        Sucesso = DAO.SalvarHoraNoBancoH3(Nome, Hora, Data);
-                        break;
+            return false;
+            
 
-                    case 4:
-                        Sucesso = DAO.SalvarHoraNoBancoH4(Nome, Hora, Data);
-                        break;
 
-                    default:
-                        var TelaErro = new Erro("Todas as horas de hoje já foram preenchidas");
-                        break;
-                }
-            }
-
-            if (Sucesso == true)
-            {
-                var Tela = new Sucesso("Ponto salvo");
-                Tela.Show();
-            }
-
-            return Sucesso;
+             
 
         }
 

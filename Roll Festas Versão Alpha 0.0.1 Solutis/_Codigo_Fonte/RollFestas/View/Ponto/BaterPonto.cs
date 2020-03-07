@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RollFestas.Controllers;
+using RollFestas.View.MensagemErro;
 
 namespace RollFestas.View.Ponto
 {
@@ -30,12 +31,16 @@ namespace RollFestas.View.Ponto
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             var pontoC = new PontoController();
-            bool Sucesso = pontoC.BaterPonto(TxtNome.Text);
-            if (Sucesso == true)
+            bool SucessoPonto = pontoC.BaterPonto(TxtNome.Text);
+            if (SucessoPonto == true)
             {
                 var Tela = new Home();
                 Tela.Show();
                 this.Close();
+
+                var TelaSucesso = new Sucesso("Ponto salvo");
+                TelaSucesso.Show();
+
             }
         }
     }

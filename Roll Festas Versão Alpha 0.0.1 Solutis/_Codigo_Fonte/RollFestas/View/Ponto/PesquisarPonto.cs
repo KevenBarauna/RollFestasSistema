@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using RollFestas.Controllers;
 using RollFestas.Models;
 using RollFestas.Utils;
+using RollFestas.View.MensagemErro;
 
 namespace RollFestas.View.Ponto
 {
@@ -45,6 +46,11 @@ namespace RollFestas.View.Ponto
 
                 }
             }
+            else
+            {
+                var Tela = new Erro("Nenhum registro encontrado");
+                Tela.Show();
+            }
         }
 
         private void BtnMes_Click(object sender, EventArgs e)
@@ -68,6 +74,11 @@ namespace RollFestas.View.Ponto
                     listViewPonto.Items.Add(Lista);
 
                 }
+            }
+            else
+            {
+                var Tela = new Erro("Nenhum registro encontrado");
+                Tela.Show();
             }
         }
 
