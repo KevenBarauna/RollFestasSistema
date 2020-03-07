@@ -53,7 +53,7 @@
             this.panel3.BackColor = System.Drawing.Color.DarkOrange;
             this.panel3.Controls.Add(this.ImgProximasEncomendas);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(12, 36);
+            this.panel3.Location = new System.Drawing.Point(18, 13);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(836, 52);
             this.panel3.TabIndex = 33;
@@ -94,9 +94,9 @@
             this.Nome,
             this.Descricao});
             this.ListEntregas.HideSelection = false;
-            this.ListEntregas.Location = new System.Drawing.Point(12, 86);
+            this.ListEntregas.Location = new System.Drawing.Point(18, 63);
             this.ListEntregas.Name = "ListEntregas";
-            this.ListEntregas.Size = new System.Drawing.Size(836, 335);
+            this.ListEntregas.Size = new System.Drawing.Size(836, 358);
             this.ListEntregas.TabIndex = 32;
             this.ListEntregas.UseCompatibleStateImageBehavior = false;
             this.ListEntregas.View = System.Windows.Forms.View.Details;
@@ -157,7 +157,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 30);
             this.button1.TabIndex = 34;
-            this.button1.Text = "Sair";
+            this.button1.Text = "Voltar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

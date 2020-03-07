@@ -59,7 +59,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.BackColor = System.Drawing.Color.White;
-            this.lblData.Location = new System.Drawing.Point(278, 56);
+            this.lblData.Location = new System.Drawing.Point(306, 57);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(65, 13);
             this.lblData.TabIndex = 20;
@@ -147,7 +147,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(210, 21);
+            this.label1.Location = new System.Drawing.Point(238, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 25);
             this.label1.TabIndex = 12;
@@ -159,7 +159,7 @@
             this.BtnSair.FlatAppearance.BorderSize = 0;
             this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSair.ForeColor = System.Drawing.Color.White;
-            this.BtnSair.Location = new System.Drawing.Point(408, 334);
+            this.BtnSair.Location = new System.Drawing.Point(420, 334);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Size = new System.Drawing.Size(70, 30);
             this.BtnSair.TabIndex = 26;

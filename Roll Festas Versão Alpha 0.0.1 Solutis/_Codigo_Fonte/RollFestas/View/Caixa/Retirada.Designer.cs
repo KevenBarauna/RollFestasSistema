@@ -56,7 +56,7 @@
             // Linha
             // 
             this.Linha.BackColor = System.Drawing.Color.Orange;
-            this.Linha.Location = new System.Drawing.Point(38, 220);
+            this.Linha.Location = new System.Drawing.Point(50, 220);
             this.Linha.Name = "Linha";
             this.Linha.Size = new System.Drawing.Size(130, 1);
             this.Linha.TabIndex = 36;
@@ -64,7 +64,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(33, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(165, 106);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -87,7 +87,7 @@
             // TxtValor
             // 
             this.TxtValor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtValor.Location = new System.Drawing.Point(38, 201);
+            this.TxtValor.Location = new System.Drawing.Point(50, 201);
             this.TxtValor.Name = "TxtValor";
             this.TxtValor.Size = new System.Drawing.Size(127, 13);
             this.TxtValor.TabIndex = 33;
@@ -95,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 185);
+            this.label3.Location = new System.Drawing.Point(49, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 32;
@@ -105,7 +105,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 124);
+            this.label1.Location = new System.Drawing.Point(45, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 22);
             this.label1.TabIndex = 31;

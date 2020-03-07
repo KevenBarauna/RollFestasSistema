@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarEncomenda));
             this.CbAviso = new System.Windows.Forms.CheckBox();
             this.TxtDataEntrega = new System.Windows.Forms.MaskedTextBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.BtnFinalizar = new System.Windows.Forms.Button();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,10 +70,12 @@
             this.BtnPesquisar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.BtnVerCodigo = new System.Windows.Forms.Button();
             this.CbEntregue = new System.Windows.Forms.CheckBox();
             this.BtnSair = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -90,9 +91,10 @@
             // CbAviso
             // 
             this.CbAviso.AutoSize = true;
-            this.CbAviso.Location = new System.Drawing.Point(112, 202);
+            this.CbAviso.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CbAviso.Location = new System.Drawing.Point(19, 477);
             this.CbAviso.Name = "CbAviso";
-            this.CbAviso.Size = new System.Drawing.Size(283, 17);
+            this.CbAviso.Size = new System.Drawing.Size(281, 17);
             this.CbAviso.TabIndex = 229;
             this.CbAviso.Text = "Não quero ser lembrado da entrega dessa encomenda";
             this.CbAviso.UseVisualStyleBackColor = true;
@@ -108,22 +110,12 @@
             this.TxtDataEntrega.TabIndex = 228;
             this.TxtDataEntrega.ValidatingType = typeof(System.DateTime);
             // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(337, 561);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(34, 35);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 220;
-            this.pictureBox11.TabStop = false;
-            // 
             // BtnFinalizar
             // 
             this.BtnFinalizar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFinalizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnFinalizar.Location = new System.Drawing.Point(375, 561);
+            this.BtnFinalizar.Location = new System.Drawing.Point(18, 566);
             this.BtnFinalizar.Name = "BtnFinalizar";
             this.BtnFinalizar.Size = new System.Drawing.Size(92, 35);
             this.BtnFinalizar.TabIndex = 219;
@@ -144,6 +136,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(307, 412);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
@@ -180,6 +173,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(311, 240);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
@@ -207,6 +201,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label19.Location = new System.Drawing.Point(308, 299);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(91, 13);
@@ -252,6 +247,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(68, 356);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
@@ -279,6 +275,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label15.Location = new System.Drawing.Point(68, 299);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(87, 13);
@@ -368,6 +365,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label16.Location = new System.Drawing.Point(67, 416);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(91, 13);
@@ -377,6 +375,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label17.Location = new System.Drawing.Point(307, 352);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(37, 13);
@@ -386,6 +385,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label18.Location = new System.Drawing.Point(71, 240);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(32, 13);
@@ -395,7 +395,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(86, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(82, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -405,10 +405,10 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(100, 18);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(175, 22);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(155, 22);
+            this.label14.Size = new System.Drawing.Size(233, 31);
             this.label14.TabIndex = 188;
             this.label14.Text = "Editar encomenda";
             // 
@@ -417,8 +417,9 @@
             this.BtnDuvida.BackColor = System.Drawing.Color.Orange;
             this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
             this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.BtnDuvida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDuvida.Location = new System.Drawing.Point(414, 18);
+            this.BtnDuvida.Location = new System.Drawing.Point(451, 12);
             this.BtnDuvida.Name = "BtnDuvida";
             this.BtnDuvida.Size = new System.Drawing.Size(35, 35);
             this.BtnDuvida.TabIndex = 176;
@@ -427,10 +428,11 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(307, 428);
+            this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescricao.Location = new System.Drawing.Point(307, 427);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(161, 41);
+            this.txtDescricao.Size = new System.Drawing.Size(161, 21);
             this.txtDescricao.TabIndex = 175;
             // 
             // panel7
@@ -467,6 +469,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.Location = new System.Drawing.Point(182, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 13);
@@ -482,24 +485,13 @@
             this.txtPesquisa.Size = new System.Drawing.Size(155, 13);
             this.txtPesquisa.TabIndex = 230;
             // 
-            // BtnVerCodigo
-            // 
-            this.BtnVerCodigo.BackColor = System.Drawing.Color.Orange;
-            this.BtnVerCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVerCodigo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnVerCodigo.Location = new System.Drawing.Point(376, 94);
-            this.BtnVerCodigo.Name = "BtnVerCodigo";
-            this.BtnVerCodigo.Size = new System.Drawing.Size(92, 51);
-            this.BtnVerCodigo.TabIndex = 235;
-            this.BtnVerCodigo.Text = "Não sabe o código?";
-            this.BtnVerCodigo.UseVisualStyleBackColor = false;
-            // 
             // CbEntregue
             // 
             this.CbEntregue.AutoSize = true;
-            this.CbEntregue.Location = new System.Drawing.Point(164, 500);
+            this.CbEntregue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CbEntregue.Location = new System.Drawing.Point(19, 500);
             this.CbEntregue.Name = "CbEntregue";
-            this.CbEntregue.Size = new System.Drawing.Size(151, 17);
+            this.CbEntregue.Size = new System.Drawing.Size(149, 17);
             this.CbEntregue.TabIndex = 236;
             this.CbEntregue.Text = "A encomenda foi entregue";
             this.CbEntregue.UseVisualStyleBackColor = true;
@@ -511,13 +503,45 @@
             this.BtnSair.FlatAppearance.BorderSize = 0;
             this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSair.ForeColor = System.Drawing.Color.White;
-            this.BtnSair.Location = new System.Drawing.Point(33, 578);
+            this.BtnSair.Location = new System.Drawing.Point(394, 566);
             this.BtnSair.Name = "BtnSair";
-            this.BtnSair.Size = new System.Drawing.Size(70, 30);
+            this.BtnSair.Size = new System.Drawing.Size(92, 35);
             this.BtnSair.TabIndex = 237;
             this.BtnSair.Text = "Sair";
             this.BtnSair.UseVisualStyleBackColor = false;
             this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Tan;
+            this.panel8.Location = new System.Drawing.Point(7, 79);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(484, 1);
+            this.panel8.TabIndex = 282;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Tan;
+            this.panel9.Location = new System.Drawing.Point(7, 189);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(484, 1);
+            this.panel9.TabIndex = 283;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Tan;
+            this.panel10.Location = new System.Drawing.Point(7, 538);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(484, 1);
+            this.panel10.TabIndex = 284;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Orange;
+            this.panel11.Location = new System.Drawing.Point(308, 451);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(160, 1);
+            this.panel11.TabIndex = 198;
             // 
             // EditarEncomenda
             // 
@@ -525,9 +549,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(498, 620);
+            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.CbEntregue);
-            this.Controls.Add(this.BtnVerCodigo);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.BtnPesquisar);
@@ -535,7 +562,6 @@
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.CbAviso);
             this.Controls.Add(this.TxtDataEntrega);
-            this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.BtnFinalizar);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.label3);
@@ -575,7 +601,6 @@
             this.Name = "EditarEncomenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarEncomenda";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -595,7 +620,6 @@
 
         private System.Windows.Forms.CheckBox CbAviso;
         private System.Windows.Forms.MaskedTextBox TxtDataEntrega;
-        private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Button BtnFinalizar;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label3;
@@ -635,8 +659,11 @@
         private System.Windows.Forms.Button BtnPesquisar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPesquisa;
-        private System.Windows.Forms.Button BtnVerCodigo;
         private System.Windows.Forms.CheckBox CbEntregue;
         private System.Windows.Forms.Button BtnSair;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
     }
 }

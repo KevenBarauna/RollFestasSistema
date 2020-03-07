@@ -54,3 +54,4 @@ C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Fest
 C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\bin\Debug\ExcelNumberFormat.xml
 C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\obj\Debug\RollFestas.View.Ponto.PesquisarPonto.resources
+C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\obj\Debug\RollFestas.csprojAssemblyReference.cache
