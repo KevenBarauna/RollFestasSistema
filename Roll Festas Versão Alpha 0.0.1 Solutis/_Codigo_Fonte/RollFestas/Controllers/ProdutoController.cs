@@ -11,7 +11,7 @@ namespace RollFestas.Controllers
     {
         ProdutoDAO DAO = new ProdutoDAO();
 
-        public bool Cadastrar(string Nome, string Tema, string Preco, string Quantidade, bool SalvarQuantidade, string Fornecedor, string Data, string Descricao)
+        public bool Cadastrar(string Nome, string Tema, string Preco, string Quantidade, int SalvarQuantidade, string Fornecedor, string Data, string Descricao)
         {
 
             bool ProdutoExiste = VerificaSeNoveJaExiste(Nome);
@@ -57,18 +57,19 @@ namespace RollFestas.Controllers
                 Tela.Show();
                 return false;
             }
-            else if (SalvarQuantidade == false && string.IsNullOrEmpty(Quantidade))
+            else if (SalvarQuantidade == 1 && string.IsNullOrEmpty(Quantidade))
             {
                 var Tela = new Erro("Informe a quantidade do produto");
                 Tela.Show();
                 return false;
             }
-            if (SalvarQuantidade == false)
+            if (SalvarQuantidade == 2)
             {
-                Quantidade = "";
+                Quantidade = "0";
             }
 
-            bool Sucesso = DAO.InserirProduto(Nome, Tema, Preco, Quantidade, Fornecedor, Data, Descricao);
+
+            bool Sucesso = DAO.InserirProduto(Nome, Tema, Preco, Quantidade, SalvarQuantidade, Fornecedor, Data, Descricao);
 
             if (Sucesso == true)
             {
@@ -100,13 +101,18 @@ namespace RollFestas.Controllers
 
         }
 
-        public bool EditarProduto(string Nome, string Tema, string Preco, string Quantidade, string Fornecedor, string Data, string Descricao, string Id)
+        public bool EditarProduto(string Nome, string Tema, string Preco, string Quantidade, int InformarQuantidade, string Fornecedor, string Data, string Descricao, string Id)
         {
             if (Preco.Contains("."))
             {
                 var Tela = new Erro("O preço da mercadoria deve conter somente números e virgula");
                 Tela.Show();
                 return false;
+            }
+
+            if (InformarQuantidade == 2)
+            {
+                Quantidade = "0";
             }
 
             try
@@ -150,7 +156,7 @@ namespace RollFestas.Controllers
                 return false;
             }
 
-            bool Sucesso = DAO.Editar(Nome, Tema, Preco, Quantidade, Fornecedor, Data, Descricao, Id);
+            bool Sucesso = DAO.Editar(Nome, Tema, Preco, Quantidade, InformarQuantidade, Fornecedor, Data, Descricao, Id);
 
             if (Sucesso == true)
             {
@@ -241,12 +247,16 @@ namespace RollFestas.Controllers
 
                 foreach (var produto in ListaVendida)
                 {
-                    decimal QuantidadeEstoque = Convert.ToDecimal(produto.QuantidadeEstoque);
-                    decimal QuantidadeVenda = Convert.ToDecimal(produto.QuantidadeVenda);
+                    if (produto.InformarQuantidade == "1")
+                    {
+                        decimal QuantidadeEstoque = Convert.ToDecimal(produto.QuantidadeEstoque);
+                        decimal QuantidadeVenda = Convert.ToDecimal(produto.QuantidadeVenda);
 
-                    decimal NovaQuantidade = QuantidadeEstoque - QuantidadeVenda;
+                        decimal NovaQuantidade = QuantidadeEstoque - QuantidadeVenda;
 
-                    DAO.Editar(produto.Nome, produto.Tema, produto.Preco, NovaQuantidade.ToString(), produto.Fornecedor, produto.Data, produto.Descricao, produto.Id.ToString());
+                        DAO.Editar(produto.Nome, produto.Tema, produto.Preco, NovaQuantidade.ToString(), 1, produto.Fornecedor, produto.Data, produto.Descricao, produto.Id.ToString());
+                    }
+                    
                 }
                 return true;
             }

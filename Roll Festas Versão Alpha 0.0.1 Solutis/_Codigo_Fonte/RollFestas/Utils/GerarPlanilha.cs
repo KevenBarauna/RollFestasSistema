@@ -21,7 +21,7 @@ namespace RollFestas.Utils
                 PontoDAO DAO = new PontoDAO();
                 string caminho = Program._CaminhoPlanilhaPonto;
 
-                //PADRÂO
+                //PADRÃO
                 var wb = new XLWorkbook();
                 var ws = wb.Worksheets.Add("Follha de ponto ");
 
@@ -155,7 +155,8 @@ namespace RollFestas.Utils
                 rngTable.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
 
                 //SALVAR PLANILHA
-                wb.SaveAs(Program._CaminhoPlanilhaPonto + @"\" + Mes + ".xlsx");
+                string DataParaSalvar = GetDate.DataPararCriarPasta();
+                wb.SaveAs(Program._CaminhoPlanilhaPonto + @"\" + DataParaSalvar + ".xlsx");
 
                 wb.Dispose();
 

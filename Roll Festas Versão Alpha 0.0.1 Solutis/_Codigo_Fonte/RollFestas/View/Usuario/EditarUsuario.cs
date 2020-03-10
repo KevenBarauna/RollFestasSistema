@@ -57,7 +57,7 @@ namespace RollFestas.View.Usuario
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }

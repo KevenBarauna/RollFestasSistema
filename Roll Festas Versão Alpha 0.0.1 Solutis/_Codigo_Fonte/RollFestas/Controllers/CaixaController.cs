@@ -278,7 +278,7 @@ namespace RollFestas.Controllers
             //TELA DE SUCESSO
             if (SucessoDAO == true)
             {
-                var TelaHome = new Home();
+                var TelaHome = new Home(false);
                 TelaHome.Show();
                 var Tela = new Sucesso("Retirada registrada com sucesso!");
                 Tela.Show();
@@ -344,7 +344,7 @@ namespace RollFestas.Controllers
             //TELA DE SUCESSO
             if (SucessoDAO == true)
             {
-                var TelaHome = new Home();
+                var TelaHome = new Home(false);
                 TelaHome.Show();
                 var Tela = new Sucesso("Depósito registrado com sucesso!");
                 Tela.Show();

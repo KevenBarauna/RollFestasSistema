@@ -118,6 +118,12 @@ namespace RollFestas.View.Encomenda
 
                 if (Sucesso == true)
                 {
+                    TxtTipo.Text = "";
+                    txtDescricao.Text = "";
+                    TxtQuantidade.Text = "";
+                    TxtTema.Text = "";
+                    TxtDataEntrega.Text = "";
+                    TxtDataPedido.Text = "";
                     TxtValor.Text = "";
                     TxtValorRecebido.Text = "";
                     LblTroco.Text = "";
@@ -145,7 +151,7 @@ namespace RollFestas.View.Encomenda
                 encomendaM.NomeCliente = TxtNomeCliente.Text;
 
                 Program._Encomenda = encomendaM;
-                var Tela = new VendaSemPagamento(TxtValor.Text, TxtValorRecebido.Text, TipoPagamento, LblTroco.Text);
+                var Tela = new EncomendaPagamentoPendente(TxtValor.Text, TxtValorRecebido.Text, TipoPagamento, LblTroco.Text, TxtNomeCliente.Text);
                 Tela.Show();
                 this.Close();
 
@@ -176,7 +182,7 @@ namespace RollFestas.View.Encomenda
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }

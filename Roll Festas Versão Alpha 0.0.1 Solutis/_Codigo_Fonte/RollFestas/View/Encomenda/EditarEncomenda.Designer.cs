@@ -102,10 +102,12 @@
             // 
             // TxtDataEntrega
             // 
+            this.TxtDataEntrega.BackColor = System.Drawing.Color.White;
             this.TxtDataEntrega.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtDataEntrega.Location = new System.Drawing.Point(311, 315);
             this.TxtDataEntrega.Mask = "00/00/0000";
             this.TxtDataEntrega.Name = "TxtDataEntrega";
+            this.TxtDataEntrega.ReadOnly = true;
             this.TxtDataEntrega.Size = new System.Drawing.Size(142, 13);
             this.TxtDataEntrega.TabIndex = 228;
             this.TxtDataEntrega.ValidatingType = typeof(System.DateTime);
@@ -167,6 +169,7 @@
             this.TxtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtQuantidade.Location = new System.Drawing.Point(307, 256);
             this.TxtQuantidade.Name = "TxtQuantidade";
+            this.TxtQuantidade.ReadOnly = true;
             this.TxtQuantidade.Size = new System.Drawing.Size(160, 13);
             this.TxtQuantidade.TabIndex = 214;
             // 
@@ -210,10 +213,12 @@
             // 
             // TxtDataPedido
             // 
+            this.TxtDataPedido.BackColor = System.Drawing.Color.White;
             this.TxtDataPedido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtDataPedido.Location = new System.Drawing.Point(67, 315);
             this.TxtDataPedido.Mask = "00/00/0000";
             this.TxtDataPedido.Name = "TxtDataPedido";
+            this.TxtDataPedido.ReadOnly = true;
             this.TxtDataPedido.Size = new System.Drawing.Size(142, 13);
             this.TxtDataPedido.TabIndex = 209;
             this.TxtDataPedido.ValidatingType = typeof(System.DateTime);
@@ -238,9 +243,11 @@
             // 
             // TxtValor
             // 
+            this.TxtValor.BackColor = System.Drawing.Color.White;
             this.TxtValor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtValor.Location = new System.Drawing.Point(68, 372);
             this.TxtValor.Name = "TxtValor";
+            this.TxtValor.ReadOnly = true;
             this.TxtValor.Size = new System.Drawing.Size(160, 13);
             this.TxtValor.TabIndex = 206;
             // 
@@ -338,9 +345,11 @@
             // 
             // TxtNomeCliente
             // 
+            this.TxtNomeCliente.BackColor = System.Drawing.Color.White;
             this.TxtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtNomeCliente.Location = new System.Drawing.Point(67, 432);
             this.TxtNomeCliente.Name = "TxtNomeCliente";
+            this.TxtNomeCliente.ReadOnly = true;
             this.TxtNomeCliente.Size = new System.Drawing.Size(160, 13);
             this.TxtNomeCliente.TabIndex = 195;
             // 
@@ -350,6 +359,7 @@
             this.TxtTema.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtTema.Location = new System.Drawing.Point(307, 368);
             this.TxtTema.Name = "TxtTema";
+            this.TxtTema.ReadOnly = true;
             this.TxtTema.Size = new System.Drawing.Size(160, 13);
             this.TxtTema.TabIndex = 194;
             // 
@@ -359,6 +369,7 @@
             this.TxtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtTipo.Location = new System.Drawing.Point(67, 256);
             this.TxtTipo.Name = "TxtTipo";
+            this.TxtTipo.ReadOnly = true;
             this.TxtTipo.Size = new System.Drawing.Size(160, 13);
             this.TxtTipo.TabIndex = 193;
             // 
@@ -428,10 +439,12 @@
             // 
             // txtDescricao
             // 
+            this.txtDescricao.BackColor = System.Drawing.Color.White;
             this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescricao.Location = new System.Drawing.Point(307, 427);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.ReadOnly = true;
             this.txtDescricao.Size = new System.Drawing.Size(161, 21);
             this.txtDescricao.TabIndex = 175;
             // 

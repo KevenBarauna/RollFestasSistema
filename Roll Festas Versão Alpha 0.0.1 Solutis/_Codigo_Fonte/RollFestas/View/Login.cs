@@ -21,9 +21,13 @@ namespace RollFestas
             var usuarioC = new UsuarioController();
             usuarioC.IniciaLogin();
 
+            //INICIA CAIXA
+            var caixaC = new CaixaController();
+            caixaC.IniciarCaixaDia(GetDate.PegarDiaMesAnoAtual());
+
             //SALVAR CAMINHOS
-            Program._CaminhoReciboVenda = @"C:\Users\keven.barauna\Desktop";
-            Program._CaminhoPlanilhaPonto = @"C:\Users\keven.barauna\Desktop";
+            Program._CaminhoReciboVenda = @"C:\Users\keven.barauna\Desktop\Teste";
+            Program._CaminhoPlanilhaPonto = @"C:\Users\keven.barauna\Desktop\Teste";
 
 
         }
@@ -37,7 +41,7 @@ namespace RollFestas
             {
                 Program._Usuario = usuarioM;
 
-                var Tela = new Home();
+                var Tela = new Home(true);
                 Tela.Show();
                 this.Hide();
             }

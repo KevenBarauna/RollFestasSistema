@@ -61,7 +61,7 @@ namespace RollFestas.View.Venda
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }
@@ -73,7 +73,7 @@ namespace RollFestas.View.Venda
 
             if (SucessoVenda == true)
             {
-                var Tela = new Home();
+                var Tela = new Home(false);
                 Tela.Show();
                 this.Close();
             }

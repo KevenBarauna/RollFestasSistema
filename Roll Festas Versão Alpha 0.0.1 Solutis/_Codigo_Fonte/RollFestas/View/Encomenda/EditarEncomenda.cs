@@ -38,6 +38,15 @@ namespace RollFestas.View.Encomenda
                 TxtNomeCliente.Text = encomendaM.NomeCliente;
                 txtDescricao.Text = encomendaM.Descricao;
 
+                TxtTipo.ReadOnly = false;
+                TxtQuantidade.ReadOnly = false;
+                TxtDataPedido.ReadOnly = false;
+                TxtDataEntrega.ReadOnly = false;
+                TxtValor.ReadOnly = false;
+                TxtTema.ReadOnly = false;
+                TxtNomeCliente.ReadOnly = false;
+                txtDescricao.ReadOnly = false;
+
                 Id = encomendaM.Id.ToString();
 
                 if (encomendaM.Entregue == 2)
@@ -99,13 +108,24 @@ namespace RollFestas.View.Encomenda
                     CbAviso.Checked = false;
                     CbEntregue.Checked = false;
 
+                    TxtTipo.ReadOnly = true;
+                    TxtQuantidade.ReadOnly = true;
+                    TxtDataPedido.ReadOnly = true;
+                    TxtDataEntrega.ReadOnly = true;
+                    TxtValor.ReadOnly = true;
+                    TxtTema.ReadOnly = true;
+                    TxtNomeCliente.ReadOnly = true;
+                    txtDescricao.ReadOnly = true;
+                    CbAviso.Checked = false;
+                    CbEntregue.Checked = false;
+
                 }
             }
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }

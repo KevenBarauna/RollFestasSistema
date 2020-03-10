@@ -42,7 +42,7 @@ namespace RollFestas.View.Mercadoria
 
         private void BtnFechar_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }
@@ -134,7 +134,7 @@ namespace RollFestas.View.Mercadoria
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }

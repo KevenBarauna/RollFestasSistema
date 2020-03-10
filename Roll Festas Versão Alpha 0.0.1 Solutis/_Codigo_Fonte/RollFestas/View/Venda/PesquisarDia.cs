@@ -58,7 +58,7 @@ namespace RollFestas.View.Venda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }

@@ -640,15 +640,16 @@
             // bannerToolStripMenuItem
             // 
             this.bannerToolStripMenuItem.Name = "bannerToolStripMenuItem";
-            this.bannerToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.bannerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bannerToolStripMenuItem.Text = "Banner";
             this.bannerToolStripMenuItem.Click += new System.EventHandler(this.bannerToolStripMenuItem_Click);
             // 
             // mDFToolStripMenuItem
             // 
             this.mDFToolStripMenuItem.Name = "mDFToolStripMenuItem";
-            this.mDFToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.mDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mDFToolStripMenuItem.Text = "MDF";
+            this.mDFToolStripMenuItem.Click += new System.EventHandler(this.mDFToolStripMenuItem_Click);
             // 
             // caixaToolStripMenuItem
             // 

@@ -8,6 +8,7 @@ using RollFestas.View.Avisos;
 using RollFestas.View.Caixa;
 using RollFestas.View.Calculo;
 using RollFestas.View.Encomenda;
+using RollFestas.View.MensagemErro;
 using RollFestas.View.Mercadoria;
 using RollFestas.View.Ponto;
 using RollFestas.View.Usuario;
@@ -18,7 +19,7 @@ namespace RollFestas.View
 {
     public partial class Home : Form
     {
-        public Home()
+        public Home(bool ExibirAvisos)
         {
             InitializeComponent();
 
@@ -50,7 +51,7 @@ namespace RollFestas.View
 
                     ListEntregas.Items.Add(Lista);
 
-                    if (item.DataEntrega == Data)
+                    if (item.DataEntrega == Data && ExibirAvisos == true)
                     {
                         this.Hide();
                         var Tela = new MensagemAlerta("Hoje tem entrega da encomenda do tipo " + item.TipoServico +" do(a) cliente " + item.NomeCliente);
@@ -342,7 +343,13 @@ namespace RollFestas.View
             Tela.Show();
             this.Close();
         }
+
         #endregion
 
+        private void mDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Tela = new Erro("Essa função não foi desenvolvida, para ser finalizada é preciso enviar uma planilha com os tamanhos e valores para o desenvolvedor do software");
+            Tela.Show();
+        }
     }
 }

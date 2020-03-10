@@ -76,7 +76,7 @@ namespace RollFestas.View.Venda
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }
@@ -89,7 +89,7 @@ namespace RollFestas.View.Venda
             if (Sucesso == true)
             {
                 Program._Produtos = null;
-                var Tela = new Home();
+                var Tela = new Home(false);
                 Tela.Show();
             }
         }

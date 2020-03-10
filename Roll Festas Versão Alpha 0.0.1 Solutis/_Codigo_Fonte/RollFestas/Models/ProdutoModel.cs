@@ -14,6 +14,7 @@ namespace RollFestas.Models
         public string Preco { get; set; }
         public string QuantidadeEstoque { get; set; }
         public string QuantidadeVenda { get; set; }
+        public string InformarQuantidade { get; set; }
         public string Fornecedor { get; set; }
         public string Data { get; set; }
         public string Descricao { get; set; }

@@ -5,6 +5,7 @@ CREATE TABLE TB_PRODUTO
     [tema] VARCHAR(25)  NULL, 
     [preco] VARCHAR(7) NOT NULL, 
     [quantidade] VARCHAR(4) NULL, 
+[informar_quantidade] VARCHAR(1) NOT NULL,
     [fornecedor] VARCHAR(50) NULL, 
     [data] VARCHAR(11) NULL, 
     [descricao] NVARCHAR(150) NULL 
@@ -24,7 +25,6 @@ CREATE TABLE TB_VENDA
     [status_pagamento] VARCHAR(1) NULL,
     [valor_pendente] VARCHAR(20) NULL,
 	[nome] VARCHAR(20) NULL,
-[devolucao] VARCHAR(20) NULL,
 )
 
 GO
@@ -68,6 +68,7 @@ CREATE TABLE TB_CAIXA
     [dinheiro] VARCHAR(10) NULL,
 	[cartao] VARCHAR(10) NULL,
 	[outros] VARCHAR(10) NULL
+[devolucao] VARCHAR(20) NULL,
 )
 
 GO

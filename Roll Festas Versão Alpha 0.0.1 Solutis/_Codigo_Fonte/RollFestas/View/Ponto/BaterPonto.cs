@@ -23,7 +23,7 @@ namespace RollFestas.View.Ponto
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }
@@ -34,7 +34,7 @@ namespace RollFestas.View.Ponto
             bool SucessoPonto = pontoC.BaterPonto(TxtNome.Text);
             if (SucessoPonto == true)
             {
-                var Tela = new Home();
+                var Tela = new Home(false);
                 Tela.Show();
                 this.Close();
 

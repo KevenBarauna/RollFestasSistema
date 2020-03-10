@@ -64,6 +64,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.BtnSair = new System.Windows.Forms.Button();
+            this.CbQuant = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtQuantidade)).BeginInit();
             this.panel7.SuspendLayout();
@@ -131,22 +132,27 @@
             // 
             // TxtNome
             // 
+            this.TxtNome.BackColor = System.Drawing.Color.White;
             this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtNome.Location = new System.Drawing.Point(20, 229);
             this.TxtNome.Name = "TxtNome";
+            this.TxtNome.ReadOnly = true;
             this.TxtNome.Size = new System.Drawing.Size(150, 13);
             this.TxtNome.TabIndex = 84;
             // 
             // Txtpreco
             // 
+            this.Txtpreco.BackColor = System.Drawing.Color.White;
             this.Txtpreco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Txtpreco.Location = new System.Drawing.Point(23, 274);
             this.Txtpreco.Name = "Txtpreco";
+            this.Txtpreco.ReadOnly = true;
             this.Txtpreco.Size = new System.Drawing.Size(142, 13);
             this.Txtpreco.TabIndex = 92;
             // 
             // TxtQuantidade
             // 
+            this.TxtQuantidade.BackColor = System.Drawing.Color.White;
             this.TxtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtQuantidade.Location = new System.Drawing.Point(250, 228);
             this.TxtQuantidade.Maximum = new decimal(new int[] {
@@ -155,40 +161,49 @@
             0,
             0});
             this.TxtQuantidade.Name = "TxtQuantidade";
+            this.TxtQuantidade.ReadOnly = true;
             this.TxtQuantidade.Size = new System.Drawing.Size(142, 16);
             this.TxtQuantidade.TabIndex = 91;
             // 
             // TxtTema
             // 
+            this.TxtTema.BackColor = System.Drawing.Color.White;
             this.TxtTema.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtTema.Location = new System.Drawing.Point(250, 273);
             this.TxtTema.Name = "TxtTema";
+            this.TxtTema.ReadOnly = true;
             this.TxtTema.Size = new System.Drawing.Size(142, 13);
             this.TxtTema.TabIndex = 90;
             // 
             // TxtFornecedor
             // 
+            this.TxtFornecedor.BackColor = System.Drawing.Color.White;
             this.TxtFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtFornecedor.Location = new System.Drawing.Point(23, 330);
             this.TxtFornecedor.Name = "TxtFornecedor";
+            this.TxtFornecedor.ReadOnly = true;
             this.TxtFornecedor.Size = new System.Drawing.Size(142, 13);
             this.TxtFornecedor.TabIndex = 85;
             // 
             // TxtData
             // 
+            this.TxtData.BackColor = System.Drawing.Color.White;
             this.TxtData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtData.Location = new System.Drawing.Point(250, 330);
             this.TxtData.Mask = "00/00/0000";
             this.TxtData.Name = "TxtData";
+            this.TxtData.ReadOnly = true;
             this.TxtData.Size = new System.Drawing.Size(142, 13);
             this.TxtData.TabIndex = 88;
             this.TxtData.ValidatingType = typeof(System.DateTime);
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(23, 401);
+            this.txtDescricao.BackColor = System.Drawing.Color.White;
+            this.txtDescricao.Location = new System.Drawing.Point(36, 401);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.ReadOnly = true;
             this.txtDescricao.Size = new System.Drawing.Size(371, 83);
             this.txtDescricao.TabIndex = 86;
             // 
@@ -239,7 +254,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(177, 385);
+            this.label5.Location = new System.Drawing.Point(192, 385);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 81;
@@ -249,7 +264,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(247, 213);
+            this.label4.Location = new System.Drawing.Point(281, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 80;
@@ -397,13 +412,27 @@
             this.BtnSair.UseVisualStyleBackColor = false;
             this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // CbQuant
+            // 
+            this.CbQuant.AutoSize = true;
+            this.CbQuant.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CbQuant.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CbQuant.Location = new System.Drawing.Point(262, 196);
+            this.CbQuant.Name = "CbQuant";
+            this.CbQuant.Size = new System.Drawing.Size(114, 17);
+            this.CbQuant.TabIndex = 288;
+            this.CbQuant.Text = "Não quero informar";
+            this.CbQuant.UseVisualStyleBackColor = true;
+            this.CbQuant.CheckedChanged += new System.EventHandler(this.CbQuant_CheckedChanged);
+            // 
             // EditarMercadoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(423, 563);
+            this.ClientSize = new System.Drawing.Size(443, 563);
             this.ControlBox = false;
+            this.Controls.Add(this.CbQuant);
             this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel9);
@@ -490,5 +519,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button BtnSair;
+        private System.Windows.Forms.CheckBox CbQuant;
     }
 }

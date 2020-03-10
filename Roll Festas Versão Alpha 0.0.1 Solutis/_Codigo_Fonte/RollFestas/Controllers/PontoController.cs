@@ -71,10 +71,7 @@ namespace RollFestas.Controllers
 
     
                 return DAO.SalvarHoraNoBancoH1(Nome, Hora, Data);
-            
-
-            return false;
-            
+              
 
 
              

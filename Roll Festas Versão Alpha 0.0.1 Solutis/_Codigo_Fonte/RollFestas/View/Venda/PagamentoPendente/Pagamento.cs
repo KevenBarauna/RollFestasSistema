@@ -75,7 +75,7 @@ namespace RollFestas.View.Venda.PagamentoPendente
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }

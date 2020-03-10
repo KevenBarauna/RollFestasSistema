@@ -9,7 +9,7 @@ namespace RollFestas.View.Mercadoria
     public partial class NovaMercadoria : Form
     {
 
-        bool SalvarQuantidade; //TRUE CASO QUEIRA SALVAR || FALSE PARA NÃO SALVAR
+        int SalvarQuantidade; //1 CASO QUEIRA SALVAR || 2 PARA NÃO SALVAR
         public NovaMercadoria()
         {
             InitializeComponent();
@@ -17,7 +17,7 @@ namespace RollFestas.View.Mercadoria
 
         private void BtnFechar_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }
@@ -25,7 +25,7 @@ namespace RollFestas.View.Mercadoria
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             var produtoC = new ProdutoController();
-            bool SucessoCadastro = produtoC.Cadastrar(TxtNome.Text , TxtTema.Text , Txtpreco.Text , TxtQuantidade.Value.ToString(), SalvarQuantidade , TxtFornecedor.Text , TxtData.Text , txtDescricao.Text);
+            bool SucessoCadastro = produtoC.Cadastrar(TxtNome.Text , TxtTema.Text , Txtpreco.Text , TxtQuantidade.Value.ToString(), SalvarQuantidade, TxtFornecedor.Text , TxtData.Text , txtDescricao.Text);
 
             if (SucessoCadastro == true)
             {
@@ -48,19 +48,19 @@ namespace RollFestas.View.Mercadoria
             {
                 TxtQuantidade.Value = 0;
                 TxtQuantidade.ReadOnly = true;
-                SalvarQuantidade = true;
+                SalvarQuantidade = 2;
             }
             else
             {
                 TxtQuantidade.ReadOnly = false;
-                SalvarQuantidade = false;
+                SalvarQuantidade = 1;
             }
 
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            var Tela = new Home();
+            var Tela = new Home(false);
             Tela.Show();
             this.Close();
         }

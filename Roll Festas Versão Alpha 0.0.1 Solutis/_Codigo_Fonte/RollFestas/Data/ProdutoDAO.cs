@@ -14,16 +14,17 @@ namespace RollFestas.Data
         SqlCommand cmd = new SqlCommand();
 
         //NOVO PRODUTO
-        public bool InserirProduto(string Nome, string Tema, string Preco, string Quantidade, string Fornecedor, string Data, string Descricao)
+        public bool InserirProduto(string Nome, string Tema, string Preco, string Quantidade, int InfQuantidade, string Fornecedor, string Data, string Descricao)
         {
             try
             {
-                cmd.CommandText = "INSERT INTO TB_PRODUTO (nome,tema,preco,quantidade,fornecedor,data,descricao) VALUES (@nome,@tema,@preco,@quantidade,@fornecedor,@data,@descricao)";
+                cmd.CommandText = "INSERT INTO TB_PRODUTO (nome,tema,preco,quantidade,informar_quantidade,fornecedor,data,descricao) VALUES (@nome,@tema,@preco,@quantidade,@infQuantidade,@fornecedor,@data,@descricao)";
 
                 cmd.Parameters.AddWithValue("@nome", Nome);
                 cmd.Parameters.AddWithValue("@tema", Tema);
                 cmd.Parameters.AddWithValue("@preco", Preco);
                 cmd.Parameters.AddWithValue("@quantidade", Quantidade);
+                cmd.Parameters.AddWithValue("@infQuantidade", InfQuantidade);
                 cmd.Parameters.AddWithValue("@fornecedor", Fornecedor);
                 cmd.Parameters.AddWithValue("@data", Data);
                 cmd.Parameters.AddWithValue("@descricao", Descricao);
@@ -78,16 +79,17 @@ namespace RollFestas.Data
         }
 
         //EDITAR
-        public bool Editar(string Nome, string Tema, string Preco, string Quantidade, string Fornecedor, string Data, string Descricao, string Id)
+        public bool Editar(string Nome, string Tema, string Preco, string Quantidade, int InformarQuantidade, string Fornecedor, string Data, string Descricao, string Id)
         {
             try
             {
-                cmd.CommandText = "UPDATE TB_PRODUTO SET nome = @nome, tema = @tema, preco = @preco, quantidade = @quantidade, fornecedor = @fornecedor, data = @data, descricao = @descricao  WHERE id = @id";
+                cmd.CommandText = "UPDATE TB_PRODUTO SET nome = @nome, tema = @tema, preco = @preco, quantidade = @quantidade, informar_quantidade = @InformarQuantidade ,fornecedor = @fornecedor, data = @data, descricao = @descricao  WHERE id = @id";
 
                 cmd.Parameters.AddWithValue("@nome", Nome);
                 cmd.Parameters.AddWithValue("@tema", Tema);
                 cmd.Parameters.AddWithValue("@preco", Preco);
                 cmd.Parameters.AddWithValue("@quantidade", Quantidade);
+                cmd.Parameters.AddWithValue("@InformarQuantidade", InformarQuantidade);
                 cmd.Parameters.AddWithValue("@fornecedor", Fornecedor);
                 cmd.Parameters.AddWithValue("@data", Data);
                 cmd.Parameters.AddWithValue("@descricao", Descricao);
@@ -186,6 +188,7 @@ namespace RollFestas.Data
                         produtoM.Tema = Convert.ToString(dr["tema"]);
                         produtoM.Preco = Convert.ToString(dr["preco"]);
                         produtoM.QuantidadeEstoque = Convert.ToString(dr["quantidade"]);
+                        produtoM.InformarQuantidade = Convert.ToString(dr["informar_quantidade"]);
                         produtoM.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoM.Data = Convert.ToString(dr["data"]);
                         produtoM.Descricao = Convert.ToString(dr["descricao"]);
@@ -234,6 +237,7 @@ namespace RollFestas.Data
                     var TEMA = dr["tema"];
                     var PRECO = dr["preco"];
                     var QUANTIDADE = dr["quantidade"];
+                    var INFOQUANTIDADE = dr["informar_quantidade"];
                     var FORNECEDOR = dr["fornecedor"];
                     var DATA = dr["data"];
                     var DESCRICAO = dr["descricao"];
@@ -243,6 +247,7 @@ namespace RollFestas.Data
                     produtoM.Tema = Convert.ToString(TEMA);
                     produtoM.Preco = Convert.ToString(PRECO);
                     produtoM.QuantidadeEstoque = Convert.ToString(QUANTIDADE);
+                    produtoM.InformarQuantidade = Convert.ToString(INFOQUANTIDADE);
                     produtoM.Fornecedor = Convert.ToString(FORNECEDOR);
                     produtoM.Data = Convert.ToString(DATA);
                     produtoM.Descricao = Convert.ToString(DESCRICAO);
@@ -279,26 +284,28 @@ namespace RollFestas.Data
 
                 if (dr.HasRows)
                 {
-                   
-                        dr.Read();
 
-                        var ID = dr["id"];
-                        var NOME = dr["nome"];
-                        var TEMA = dr["tema"];
-                        var PRECO = dr["preco"];
-                        var QUANTIDADE = dr["quantidade"];
-                        var FORNECEDOR = dr["fornecedor"];
-                        var DATA = dr["data"];
-                        var DESCRICAO = dr["descricao"];
+                    dr.Read();
 
-                        produtoM.Id = Convert.ToInt32(ID);
-                        produtoM.Nome = Convert.ToString(NOME);
-                        produtoM.Tema = Convert.ToString(TEMA);
-                        produtoM.Preco = Convert.ToString(PRECO);
-                        produtoM.QuantidadeEstoque = Convert.ToString(QUANTIDADE);
-                        produtoM.Fornecedor = Convert.ToString(FORNECEDOR);
-                        produtoM.Data = Convert.ToString(DATA);
-                        produtoM.Descricao = Convert.ToString(DESCRICAO);
+                    var ID = dr["id"];
+                    var NOME = dr["nome"];
+                    var TEMA = dr["tema"];
+                    var PRECO = dr["preco"];
+                    var QUANTIDADE = dr["quantidade"];
+                    var INFOQUANTIDADE = dr["informar_quantidade"];
+                    var FORNECEDOR = dr["fornecedor"];
+                    var DATA = dr["data"];
+                    var DESCRICAO = dr["descricao"];
+
+                    produtoM.Id = Convert.ToInt32(ID);
+                    produtoM.Nome = Convert.ToString(NOME);
+                    produtoM.Tema = Convert.ToString(TEMA);
+                    produtoM.Preco = Convert.ToString(PRECO);
+                    produtoM.QuantidadeEstoque = Convert.ToString(QUANTIDADE);
+                    produtoM.InformarQuantidade = Convert.ToString(INFOQUANTIDADE);
+                    produtoM.Fornecedor = Convert.ToString(FORNECEDOR);
+                    produtoM.Data = Convert.ToString(DATA);
+                    produtoM.Descricao = Convert.ToString(DESCRICAO);
 
                 }
 
@@ -341,6 +348,7 @@ namespace RollFestas.Data
                         var TEMA = dr["tema"];
                         var PRECO = dr["preco"];
                         var QUANTIDADE = dr["quantidade"];
+                        var INFOQUANTIDADE = dr["informar_quantidade"];
                         var FORNECEDOR = dr["fornecedor"];
                         var DATA = dr["data"];
                         var DESCRICAO = dr["descricao"];
@@ -352,6 +360,7 @@ namespace RollFestas.Data
                         produtoM.Tema = Convert.ToString(TEMA);
                         produtoM.Preco = Convert.ToString(PRECO);
                         produtoM.QuantidadeEstoque = Convert.ToString(QUANTIDADE);
+                        produtoM.InformarQuantidade = Convert.ToString(INFOQUANTIDADE);
                         produtoM.Fornecedor = Convert.ToString(FORNECEDOR);
                         produtoM.Data = Convert.ToString(DATA);
                         produtoM.Descricao = Convert.ToString(DESCRICAO);
@@ -403,6 +412,7 @@ namespace RollFestas.Data
                         var TEMA = dr["tema"];
                         var PRECO = dr["preco"];
                         var QUANTIDADE = dr["quantidade"];
+                        var INFOQUANTIDADE = dr["informar_quantidade"];
                         var FORNECEDOR = dr["fornecedor"];
                         var DATA = dr["data"];
                         var DESCRICAO = dr["descricao"];
@@ -414,6 +424,7 @@ namespace RollFestas.Data
                         produtoM.Tema = Convert.ToString(TEMA);
                         produtoM.Preco = Convert.ToString(PRECO);
                         produtoM.QuantidadeEstoque = Convert.ToString(QUANTIDADE);
+                        produtoM.InformarQuantidade = Convert.ToString(INFOQUANTIDADE);
                         produtoM.Fornecedor = Convert.ToString(FORNECEDOR);
                         produtoM.Data = Convert.ToString(DATA);
                         produtoM.Descricao = Convert.ToString(DESCRICAO);
@@ -463,6 +474,7 @@ namespace RollFestas.Data
                         produtoM.Tema = Convert.ToString(dr["tema"]);
                         produtoM.Preco = Convert.ToString(dr["preco"]);
                         produtoM.QuantidadeEstoque = Convert.ToString(dr["quantidade"]);
+                        produtoM.InformarQuantidade = Convert.ToString(dr["informar_quantidade"]);
                         produtoM.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoM.Data = Convert.ToString(dr["data"]);
                         produtoM.Descricao = Convert.ToString(dr["descricao"]);
@@ -511,6 +523,7 @@ namespace RollFestas.Data
                         produtoM.Tema = Convert.ToString(dr["tema"]);
                         produtoM.Preco = Convert.ToString(dr["preco"]);
                         produtoM.QuantidadeEstoque = Convert.ToString(dr["quantidade"]);
+                        produtoM.InformarQuantidade = Convert.ToString(dr["informar_quantidade"]);
                         produtoM.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoM.Data = Convert.ToString(dr["data"]);
                         produtoM.Descricao = Convert.ToString(dr["descricao"]);
@@ -560,6 +573,7 @@ namespace RollFestas.Data
                         produtoM.Tema = Convert.ToString(dr["tema"]);
                         produtoM.Preco = Convert.ToString(dr["preco"]);
                         produtoM.QuantidadeEstoque = Convert.ToString(dr["quantidade"]);
+                        produtoM.InformarQuantidade = Convert.ToString(dr["informar_quantidade"]);
                         produtoM.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoM.Data = Convert.ToString(dr["data"]);
                         produtoM.Descricao = Convert.ToString(dr["descricao"]);
@@ -608,6 +622,7 @@ namespace RollFestas.Data
                         produtoM.Tema = Convert.ToString(dr["tema"]);
                         produtoM.Preco = Convert.ToString(dr["preco"]);
                         produtoM.QuantidadeEstoque = Convert.ToString(dr["quantidade"]);
+                        produtoM.InformarQuantidade = Convert.ToString(dr["informar_quantidade"]);
                         produtoM.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoM.Data = Convert.ToString(dr["data"]);
                         produtoM.Descricao = Convert.ToString(dr["descricao"]);
@@ -656,6 +671,7 @@ namespace RollFestas.Data
                         produtoM.Tema = Convert.ToString(dr["tema"]);
                         produtoM.Preco = Convert.ToString(dr["preco"]);
                         produtoM.QuantidadeEstoque = Convert.ToString(dr["quantidade"]);
+                        produtoM.InformarQuantidade = Convert.ToString(dr["informar_quantidade"]);
                         produtoM.Fornecedor = Convert.ToString(dr["fornecedor"]);
                         produtoM.Data = Convert.ToString(dr["data"]);
                         produtoM.Descricao = Convert.ToString(dr["descricao"]);
