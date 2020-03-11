@@ -37,7 +37,6 @@
             this.Usuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ValorTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ValorPago = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Troco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TipoPagamento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StatusPagamento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ValorPendente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,7 +59,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(807, 431);
+            this.button1.Location = new System.Drawing.Point(721, 431);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 30);
             this.button1.TabIndex = 56;
@@ -74,7 +73,7 @@
             this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
             this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDuvida.Location = new System.Drawing.Point(852, 12);
+            this.BtnDuvida.Location = new System.Drawing.Point(756, 12);
             this.BtnDuvida.Name = "BtnDuvida";
             this.BtnDuvida.Size = new System.Drawing.Size(35, 35);
             this.BtnDuvida.TabIndex = 54;
@@ -89,7 +88,6 @@
             this.Usuario,
             this.ValorTotal,
             this.ValorPago,
-            this.Troco,
             this.TipoPagamento,
             this.StatusPagamento,
             this.ValorPendente,
@@ -97,7 +95,7 @@
             this.listCodigo.HideSelection = false;
             this.listCodigo.Location = new System.Drawing.Point(12, 146);
             this.listCodigo.Name = "listCodigo";
-            this.listCodigo.Size = new System.Drawing.Size(865, 279);
+            this.listCodigo.Size = new System.Drawing.Size(779, 279);
             this.listCodigo.TabIndex = 52;
             this.listCodigo.UseCompatibleStateImageBehavior = false;
             this.listCodigo.View = System.Windows.Forms.View.Details;
@@ -127,11 +125,6 @@
             this.ValorPago.Text = "valor pago:";
             this.ValorPago.Width = 100;
             // 
-            // Troco
-            // 
-            this.Troco.Text = "Troco:";
-            this.Troco.Width = 90;
-            // 
             // TipoPagamento
             // 
             this.TipoPagamento.Text = "Pagamento:";
@@ -158,7 +151,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(12, 96);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(865, 52);
+            this.panel3.Size = new System.Drawing.Size(779, 52);
             this.panel3.TabIndex = 57;
             // 
             // ImgProximasEncomendas
@@ -176,7 +169,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Amiri Quran", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(248, 3);
+            this.label3.Location = new System.Drawing.Point(189, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(329, 54);
             this.label3.TabIndex = 27;
@@ -186,7 +179,7 @@
             // TxtPesquisaData
             // 
             this.TxtPesquisaData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtPesquisaData.Location = new System.Drawing.Point(375, 30);
+            this.TxtPesquisaData.Location = new System.Drawing.Point(330, 30);
             this.TxtPesquisaData.Name = "TxtPesquisaData";
             this.TxtPesquisaData.Size = new System.Drawing.Size(155, 13);
             this.TxtPesquisaData.TabIndex = 175;
@@ -195,7 +188,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Orange;
-            this.panel7.Location = new System.Drawing.Point(378, 46);
+            this.panel7.Location = new System.Drawing.Point(333, 46);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(150, 1);
             this.panel7.TabIndex = 174;
@@ -205,7 +198,7 @@
             this.BtnPesquisarData.BackColor = System.Drawing.Color.DarkOrange;
             this.BtnPesquisarData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPesquisarData.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnPesquisarData.Location = new System.Drawing.Point(405, 53);
+            this.BtnPesquisarData.Location = new System.Drawing.Point(360, 53);
             this.BtnPesquisarData.Name = "BtnPesquisarData";
             this.BtnPesquisarData.Size = new System.Drawing.Size(89, 27);
             this.BtnPesquisarData.TabIndex = 177;
@@ -216,7 +209,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(405, 9);
+            this.label10.Location = new System.Drawing.Point(360, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 13);
             this.label10.TabIndex = 176;
@@ -235,7 +228,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(899, 472);
+            this.ClientSize = new System.Drawing.Size(814, 472);
             this.Controls.Add(this.TxtPesquisaData);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.BtnPesquisarData);
@@ -268,7 +261,6 @@
         private System.Windows.Forms.ColumnHeader Usuario;
         private System.Windows.Forms.ColumnHeader ValorTotal;
         private System.Windows.Forms.ColumnHeader ValorPago;
-        private System.Windows.Forms.ColumnHeader Troco;
         private System.Windows.Forms.ColumnHeader TipoPagamento;
         private System.Windows.Forms.ColumnHeader StatusPagamento;
         private System.Windows.Forms.ColumnHeader ValorPendente;

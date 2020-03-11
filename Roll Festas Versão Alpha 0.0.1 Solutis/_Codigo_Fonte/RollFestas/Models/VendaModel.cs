@@ -13,7 +13,6 @@ namespace RollFestas.Models
         public string Usuario { get; set; }
         public string ValorTotal { get; set; }
         public string ValorPago { get; set; }
-        public string Troco { get; set; }
         public string TipoPagamento { get; set; }
         public string StatusPagamento { get; set; }
         public string ValorPendente { get; set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using RollFestas.Data;
 using RollFestas.Models;
 using RollFestas.Utils;
@@ -15,14 +16,9 @@ namespace RollFestas.Controllers
 
         public bool IniciarCaixaDia(string Data)
         {
-            bool Sucesso = false;
 
-            while (Sucesso == false)
-            {
-                Sucesso = DAO.IniciarCaixa(Data);
-            }
+             return  DAO.IniciarCaixa(Data);
 
-            return Sucesso;
         }
 
         //SAlVAR VALOR CAIXA
@@ -285,7 +281,7 @@ namespace RollFestas.Controllers
             }
 
             return SucessoDAO;
-          
+
         }
 
         //REALIZAR DEPOSITO
@@ -385,7 +381,7 @@ namespace RollFestas.Controllers
 
             //SALVAR VALOR
             DAO.InserirValorTotal(NovoValor.ToString(), Data);
-            
+
         }
 
         //VALOR TOTAL DO MES
@@ -394,7 +390,7 @@ namespace RollFestas.Controllers
 
             List<CaixaModel> ListaCaixa = DAO.PegarValoresPorMes(Mes);
 
-            if (ListaCaixa.Count < 0 )
+            if (ListaCaixa.Count < 0)
             {
                 var TelaErro = new Erro("Nenhum registro encontrado");
                 TelaErro.Show();

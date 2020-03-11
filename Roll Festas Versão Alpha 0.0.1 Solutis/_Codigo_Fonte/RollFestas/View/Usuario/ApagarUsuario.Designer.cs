@@ -37,6 +37,7 @@
             this.TxtPesquisa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.BtnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +72,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(13, 267);
+            this.label3.Location = new System.Drawing.Point(14, 304);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(252, 30);
             this.label3.TabIndex = 33;
@@ -118,12 +119,27 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Apagar Usuário";
             // 
+            // BtnSair
+            // 
+            this.BtnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(15)))), ((int)(((byte)(60)))));
+            this.BtnSair.FlatAppearance.BorderSize = 0;
+            this.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSair.ForeColor = System.Drawing.Color.White;
+            this.BtnSair.Location = new System.Drawing.Point(101, 250);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.Size = new System.Drawing.Size(70, 30);
+            this.BtnSair.TabIndex = 93;
+            this.BtnSair.Text = "Voltar";
+            this.BtnSair.UseVisualStyleBackColor = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
+            // 
             // ApagarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(278, 310);
+            this.ClientSize = new System.Drawing.Size(278, 352);
+            this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Linha);
             this.Controls.Add(this.pictureBox1);
@@ -155,5 +171,6 @@
         private System.Windows.Forms.TextBox TxtPesquisa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnSair;
     }
 }

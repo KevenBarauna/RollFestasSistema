@@ -40,20 +40,15 @@ namespace RollFestas.View.Encomenda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var vendaC = new VendaController();
-            string Troco = vendaC.CalcularTroco(TxtValor.Text, TxtValorRecebido.Text);
+            LblTroco.Text = CalculoValores.CalcularTroco(TxtValor.Text, TxtValorRecebido.Text);
 
-            if (Troco != "PENDENTE")
-            {
-                LblTroco.Text = Troco;
-            }
-            else
+            if (LblTroco.Text == "PENDENTE")
             {
                 var Tela = new VendaSemPagamento(TxtValor.Text, TxtValorRecebido.Text, TipoPagamento, LblTroco.Text);
                 Tela.Show();
                 this.Close();
-
             }
+
         }
 
         private void RBDinheiro_CheckedChanged(object sender, EventArgs e)

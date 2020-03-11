@@ -86,8 +86,8 @@
             this.CbAviso = new System.Windows.Forms.CheckBox();
             this.BtnSair = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgAtencao)).BeginInit();
@@ -688,14 +688,6 @@
             this.panel8.Size = new System.Drawing.Size(530, 1);
             this.panel8.TabIndex = 283;
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Orange;
-            this.panel7.Location = new System.Drawing.Point(327, 331);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(160, 1);
-            this.panel7.TabIndex = 139;
-            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Tan;
@@ -703,6 +695,14 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(530, 1);
             this.panel9.TabIndex = 284;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Orange;
+            this.panel7.Location = new System.Drawing.Point(327, 331);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(160, 1);
+            this.panel7.TabIndex = 139;
             // 
             // panel10
             // 

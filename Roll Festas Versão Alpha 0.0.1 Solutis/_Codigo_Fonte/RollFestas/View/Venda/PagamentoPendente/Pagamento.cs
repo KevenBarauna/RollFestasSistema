@@ -66,11 +66,7 @@ namespace RollFestas.View.Venda.PagamentoPendente
 
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
-            var vendaC = new VendaController();
-            string Troco = vendaC.CalcularTroco(LblTotal.Text, TxtValorRecebido.Text);
-
-            LblTroco.Text = Troco;
-
+            LblTroco.Text = CalculoValores.CalcularTroco(TxtValorRecebido.Text, TxtValorRecebido.Text);
         }
 
         private void Cancelar_Click(object sender, EventArgs e)

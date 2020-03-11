@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RollFestas.Models;
 using RollFestas.Services;
+using RollFestas.Utils;
 using RollFestas.View.MensagemErro;
 
 namespace RollFestas.Data
@@ -33,6 +34,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var Tela = new ErroConexao("DB1PT", e.Message);
                 Tela.Show();
                 return false;
@@ -57,6 +59,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var Tela = new ErroConexao("DB2PT", e.Message);
                 Tela.Show();
                 return false;
@@ -85,6 +88,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var Tela = new ErroConexao("DB3PT", e.Message);
                 Tela.Show();
                 return false;
@@ -112,6 +116,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var Tela = new ErroConexao("DB3PT", e.Message);
                 Tela.Show();
                 return false;
@@ -120,7 +125,6 @@ namespace RollFestas.Data
             return true;
 
         }
-
 
         public List<PontoModel> ListarPordata(string Data)
         {
@@ -156,6 +160,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var Tela = new ErroConexao("DB4PT", e.Message);
                 Tela.Show();
             }
@@ -199,6 +204,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var Tela = new ErroConexao("DB5PT", e.Message);
                 Tela.Show();
             }
@@ -244,6 +250,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var Tela = new ErroConexao("DB6PT", e.Message);
                 Tela.Show();
             }

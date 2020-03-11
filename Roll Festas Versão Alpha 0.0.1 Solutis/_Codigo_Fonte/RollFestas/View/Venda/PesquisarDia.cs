@@ -39,7 +39,6 @@ namespace RollFestas.View.Venda
                 listP.SubItems.Add(Convert.ToString(item.Usuario));
                 listP.SubItems.Add(Convert.ToString(item.ValorTotal));
                 listP.SubItems.Add(Convert.ToString(item.ValorPago));
-                listP.SubItems.Add(Convert.ToString(item.Troco));
                 listP.SubItems.Add(Convert.ToString(item.TipoPagamento));
                 if (item.StatusPagamento == "2")
                 {

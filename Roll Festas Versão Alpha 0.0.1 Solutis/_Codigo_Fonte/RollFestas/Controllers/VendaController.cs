@@ -67,7 +67,7 @@ namespace RollFestas.Controllers
             }
 
             //SALVA VENDA
-            bool SucessoVenda = DAO.NovaVenda(Data, Usuario, ValorTotal, ValorPago, Troco, TipoPagamento, StatusPagamento, ValorPendente, NomeCliente);
+            bool SucessoVenda = DAO.NovaVenda(Data, Usuario, ValorTotal, ValorPago, TipoPagamento, StatusPagamento, ValorPendente, NomeCliente);
             if (SucessoVenda == false)
             {
                 var TelaErro = new Erro("Não foi possível finalizar a venda, verifique os valores e tente novamente");
@@ -131,58 +131,6 @@ namespace RollFestas.Controllers
             Tela.Show();
             return true;
         }
-
-        //CALCULAR TROCO
-        public string CalcularTroco(string ValorTotal, string ValorRecebido)
-        {
-            decimal Total;
-            decimal Recebido;
-
-            if (string.IsNullOrEmpty(ValorTotal))
-            {
-                var TelaErro = new Erro("Informe o valor total");
-                TelaErro.Show();
-                return null;
-
-            }
-
-            if (string.IsNullOrEmpty(ValorRecebido))
-            {
-                var TelaErro = new Erro("Informe o valor recebido");
-                TelaErro.Show();
-                return null;
-            }
-
-            try
-            {
-                Total = Convert.ToDecimal(ValorTotal);
-                Recebido = Convert.ToDecimal(ValorRecebido);
-
-            }
-            catch (Exception)
-            {
-                var TelaErro = new ErroController("CVT", "Erro, valores invalidos","Os valores informados estão corretos?", "Os valores informados não podem ser negativos", "Informou somente núemros e virgula?");
-                TelaErro.Show();
-                return null;
-            }
-
-            decimal ValorTroco = Recebido - Total;
-
-            string Valor = ValorTroco.ToString();
-            if (Valor.Contains("-"))
-            {
-                
-                if (MessageBox.Show("Resta uma pendencia de " + Valor + ". Clique em OK para ir pra tela de pagamentos pendentes", "Valor negativo", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                {
-
-                    return "PENDENTE";
-
-                }
-            }
-
-            return ValorTroco.ToString();
-        }
-
 
         //LISTAR VENDAS POR DIA
         public List<VendaModel> ListarVendas(string Data)

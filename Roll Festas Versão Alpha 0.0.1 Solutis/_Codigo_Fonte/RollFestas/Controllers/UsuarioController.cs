@@ -14,9 +14,9 @@ namespace RollFestas.Controllers
         UsuarioDAO DAO = new UsuarioDAO();
 
         //QUANDO INICIA O PROGRAMA
-        public void IniciaLogin()
+        public bool IniciaLogin()
         {
-            DAO.TesteConexao();
+            return DAO.TesteConexao();
         }
 
 

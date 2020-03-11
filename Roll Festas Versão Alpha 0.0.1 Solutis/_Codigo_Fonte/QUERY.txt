@@ -20,7 +20,6 @@ CREATE TABLE TB_VENDA
 	[usuario] VARCHAR(20) NOT NULL, 
 	[valortotal] VARCHAR(20) NOT NULL, 
 	[valorpago] VARCHAR(20) NULL, 
-	[troco] VARCHAR(20) NULL, 
 	[tipopagamento] VARCHAR(20) NULL,
     [status_pagamento] VARCHAR(1) NULL,
     [valor_pendente] VARCHAR(20) NULL,
@@ -55,6 +54,27 @@ CREATE TABLE TB_ENCOMENDA
 	[descricao] VARCHAR(100) NULL,
 	[nomecliente] VARCHAR(100) NULL,
 )
+
+GO
+
+CREATE TABLE TB_EVENTO
+(
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[cep] VARCHAR(10) NULL,
+	[local] VARCHAR(100) NOT NULL, 
+	[descricao] VARCHAR(200) NOT NULL,
+	[nome_cliente] VARCHAR(100) NULL,
+	[telefone_1] VARCHAR(17) NULL,
+	[telefone_2] VARCHAR(17) NULL,
+	[email] VARCHAR(20) NULL, 
+	[tipo] VARCHAR(20) NULL, 
+	[data] VARCHAR(20) NULL, 
+	[hora] VARCHAR(20) NULL, 
+	[valor_total] VARCHAR(20) NOT NULL,
+	[valor_pago] VARCHAR(20) NOT NULL,
+	[entregue] VARCHAR(1) NOT NULL,
+)
+
 
 GO
 

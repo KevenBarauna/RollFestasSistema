@@ -8,6 +8,7 @@ using RollFestas.View.Avisos;
 using RollFestas.View.Caixa;
 using RollFestas.View.Calculo;
 using RollFestas.View.Encomenda;
+using RollFestas.View.Evento;
 using RollFestas.View.MensagemErro;
 using RollFestas.View.Mercadoria;
 using RollFestas.View.Ponto;
@@ -350,6 +351,13 @@ namespace RollFestas.View
         {
             var Tela = new Erro("Essa função não foi desenvolvida, para ser finalizada é preciso enviar uma planilha com os tamanhos e valores para o desenvolvedor do software");
             Tela.Show();
+        }
+
+        private void novoEventoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Tela = new NovoEvento();
+            Tela.Show();
+            this.Close();
         }
     }
 }

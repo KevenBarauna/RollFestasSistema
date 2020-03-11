@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using RollFestas.Models;
 using RollFestas.Services;
+using RollFestas.Utils;
 using RollFestas.View.MensagemErro;
 
 namespace RollFestas.Date
@@ -13,7 +14,7 @@ namespace RollFestas.Date
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
 
-        #region LOGIN
+ 
        
         //TESTA A CONEXÃO COM O BANCO
         public bool TesteConexao()
@@ -30,6 +31,7 @@ namespace RollFestas.Date
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB01 - Erro ao conectar com o banco de dados", e.Message);
                 TelaErro.Show();
                 return false;
@@ -76,6 +78,7 @@ namespace RollFestas.Date
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB04", e.Message);
                 TelaErro.Show();
             }
@@ -86,9 +89,6 @@ namespace RollFestas.Date
             return usuarioModel;
         }
 
-        #endregion
-
-        #region CRUD
         //CADASTRA NOVO USUARIO
         public bool SetUsuario(string Nome, string Senha, string Email, string Data_admissao)
         {
@@ -111,6 +111,7 @@ namespace RollFestas.Date
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB06", e.Message);
                 TelaErro.Show();
 
@@ -142,6 +143,7 @@ namespace RollFestas.Date
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB09", e.Message);
                 TelaErro.Show();
                 return false;
@@ -168,6 +170,7 @@ namespace RollFestas.Date
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB10", e.Message);
                 TelaErro.Show();
                 return false;
@@ -212,6 +215,7 @@ namespace RollFestas.Date
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB11", e.Message);
                 TelaErro.Show();
             }
@@ -257,6 +261,7 @@ namespace RollFestas.Date
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB08", e.Message);
                 TelaErro.Show();
             }
@@ -306,6 +311,7 @@ namespace RollFestas.Date
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB12", e.Message);
                 TelaErro.Show();
             }
@@ -316,7 +322,7 @@ namespace RollFestas.Date
         }
 
 
-        #endregion
+   
 
 
         //VERIFICA SE TEM USUÁRIO COM NOME PASSADO
@@ -341,6 +347,7 @@ namespace RollFestas.Date
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB07", e.Message);
                 TelaErro.Show();
             }

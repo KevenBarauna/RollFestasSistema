@@ -14,6 +14,13 @@ namespace RollFestas
         {
             InitializeComponent();
 
+
+            //SALVAR CAMINHOS
+            Program._CaminhoReciboVenda = @"C:\Users\keven.barauna\Desktop\Teste";
+            Program._CaminhoPlanilhaPonto = @"C:\Users\keven.barauna\Desktop\Teste";
+            Program._CaminhoCacheErro = @"C:\Users\keven.barauna\Desktop\Teste";
+            Program._CaminhoArquivoDuvida = @"C:\Users\keven.barauna\Desktop\Teste";
+
             //DEFINIR USUARIO LOGADO
             Program._Usuario = null;
 
@@ -23,11 +30,12 @@ namespace RollFestas
 
             //INICIA CAIXA
             var caixaC = new CaixaController();
-            caixaC.IniciarCaixaDia(GetDate.PegarDiaMesAnoAtual());
+            bool Sucesso = caixaC.IniciarCaixaDia(GetDate.PegarDiaMesAnoAtual());
+            if (Sucesso == false)
+            {
+                Application.Exit();
+            }
 
-            //SALVAR CAMINHOS
-            Program._CaminhoReciboVenda = @"C:\Users\keven.barauna\Desktop\Teste";
-            Program._CaminhoPlanilhaPonto = @"C:\Users\keven.barauna\Desktop\Teste";
 
 
         }

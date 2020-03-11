@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RollFestas.Models;
 using RollFestas.Services;
+using RollFestas.Utils;
 using RollFestas.View.MensagemErro;
 
 namespace RollFestas.Data
@@ -16,17 +17,16 @@ namespace RollFestas.Data
         SqlCommand cmd = new SqlCommand();
 
         //NOVA VENDA
-        public bool NovaVenda(string Data, string Usuario, string ValorTotal, string ValorPago, string Troco, string TipoPagamento, int StatusPagamento, string ValorPendente, string Nome)
+        public bool NovaVenda(string Data, string Usuario, string ValorTotal, string ValorPago, string TipoPagamento, int StatusPagamento, string ValorPendente, string Nome)
         {
             try
             {
-                cmd.CommandText = "INSERT INTO TB_VENDA (data,usuario,valortotal,valorpago,troco,tipopagamento,status_pagamento,valor_pendente,nome) VALUES (@data,@usuario,@valortotal,@valorpago,@troco,@tipopagamento,@status_pagamento,@valor_pendente,@nome)";
+                cmd.CommandText = "INSERT INTO TB_VENDA (data,usuario,valortotal,valorpago,tipopagamento,status_pagamento,valor_pendente,nome) VALUES (@data,@usuario,@valortotal,@valorpago,@tipopagamento,@status_pagamento,@valor_pendente,@nome)";
 
                 cmd.Parameters.AddWithValue("@data", Data);
                 cmd.Parameters.AddWithValue("@usuario", Usuario);
                 cmd.Parameters.AddWithValue("@valortotal", ValorTotal);
                 cmd.Parameters.AddWithValue("@valorpago", ValorPago);
-                cmd.Parameters.AddWithValue("@troco", Troco);
                 cmd.Parameters.AddWithValue("@tipopagamento", TipoPagamento);
                 cmd.Parameters.AddWithValue("@status_pagamento", StatusPagamento);
                 cmd.Parameters.AddWithValue("@valor_pendente", ValorPendente);
@@ -38,6 +38,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB01V", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -75,7 +76,6 @@ namespace RollFestas.Data
                     var USUARIO = dr["usuario"];
                     var VALORTOTAL = dr["valortotal"];
                     var VALORPAGO = dr["valorpago"];
-                    var TROCO = dr["troco"];
                     var TIPOPAGAMENTO = dr["tipopagamento"];
                     var NOME = dr["nome"];
 
@@ -85,7 +85,6 @@ namespace RollFestas.Data
                     venda.Usuario = Convert.ToString(USUARIO);
                     venda.ValorTotal = Convert.ToString(VALORTOTAL);
                     venda.ValorPago = Convert.ToString(VALORPAGO);
-                    venda.Troco = Convert.ToString(TROCO);
                     venda.TipoPagamento = Convert.ToString(TIPOPAGAMENTO);
                     venda.NomeCliente = Convert.ToString(NOME);
 
@@ -94,6 +93,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB02V", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -134,17 +134,12 @@ namespace RollFestas.Data
                         var USUARIO = dr["usuario"];
                         var VALORTOTAL = dr["valortotal"];
                         var VALORPAGO = dr["valorpago"];
-                        var TROCO = dr["troco"];
                         var TIPOPAGAMENTO = dr["tipopagamento"];
                         var STATUS = dr["status_pagamento"];
                         var VALORPENDENTE = dr["valor_pendente"];
                         var NOME = dr["nome"];
- 
 
-                        if (TROCO == null)
-                        {
-                            TROCO = "0";
-                        }
+
                         if (VALORPAGO == null)
                         {
                             VALORPAGO = "0";
@@ -155,7 +150,6 @@ namespace RollFestas.Data
                         vendaM.Usuario = Convert.ToString(USUARIO);
                         vendaM.ValorTotal = Convert.ToString(VALORTOTAL);
                         vendaM.ValorPago = Convert.ToString(VALORPAGO);
-                        vendaM.Troco = Convert.ToString(TROCO);
                         vendaM.TipoPagamento = Convert.ToString(TIPOPAGAMENTO);
                         vendaM.StatusPagamento = Convert.ToString(STATUS);
                         vendaM.ValorPendente = Convert.ToString(VALORPENDENTE);
@@ -171,6 +165,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB03V", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -220,6 +215,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB03V", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -262,30 +258,26 @@ namespace RollFestas.Data
                         var USUARIO = dr["usuario"];
                         var VALORTOTAL = dr["valortotal"];
                         var VALORPAGO = dr["valorpago"];
-                        var TROCO = dr["troco"];
                         var TIPOPAGAMENTO = dr["tipopagamento"];
                         var NOME = dr["nome"];
 
-                        if (TROCO == null)
+
+
+                        if (VALORPAGO == null)
                         {
-                            TROCO = "0";
-
-                            if (VALORPAGO == null)
-                            {
-                                VALORPAGO = "0";
-                            }
-
-                            vendaM.Id = Convert.ToInt32(ID);
-                            vendaM.Data = Convert.ToString(DATA);
-                            vendaM.Usuario = Convert.ToString(USUARIO);
-                            vendaM.ValorTotal = Convert.ToString(VALORTOTAL);
-                            vendaM.ValorPago = Convert.ToString(VALORPAGO);
-                            vendaM.Troco = Convert.ToString(TROCO);
-                            vendaM.TipoPagamento = Convert.ToString(TIPOPAGAMENTO);
-                            vendaM.NomeCliente = Convert.ToString(NOME);
-
-                            venda.Add(vendaM);
+                            VALORPAGO = "0";
                         }
+
+                        vendaM.Id = Convert.ToInt32(ID);
+                        vendaM.Data = Convert.ToString(DATA);
+                        vendaM.Usuario = Convert.ToString(USUARIO);
+                        vendaM.ValorTotal = Convert.ToString(VALORTOTAL);
+                        vendaM.ValorPago = Convert.ToString(VALORPAGO);
+                        vendaM.TipoPagamento = Convert.ToString(TIPOPAGAMENTO);
+                        vendaM.NomeCliente = Convert.ToString(NOME);
+
+                        venda.Add(vendaM);
+
 
                     }
 
@@ -293,6 +285,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB05V", e.Message);
                 TelaErro.Show();
             }
@@ -330,16 +323,10 @@ namespace RollFestas.Data
                         var USUARIO = dr["usuario"];
                         var VALORTOTAL = dr["valortotal"];
                         var VALORPAGO = dr["valorpago"];
-                        var TROCO = dr["troco"];
                         var VALORPENDENTE = dr["valor_pendente"];
                         var TIPOPAGAMENTO = dr["tipopagamento"];
                         var NOME = dr["nome"];
 
-
-                        if (TROCO == null)
-                        {
-                            TROCO = "0";
-                        }
                         if (VALORPAGO == null)
                         {
                             VALORPAGO = "0";
@@ -350,7 +337,6 @@ namespace RollFestas.Data
                         vendaM.Usuario = Convert.ToString(USUARIO);
                         vendaM.ValorTotal = Convert.ToString(VALORTOTAL);
                         vendaM.ValorPago = Convert.ToString(VALORPAGO);
-                        vendaM.Troco = Convert.ToString(TROCO);
                         vendaM.ValorPendente = Convert.ToString(VALORPENDENTE);
                         vendaM.TipoPagamento = Convert.ToString(TIPOPAGAMENTO);
                         vendaM.NomeCliente = Convert.ToString(NOME);
@@ -364,6 +350,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB06V", e.Message);
                 TelaErro.Show();
 
@@ -398,15 +385,11 @@ namespace RollFestas.Data
                     var USUARIO = dr["usuario"];
                     var VALORTOTAL = dr["valortotal"];
                     var VALORPAGO = dr["valorpago"];
-                    var TROCO = dr["troco"];
                     var VALORPENDENTE = dr["valor_pendente"];
                     var TIPOPAGAMENTO = dr["tipopagamento"];
                     var NOME = dr["nome"];
 
-                    if (TROCO == null)
-                    {
-                        TROCO = "0";
-                    }
+
                     if (VALORPAGO == null)
                     {
                         VALORPAGO = "0";
@@ -417,7 +400,6 @@ namespace RollFestas.Data
                     vendaM.Usuario = Convert.ToString(USUARIO);
                     vendaM.ValorTotal = Convert.ToString(VALORTOTAL);
                     vendaM.ValorPago = Convert.ToString(VALORPAGO);
-                    vendaM.Troco = Convert.ToString(TROCO);
                     vendaM.ValorPendente = Convert.ToString(VALORPENDENTE);
                     vendaM.TipoPagamento = Convert.ToString(TIPOPAGAMENTO);
                     vendaM.NomeCliente = Convert.ToString(NOME);
@@ -430,6 +412,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB07V", e.Message);
                 TelaErro.Show();
 
@@ -455,12 +438,13 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB08V", e.Message);
                 TelaErro.Show();
                 return false;
             }
 
-           
+
             cmd.Parameters.Clear();
             conexao.Desconectar();
             return true;
@@ -478,11 +462,12 @@ namespace RollFestas.Data
 
                 cmd.Connection = conexao.Conectar();
                 cmd.ExecuteNonQuery();
-                
+
 
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB09V", e.Message);
                 TelaErro.Show();
                 return false;
@@ -517,7 +502,6 @@ namespace RollFestas.Data
                     var USUARIO = dr["usuario"];
                     var VALORTOTAL = dr["valortotal"];
                     var VALORPAGO = dr["valorpago"];
-                    var TROCO = dr["troco"];
                     var TIPOPAGAMENTO = dr["tipopagamento"];
                     var NOME = dr["nome"];
 
@@ -527,7 +511,6 @@ namespace RollFestas.Data
                     vendaM.Usuario = Convert.ToString(USUARIO);
                     vendaM.ValorTotal = Convert.ToString(VALORTOTAL);
                     vendaM.ValorPago = Convert.ToString(VALORPAGO);
-                    vendaM.Troco = Convert.ToString(TROCO);
                     vendaM.TipoPagamento = Convert.ToString(TIPOPAGAMENTO);
                     vendaM.NomeCliente = Convert.ToString(NOME);
 
@@ -536,6 +519,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB010V", e.Message);
                 TelaErro.Show();
 

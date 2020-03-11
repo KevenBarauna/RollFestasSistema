@@ -268,10 +268,10 @@
             // TxtDataAdmissao
             // 
             this.TxtDataAdmissao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtDataAdmissao.Location = new System.Drawing.Point(73, 260);
+            this.TxtDataAdmissao.Location = new System.Drawing.Point(73, 203);
             this.TxtDataAdmissao.Mask = "00/00/0000";
             this.TxtDataAdmissao.Name = "TxtDataAdmissao";
-            this.TxtDataAdmissao.Size = new System.Drawing.Size(142, 13);
+            this.TxtDataAdmissao.Size = new System.Drawing.Size(159, 13);
             this.TxtDataAdmissao.TabIndex = 89;
             this.TxtDataAdmissao.ValidatingType = typeof(System.DateTime);
             // 

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Web.Script.Serialization;
 using RollFestas.Models;
 using RollFestas.Services;
+using RollFestas.Utils;
 using RollFestas.View.MensagemErro;
 
 namespace RollFestas.Data
@@ -12,6 +14,7 @@ namespace RollFestas.Data
 
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
+        //JavaScriptSerializer javascriptSerializer = new JavaScriptSerializer();
 
         //INICIAR CAIXA
         public bool IniciarCaixa(string Data)
@@ -61,6 +64,9 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                
+                GerarTxt.SalvarTxtErro(null, e.Message,e.Number.ToString(),e.Errors.ToString(),e.ErrorCode.ToString(),Program._CaminhoCacheErro);
+
                 var TelaErro = new ErroConexao("E.I.C", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -87,6 +93,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB02C", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -113,6 +120,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB03C", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -139,6 +147,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB04C", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -165,6 +174,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB04C", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -191,6 +201,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB04iC", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -217,6 +228,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB05C", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -243,6 +255,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB06C", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -297,6 +310,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB07C", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -358,6 +372,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB08C", e.Message);
                 TelaErro.Show();
                 cmd.Parameters.Clear();
@@ -420,6 +435,7 @@ namespace RollFestas.Data
             }
             catch (SqlException e)
             {
+                GerarTxt.SalvarTxtErro(null, e.Message, e.Number.ToString(), e.Errors.ToString(), e.ErrorCode.ToString(), Program._CaminhoCacheErro);
                 var TelaErro = new ErroConexao("CDB09C", e.Message);
                 TelaErro.Show();
             }

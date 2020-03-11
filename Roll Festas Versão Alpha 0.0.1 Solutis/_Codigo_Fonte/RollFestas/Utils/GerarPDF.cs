@@ -80,11 +80,11 @@ namespace RollFestas.Utils
                 paragrafo.Add("Valor total: " + ValorTotalDaVenda + "                       ");
                 paragrafo.Add("Valor pago: " + ValorpagoDaVenda + "                       ");
 
-                String TrocoDaVenda = vendaModel.Troco;
+                //String TrocoDaVenda = vendaModel.Troco;
                 String PendenciaDaVenda = vendaModel.ValorPendente;
 
 
-                paragrafo.Add("Troco: " + TrocoDaVenda + "                               ");
+                //paragrafo.Add("Troco: " + TrocoDaVenda + "                               ");
                 paragrafo.Add("Pendencia: " + PendenciaDaVenda + "                       ");
 
 

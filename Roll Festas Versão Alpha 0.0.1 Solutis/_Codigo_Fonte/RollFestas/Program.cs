@@ -18,6 +18,7 @@ namespace RollFestas
         public static string _CaminhoCache { get; set; }
         public static string _CaminhoCacheErro { get; set; }
         public static string _CaminhoTabelaPonto { get; set; }
+        public static string _CaminhoArquivoDuvida { get; set; }
 
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.

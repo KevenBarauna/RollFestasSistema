@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RollFestas.Controllers;
 using RollFestas.Models;
+using RollFestas.Utils;
 using RollFestas.View.Avisos;
 
 namespace RollFestas.View.Venda
@@ -127,7 +128,7 @@ namespace RollFestas.View.Venda
         private void button1_Click(object sender, EventArgs e)
         {
             var vendaC = new VendaController();
-            TxtTroco.Text = vendaC.CalcularTroco(LblValorTotalNovo.Text, TxtValorRecebido.Text);
+            TxtTroco.Text = CalculoValores.CalcularTroco(TxtValorRecebido.Text, TxtValorRecebido.Text);
         }
     }
 }

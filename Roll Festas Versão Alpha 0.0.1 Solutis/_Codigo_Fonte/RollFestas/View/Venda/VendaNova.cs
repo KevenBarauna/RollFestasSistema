@@ -161,14 +161,9 @@ namespace RollFestas.View.Venda
 
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
-            var vendaC = new VendaController();
-            string Troco = vendaC.CalcularTroco(LblTotal.Text, TxtValorRecebido.Text);
+            LblTroco.Text = CalculoValores.CalcularTroco(LblTotal.Text, TxtValorRecebido.Text);
 
-            if (Troco != "PENDENTE")
-            {
-                LblTroco.Text = Troco;
-            }
-            else
+            if (LblTroco.Text == "PENDENTE")
             {
                 Program._Produtos = null;
                 Program._Produtos = _ListaProdutos;
