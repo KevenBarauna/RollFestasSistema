@@ -18,8 +18,8 @@ namespace RollFestas.View.Venda
     {
 
         List<ProdutoModel> _ListaProdutos;
-
-        public VendaSemPagamento(string ValorTotal, string ValorPago, string TipoPagamento, string Troco)
+        string TipoPagamento;
+        public VendaSemPagamento(string ValorTotal, string ValorPago, string TipoPagamento, string ParteCartao)
         {
             InitializeComponent();
 
@@ -32,9 +32,31 @@ namespace RollFestas.View.Venda
             //CARREGAR LISTA DE PRODUTOS
             _ListaProdutos = Program._Produtos;
 
-            LblValorTotal.Text = ValorTotal;
-            LblValorPago.Text = ValorPago;
-            LblTipoDePagamento.Text = TipoPagamento;
+            TxtValorTotal.Text = ValorTotal;
+            TxtValorPago.Text = ValorPago;
+
+            if (TipoPagamento == "Dinheiro")
+            {
+                RBDinheiro.Checked = true;
+                TipoPagamento = "Dinheiro";
+            }
+            if (TipoPagamento == "Cartão")
+            {
+                RBCartao.Checked = true;
+                TipoPagamento = "Cartão";
+            }
+            if (TipoPagamento == "Outros")
+            {
+                RBOutros.Checked = true;
+                TipoPagamento = "Outros";
+            }
+            if (TipoPagamento == "Dinheiro e Cartão")
+            {
+                RbDinCart.Checked = true;
+                TipoPagamento = "Dinheiro e Cartão";
+                TxtDinCart.Visible = true;
+                TxtDinCart.Text = ParteCartao;
+            }
 
         }
 
@@ -44,14 +66,14 @@ namespace RollFestas.View.Venda
             decimal ValorPago;
             try
             {
-                ValorTotal = Convert.ToDecimal(LblValorTotal.Text);
-                ValorPago = Convert.ToDecimal(LblValorPago.Text);
+                ValorTotal = Convert.ToDecimal(TxtValorTotal.Text);
+                ValorPago = Convert.ToDecimal(TxtValorPago.Text);
             }
             catch (Exception)
             {
                 var TelaErro = new Erro("Valores incorretos 'Valor recebido' altere esse valor e tente novamente");
                 TelaErro.Show();
-                ValorTotal = Convert.ToDecimal(LblValorTotal.Text);
+                ValorTotal = Convert.ToDecimal(TxtValorTotal.Text);
                 ValorPago = 0;
             }
 
@@ -69,7 +91,7 @@ namespace RollFestas.View.Venda
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
             var vendaC = new VendaController();
-            bool SucessoVenda = vendaC.FinalizarVenda(LblData.Text, LblUsuario.Text, LblValorTotal.Text, LblValorPago.Text, "0", LblTipoDePagamento.Text, "", 2, TxtValorRestante.Text, TxtNome.Text, _ListaProdutos,false);
+            bool SucessoVenda = vendaC.FinalizarVenda(LblData.Text, LblUsuario.Text, TxtValorTotal.Text, TxtValorPago.Text, TipoPagamento, "", 2, TxtValorRestante.Text, TxtNome.Text, _ListaProdutos,false);
 
             if (SucessoVenda == true)
             {
@@ -77,6 +99,40 @@ namespace RollFestas.View.Venda
                 Tela.Show();
                 this.Close();
             }
+        }
+
+        private void BtnDuvida_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Program._CaminhoArquivoDuvida + @"\Duvida_Venda.pdf");
+        }
+
+        private void RBDinheiro_CheckedChanged(object sender, EventArgs e)
+        {
+            RBDinheiro.Checked = true;
+            TipoPagamento = "Dinheiro";
+            TxtDinCart.Visible = false;
+        }
+
+        private void RBCartao_CheckedChanged(object sender, EventArgs e)
+        {
+            RBCartao.Checked = true;
+            TipoPagamento = "Cartão";
+            TxtDinCart.Visible = false;
+        }
+
+        private void RBOutros_CheckedChanged(object sender, EventArgs e)
+        {
+
+            RBOutros.Checked = true;
+            TipoPagamento = "Outros";
+            TxtDinCart.Visible = false;
+        }
+
+        private void RbDinCart_CheckedChanged(object sender, EventArgs e)
+        {
+            RbDinCart.Checked = true;
+            TipoPagamento = "Dinheiro e Cartão";
+            TxtDinCart.Visible = true;
         }
     }
 }

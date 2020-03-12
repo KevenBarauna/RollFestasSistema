@@ -44,7 +44,7 @@ namespace RollFestas.View.Encomenda
 
             if (LblTroco.Text == "PENDENTE")
             {
-                var Tela = new VendaSemPagamento(TxtValor.Text, TxtValorRecebido.Text, TipoPagamento, LblTroco.Text);
+                var Tela = new EncomendaPagamentoPendente(TxtValor.Text, TxtValorRecebido.Text, TipoPagamento, LblTroco.Text, TxtNomeCliente.Text);
                 Tela.Show();
                 this.Close();
             }
@@ -109,7 +109,7 @@ namespace RollFestas.View.Encomenda
             if (Sucesso == true)
             {
                 var vendaC = new VendaController();
-                Sucesso = vendaC.FinalizarVenda(LblData.Text, LblUsuario.Text, TxtValor.Text, TxtValorRecebido.Text, LblTroco.Text, TipoPagamento, TxtDinCart.Text, 1, null, TxtNomeCliente.Text, null,true);
+                Sucesso = vendaC.FinalizarVenda(LblData.Text, LblUsuario.Text, TxtValor.Text, TxtValorRecebido.Text, TipoPagamento, TxtDinCart.Text, 1, null, TxtNomeCliente.Text, null,true);
 
                 if (Sucesso == true)
                 {
@@ -181,5 +181,7 @@ namespace RollFestas.View.Encomenda
             Tela.Show();
             this.Close();
         }
+
+     
     }
 }

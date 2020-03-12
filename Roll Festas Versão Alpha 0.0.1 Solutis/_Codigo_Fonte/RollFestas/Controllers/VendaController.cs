@@ -19,10 +19,9 @@ namespace RollFestas.Controllers
         VendaDAO DAO = new VendaDAO();
 
         //SALVAR NOVA VENDA
-        public bool FinalizarVenda(string Data, string Usuario, string ValorTotal, string ValorPago, string Troco, string TipoPagamento, string ParteCartao ,int StatusPagamento, string ValorPendente, string NomeCliente, List<ProdutoModel> ListaProdutos, bool Encomenda)
+        public bool FinalizarVenda(string Data, string Usuario, string ValorTotal, string ValorPago, string TipoPagamento, string ParteCartao, int StatusPagamento, string ValorPendente, string NomeCliente, List<ProdutoModel> ListaProdutos, bool Encomenda)
         {
-
-            //VERIFICA SEM TEM PRODUTOS NA LISTA
+            //VALIDA CAMPOS OBRIGATÓRIOS DE VENDA
             if (Encomenda == false)
             {
                 if (ListaProdutos.Count <= 0)
@@ -32,23 +31,36 @@ namespace RollFestas.Controllers
                     return false;
                 }
             }
-            
 
-            //VERIFICA A COMPRA TEM VALOR
-            if (string.IsNullOrEmpty(ValorTotal))
+            #region VerificaR$
+            //VERIFICA SE VALORES R$ SÃO CORRETOS
+            if (CalculoValores.VerificaValor(ValorTotal) == false)
             {
-                var TelaErro = new Erro("Informe o valor total da venda");
+                var TelaErro = new Erro("O campo 'valor total' está incorreto");
                 TelaErro.Show();
                 return false;
             }
-
-            //DEPENDENDO DO TIPO DE PAGAMENTO EXIGE O VALOR PENDENTE E NOME DO CLIENTE
-            if (StatusPagamento == 1)
+            else if (CalculoValores.VerificaValor(ValorPago) == false)
             {
-                ValorPendente = "";
-                NomeCliente = "";
+                var TelaErro = new Erro("O campo 'valor pago' está incorreto");
+                TelaErro.Show();
+                return false;
             }
+            else if(TipoPagamento == "Dinheiro e cartão" && CalculoValores.VerificaValor(ParteCartao) == false)
+            {
+                var TelaErro = new Erro("O campo 'parte em cartão' está incorreto");
+                TelaErro.Show();
+                return false;
+            }
+            else if( StatusPagamento == 2 && CalculoValores.VerificaValor(ValorPendente) == false)
+            {
+                var TelaErro = new Erro("O campo 'valor pendente' está incorreto");
+                TelaErro.Show();
+                return false;
+            }
+            #endregion
 
+            #region PagarDepos
             if (StatusPagamento == 2)
             {
                 if (ValorPendente == "")
@@ -57,13 +69,22 @@ namespace RollFestas.Controllers
                     TelaErro.Show();
                     return false;
                 }
-                if (NomeCliente == "")
+                else if (NomeCliente == "")
                 {
                     var TelaErro = new Erro("Informe o nome do cliente");
                     TelaErro.Show();
                     return false;
                 }
- 
+            }
+            #endregion
+
+            if (string.IsNullOrEmpty(NomeCliente))
+            {
+                NomeCliente = "";
+            }
+            if (string.IsNullOrEmpty(ValorPendente))
+            {
+                ValorPendente = "0";
             }
 
             //SALVA VENDA
@@ -74,6 +95,7 @@ namespace RollFestas.Controllers
                 TelaErro.Show();
                 return false;
             }
+
 
             //DECREMENTAR PRODUTOS
             if (Encomenda == false)
@@ -88,10 +110,9 @@ namespace RollFestas.Controllers
             }
 
 
-            //SE JÁ FOI PAGO
+            //SE JÁ FOI PAGO SALVAR DINHEIRO NO CAIXA
             if (StatusPagamento == 1)
             {
-                //SALVAR DINHEIRO NO CAIXA
                 var caixaC = new CaixaController();
                 bool SucessoCaixa = caixaC.SalvarValor(Data, ValorTotal, TipoPagamento, ParteCartao);
                 if (SucessoCaixa == false)
@@ -102,10 +123,9 @@ namespace RollFestas.Controllers
                 }
             }
 
-            //SE AINDA VAI SER PAGO
+            //SE AINDA VAI SER PAGO SALVAR DINHEIRO NO CAIXA
             if (StatusPagamento == 2)
             {
-                //SALVAR DINHEIRO NO CAIXA
                 var caixaC = new CaixaController();
                 bool SucessoCaixa = caixaC.SalvarValor(Data, ValorPago, TipoPagamento, ParteCartao);
                 if (SucessoCaixa == false)
@@ -126,8 +146,8 @@ namespace RollFestas.Controllers
                 TelaErro.Show();
             }
 
-            VendaModel vendaM = PegarIdDaUltimaVenda();
-            var Tela = new Sucesso("Venda cadastrada. Código da venda: " + vendaM.Id);
+
+            var Tela = new Sucesso("Venda cadastrada. Código da venda: " + UltimaVenda.Id);
             Tela.Show();
             return true;
         }
@@ -245,7 +265,7 @@ namespace RollFestas.Controllers
             decimal ValorTotal = 0;
             foreach (var venda in vendaM)
             {
-                decimal ValorVenda=0;
+                decimal ValorVenda = 0;
 
                 try
                 {
@@ -259,7 +279,7 @@ namespace RollFestas.Controllers
                 ValorTotal += Convert.ToDecimal(venda.ValorTotal);
 
             }
-            
+
             return ValorTotal.ToString();
         }
 

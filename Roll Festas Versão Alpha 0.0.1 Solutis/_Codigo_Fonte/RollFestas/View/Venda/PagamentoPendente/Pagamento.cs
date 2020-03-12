@@ -62,6 +62,7 @@ namespace RollFestas.View.Venda.PagamentoPendente
             }
 
             LblTotal.Text = vendaM.ValorPendente;
+            LblNomeCliente.Text = vendaM.NomeCliente;
         }
 
         private void BtnCalcular_Click(object sender, EventArgs e)

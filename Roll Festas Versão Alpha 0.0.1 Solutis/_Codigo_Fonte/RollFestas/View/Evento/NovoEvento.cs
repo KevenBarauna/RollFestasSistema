@@ -45,7 +45,9 @@ namespace RollFestas.View.Evento
 
             if (LblTroco.Text == "PENDENTE")
             {
-                //CHAMA TELA DE PENDENCIA
+                var Tela = new PagarEventoPendente(TipoPagamento, TxtvalorEntrada.Text, TxtValorTotal.Text, TxtNome.Text, TxtCep.Text, TxtLocal.Text, TxtTel1.Text, TxtTel2.Text, TxtEmail.Text, TipoEvento, TxtData.Text, TxtHora.Text,TxtDinCart.Text,TxtDescEvento.Text); ;
+                Tela.Show();
+                this.Close();
             }
            
         }
@@ -53,7 +55,7 @@ namespace RollFestas.View.Evento
         private void BtnEntrar_Click(object sender, EventArgs e)
         {
             var eventoC = new EventoController();
-            eventoC.NovaEncomenda(TxtCep.Text,TxtLocal.Text,TxtDescEvento.Text,TxtNome.Text,TxtTel1.Text,TxtTel2.Text,TxtEmail.Text,TipoEvento,TxtData.Text,TxtHora.Text,TxtValorTotal.Text,TxtvalorEntrada.Text,2, TipoPagamento, TxtDinCart.Text, 1, LblTroco.Text);
+            eventoC.NovoEvento(TxtCep.Text,TxtLocal.Text,TxtDescEvento.Text,TxtNome.Text,TxtTel1.Text,TxtTel2.Text,TxtEmail.Text,TipoEvento,TxtData.Text,TxtHora.Text,TxtValorTotal.Text,TxtvalorEntrada.Text,2, TipoPagamento, TxtDinCart.Text, 1, LblTroco.Text);
         }
 
         private void RBDinheiro_CheckedChanged(object sender, EventArgs e)
@@ -116,6 +118,13 @@ namespace RollFestas.View.Evento
         private void RbFesta_CheckedChanged(object sender, EventArgs e)
         {
             TipoEvento = "Festa";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var Tela = new PagarEventoPendente(TipoPagamento, TxtvalorEntrada.Text, TxtValorTotal.Text, TxtNome.Text, TxtCep.Text, TxtLocal.Text, TxtTel1.Text, TxtTel2.Text, TxtEmail.Text, TipoEvento, TxtData.Text, TxtHora.Text, TxtDinCart.Text, TxtDescEvento.Text); ;
+            Tela.Show();
+            this.Close();
         }
     }
 }

@@ -158,7 +158,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(448, 12);
+            this.label3.Location = new System.Drawing.Point(446, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(19, 13);
             this.label3.TabIndex = 161;
@@ -167,7 +167,7 @@
             // TxtPesquisaMes
             // 
             this.TxtPesquisaMes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtPesquisaMes.Location = new System.Drawing.Point(496, 31);
+            this.TxtPesquisaMes.Location = new System.Drawing.Point(494, 31);
             this.TxtPesquisaMes.Name = "TxtPesquisaMes";
             this.TxtPesquisaMes.Size = new System.Drawing.Size(155, 13);
             this.TxtPesquisaMes.TabIndex = 158;
@@ -176,7 +176,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Orange;
-            this.panel1.Location = new System.Drawing.Point(499, 47);
+            this.panel1.Location = new System.Drawing.Point(497, 47);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 1);
             this.panel1.TabIndex = 157;
@@ -186,7 +186,7 @@
             this.BtnPesquisarMes.BackColor = System.Drawing.Color.DarkOrange;
             this.BtnPesquisarMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPesquisarMes.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnPesquisarMes.Location = new System.Drawing.Point(526, 54);
+            this.BtnPesquisarMes.Location = new System.Drawing.Point(524, 54);
             this.BtnPesquisarMes.Name = "BtnPesquisarMes";
             this.BtnPesquisarMes.Size = new System.Drawing.Size(89, 27);
             this.BtnPesquisarMes.TabIndex = 160;
@@ -198,7 +198,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(518, 12);
+            this.label2.Location = new System.Drawing.Point(516, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 13);
             this.label2.TabIndex = 159;
@@ -208,7 +208,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(209, 12);
+            this.label11.Location = new System.Drawing.Point(207, 12);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(19, 13);
             this.label11.TabIndex = 156;
@@ -217,7 +217,7 @@
             // TxtPesquisaData
             // 
             this.TxtPesquisaData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtPesquisaData.Location = new System.Drawing.Point(264, 31);
+            this.TxtPesquisaData.Location = new System.Drawing.Point(262, 31);
             this.TxtPesquisaData.Name = "TxtPesquisaData";
             this.TxtPesquisaData.Size = new System.Drawing.Size(155, 13);
             this.TxtPesquisaData.TabIndex = 153;
@@ -226,7 +226,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Orange;
-            this.panel7.Location = new System.Drawing.Point(267, 47);
+            this.panel7.Location = new System.Drawing.Point(265, 47);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(150, 1);
             this.panel7.TabIndex = 152;
@@ -236,7 +236,7 @@
             this.BtnPesquisarData.BackColor = System.Drawing.Color.DarkOrange;
             this.BtnPesquisarData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPesquisarData.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnPesquisarData.Location = new System.Drawing.Point(294, 54);
+            this.BtnPesquisarData.Location = new System.Drawing.Point(292, 54);
             this.BtnPesquisarData.Name = "BtnPesquisarData";
             this.BtnPesquisarData.Size = new System.Drawing.Size(89, 27);
             this.BtnPesquisarData.TabIndex = 155;
@@ -248,7 +248,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(284, 11);
+            this.label10.Location = new System.Drawing.Point(282, 11);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 13);
             this.label10.TabIndex = 154;
@@ -258,7 +258,7 @@
             // 
             this.txtPesquisaHoje.BackColor = System.Drawing.Color.White;
             this.txtPesquisaHoje.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPesquisaHoje.Location = new System.Drawing.Point(31, 31);
+            this.txtPesquisaHoje.Location = new System.Drawing.Point(29, 31);
             this.txtPesquisaHoje.Name = "txtPesquisaHoje";
             this.txtPesquisaHoje.ReadOnly = true;
             this.txtPesquisaHoje.Size = new System.Drawing.Size(155, 13);
@@ -270,7 +270,7 @@
             this.BtnPesquisarHoje.BackColor = System.Drawing.Color.DarkOrange;
             this.BtnPesquisarHoje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPesquisarHoje.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnPesquisarHoje.Location = new System.Drawing.Point(61, 54);
+            this.BtnPesquisarHoje.Location = new System.Drawing.Point(59, 54);
             this.BtnPesquisarHoje.Name = "BtnPesquisarHoje";
             this.BtnPesquisarHoje.Size = new System.Drawing.Size(89, 27);
             this.BtnPesquisarHoje.TabIndex = 150;
@@ -282,7 +282,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(58, 11);
+            this.label9.Location = new System.Drawing.Point(56, 11);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 13);
             this.label9.TabIndex = 149;
@@ -292,7 +292,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(658, 12);
+            this.label1.Location = new System.Drawing.Point(656, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(19, 13);
             this.label1.TabIndex = 168;
@@ -301,7 +301,7 @@
             // TxtPesquisaAno
             // 
             this.TxtPesquisaAno.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtPesquisaAno.Location = new System.Drawing.Point(706, 31);
+            this.TxtPesquisaAno.Location = new System.Drawing.Point(704, 31);
             this.TxtPesquisaAno.Name = "TxtPesquisaAno";
             this.TxtPesquisaAno.Size = new System.Drawing.Size(155, 13);
             this.TxtPesquisaAno.TabIndex = 165;
@@ -310,7 +310,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Orange;
-            this.panel2.Location = new System.Drawing.Point(709, 47);
+            this.panel2.Location = new System.Drawing.Point(707, 47);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(150, 1);
             this.panel2.TabIndex = 164;
@@ -320,7 +320,7 @@
             this.BtnPesquisarAno.BackColor = System.Drawing.Color.DarkOrange;
             this.BtnPesquisarAno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPesquisarAno.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnPesquisarAno.Location = new System.Drawing.Point(736, 54);
+            this.BtnPesquisarAno.Location = new System.Drawing.Point(734, 54);
             this.BtnPesquisarAno.Name = "BtnPesquisarAno";
             this.BtnPesquisarAno.Size = new System.Drawing.Size(89, 27);
             this.BtnPesquisarAno.TabIndex = 167;
@@ -332,7 +332,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(733, 12);
+            this.label5.Location = new System.Drawing.Point(731, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 13);
             this.label5.TabIndex = 166;

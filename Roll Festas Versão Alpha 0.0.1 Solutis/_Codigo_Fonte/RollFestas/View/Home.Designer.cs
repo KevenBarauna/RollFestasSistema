@@ -98,7 +98,12 @@
             this.baterPontoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verPontoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerarPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirTodasAsAjudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.BtnDuvida = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgPesquisaPorTema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgUsuario)).BeginInit();
@@ -109,6 +114,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ImgProximasEncomendas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -117,9 +124,9 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1103, 509);
+            this.button1.Location = new System.Drawing.Point(1074, 504);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 30);
+            this.button1.Size = new System.Drawing.Size(96, 40);
             this.button1.TabIndex = 26;
             this.button1.Text = "Sair";
             this.button1.UseVisualStyleBackColor = false;
@@ -127,6 +134,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.ImgPesquisaPorTema);
             this.panel1.Controls.Add(this.BtnPesquisaTema);
             this.panel1.Controls.Add(this.label5);
@@ -175,12 +183,13 @@
             this.BtnPesquisaTema.Text = "Pesquisa por tema";
             this.BtnPesquisaTema.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnPesquisaTema.UseVisualStyleBackColor = false;
+            this.BtnPesquisaTema.Click += new System.EventHandler(this.BtnPesquisaTema_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 383);
+            this.label5.Location = new System.Drawing.Point(32, 380);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 16);
             this.label5.TabIndex = 119;
@@ -213,9 +222,9 @@
             this.BtnTrocarUsuario.FlatAppearance.BorderSize = 0;
             this.BtnTrocarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTrocarUsuario.ForeColor = System.Drawing.Color.White;
-            this.BtnTrocarUsuario.Location = new System.Drawing.Point(28, 485);
+            this.BtnTrocarUsuario.Location = new System.Drawing.Point(49, 478);
             this.BtnTrocarUsuario.Name = "BtnTrocarUsuario";
-            this.BtnTrocarUsuario.Size = new System.Drawing.Size(111, 39);
+            this.BtnTrocarUsuario.Size = new System.Drawing.Size(108, 39);
             this.BtnTrocarUsuario.TabIndex = 44;
             this.BtnTrocarUsuario.Text = "Trocar de usuário";
             this.BtnTrocarUsuario.UseVisualStyleBackColor = false;
@@ -225,7 +234,7 @@
             // 
             this.LblVendas.AutoSize = true;
             this.LblVendas.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVendas.Location = new System.Drawing.Point(56, 383);
+            this.LblVendas.Location = new System.Drawing.Point(55, 380);
             this.LblVendas.Name = "LblVendas";
             this.LblVendas.Size = new System.Drawing.Size(68, 16);
             this.LblVendas.TabIndex = 32;
@@ -234,7 +243,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 363);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(60, 360);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 22;
@@ -246,7 +256,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SlateGray;
-            this.label2.Location = new System.Drawing.Point(19, 338);
+            this.label2.Location = new System.Drawing.Point(18, 321);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 14);
             this.label2.TabIndex = 31;
@@ -254,8 +264,8 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Orange;
-            this.panel2.Location = new System.Drawing.Point(15, 318);
+            this.panel2.BackColor = System.Drawing.Color.Tan;
+            this.panel2.Location = new System.Drawing.Point(14, 312);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(130, 1);
             this.panel2.TabIndex = 24;
@@ -307,10 +317,11 @@
             this.BtnPonto.Text = "Ponto";
             this.BtnPonto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnPonto.UseVisualStyleBackColor = false;
+            this.BtnPonto.Click += new System.EventHandler(this.BtnPonto_Click);
             // 
             // Linha
             // 
-            this.Linha.BackColor = System.Drawing.Color.Orange;
+            this.Linha.BackColor = System.Drawing.Color.Tan;
             this.Linha.Location = new System.Drawing.Point(11, 118);
             this.Linha.Name = "Linha";
             this.Linha.Size = new System.Drawing.Size(130, 1);
@@ -341,6 +352,7 @@
             this.BtnEncomenda.Text = "Nova encomenda";
             this.BtnEncomenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEncomenda.UseVisualStyleBackColor = false;
+            this.BtnEncomenda.Click += new System.EventHandler(this.BtnEncomenda_Click);
             // 
             // BtnVenda
             // 
@@ -357,6 +369,7 @@
             this.BtnVenda.Text = "Nova venda";
             this.BtnVenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnVenda.UseVisualStyleBackColor = false;
+            this.BtnVenda.Click += new System.EventHandler(this.BtnVenda_Click);
             // 
             // ListEntregas
             // 
@@ -367,9 +380,9 @@
             this.columnHeader8,
             this.columnHeader9});
             this.ListEntregas.HideSelection = false;
-            this.ListEntregas.Location = new System.Drawing.Point(727, 77);
+            this.ListEntregas.Location = new System.Drawing.Point(727, 107);
             this.ListEntregas.Name = "ListEntregas";
-            this.ListEntregas.Size = new System.Drawing.Size(446, 413);
+            this.ListEntregas.Size = new System.Drawing.Size(446, 383);
             this.ListEntregas.TabIndex = 23;
             this.ListEntregas.UseCompatibleStateImageBehavior = false;
             this.ListEntregas.View = System.Windows.Forms.View.Details;
@@ -441,7 +454,8 @@
             this.eventoToolStripMenuItem,
             this.calcularToolStripMenuItem,
             this.caixaToolStripMenuItem,
-            this.pontoToolStripMenuItem});
+            this.pontoToolStripMenuItem,
+            this.ajudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
@@ -655,12 +669,14 @@
             this.editarEventoToolStripMenuItem.Name = "editarEventoToolStripMenuItem";
             this.editarEventoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.editarEventoToolStripMenuItem.Text = "Editar evento";
+            this.editarEventoToolStripMenuItem.Click += new System.EventHandler(this.editarEventoToolStripMenuItem_Click);
             // 
             // apagarEventoToolStripMenuItem
             // 
             this.apagarEventoToolStripMenuItem.Name = "apagarEventoToolStripMenuItem";
             this.apagarEventoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.apagarEventoToolStripMenuItem.Text = "Ver todos os eventos";
+            this.apagarEventoToolStripMenuItem.Click += new System.EventHandler(this.apagarEventoToolStripMenuItem_Click);
             // 
             // calcularToolStripMenuItem
             // 
@@ -758,15 +774,66 @@
             this.gerarPDFToolStripMenuItem.Text = "Gerar planilha do mês";
             this.gerarPDFToolStripMenuItem.Click += new System.EventHandler(this.gerarPDFToolStripMenuItem_Click);
             // 
+            // ajudaToolStripMenuItem
+            // 
+            this.ajudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirTodasAsAjudasToolStripMenuItem});
+            this.ajudaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ajudaToolStripMenuItem.Image")));
+            this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.ajudaToolStripMenuItem.Text = "Ajuda";
+            // 
+            // abrirTodasAsAjudasToolStripMenuItem
+            // 
+            this.abrirTodasAsAjudasToolStripMenuItem.Name = "abrirTodasAsAjudasToolStripMenuItem";
+            this.abrirTodasAsAjudasToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.abrirTodasAsAjudasToolStripMenuItem.Text = "Abrir todas as ajudas";
+            this.abrirTodasAsAjudasToolStripMenuItem.Click += new System.EventHandler(this.abrirTodasAsAjudasToolStripMenuItem_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkOrange;
             this.panel3.Controls.Add(this.ImgProximasEncomendas);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(727, 27);
+            this.panel3.Location = new System.Drawing.Point(727, 56);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(446, 52);
             this.panel3.TabIndex = 31;
+            // 
+            // BtnDuvida
+            // 
+            this.BtnDuvida.BackColor = System.Drawing.Color.Orange;
+            this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
+            this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.BtnDuvida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDuvida.Location = new System.Drawing.Point(1137, 15);
+            this.BtnDuvida.Name = "BtnDuvida";
+            this.BtnDuvida.Size = new System.Drawing.Size(35, 35);
+            this.BtnDuvida.TabIndex = 104;
+            this.BtnDuvida.Text = "?";
+            this.BtnDuvida.UseVisualStyleBackColor = false;
+            this.BtnDuvida.Click += new System.EventHandler(this.BtnDuvida_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(1028, 504);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 172;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(5, 477);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 173;
+            this.pictureBox1.TabStop = false;
             // 
             // Home
             // 
@@ -774,6 +841,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.BtnDuvida);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.button1);
@@ -799,6 +868,8 @@
             this.menuStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -876,5 +947,10 @@
         private System.Windows.Forms.ToolStripMenuItem novoEventoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarEventoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apagarEventoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirTodasAsAjudasToolStripMenuItem;
+        private System.Windows.Forms.Button BtnDuvida;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

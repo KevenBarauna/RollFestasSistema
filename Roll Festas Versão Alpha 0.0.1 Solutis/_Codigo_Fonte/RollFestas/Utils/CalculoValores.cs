@@ -61,21 +61,36 @@ namespace RollFestas.Utils
             return ValorTroco.ToString();
         }
 
-        //CALCULAR TROCO
-        public static decimal Convertevalor(string ValorRecebido)
+        //VERIFICA SE VALOR É VALIDO
+        public static bool VerificaValor(string ValorRecebido)
         {
             decimal NovoValor = 0;
 
             try
             {
                 NovoValor = Convert.ToDecimal(ValorRecebido);
-                return NovoValor;
+                return true;
             }
             catch (Exception)
             {
-                return NovoValor;
+                var TelaErro = new Erro("Valor incorreto, use soemnte números e virgula");
+                TelaErro.Show();
+                return false;
             }
-           
+
+        }
+
+        //CONVERTE VALOR
+        public static decimal Convertevalor(string ValorRecebido)
+        {
+            decimal NovoValor = 0;
+
+            bool Valido = VerificaValor(ValorRecebido);
+
+            if (Valido == false) return NovoValor;
+
+            return NovoValor = Convert.ToDecimal(ValorRecebido);
+
         }
 
     }

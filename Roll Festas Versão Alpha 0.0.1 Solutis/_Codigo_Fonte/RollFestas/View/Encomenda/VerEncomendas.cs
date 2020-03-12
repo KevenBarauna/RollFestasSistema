@@ -20,7 +20,7 @@ namespace RollFestas.View.Encomenda
             InitializeComponent();
 
             //LISTA DE ENTREGAS
-            ListEntregas.Items.Clear();
+            ListEncomendas.Items.Clear();
 
             var encomendaoC = new EncomendaController();
             List<EncomendaModel> ListaEncomenda = encomendaoC.ListraEncomendas();
@@ -47,7 +47,7 @@ namespace RollFestas.View.Encomenda
                     Lista.SubItems.Add(item.NomeCliente);
                     Lista.SubItems.Add(item.Descricao);
 
-                    ListEntregas.Items.Add(Lista);
+                    ListEncomendas.Items.Add(Lista);
                 }
             }
         }

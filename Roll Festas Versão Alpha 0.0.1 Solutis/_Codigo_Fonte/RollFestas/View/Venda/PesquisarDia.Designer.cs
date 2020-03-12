@@ -49,8 +49,10 @@
             this.BtnPesquisarData = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.LblId = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgProximasEncomendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -72,6 +74,7 @@
             this.BtnDuvida.BackColor = System.Drawing.Color.Orange;
             this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
             this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.BtnDuvida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDuvida.Location = new System.Drawing.Point(756, 12);
             this.BtnDuvida.Name = "BtnDuvida";
@@ -79,6 +82,7 @@
             this.BtnDuvida.TabIndex = 54;
             this.BtnDuvida.Text = "?";
             this.BtnDuvida.UseVisualStyleBackColor = false;
+            this.BtnDuvida.Click += new System.EventHandler(this.BtnDuvida_Click);
             // 
             // listCodigo
             // 
@@ -169,7 +173,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Amiri Quran", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(189, 0);
+            this.label3.Location = new System.Drawing.Point(234, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(329, 54);
             this.label3.TabIndex = 27;
@@ -179,16 +183,16 @@
             // TxtPesquisaData
             // 
             this.TxtPesquisaData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtPesquisaData.Location = new System.Drawing.Point(330, 30);
+            this.TxtPesquisaData.Location = new System.Drawing.Point(341, 23);
             this.TxtPesquisaData.Name = "TxtPesquisaData";
-            this.TxtPesquisaData.Size = new System.Drawing.Size(155, 13);
+            this.TxtPesquisaData.Size = new System.Drawing.Size(142, 13);
             this.TxtPesquisaData.TabIndex = 175;
             this.TxtPesquisaData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Orange;
-            this.panel7.Location = new System.Drawing.Point(333, 46);
+            this.panel7.Location = new System.Drawing.Point(338, 40);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(150, 1);
             this.panel7.TabIndex = 174;
@@ -198,7 +202,7 @@
             this.BtnPesquisarData.BackColor = System.Drawing.Color.DarkOrange;
             this.BtnPesquisarData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPesquisarData.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnPesquisarData.Location = new System.Drawing.Point(360, 53);
+            this.BtnPesquisarData.Location = new System.Drawing.Point(357, 50);
             this.BtnPesquisarData.Name = "BtnPesquisarData";
             this.BtnPesquisarData.Size = new System.Drawing.Size(89, 27);
             this.BtnPesquisarData.TabIndex = 177;
@@ -209,7 +213,8 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(360, 9);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(339, 7);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 13);
             this.label10.TabIndex = 176;
@@ -223,12 +228,23 @@
             this.LblId.Size = new System.Drawing.Size(0, 13);
             this.LblId.TabIndex = 173;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(280, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 178;
+            this.pictureBox1.TabStop = false;
+            // 
             // PesquisarDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(814, 472);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TxtPesquisaData);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.BtnPesquisarData);
@@ -246,6 +262,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgProximasEncomendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,5 +290,6 @@
         private System.Windows.Forms.Button BtnPesquisarData;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label LblId;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

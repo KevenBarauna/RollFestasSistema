@@ -44,6 +44,7 @@ namespace RollFestas.View
             {
                 foreach (var item in ListaEncomenda)
                 {
+                    
                     ListViewItem Lista = new ListViewItem(Convert.ToString(item.Id));
                     Lista.SubItems.Add(item.TipoServico);
                     Lista.SubItems.Add(item.DataEntrega);
@@ -62,8 +63,6 @@ namespace RollFestas.View
                     }
                 }
             }
-           
-
 
         }
 
@@ -358,6 +357,58 @@ namespace RollFestas.View
             var Tela = new NovoEvento();
             Tela.Show();
             this.Close();
+        }
+
+        private void editarEventoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Tela = new EditarEvento();
+            Tela.Show();
+            this.Close();
+        }
+
+        private void apagarEventoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Tela = new TodosOsEventos();
+            Tela.Show();
+            this.Close();
+        }
+
+        private void BtnVenda_Click(object sender, EventArgs e)
+        {
+            var Tela = new Venda.VendaNova();
+            Tela.Show();
+            this.Close();
+        }
+
+        private void BtnEncomenda_Click(object sender, EventArgs e)
+        {
+            var Tela = new NovaEncomenda();
+            Tela.Show();
+            this.Close();
+        }
+
+        private void BtnPonto_Click(object sender, EventArgs e)
+        {
+            var Tela = new BaterPonto();
+            Tela.Show();
+            this.Close();
+        }
+
+        private void BtnPesquisaTema_Click(object sender, EventArgs e)
+        {
+            var Tela = new PesquisarProduto();
+            Tela.Show();
+            this.Close();
+        }
+
+        private void abrirTodasAsAjudasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Program._CaminhoArquivoDuvida + @"\Duvida_Perguntas.pdf");
+        }
+
+        private void BtnDuvida_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Program._CaminhoArquivoDuvida + @"\Duvida_Home.pdf");
         }
     }
 }

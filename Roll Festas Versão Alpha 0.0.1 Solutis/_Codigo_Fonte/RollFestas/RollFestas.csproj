@@ -171,11 +171,29 @@
     <Compile Include="View\Encomenda\VerEncomendas.Designer.cs">
       <DependentUpon>VerEncomendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Evento\EditarEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Evento\EditarEvento.Designer.cs">
+      <DependentUpon>EditarEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Evento\NovoEvento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Evento\NovoEvento.Designer.cs">
       <DependentUpon>NovoEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Evento\PagarEventoPendente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Evento\PagarEventoPendente.Designer.cs">
+      <DependentUpon>PagarEventoPendente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Evento\TodosOsEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Evento\TodosOsEventos.Designer.cs">
+      <DependentUpon>TodosOsEventos.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
@@ -368,8 +386,17 @@
     <EmbeddedResource Include="View\Encomenda\VerEncomendas.resx">
       <DependentUpon>VerEncomendas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Evento\EditarEvento.resx">
+      <DependentUpon>EditarEvento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Evento\NovoEvento.resx">
       <DependentUpon>NovoEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Evento\PagarEventoPendente.resx">
+      <DependentUpon>PagarEventoPendente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Evento\TodosOsEventos.resx">
+      <DependentUpon>TodosOsEventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

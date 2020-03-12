@@ -14,14 +14,39 @@ namespace RollFestas.View.Venda
 {
     public partial class VendaDescontoTotal : Form
     {
-        public VendaDescontoTotal(string Usuario, string Data, string ValorTotal, string TipoPagamento)
+        string ValorTipoPagamento;
+        public VendaDescontoTotal(string Usuario, string Data, string ValorTotal, string TipoPagamento, string ParteCartao)
         {
             InitializeComponent();
 
             LblUsuario.Text = Usuario;
             LblData.Text = Data;
-            LblValorTotalCheio.Text = ValorTotal;
-            LblTipoDePagamento.Text = TipoPagamento;
+            TxtValorTotalCheio.Text = ValorTotal;
+            ValorTipoPagamento = TipoPagamento;
+
+            if (TipoPagamento == "Dinheiro")
+            {
+                RBDinheiro.Checked = true;
+                TipoPagamento = "Dinheiro";
+            }
+            if (TipoPagamento == "Cartão")
+            {
+                RBCartao.Checked = true;
+                TipoPagamento = "Cartão";
+            }
+            if (TipoPagamento == "Outros")
+            {
+                RBOutros.Checked = true;
+                TipoPagamento = "Outros";
+            }
+            if (TipoPagamento == "Dinheiro e Cartão")
+            {
+                RbDinCart.Checked = true;
+                TipoPagamento = "Dinheiro e Cartão";
+                TxtDinCart.Visible = true;
+                TxtDinCart.Text = ParteCartao;
+            }
+
         }
 
         private void BtnCalcular_Click(object sender, EventArgs e)
@@ -29,7 +54,7 @@ namespace RollFestas.View.Venda
             try
             {
                 int Porcentagem = Convert.ToInt32(TxtPorcentagem.Text);
-                double ValorTotal = Convert.ToDouble(LblValorTotalCheio.Text);
+                double ValorTotal = Convert.ToDouble(TxtValorTotalCheio.Text);
                 double valorFinal;
 
                 valorFinal = (Porcentagem * ValorTotal) / 100;
@@ -84,7 +109,7 @@ namespace RollFestas.View.Venda
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
             var vendaC = new VendaController();
-            bool Sucesso = vendaC.FinalizarVenda(LblData.Text,LblUsuario.Text,LblValorTotalNovo.Text,TxtValorRecebido.Text,TxtTroco.Text,LblTipoDePagamento.Text,"",1,"","",Program._Produtos,false);
+            bool Sucesso = vendaC.FinalizarVenda(LblData.Text,LblUsuario.Text,LblValorTotalNovo.Text,TxtValorRecebido.Text,ValorTipoPagamento,"",1,"","",Program._Produtos,false);
 
             if (Sucesso == true)
             {
@@ -92,6 +117,39 @@ namespace RollFestas.View.Venda
                 var Tela = new Home(false);
                 Tela.Show();
             }
+        }
+
+        private void BtnDuvida_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Program._CaminhoArquivoDuvida + @"\Duvida_Venda.pdf");
+        }
+
+        private void RBDinheiro_CheckedChanged(object sender, EventArgs e)
+        {
+            RBDinheiro.Checked = true;
+            ValorTipoPagamento = "Dinheiro";
+            TxtDinCart.Visible = false;
+        }
+
+        private void RBCartao_CheckedChanged(object sender, EventArgs e)
+        {
+            RBCartao.Checked = true;
+            ValorTipoPagamento = "Cartão";
+            TxtDinCart.Visible = false;
+        }
+
+        private void RBOutros_CheckedChanged(object sender, EventArgs e)
+        {
+            RBOutros.Checked = true;
+            ValorTipoPagamento = "Outros";
+            TxtDinCart.Visible = false;
+        }
+
+        private void RbDinCart_CheckedChanged(object sender, EventArgs e)
+        {
+            RbDinCart.Checked = true;
+            ValorTipoPagamento = "Dinheiro e Cartão";
+            TxtDinCart.Visible = true;
         }
     }
 }

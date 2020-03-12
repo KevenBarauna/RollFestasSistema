@@ -35,5 +35,10 @@ namespace RollFestas.View.Usuario
             Tela.Show();
             this.Close();
         }
+
+        private void BtnDuvida_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Program._CaminhoArquivoDuvida + @"\Duvida_Usuario.pdf");
+        }
     }
 }

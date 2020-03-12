@@ -15,9 +15,7 @@ namespace RollFestas
         public static EncomendaModel _Encomenda{ get; set; }
         public static string _CaminhoReciboVenda { get; set; }
         public static string _CaminhoPlanilhaPonto { get; set; }
-        public static string _CaminhoCache { get; set; }
         public static string _CaminhoCacheErro { get; set; }
-        public static string _CaminhoTabelaPonto { get; set; }
         public static string _CaminhoArquivoDuvida { get; set; }
 
         /// <summary>

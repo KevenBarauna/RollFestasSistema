@@ -188,8 +188,10 @@ namespace RollFestas.View.Venda
 
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
+            Program._Produtos = null;
+            Program._Produtos = _ListaProdutos;
             var vendaC = new VendaController();
-            bool SucessoVenda = vendaC.FinalizarVenda(LblData.Text, LblUsuario.Text, LblTotal.Text, TxtValorRecebido.Text, LblTroco.Text, TipoPagamento, TxtDinCart.Text ,1, null, null,_ListaProdutos,false);
+            bool SucessoVenda = vendaC.FinalizarVenda(LblData.Text, LblUsuario.Text, LblTotal.Text, TxtValorRecebido.Text, TipoPagamento, TxtDinCart.Text ,1, null, null,_ListaProdutos,false);
 
             if (SucessoVenda == true)
             {
@@ -223,7 +225,7 @@ namespace RollFestas.View.Venda
             }
             else
             {
-                var Tela = new VendaSemPagamento(LblTotal.Text, TxtValorRecebido.Text, TipoPagamento, LblTroco.Text);
+                var Tela = new VendaSemPagamento(LblTotal.Text, TxtValorRecebido.Text, TipoPagamento, TxtDinCart.Text);
                 Tela.Show();
                 this.Close();
             }
@@ -240,7 +242,7 @@ namespace RollFestas.View.Venda
         {
             Program._Produtos = null;
             Program._Produtos = _ListaProdutos;
-            var Tela = new VendaDescontoTotal(LblUsuario.Text,LblData.Text,LblTotal.Text,TipoPagamento);
+            var Tela = new VendaDescontoTotal(LblUsuario.Text,LblData.Text,LblTotal.Text,TipoPagamento,TxtDinCart.Text);
             Tela.Show();
             this.Close();
         }
@@ -249,9 +251,14 @@ namespace RollFestas.View.Venda
         {
             Program._Produtos = null;
             Program._Produtos = _ListaProdutos;
-            var Tela = new VendaDescontoProduto(LblUsuario.Text, LblData.Text, LblTotal.Text, TipoPagamento);
+            var Tela = new VendaDescontoProduto(LblUsuario.Text, LblData.Text, LblTotal.Text, TipoPagamento,TxtDinCart.Text);
             Tela.Show();
             this.Close();
+        }
+
+        private void BtnDuvida_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Program._CaminhoArquivoDuvida + @"\Duvida_Venda.pdf");
         }
     }
 }

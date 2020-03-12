@@ -17,14 +17,13 @@ namespace RollFestas.View.Venda
     public partial class VendaDescontoProduto : Form
     {
         List<ProdutoModel> ListaProdutos;
-
-        public VendaDescontoProduto(string Usuario, string Data, string ValorTotal, string TipoPagamento)
+        string ValorTipoPagamento;
+        public VendaDescontoProduto(string Usuario, string Data, string ValorTotal, string TipoPagamento, string ParteCartao)
         {
             InitializeComponent();
 
             LblUsuario.Text = Usuario;
             LblData.Text = Data;
-            LblTipoDePagamento.Text = TipoPagamento;
             LblValorTotalCheio.Text = ValorTotal;
 
             ListaProdutos = Program._Produtos;
@@ -47,6 +46,29 @@ namespace RollFestas.View.Venda
 
             LblValorTotalCheio.Text = ValorTotalProdutos.ToString();
             LblValorTotalNovo.Text = ValorTotalProdutos.ToString();
+
+            if (TipoPagamento == "Dinheiro")
+            {
+                RBDinheiro.Checked = true;
+                ValorTipoPagamento = "Dinheiro";
+            }
+            if (TipoPagamento == "Cartão")
+            {
+                RBCartao.Checked = true;
+                ValorTipoPagamento = "Cartão";
+            }
+            if (TipoPagamento == "Outros")
+            {
+                RBOutros.Checked = true;
+                ValorTipoPagamento = "Outros";
+            }
+            if (TipoPagamento == "Dinheiro e Cartão")
+            {
+                RbDinCart.Checked = true;
+                ValorTipoPagamento = "Dinheiro e Cartão";
+                TxtDinCart.Visible = true;
+                TxtDinCart.Text = ParteCartao;
+            }
 
             TxtId.Focus();
         }
@@ -129,6 +151,52 @@ namespace RollFestas.View.Venda
         {
             var vendaC = new VendaController();
             TxtTroco.Text = CalculoValores.CalcularTroco(TxtValorRecebido.Text, TxtValorRecebido.Text);
+        }
+
+        private void BtnDuvida_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Program._CaminhoArquivoDuvida + @"\Duvida_Venda.pdf");
+        }
+
+        private void RBDinheiro_CheckedChanged(object sender, EventArgs e)
+        {
+            RBDinheiro.Checked = true;
+            ValorTipoPagamento = "Dinheiro";
+            TxtDinCart.Visible = false;
+        }
+
+        private void RBCartao_CheckedChanged(object sender, EventArgs e)
+        {
+            RBCartao.Checked = true;
+            ValorTipoPagamento = "Cartão";
+            TxtDinCart.Visible = false;
+        }
+
+        private void RBOutros_CheckedChanged(object sender, EventArgs e)
+        {
+            RBOutros.Checked = true;
+            ValorTipoPagamento = "Outros";
+            TxtDinCart.Visible = false;
+        }
+
+        private void RbDinCart_CheckedChanged(object sender, EventArgs e)
+        {
+            RbDinCart.Checked = true;
+            ValorTipoPagamento = "Dinheiro e Cartão";
+            TxtDinCart.Visible = true;
+        }
+
+        private void BtnFinalizar_Click(object sender, EventArgs e)
+        {
+            var vendaC = new VendaController();
+            bool Sucesso = vendaC.FinalizarVenda(LblData.Text, LblUsuario.Text, LblValorTotalNovo.Text, TxtValorRecebido.Text, ValorTipoPagamento, "", 1, "", "", Program._Produtos, false);
+
+            if (Sucesso == true)
+            {
+                Program._Produtos = null;
+                var Tela = new Home(false);
+                Tela.Show();
+            }
         }
     }
 }

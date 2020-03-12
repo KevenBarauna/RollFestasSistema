@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RollFestas.Data;
 using RollFestas.Models;
+using RollFestas.Utils;
 using RollFestas.View.MensagemErro;
 
 namespace RollFestas.Controllers
@@ -23,7 +24,7 @@ namespace RollFestas.Controllers
         }
 
         //LISTA
-        public List<EventoModel> ListratotasEncomendas()
+        public List<EventoModel> ListratotosEventos()
         {
             List<EventoModel> ListadeEvento = DAO.ListarTodosOsEventos();
 
@@ -31,7 +32,7 @@ namespace RollFestas.Controllers
         }
 
         //NOVA
-        public bool NovaEncomenda(string Cep, string Local, string Descricao, string NomeCliente, string Telefone1, string Telefone2, string Email, string Tipo, string Data, string Hora, string ValorTotal, string ValorPago, int Entregue, string TipoPagamento, string ParteCartao, int StatusPagamento, string ValorPendente)
+        public bool NovoEvento(string Cep, string Local, string Descricao, string NomeCliente, string Telefone1, string Telefone2, string Email, string Tipo, string Data, string Hora, string ValorTotal, string ValorPago, int Entregue, string TipoPagamento, string ParteCartao, int StatusPagamento, string ValorPendente)
         {
 
             if (string.IsNullOrEmpty(Local))
@@ -94,7 +95,7 @@ namespace RollFestas.Controllers
 
                 //SALVA VENDA
                 var vendaC = new VendaController();
-                bool SucessoVenda = vendaC.FinalizarVenda(Data, Program._Usuario.Nome, ValorTotal, ValorPago, null, TipoPagamento, ParteCartao, StatusPagamento, ValorPendente, NomeCliente, null, true) ;
+                bool SucessoVenda = vendaC.FinalizarVenda(GetDate.PegarDiaMesAnoAtual(), Program._Usuario.Nome, ValorTotal, ValorPago, TipoPagamento, ParteCartao, StatusPagamento, ValorPendente, NomeCliente, null, true) ;
                 if (SucessoVenda == false)
                 {
                     var TelaErro = new Erro("Não foi possível finalizar a venda, verifique os valores e tente novamente");
@@ -108,7 +109,7 @@ namespace RollFestas.Controllers
         }
 
         //EXIBIR DETALHES POR ID
-        public EventoModel ExibirDetalhesdoDaEncomenda(string Id)
+        public EventoModel ExibirDetalhesdoDoEvento(string Id)
         {
 
             EventoModel eventoM = DAO.ExibirDetalhesdoDoEvento(Id);

@@ -57,3 +57,7 @@ C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Fest
 C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\obj\Debug\RollFestas.csproj.CopyComplete
 C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\obj\Debug\RollFestas.exe
 C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\obj\Debug\RollFestas.pdb
+C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\obj\Debug\RollFestas.View.Evento.PagarEventoPendente.resources
+C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\obj\Debug\RollFestas.View.Evento.EditarEvento.resources
+C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\obj\Debug\RollFestas.View.Evento.TodosOsEventos.resources
+C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\obj\Debug\RollFestas.csprojAssemblyReference.cache

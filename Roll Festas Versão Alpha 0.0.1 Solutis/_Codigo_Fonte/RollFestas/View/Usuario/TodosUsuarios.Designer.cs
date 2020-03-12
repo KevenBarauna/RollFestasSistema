@@ -36,6 +36,7 @@
             this.C2Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.C3Data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BtnSair = new System.Windows.Forms.Button();
+            this.BtnDuvida = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,12 +103,28 @@
             this.BtnSair.UseVisualStyleBackColor = false;
             this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // BtnDuvida
+            // 
+            this.BtnDuvida.BackColor = System.Drawing.Color.Orange;
+            this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
+            this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.BtnDuvida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDuvida.Location = new System.Drawing.Point(411, 12);
+            this.BtnDuvida.Name = "BtnDuvida";
+            this.BtnDuvida.Size = new System.Drawing.Size(35, 35);
+            this.BtnDuvida.TabIndex = 105;
+            this.BtnDuvida.Text = "?";
+            this.BtnDuvida.UseVisualStyleBackColor = false;
+            this.BtnDuvida.Click += new System.EventHandler(this.BtnDuvida_Click);
+            // 
             // TodosUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(461, 450);
+            this.Controls.Add(this.BtnDuvida);
             this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -133,5 +150,6 @@
         private System.Windows.Forms.ColumnHeader C2Email;
         private System.Windows.Forms.ColumnHeader C3Data;
         private System.Windows.Forms.Button BtnSair;
+        private System.Windows.Forms.Button BtnDuvida;
     }
 }

@@ -44,13 +44,7 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.BtnFinalizar = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
-            this.LblTroco = new System.Windows.Forms.TextBox();
-            this.TxtValorRecebido = new System.Windows.Forms.TextBox();
             this.BtnCalcular = new System.Windows.Forms.Button();
-            this.LblTotal = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -67,12 +61,33 @@
             this.ListaVenda = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.LblTroco = new System.Windows.Forms.TextBox();
+            this.TxtValorRecebido = new System.Windows.Forms.TextBox();
+            this.LblTotal = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.LblNomeCliente = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgAtencao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgProximasEncomendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnDuvida
@@ -123,7 +138,7 @@
             // ImgAtencao
             // 
             this.ImgAtencao.Image = ((System.Drawing.Image)(resources.GetObject("ImgAtencao.Image")));
-            this.ImgAtencao.Location = new System.Drawing.Point(608, 344);
+            this.ImgAtencao.Location = new System.Drawing.Point(591, 338);
             this.ImgAtencao.Name = "ImgAtencao";
             this.ImgAtencao.Size = new System.Drawing.Size(61, 61);
             this.ImgAtencao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -136,7 +151,7 @@
             this.LblDinCart.BackColor = System.Drawing.Color.White;
             this.LblDinCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDinCart.ForeColor = System.Drawing.Color.Red;
-            this.LblDinCart.Location = new System.Drawing.Point(675, 349);
+            this.LblDinCart.Location = new System.Drawing.Point(658, 343);
             this.LblDinCart.Name = "LblDinCart";
             this.LblDinCart.Size = new System.Drawing.Size(142, 50);
             this.LblDinCart.TabIndex = 181;
@@ -147,7 +162,7 @@
             // TxtDinCart
             // 
             this.TxtDinCart.BackColor = System.Drawing.Color.White;
-            this.TxtDinCart.Location = new System.Drawing.Point(715, 307);
+            this.TxtDinCart.Location = new System.Drawing.Point(698, 301);
             this.TxtDinCart.Name = "TxtDinCart";
             this.TxtDinCart.ReadOnly = true;
             this.TxtDinCart.Size = new System.Drawing.Size(78, 20);
@@ -158,7 +173,7 @@
             // 
             this.RbDinCart.AutoSize = true;
             this.RbDinCart.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.RbDinCart.Location = new System.Drawing.Point(605, 308);
+            this.RbDinCart.Location = new System.Drawing.Point(588, 302);
             this.RbDinCart.Name = "RbDinCart";
             this.RbDinCart.Size = new System.Drawing.Size(107, 17);
             this.RbDinCart.TabIndex = 179;
@@ -170,7 +185,7 @@
             // 
             this.RBOutros.AutoSize = true;
             this.RBOutros.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.RBOutros.Location = new System.Drawing.Point(737, 285);
+            this.RBOutros.Location = new System.Drawing.Point(720, 279);
             this.RBOutros.Name = "RBOutros";
             this.RBOutros.Size = new System.Drawing.Size(56, 17);
             this.RBOutros.TabIndex = 178;
@@ -182,7 +197,7 @@
             // 
             this.RBCartao.AutoSize = true;
             this.RBCartao.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.RBCartao.Location = new System.Drawing.Point(675, 285);
+            this.RBCartao.Location = new System.Drawing.Point(658, 279);
             this.RBCartao.Name = "RBCartao";
             this.RBCartao.Size = new System.Drawing.Size(56, 17);
             this.RBCartao.TabIndex = 177;
@@ -195,7 +210,7 @@
             this.RBDinheiro.AutoSize = true;
             this.RBDinheiro.Checked = true;
             this.RBDinheiro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.RBDinheiro.Location = new System.Drawing.Point(605, 285);
+            this.RBDinheiro.Location = new System.Drawing.Point(588, 279);
             this.RBDinheiro.Name = "RBDinheiro";
             this.RBDinheiro.Size = new System.Drawing.Size(64, 17);
             this.RBDinheiro.TabIndex = 176;
@@ -208,7 +223,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(644, 257);
+            this.label6.Location = new System.Drawing.Point(627, 251);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 15);
             this.label6.TabIndex = 175;
@@ -242,7 +257,7 @@
             this.Cancelar.BackColor = System.Drawing.Color.Red;
             this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelar.ForeColor = System.Drawing.SystemColors.Info;
-            this.Cancelar.Location = new System.Drawing.Point(874, 416);
+            this.Cancelar.Location = new System.Drawing.Point(874, 407);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(92, 35);
             this.Cancelar.TabIndex = 187;
@@ -250,83 +265,22 @@
             this.Cancelar.UseVisualStyleBackColor = false;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
-            // LblTroco
-            // 
-            this.LblTroco.BackColor = System.Drawing.Color.White;
-            this.LblTroco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LblTroco.Location = new System.Drawing.Point(591, 183);
-            this.LblTroco.Name = "LblTroco";
-            this.LblTroco.ReadOnly = true;
-            this.LblTroco.Size = new System.Drawing.Size(84, 13);
-            this.LblTroco.TabIndex = 194;
-            this.LblTroco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TxtValorRecebido
-            // 
-            this.TxtValorRecebido.BackColor = System.Drawing.Color.White;
-            this.TxtValorRecebido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtValorRecebido.Location = new System.Drawing.Point(698, 123);
-            this.TxtValorRecebido.Name = "TxtValorRecebido";
-            this.TxtValorRecebido.Size = new System.Drawing.Size(83, 20);
-            this.TxtValorRecebido.TabIndex = 192;
-            // 
             // BtnCalcular
             // 
             this.BtnCalcular.BackColor = System.Drawing.Color.Turquoise;
             this.BtnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCalcular.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnCalcular.Location = new System.Drawing.Point(697, 166);
+            this.BtnCalcular.Location = new System.Drawing.Point(874, 321);
             this.BtnCalcular.Name = "BtnCalcular";
-            this.BtnCalcular.Size = new System.Drawing.Size(84, 33);
+            this.BtnCalcular.Size = new System.Drawing.Size(92, 35);
             this.BtnCalcular.TabIndex = 193;
             this.BtnCalcular.Text = "Calcular";
             this.BtnCalcular.UseVisualStyleBackColor = false;
             this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
-            // LblTotal
-            // 
-            this.LblTotal.BackColor = System.Drawing.Color.White;
-            this.LblTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LblTotal.Location = new System.Drawing.Point(591, 125);
-            this.LblTotal.Name = "LblTotal";
-            this.LblTotal.ReadOnly = true;
-            this.LblTotal.Size = new System.Drawing.Size(84, 13);
-            this.LblTotal.TabIndex = 191;
-            this.LblTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(611, 162);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 190;
-            this.label7.Text = "Troco";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(700, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 14);
-            this.label5.TabIndex = 189;
-            this.label5.Text = "Valor recebido";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(615, 107);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 188;
-            this.label4.Text = "Total";
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Orange;
+            this.panel1.BackColor = System.Drawing.Color.Tan;
             this.panel1.Location = new System.Drawing.Point(577, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 447);
@@ -334,7 +288,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Orange;
+            this.panel2.BackColor = System.Drawing.Color.Tan;
             this.panel2.Location = new System.Drawing.Point(241, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1, 447);
@@ -466,12 +420,178 @@
             this.columnHeader5.Text = "Valor pendente:";
             this.columnHeader5.Width = 100;
             // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(775, 158);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 310;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(775, 98);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 309;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(612, 158);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 308;
+            this.pictureBox7.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Orange;
+            this.panel4.Location = new System.Drawing.Point(657, 194);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(84, 1);
+            this.panel4.TabIndex = 307;
+            // 
+            // LblTroco
+            // 
+            this.LblTroco.BackColor = System.Drawing.Color.White;
+            this.LblTroco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LblTroco.Location = new System.Drawing.Point(820, 180);
+            this.LblTroco.Name = "LblTroco";
+            this.LblTroco.ReadOnly = true;
+            this.LblTroco.Size = new System.Drawing.Size(84, 13);
+            this.LblTroco.TabIndex = 305;
+            this.LblTroco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TxtValorRecebido
+            // 
+            this.TxtValorRecebido.BackColor = System.Drawing.Color.White;
+            this.TxtValorRecebido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtValorRecebido.Location = new System.Drawing.Point(658, 177);
+            this.TxtValorRecebido.Name = "TxtValorRecebido";
+            this.TxtValorRecebido.Size = new System.Drawing.Size(83, 13);
+            this.TxtValorRecebido.TabIndex = 304;
+            // 
+            // LblTotal
+            // 
+            this.LblTotal.BackColor = System.Drawing.Color.White;
+            this.LblTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LblTotal.Location = new System.Drawing.Point(820, 118);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.ReadOnly = true;
+            this.LblTotal.Size = new System.Drawing.Size(84, 13);
+            this.LblTotal.TabIndex = 303;
+            this.LblTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(820, 159);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 302;
+            this.label7.Text = "Troco";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(660, 158);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 14);
+            this.label5.TabIndex = 301;
+            this.label5.Text = "Valor recebido";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(819, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 300;
+            this.label4.Text = "Pendente";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(836, 321);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 311;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(836, 407);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 312;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(612, 98);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 315;
+            this.pictureBox5.TabStop = false;
+            // 
+            // LblNomeCliente
+            // 
+            this.LblNomeCliente.BackColor = System.Drawing.Color.White;
+            this.LblNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LblNomeCliente.Location = new System.Drawing.Point(657, 120);
+            this.LblNomeCliente.Name = "LblNomeCliente";
+            this.LblNomeCliente.ReadOnly = true;
+            this.LblNomeCliente.Size = new System.Drawing.Size(84, 13);
+            this.LblNomeCliente.TabIndex = 314;
+            this.LblNomeCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(657, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 313;
+            this.label2.Text = "Cliente";
+            // 
             // Pagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(978, 463);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.LblNomeCliente);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox12);
+            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.LblTroco);
+            this.Controls.Add(this.TxtValorRecebido);
+            this.Controls.Add(this.LblTotal);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.ListaVenda);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.listCodigo);
@@ -481,13 +601,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.LblTroco);
-            this.Controls.Add(this.TxtValorRecebido);
             this.Controls.Add(this.BtnCalcular);
-            this.Controls.Add(this.LblTotal);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.BtnFinalizar);
@@ -515,6 +629,12 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgProximasEncomendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -537,13 +657,7 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Button BtnFinalizar;
         private System.Windows.Forms.Button Cancelar;
-        private System.Windows.Forms.TextBox LblTroco;
-        private System.Windows.Forms.TextBox TxtValorRecebido;
         private System.Windows.Forms.Button BtnCalcular;
-        private System.Windows.Forms.TextBox LblTotal;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -560,5 +674,20 @@
         private System.Windows.Forms.ListView ListaVenda;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox LblTroco;
+        private System.Windows.Forms.TextBox TxtValorRecebido;
+        private System.Windows.Forms.TextBox LblTotal;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TextBox LblNomeCliente;
+        private System.Windows.Forms.Label label2;
     }
 }

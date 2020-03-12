@@ -38,21 +38,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnSair = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Linha
             // 
             this.Linha.BackColor = System.Drawing.Color.Orange;
-            this.Linha.Location = new System.Drawing.Point(67, 228);
+            this.Linha.Location = new System.Drawing.Point(113, 233);
             this.Linha.Name = "Linha";
-            this.Linha.Size = new System.Drawing.Size(160, 1);
+            this.Linha.Size = new System.Drawing.Size(115, 1);
             this.Linha.TabIndex = 42;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(95, 89);
+            this.pictureBox1.Location = new System.Drawing.Point(97, 89);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(102, 84);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -64,6 +66,7 @@
             this.BtnDuvida.BackColor = System.Drawing.Color.Orange;
             this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
             this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.BtnDuvida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDuvida.Location = new System.Drawing.Point(249, 12);
             this.BtnDuvida.Name = "BtnDuvida";
@@ -71,6 +74,7 @@
             this.BtnDuvida.TabIndex = 40;
             this.BtnDuvida.Text = "?";
             this.BtnDuvida.UseVisualStyleBackColor = false;
+            this.BtnDuvida.Click += new System.EventHandler(this.BtnDuvida_Click);
             // 
             // dateTimePicker1
             // 
@@ -95,15 +99,16 @@
             // TxtNome
             // 
             this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtNome.Location = new System.Drawing.Point(67, 209);
+            this.TxtNome.Location = new System.Drawing.Point(113, 216);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(160, 13);
+            this.TxtNome.Size = new System.Drawing.Size(114, 13);
             this.TxtNome.TabIndex = 37;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(124, 193);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(113, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 36;
@@ -133,12 +138,23 @@
             this.BtnSair.UseVisualStyleBackColor = false;
             this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(68, 197);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 44;
+            this.pictureBox2.TabStop = false;
+            // 
             // BaterPonto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(296, 403);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.Linha);
             this.Controls.Add(this.pictureBox1);
@@ -154,6 +170,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BaterPonto";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +187,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnSair;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

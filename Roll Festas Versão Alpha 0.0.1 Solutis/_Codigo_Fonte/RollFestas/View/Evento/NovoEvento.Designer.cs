@@ -73,7 +73,6 @@
             this.TxtCep = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.TxtTel2 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.TxtEmail = new System.Windows.Forms.TextBox();
@@ -112,6 +111,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.PanelTipoEvento = new System.Windows.Forms.Panel();
+            this.TxtTel2 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
@@ -589,17 +589,6 @@
             this.pictureBox4.TabIndex = 304;
             this.pictureBox4.TabStop = false;
             // 
-            // TxtTel2
-            // 
-            this.TxtTel2.BackColor = System.Drawing.Color.White;
-            this.TxtTel2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtTel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.TxtTel2.Location = new System.Drawing.Point(232, 300);
-            this.TxtTel2.Name = "TxtTel2";
-            this.TxtTel2.Size = new System.Drawing.Size(137, 14);
-            this.TxtTel2.TabIndex = 302;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Orange;
@@ -719,6 +708,7 @@
             this.button1.TabIndex = 371;
             this.button1.Text = "Pagar depois";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel6
             // 
@@ -749,10 +739,10 @@
             // 
             this.LblTroco.BackColor = System.Drawing.Color.White;
             this.LblTroco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LblTroco.Location = new System.Drawing.Point(323, 502);
+            this.LblTroco.Location = new System.Drawing.Point(321, 495);
             this.LblTroco.Name = "LblTroco";
             this.LblTroco.ReadOnly = true;
-            this.LblTroco.Size = new System.Drawing.Size(84, 13);
+            this.LblTroco.Size = new System.Drawing.Size(46, 13);
             this.LblTroco.TabIndex = 383;
             this.LblTroco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -998,12 +988,24 @@
             this.PanelTipoEvento.Size = new System.Drawing.Size(175, 100);
             this.PanelTipoEvento.TabIndex = 401;
             // 
+            // TxtTel2
+            // 
+            this.TxtTel2.BackColor = System.Drawing.Color.White;
+            this.TxtTel2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtTel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TxtTel2.Location = new System.Drawing.Point(230, 302);
+            this.TxtTel2.Mask = "(00) 0 0000-0000";
+            this.TxtTel2.Name = "TxtTel2";
+            this.TxtTel2.Size = new System.Drawing.Size(100, 13);
+            this.TxtTel2.TabIndex = 402;
+            // 
             // NovoEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(848, 602);
+            this.Controls.Add(this.TxtTel2);
             this.Controls.Add(this.PanelTipoEvento);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -1070,7 +1072,6 @@
             this.Controls.Add(this.TxtCep);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.TxtTel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.TxtEmail);
@@ -1151,7 +1152,6 @@
         private System.Windows.Forms.TextBox TxtCep;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox TxtTel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox TxtEmail;
@@ -1190,5 +1190,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel PanelTipoEvento;
+        private System.Windows.Forms.MaskedTextBox TxtTel2;
     }
 }

@@ -52,11 +52,21 @@
             this.LblUsuario = new System.Windows.Forms.Label();
             this.LblData = new System.Windows.Forms.Label();
             this.BtnDuvida = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.LblNomeCliente = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.LblTotal = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImgProximasEncomendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // ListaVenda
@@ -67,7 +77,7 @@
             this.ListaVenda.HideSelection = false;
             this.ListaVenda.Location = new System.Drawing.Point(12, 110);
             this.ListaVenda.Name = "ListaVenda";
-            this.ListaVenda.Size = new System.Drawing.Size(214, 344);
+            this.ListaVenda.Size = new System.Drawing.Size(214, 222);
             this.ListaVenda.TabIndex = 236;
             this.ListaVenda.UseCompatibleStateImageBehavior = false;
             this.ListaVenda.View = System.Windows.Forms.View.Details;
@@ -123,7 +133,7 @@
             this.listCodigo.HideSelection = false;
             this.listCodigo.Location = new System.Drawing.Point(268, 85);
             this.listCodigo.Name = "listCodigo";
-            this.listCodigo.Size = new System.Drawing.Size(283, 369);
+            this.listCodigo.Size = new System.Drawing.Size(283, 247);
             this.listCodigo.TabIndex = 234;
             this.listCodigo.UseCompatibleStateImageBehavior = false;
             this.listCodigo.View = System.Windows.Forms.View.Details;
@@ -206,7 +216,7 @@
             this.Cancelar.BackColor = System.Drawing.Color.Red;
             this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelar.ForeColor = System.Drawing.SystemColors.Info;
-            this.Cancelar.Location = new System.Drawing.Point(644, 419);
+            this.Cancelar.Location = new System.Drawing.Point(711, 316);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(92, 35);
             this.Cancelar.TabIndex = 220;
@@ -217,7 +227,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(601, 367);
+            this.pictureBox10.Location = new System.Drawing.Point(668, 264);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(34, 35);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -229,7 +239,7 @@
             this.BtnFinalizar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFinalizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnFinalizar.Location = new System.Drawing.Point(644, 367);
+            this.BtnFinalizar.Location = new System.Drawing.Point(711, 264);
             this.BtnFinalizar.Name = "BtnFinalizar";
             this.BtnFinalizar.Size = new System.Drawing.Size(92, 35);
             this.BtnFinalizar.TabIndex = 218;
@@ -275,19 +285,98 @@
             this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
             this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDuvida.Location = new System.Drawing.Point(591, 85);
+            this.BtnDuvida.Location = new System.Drawing.Point(768, 5);
             this.BtnDuvida.Name = "BtnDuvida";
             this.BtnDuvida.Size = new System.Drawing.Size(35, 35);
             this.BtnDuvida.TabIndex = 206;
             this.BtnDuvida.Text = "?";
             this.BtnDuvida.UseVisualStyleBackColor = false;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(595, 105);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 329;
+            this.pictureBox5.TabStop = false;
+            // 
+            // LblNomeCliente
+            // 
+            this.LblNomeCliente.BackColor = System.Drawing.Color.White;
+            this.LblNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LblNomeCliente.Location = new System.Drawing.Point(640, 127);
+            this.LblNomeCliente.Name = "LblNomeCliente";
+            this.LblNomeCliente.ReadOnly = true;
+            this.LblNomeCliente.Size = new System.Drawing.Size(84, 13);
+            this.LblNomeCliente.TabIndex = 328;
+            this.LblNomeCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(640, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 327;
+            this.label2.Text = "Cliente";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(595, 162);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 325;
+            this.pictureBox11.TabStop = false;
+            // 
+            // LblTotal
+            // 
+            this.LblTotal.BackColor = System.Drawing.Color.White;
+            this.LblTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LblTotal.Location = new System.Drawing.Point(640, 182);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.ReadOnly = true;
+            this.LblTotal.Size = new System.Drawing.Size(84, 13);
+            this.LblTotal.TabIndex = 319;
+            this.LblTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(639, 164);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 316;
+            this.label4.Text = "Pendente";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(668, 316);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 330;
+            this.pictureBox2.TabStop = false;
+            // 
             // CancelarVendaPendente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(754, 477);
+            this.ClientSize = new System.Drawing.Size(815, 363);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.LblNomeCliente);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.LblTotal);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.ListaVenda);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.listCodigo);
@@ -315,6 +404,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +437,12 @@
         private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.Label LblData;
         private System.Windows.Forms.Button BtnDuvida;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TextBox LblNomeCliente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.TextBox LblTotal;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

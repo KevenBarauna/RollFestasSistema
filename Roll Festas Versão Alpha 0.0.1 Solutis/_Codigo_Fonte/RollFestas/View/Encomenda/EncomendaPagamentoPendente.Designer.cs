@@ -41,7 +41,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.LblTipoDePagamento = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,11 +49,16 @@
             this.BtnCalcular = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.LblValorRestante = new System.Windows.Forms.Label();
-            this.LblValorPago = new System.Windows.Forms.Label();
-            this.LblValorTotal = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.TxtDinCart = new System.Windows.Forms.TextBox();
+            this.RbDinCart = new System.Windows.Forms.RadioButton();
+            this.RBOutros = new System.Windows.Forms.RadioButton();
+            this.RBCartao = new System.Windows.Forms.RadioButton();
+            this.RBDinheiro = new System.Windows.Forms.RadioButton();
+            this.TxtValorPago = new System.Windows.Forms.TextBox();
+            this.TxtValorTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -154,7 +158,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(58, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(58, 112);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -188,21 +192,11 @@
             this.label4.TabIndex = 114;
             this.label4.Text = "Nome do cliente:";
             // 
-            // LblTipoDePagamento
-            // 
-            this.LblTipoDePagamento.AutoSize = true;
-            this.LblTipoDePagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTipoDePagamento.Location = new System.Drawing.Point(164, 130);
-            this.LblTipoDePagamento.Name = "LblTipoDePagamento";
-            this.LblTipoDePagamento.Size = new System.Drawing.Size(47, 13);
-            this.LblTipoDePagamento.TabIndex = 113;
-            this.LblTipoDePagamento.Text = "#####";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(143, 105);
+            this.label3.Location = new System.Drawing.Point(174, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 13);
             this.label3.TabIndex = 112;
@@ -281,27 +275,6 @@
             this.LblValorRestante.TabIndex = 105;
             this.LblValorRestante.Text = "Valor restante:";
             // 
-            // LblValorPago
-            // 
-            this.LblValorPago.AutoSize = true;
-            this.LblValorPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblValorPago.Location = new System.Drawing.Point(167, 209);
-            this.LblValorPago.Name = "LblValorPago";
-            this.LblValorPago.Size = new System.Drawing.Size(51, 13);
-            this.LblValorPago.TabIndex = 104;
-            this.LblValorPago.Text = "###,##";
-            // 
-            // LblValorTotal
-            // 
-            this.LblValorTotal.AutoSize = true;
-            this.LblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblValorTotal.Location = new System.Drawing.Point(167, 285);
-            this.LblValorTotal.Name = "LblValorTotal";
-            this.LblValorTotal.Size = new System.Drawing.Size(51, 13);
-            this.LblValorTotal.TabIndex = 103;
-            this.LblValorTotal.Text = "###,##";
-            this.LblValorTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Tan;
@@ -327,12 +300,97 @@
             this.panel3.Size = new System.Drawing.Size(363, 1);
             this.panel3.TabIndex = 283;
             // 
+            // TxtDinCart
+            // 
+            this.TxtDinCart.BackColor = System.Drawing.Color.White;
+            this.TxtDinCart.Location = new System.Drawing.Point(250, 149);
+            this.TxtDinCart.Name = "TxtDinCart";
+            this.TxtDinCart.ReadOnly = true;
+            this.TxtDinCart.Size = new System.Drawing.Size(78, 20);
+            this.TxtDinCart.TabIndex = 288;
+            this.TxtDinCart.Visible = false;
+            // 
+            // RbDinCart
+            // 
+            this.RbDinCart.AutoSize = true;
+            this.RbDinCart.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.RbDinCart.Location = new System.Drawing.Point(140, 150);
+            this.RbDinCart.Name = "RbDinCart";
+            this.RbDinCart.Size = new System.Drawing.Size(107, 17);
+            this.RbDinCart.TabIndex = 287;
+            this.RbDinCart.Text = "Dinheiro e Cartão";
+            this.RbDinCart.UseVisualStyleBackColor = true;
+            this.RbDinCart.CheckedChanged += new System.EventHandler(this.RbDinCart_CheckedChanged);
+            // 
+            // RBOutros
+            // 
+            this.RBOutros.AutoSize = true;
+            this.RBOutros.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.RBOutros.Location = new System.Drawing.Point(272, 127);
+            this.RBOutros.Name = "RBOutros";
+            this.RBOutros.Size = new System.Drawing.Size(56, 17);
+            this.RBOutros.TabIndex = 286;
+            this.RBOutros.Text = "Outros";
+            this.RBOutros.UseVisualStyleBackColor = true;
+            this.RBOutros.CheckedChanged += new System.EventHandler(this.RBOutros_CheckedChanged);
+            // 
+            // RBCartao
+            // 
+            this.RBCartao.AutoSize = true;
+            this.RBCartao.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.RBCartao.Location = new System.Drawing.Point(210, 127);
+            this.RBCartao.Name = "RBCartao";
+            this.RBCartao.Size = new System.Drawing.Size(56, 17);
+            this.RBCartao.TabIndex = 285;
+            this.RBCartao.Text = "Cartão";
+            this.RBCartao.UseVisualStyleBackColor = true;
+            this.RBCartao.CheckedChanged += new System.EventHandler(this.RBCartao_CheckedChanged);
+            // 
+            // RBDinheiro
+            // 
+            this.RBDinheiro.AutoSize = true;
+            this.RBDinheiro.Checked = true;
+            this.RBDinheiro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.RBDinheiro.Location = new System.Drawing.Point(140, 127);
+            this.RBDinheiro.Name = "RBDinheiro";
+            this.RBDinheiro.Size = new System.Drawing.Size(64, 17);
+            this.RBDinheiro.TabIndex = 284;
+            this.RBDinheiro.TabStop = true;
+            this.RBDinheiro.Text = "Dinheiro";
+            this.RBDinheiro.UseVisualStyleBackColor = true;
+            this.RBDinheiro.CheckedChanged += new System.EventHandler(this.RBDinheiro_CheckedChanged);
+            // 
+            // TxtValorPago
+            // 
+            this.TxtValorPago.BackColor = System.Drawing.Color.White;
+            this.TxtValorPago.Location = new System.Drawing.Point(152, 203);
+            this.TxtValorPago.Name = "TxtValorPago";
+            this.TxtValorPago.ReadOnly = true;
+            this.TxtValorPago.Size = new System.Drawing.Size(78, 20);
+            this.TxtValorPago.TabIndex = 289;
+            // 
+            // TxtValorTotal
+            // 
+            this.TxtValorTotal.BackColor = System.Drawing.Color.White;
+            this.TxtValorTotal.Location = new System.Drawing.Point(152, 278);
+            this.TxtValorTotal.Name = "TxtValorTotal";
+            this.TxtValorTotal.ReadOnly = true;
+            this.TxtValorTotal.Size = new System.Drawing.Size(78, 20);
+            this.TxtValorTotal.TabIndex = 290;
+            // 
             // EncomendaPagamentoPendente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(387, 589);
+            this.Controls.Add(this.TxtValorTotal);
+            this.Controls.Add(this.TxtValorPago);
+            this.Controls.Add(this.TxtDinCart);
+            this.Controls.Add(this.RbDinCart);
+            this.Controls.Add(this.RBOutros);
+            this.Controls.Add(this.RBCartao);
+            this.Controls.Add(this.RBDinheiro);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BtnSair);
@@ -347,7 +405,6 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.TxtNome);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.LblTipoDePagamento);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -356,8 +413,6 @@
             this.Controls.Add(this.BtnCalcular);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.LblValorRestante);
-            this.Controls.Add(this.LblValorPago);
-            this.Controls.Add(this.LblValorTotal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EncomendaPagamentoPendente";
@@ -390,7 +445,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label LblTipoDePagamento;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -399,10 +453,15 @@
         private System.Windows.Forms.Button BtnCalcular;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label LblValorRestante;
-        private System.Windows.Forms.Label LblValorPago;
-        private System.Windows.Forms.Label LblValorTotal;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox TxtDinCart;
+        private System.Windows.Forms.RadioButton RbDinCart;
+        private System.Windows.Forms.RadioButton RBOutros;
+        private System.Windows.Forms.RadioButton RBCartao;
+        private System.Windows.Forms.RadioButton RBDinheiro;
+        private System.Windows.Forms.TextBox TxtValorPago;
+        private System.Windows.Forms.TextBox TxtValorTotal;
     }
 }

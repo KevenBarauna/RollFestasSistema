@@ -32,7 +32,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.ImgProximasEncomendas = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.ListEntregas = new System.Windows.Forms.ListView();
+            this.ListEncomendas = new System.Windows.Forms.ListView();
             this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -80,9 +80,9 @@
             this.label3.Text = "Encomendas";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ListEntregas
+            // ListEncomendas
             // 
-            this.ListEntregas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ListEncomendas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Id,
             this.Tipo,
             this.Data,
@@ -93,13 +93,13 @@
             this.Valor,
             this.Nome,
             this.Descricao});
-            this.ListEntregas.HideSelection = false;
-            this.ListEntregas.Location = new System.Drawing.Point(18, 63);
-            this.ListEntregas.Name = "ListEntregas";
-            this.ListEntregas.Size = new System.Drawing.Size(836, 358);
-            this.ListEntregas.TabIndex = 32;
-            this.ListEntregas.UseCompatibleStateImageBehavior = false;
-            this.ListEntregas.View = System.Windows.Forms.View.Details;
+            this.ListEncomendas.HideSelection = false;
+            this.ListEncomendas.Location = new System.Drawing.Point(18, 63);
+            this.ListEncomendas.Name = "ListEncomendas";
+            this.ListEncomendas.Size = new System.Drawing.Size(836, 358);
+            this.ListEncomendas.TabIndex = 32;
+            this.ListEncomendas.UseCompatibleStateImageBehavior = false;
+            this.ListEncomendas.View = System.Windows.Forms.View.Details;
             // 
             // Id
             // 
@@ -169,7 +169,7 @@
             this.ClientSize = new System.Drawing.Size(875, 469);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.ListEntregas);
+            this.Controls.Add(this.ListEncomendas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VerEncomendas";
@@ -187,7 +187,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox ImgProximasEncomendas;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListView ListEntregas;
+        private System.Windows.Forms.ListView ListEncomendas;
         private System.Windows.Forms.ColumnHeader Id;
         private System.Windows.Forms.ColumnHeader Tipo;
         private System.Windows.Forms.ColumnHeader Data;

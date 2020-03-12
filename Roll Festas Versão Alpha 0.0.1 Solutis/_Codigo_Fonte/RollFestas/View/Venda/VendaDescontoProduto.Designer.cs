@@ -59,7 +59,6 @@
             this.Linha = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LblTipoDePagamento = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -71,6 +70,16 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.LblValorTotalNovo = new System.Windows.Forms.Label();
+            this.BtnDuvida = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.TxtDinCart = new System.Windows.Forms.TextBox();
+            this.RbDinCart = new System.Windows.Forms.RadioButton();
+            this.RBOutros = new System.Windows.Forms.RadioButton();
+            this.RBCartao = new System.Windows.Forms.RadioButton();
+            this.RBDinheiro = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -80,6 +89,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // ListaViewDesconto
@@ -129,9 +141,9 @@
             this.Valor,
             this.Id});
             this.ListItens.HideSelection = false;
-            this.ListItens.Location = new System.Drawing.Point(16, 127);
+            this.ListItens.Location = new System.Drawing.Point(16, 58);
             this.ListItens.Name = "ListItens";
-            this.ListItens.Size = new System.Drawing.Size(328, 278);
+            this.ListItens.Size = new System.Drawing.Size(328, 347);
             this.ListItens.TabIndex = 185;
             this.ListItens.UseCompatibleStateImageBehavior = false;
             this.ListItens.View = System.Windows.Forms.View.Details;
@@ -199,7 +211,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(16, 12);
+            this.pictureBox6.Location = new System.Drawing.Point(613, 25);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(44, 53);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,7 +223,7 @@
             this.LblUsuario.AutoSize = true;
             this.LblUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblUsuario.Location = new System.Drawing.Point(66, 21);
+            this.LblUsuario.Location = new System.Drawing.Point(663, 34);
             this.LblUsuario.Name = "LblUsuario";
             this.LblUsuario.Size = new System.Drawing.Size(56, 16);
             this.LblUsuario.TabIndex = 179;
@@ -222,7 +234,7 @@
             this.LblData.AutoSize = true;
             this.LblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblData.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.LblData.Location = new System.Drawing.Point(66, 41);
+            this.LblData.Location = new System.Drawing.Point(663, 54);
             this.LblData.Name = "LblData";
             this.LblData.Size = new System.Drawing.Size(33, 15);
             this.LblData.TabIndex = 178;
@@ -233,7 +245,7 @@
             this.Cancelar.BackColor = System.Drawing.Color.Red;
             this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelar.ForeColor = System.Drawing.SystemColors.Info;
-            this.Cancelar.Location = new System.Drawing.Point(991, 387);
+            this.Cancelar.Location = new System.Drawing.Point(996, 384);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(105, 35);
             this.Cancelar.TabIndex = 168;
@@ -243,18 +255,18 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel3.Location = new System.Drawing.Point(636, 91);
+            this.panel3.BackColor = System.Drawing.Color.Tan;
+            this.panel3.Location = new System.Drawing.Point(613, 91);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(426, 1);
+            this.panel3.Size = new System.Drawing.Size(491, 1);
             this.panel3.TabIndex = 163;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(661, 106);
+            this.pictureBox2.Location = new System.Drawing.Point(637, 106);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 162;
             this.pictureBox2.TabStop = false;
@@ -262,7 +274,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(878, 16);
+            this.pictureBox5.Location = new System.Drawing.Point(802, 26);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(64, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -273,7 +285,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(738, 115);
+            this.label1.Location = new System.Drawing.Point(693, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 160;
@@ -284,17 +296,18 @@
             this.BtnFinalizar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFinalizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnFinalizar.Location = new System.Drawing.Point(991, 285);
+            this.BtnFinalizar.Location = new System.Drawing.Point(996, 288);
             this.BtnFinalizar.Name = "BtnFinalizar";
             this.BtnFinalizar.Size = new System.Drawing.Size(105, 35);
             this.BtnFinalizar.TabIndex = 159;
             this.BtnFinalizar.Text = "Finalizar";
             this.BtnFinalizar.UseVisualStyleBackColor = false;
+            this.BtnFinalizar.Click += new System.EventHandler(this.BtnFinalizar_Click);
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(948, 21);
+            this.label6.Location = new System.Drawing.Point(872, 31);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(148, 40);
             this.label6.TabIndex = 157;
@@ -305,7 +318,7 @@
             // 
             this.LblValorTotalCheio.AutoSize = true;
             this.LblValorTotalCheio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblValorTotalCheio.Location = new System.Drawing.Point(749, 135);
+            this.LblValorTotalCheio.Location = new System.Drawing.Point(697, 129);
             this.LblValorTotalCheio.Name = "LblValorTotalCheio";
             this.LblValorTotalCheio.Size = new System.Drawing.Size(43, 13);
             this.LblValorTotalCheio.TabIndex = 156;
@@ -316,9 +329,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Location = new System.Drawing.Point(16, 77);
+            this.panel1.Location = new System.Drawing.Point(16, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 52);
+            this.panel1.Size = new System.Drawing.Size(328, 39);
             this.panel1.TabIndex = 192;
             // 
             // label12
@@ -326,7 +339,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Amiri Quran", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(96, 5);
+            this.label12.Location = new System.Drawing.Point(96, 4);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(115, 41);
             this.label12.TabIndex = 27;
@@ -335,7 +348,7 @@
             // 
             // Linha
             // 
-            this.Linha.BackColor = System.Drawing.Color.Orange;
+            this.Linha.BackColor = System.Drawing.Color.Tan;
             this.Linha.Location = new System.Drawing.Point(356, 21);
             this.Linha.Name = "Linha";
             this.Linha.Size = new System.Drawing.Size(1, 470);
@@ -343,7 +356,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Orange;
+            this.panel2.BackColor = System.Drawing.Color.Tan;
             this.panel2.Location = new System.Drawing.Point(606, 20);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1, 470);
@@ -352,30 +365,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(661, 182);
+            this.pictureBox1.Location = new System.Drawing.Point(637, 191);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 156;
             this.pictureBox1.TabStop = false;
-            // 
-            // LblTipoDePagamento
-            // 
-            this.LblTipoDePagamento.AutoSize = true;
-            this.LblTipoDePagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTipoDePagamento.Location = new System.Drawing.Point(737, 210);
-            this.LblTipoDePagamento.Name = "LblTipoDePagamento";
-            this.LblTipoDePagamento.Size = new System.Drawing.Size(39, 13);
-            this.LblTipoDePagamento.TabIndex = 155;
-            this.LblTipoDePagamento.Text = "####";
-            this.LblTipoDePagamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(731, 182);
+            this.label4.Location = new System.Drawing.Point(697, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 14);
             this.label4.TabIndex = 154;
@@ -385,9 +387,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(661, 248);
+            this.pictureBox4.Location = new System.Drawing.Point(816, 279);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(64, 47);
+            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 153;
             this.pictureBox4.TabStop = false;
@@ -395,9 +397,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(856, 182);
+            this.pictureBox3.Location = new System.Drawing.Point(637, 282);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(64, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 152;
             this.pictureBox3.TabStop = false;
@@ -405,16 +407,16 @@
             // TxtValorRecebido
             // 
             this.TxtValorRecebido.BackColor = System.Drawing.Color.White;
-            this.TxtValorRecebido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtValorRecebido.Location = new System.Drawing.Point(925, 201);
+            this.TxtValorRecebido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtValorRecebido.Location = new System.Drawing.Point(697, 304);
             this.TxtValorRecebido.Name = "TxtValorRecebido";
-            this.TxtValorRecebido.Size = new System.Drawing.Size(80, 20);
+            this.TxtValorRecebido.Size = new System.Drawing.Size(80, 13);
             this.TxtValorRecebido.TabIndex = 151;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(922, 185);
+            this.label3.Location = new System.Drawing.Point(693, 285);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 150;
@@ -425,7 +427,7 @@
             this.button1.BackColor = System.Drawing.Color.MediumAquamarine;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(991, 336);
+            this.button1.Location = new System.Drawing.Point(996, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 35);
             this.button1.TabIndex = 149;
@@ -438,17 +440,17 @@
             this.TxtTroco.BackColor = System.Drawing.Color.White;
             this.TxtTroco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtTroco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTroco.Location = new System.Drawing.Point(731, 272);
+            this.TxtTroco.Location = new System.Drawing.Point(875, 303);
             this.TxtTroco.Name = "TxtTroco";
             this.TxtTroco.ReadOnly = true;
-            this.TxtTroco.Size = new System.Drawing.Size(84, 13);
+            this.TxtTroco.Size = new System.Drawing.Size(61, 13);
             this.TxtTroco.TabIndex = 148;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(731, 251);
+            this.label7.Location = new System.Drawing.Point(875, 282);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 147;
@@ -457,9 +459,9 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(856, 106);
+            this.pictureBox9.Location = new System.Drawing.Point(816, 106);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(64, 50);
+            this.pictureBox9.Size = new System.Drawing.Size(50, 50);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 146;
             this.pictureBox9.TabStop = false;
@@ -468,7 +470,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(933, 115);
+            this.label2.Location = new System.Drawing.Point(872, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 13);
             this.label2.TabIndex = 145;
@@ -478,22 +480,144 @@
             // 
             this.LblValorTotalNovo.AutoSize = true;
             this.LblValorTotalNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblValorTotalNovo.Location = new System.Drawing.Point(943, 137);
+            this.LblValorTotalNovo.Location = new System.Drawing.Point(872, 129);
             this.LblValorTotalNovo.Name = "LblValorTotalNovo";
             this.LblValorTotalNovo.Size = new System.Drawing.Size(51, 13);
             this.LblValorTotalNovo.TabIndex = 144;
             this.LblValorTotalNovo.Text = "###,##";
             this.LblValorTotalNovo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DescontoProduto
+            // BtnDuvida
+            // 
+            this.BtnDuvida.BackColor = System.Drawing.Color.Orange;
+            this.BtnDuvida.Cursor = System.Windows.Forms.Cursors.Help;
+            this.BtnDuvida.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.BtnDuvida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDuvida.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDuvida.Location = new System.Drawing.Point(1069, 12);
+            this.BtnDuvida.Name = "BtnDuvida";
+            this.BtnDuvida.Size = new System.Drawing.Size(35, 35);
+            this.BtnDuvida.TabIndex = 195;
+            this.BtnDuvida.Text = "?";
+            this.BtnDuvida.UseVisualStyleBackColor = false;
+            this.BtnDuvida.Click += new System.EventHandler(this.BtnDuvida_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel4.Location = new System.Drawing.Point(696, 321);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(90, 1);
+            this.panel4.TabIndex = 164;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(960, 291);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 196;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(960, 339);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 197;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(960, 389);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 198;
+            this.pictureBox11.TabStop = false;
+            // 
+            // TxtDinCart
+            // 
+            this.TxtDinCart.BackColor = System.Drawing.Color.White;
+            this.TxtDinCart.Location = new System.Drawing.Point(814, 228);
+            this.TxtDinCart.Name = "TxtDinCart";
+            this.TxtDinCart.ReadOnly = true;
+            this.TxtDinCart.Size = new System.Drawing.Size(78, 20);
+            this.TxtDinCart.TabIndex = 293;
+            this.TxtDinCart.Visible = false;
+            // 
+            // RbDinCart
+            // 
+            this.RbDinCart.AutoSize = true;
+            this.RbDinCart.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.RbDinCart.Location = new System.Drawing.Point(704, 229);
+            this.RbDinCart.Name = "RbDinCart";
+            this.RbDinCart.Size = new System.Drawing.Size(107, 17);
+            this.RbDinCart.TabIndex = 292;
+            this.RbDinCart.Text = "Dinheiro e Cartão";
+            this.RbDinCart.UseVisualStyleBackColor = true;
+            this.RbDinCart.CheckedChanged += new System.EventHandler(this.RbDinCart_CheckedChanged);
+            // 
+            // RBOutros
+            // 
+            this.RBOutros.AutoSize = true;
+            this.RBOutros.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.RBOutros.Location = new System.Drawing.Point(836, 206);
+            this.RBOutros.Name = "RBOutros";
+            this.RBOutros.Size = new System.Drawing.Size(56, 17);
+            this.RBOutros.TabIndex = 291;
+            this.RBOutros.Text = "Outros";
+            this.RBOutros.UseVisualStyleBackColor = true;
+            this.RBOutros.CheckedChanged += new System.EventHandler(this.RBOutros_CheckedChanged);
+            // 
+            // RBCartao
+            // 
+            this.RBCartao.AutoSize = true;
+            this.RBCartao.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.RBCartao.Location = new System.Drawing.Point(774, 206);
+            this.RBCartao.Name = "RBCartao";
+            this.RBCartao.Size = new System.Drawing.Size(56, 17);
+            this.RBCartao.TabIndex = 290;
+            this.RBCartao.Text = "Cartão";
+            this.RBCartao.UseVisualStyleBackColor = true;
+            this.RBCartao.CheckedChanged += new System.EventHandler(this.RBCartao_CheckedChanged);
+            // 
+            // RBDinheiro
+            // 
+            this.RBDinheiro.AutoSize = true;
+            this.RBDinheiro.Checked = true;
+            this.RBDinheiro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.RBDinheiro.Location = new System.Drawing.Point(704, 206);
+            this.RBDinheiro.Name = "RBDinheiro";
+            this.RBDinheiro.Size = new System.Drawing.Size(64, 17);
+            this.RBDinheiro.TabIndex = 289;
+            this.RBDinheiro.TabStop = true;
+            this.RBDinheiro.Text = "Dinheiro";
+            this.RBDinheiro.UseVisualStyleBackColor = true;
+            this.RBDinheiro.CheckedChanged += new System.EventHandler(this.RBDinheiro_CheckedChanged);
+            // 
+            // VendaDescontoProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1116, 434);
+            this.Controls.Add(this.TxtDinCart);
+            this.Controls.Add(this.RbDinCart);
+            this.Controls.Add(this.RBOutros);
+            this.Controls.Add(this.RBCartao);
+            this.Controls.Add(this.RBDinheiro);
+            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.BtnDuvida);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.LblTipoDePagamento);
             this.Controls.Add(this.Linha);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
@@ -528,7 +652,7 @@
             this.Controls.Add(this.LblValorTotalCheio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "DescontoProduto";
+            this.Name = "VendaDescontoProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DescontoProduto";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -541,6 +665,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -578,7 +705,6 @@
         private System.Windows.Forms.Panel Linha;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label LblTipoDePagamento;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -590,5 +716,15 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LblValorTotalNovo;
+        private System.Windows.Forms.Button BtnDuvida;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.TextBox TxtDinCart;
+        private System.Windows.Forms.RadioButton RbDinCart;
+        private System.Windows.Forms.RadioButton RBOutros;
+        private System.Windows.Forms.RadioButton RBCartao;
+        private System.Windows.Forms.RadioButton RBDinheiro;
     }
 }
