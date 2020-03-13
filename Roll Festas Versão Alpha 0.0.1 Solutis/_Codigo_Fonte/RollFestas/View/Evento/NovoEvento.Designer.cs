@@ -941,9 +941,9 @@
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label12.Location = new System.Drawing.Point(664, 135);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 13);
+            this.label12.Size = new System.Drawing.Size(33, 13);
             this.label12.TabIndex = 397;
-            this.label12.Text = "Valor total:";
+            this.label12.Text = "Data:";
             // 
             // label13
             // 

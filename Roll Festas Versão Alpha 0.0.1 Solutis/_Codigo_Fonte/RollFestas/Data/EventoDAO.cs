@@ -102,12 +102,12 @@ namespace RollFestas.Data
         }
 
         //EDITAR
-        public bool EditarEvento(string Cep, string Local, string Descricao, string NomeCliente, string Telefone1, string Telefone2, string Email, string Tipo, string Data, string Hora, string ValorTotal, string ValorPago, int Entregue, string Id)
+        public bool EditarEvento(string Cep, string Local, string Descricao, string NomeCliente, string Telefone1, string Telefone2, string Email, string Tipo, string Data, string Hora, int Entregue, string Id)
         {
             try
             {
 
-                cmd.CommandText = "UPDATE TB_EVENTO SET cep = @cep, local = @local, nome_cliente = @nome_cliente, telefone_1 = @telefone_1, telefone_2 = @telefone_2, email = @email, tipo = @tipo, data = @data, hora = @hora, valor_total = @valor_total ,valor_pago = @valor_pago ,entregue = @entregue  WHERE id = @id";
+                cmd.CommandText = "UPDATE TB_EVENTO SET cep = @cep, local = @local, nome_cliente = @nome_cliente, telefone_1 = @telefone_1, telefone_2 = @telefone_2, email = @email, tipo = @tipo, data = @data, hora = @hora ,entregue = @entregue  WHERE id = @id";
 
                 cmd.Parameters.AddWithValue("@cep", Cep);
                 cmd.Parameters.AddWithValue("@local", Local);
@@ -119,8 +119,6 @@ namespace RollFestas.Data
                 cmd.Parameters.AddWithValue("@tipo", Tipo);
                 cmd.Parameters.AddWithValue("@data", Data);
                 cmd.Parameters.AddWithValue("@hora", Hora);
-                cmd.Parameters.AddWithValue("@valor_total", ValorTotal);
-                cmd.Parameters.AddWithValue("@valor_pago", ValorPago);
                 cmd.Parameters.AddWithValue("@entregue", Entregue);
                 cmd.Parameters.AddWithValue("@id", Id);
 

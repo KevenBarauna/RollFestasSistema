@@ -196,7 +196,7 @@ namespace RollFestas.Data
                         var QUANTIDADE = dr["quantidade"];
                         var VALOR = dr["valor"];
                         var DESCRICAO = dr["descricao"];
-                        var NOMECLIENTE = dr["descricao"];
+                        var NOMECLIENTE = dr["nomecliente"];
 
                         encomendaM.Id = Convert.ToInt32(ID);
                         encomendaM.TipoServico = Convert.ToString(TIPO);

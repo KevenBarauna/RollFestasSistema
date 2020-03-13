@@ -123,7 +123,7 @@ namespace RollFestas.Controllers
         }
 
         //EDITAR
-        public bool EditarEvento(string Cep, string Local, string Descricao, string NomeCliente, string Telefone1, string Telefone2, string Email, string Tipo, string Data, string Hora, string ValorTotal, string ValorPago, int Entregue, string Id)
+        public bool EditarEvento(string Cep, string Local, string Descricao, string NomeCliente, string Telefone1, string Telefone2, string Email, string Tipo, string Data, string Hora, int Entregue, string Id)
         {
 
             if (string.IsNullOrEmpty(Local))
@@ -162,21 +162,9 @@ namespace RollFestas.Controllers
                 TelaErro.Show();
                 return false;
             }
-            else if (string.IsNullOrEmpty(ValorTotal))
-            {
-                var TelaErro = new Erro("Informe o valor total do evento");
-                TelaErro.Show();
-                return false;
-            }
-            else if (string.IsNullOrEmpty(ValorPago))
-            {
-                var TelaErro = new Erro("Informe o valor valor pago");
-                TelaErro.Show();
-                return false;
-            }
 
 
-            bool Sucesso = DAO.EditarEvento(Cep, Local, Descricao, NomeCliente, Telefone1, Telefone2, Email, Tipo, Data, Hora, ValorTotal, ValorPago, Entregue, Id);
+            bool Sucesso = DAO.EditarEvento(Cep, Local, Descricao, NomeCliente, Telefone1, Telefone2, Email, Tipo, Data, Hora, Entregue, Id);
 
             if (Sucesso == true)
             {

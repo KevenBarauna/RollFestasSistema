@@ -111,7 +111,6 @@
             this.TxtSenha.Name = "TxtSenha";
             this.TxtSenha.Size = new System.Drawing.Size(130, 16);
             this.TxtSenha.TabIndex = 32;
-            this.TxtSenha.Text = "admin";
             this.TxtSenha.UseSystemPasswordChar = true;
             // 
             // TxtUsuario
@@ -123,7 +122,6 @@
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(130, 16);
             this.TxtUsuario.TabIndex = 31;
-            this.TxtUsuario.Text = "admin";
             // 
             // pictureBox1
             // 

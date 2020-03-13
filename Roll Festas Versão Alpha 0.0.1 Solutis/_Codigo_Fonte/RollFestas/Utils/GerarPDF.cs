@@ -97,9 +97,6 @@ namespace RollFestas.Utils
 
                 doc.Close();
 
-                GerarReciboListaVenda(Id);
-
-                return true;
 
             }
             catch (Exception e)
@@ -108,92 +105,101 @@ namespace RollFestas.Utils
                 return false;
             }
 
+
+            GerarReciboListaVenda(Id);
+
+            return true;
+
         }
 
         public static bool GerarReciboListaVenda(string Id)
         {
-            try
+            if (Program._Produtos != null)
             {
-
-                string Data = GetDate.DataPararCriarPasta();
-
-                Document doc = new Document(iTextSharp.text.PageSize.A6);
-                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(Program._CaminhoReciboVenda + @"\ListaProduto" + Id + ".pdf", FileMode.Create));
-
-                doc.Open();
-
-                string dados = "";
-
-                Paragraph paragrafo = new Paragraph(dados, new Font(Font.NORMAL, 9));
-
-
-                paragrafo.Font = new Font(Font.NORMAL, 7, (int)System.Drawing.FontStyle.Regular);
-                paragrafo.Add("                                                     ");
-
-                paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Bold);
-                paragrafo.Add("                Roll Festas               ");
-                paragrafo.Add("-----------------------------------------");
-
-
-
-                paragrafo.Add("     Endereço: Rua do Paraíso, n° 34      ");
-                paragrafo.Add("              Box 1 Salvador - BA         ");
-                paragrafo.Add("                                         ");
-
-
-
-                paragrafo.Add("CNPJ:  20.600.571/0001-74                ");
-                paragrafo.Add("                                         ");
-                paragrafo.Add("E-mail: rollfestas@hotmail.com           ");
-                paragrafo.Add("Telefone: (71) 3321-5411                 ");
-                paragrafo.Add("@lojarollfestas                          ");
-                paragrafo.Add("                                         ");
-
-
-
-                paragrafo.Add("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-                paragrafo.Add("         ESSE CUPOM NÃO É VALIDO       ");
-                paragrafo.Add("             FORA DO ESTABELICIMENTO   ");
-                paragrafo.Add("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-
-                paragrafo.Add("                                         ");
-
-                decimal ValorTotal = 0;
-                foreach (var item in Program._Produtos)
+                try
                 {
-                    paragrafo.Add("[ Código: " + item.Id + " ]");
-                    paragrafo.Add("[ Produto: " + item.Nome + " ]");
-                    paragrafo.Add("[ Quantidade: " + item.QuantidadeVenda + " ]");
-                    paragrafo.Add("[ Valor da unidade: " + item.Preco + " ]");
-                    ValorTotal = ValorTotal + Convert.ToDecimal(item.Preco) * Convert.ToDecimal(item.QuantidadeVenda);
+
+                    string Data = GetDate.DataPararCriarPasta();
+
+                    Document doc = new Document(iTextSharp.text.PageSize.A6);
+                    PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(Program._CaminhoReciboVenda + @"\ListaProduto" + Id + ".pdf", FileMode.Create));
+
+                    doc.Open();
+
+                    string dados = "";
+
+                    Paragraph paragrafo = new Paragraph(dados, new Font(Font.NORMAL, 9));
+
+
+                    paragrafo.Font = new Font(Font.NORMAL, 7, (int)System.Drawing.FontStyle.Regular);
+                    paragrafo.Add("                                                     ");
+
+                    paragrafo.Font = new Font(Font.NORMAL, 9, (int)System.Drawing.FontStyle.Bold);
+                    paragrafo.Add("                Roll Festas               ");
+                    paragrafo.Add("-----------------------------------------");
+
+
+
+                    paragrafo.Add("     Endereço: Rua do Paraíso, n° 34      ");
+                    paragrafo.Add("              Box 1 Salvador - BA         ");
+                    paragrafo.Add("                                         ");
+
+
+
+                    paragrafo.Add("CNPJ:  20.600.571/0001-74                ");
+                    paragrafo.Add("                                         ");
+                    paragrafo.Add("E-mail: rollfestas@hotmail.com           ");
+                    paragrafo.Add("Telefone: (71) 3321-5411                 ");
+                    paragrafo.Add("@lojarollfestas                          ");
+                    paragrafo.Add("                                         ");
+
+
+
+                    paragrafo.Add("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+                    paragrafo.Add("         ESSE CUPOM NÃO É VALIDO       ");
+                    paragrafo.Add("             FORA DO ESTABELICIMENTO   ");
+                    paragrafo.Add("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+
+                    paragrafo.Add("                                         ");
+
+                    decimal ValorTotal = 0;
+                    foreach (var item in Program._Produtos)
+                    {
+                        paragrafo.Add("[ Código: " + item.Id + " ]");
+                        paragrafo.Add("[ Produto: " + item.Nome + " ]");
+                        paragrafo.Add("[ Quantidade: " + item.QuantidadeVenda + " ]");
+                        paragrafo.Add("[ Valor da unidade: " + item.Preco + " ]");
+                        ValorTotal = ValorTotal + Convert.ToDecimal(item.Preco) * Convert.ToDecimal(item.QuantidadeVenda);
+                    }
+
+                    paragrafo.Add("");
+
+                    paragrafo.Add("Valor Total: R$ " + ValorTotal);
+
+                    paragrafo.Add("");
+
+                    paragrafo.Add("Data: " + GetDate.PegarHoraMinutoAtual());
+                    paragrafo.Add("Usuário: " + Program._Usuario.Nome);
+
+                    paragrafo.Add("");
+
+                    paragrafo.Add("         Obrigado pela preferência!!!      ");
+
+                    doc.Add(paragrafo);
+
+                    doc.Close();
+
+                    return true;
+
                 }
-
-                paragrafo.Add("");
-
-                paragrafo.Add("Valor Total: R$ " + ValorTotal);
-
-                paragrafo.Add("");
-
-                paragrafo.Add("Data: " + GetDate.PegarHoraMinutoAtual());
-                paragrafo.Add("Usuário: " + Program._Usuario.Nome);
-
-                paragrafo.Add("");
-
-                paragrafo.Add("         Obrigado pela preferência!!!      ");
-
-                doc.Add(paragrafo);
-
-                doc.Close();
-
-                return true;
-
+                catch (Exception e)
+                {
+                    MessageBox.Show("Erro recibo de lista de venda: " + e);
+                    
+                }
+               
             }
-            catch (Exception e)
-            {
-                MessageBox.Show("Erro recibo de lista de venda: " + e);
-                return false;
-            }
-
+            return false;
         }
 
         public static bool GerarPDFA4(string Informacoes)
@@ -223,7 +229,7 @@ namespace RollFestas.Utils
                 var Tela = new Sucesso("Arquivo salvo em: " + Program._CaminhoReciboVenda + @"\Arquivo.pdf");
                 Tela.Show();
 
-                
+
                 return true;
 
             }

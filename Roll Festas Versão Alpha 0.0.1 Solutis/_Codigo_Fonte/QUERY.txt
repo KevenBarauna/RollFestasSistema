@@ -5,7 +5,7 @@ CREATE TABLE TB_PRODUTO
     [tema] VARCHAR(25)  NULL, 
     [preco] VARCHAR(7) NOT NULL, 
     [quantidade] VARCHAR(4) NULL, 
-[informar_quantidade] VARCHAR(1) NOT NULL,
+	[informar_quantidade] VARCHAR(1) NOT NULL,
     [fornecedor] VARCHAR(50) NULL, 
     [data] VARCHAR(11) NULL, 
     [descricao] NVARCHAR(150) NULL 
@@ -66,7 +66,7 @@ CREATE TABLE TB_EVENTO
 	[nome_cliente] VARCHAR(100) NULL,
 	[telefone_1] VARCHAR(17) NULL,
 	[telefone_2] VARCHAR(17) NULL,
-	[email] VARCHAR(20) NULL, 
+	[email] VARCHAR(50) NULL, 
 	[tipo] VARCHAR(20) NULL, 
 	[data] VARCHAR(20) NULL, 
 	[hora] VARCHAR(20) NULL, 
@@ -87,8 +87,8 @@ CREATE TABLE TB_CAIXA
 	[deposito] VARCHAR(11) NULL,
     [dinheiro] VARCHAR(10) NULL,
 	[cartao] VARCHAR(10) NULL,
-	[outros] VARCHAR(10) NULL
-[devolucao] VARCHAR(20) NULL,
+	[outros] VARCHAR(10) NULL,
+	[devolucao] VARCHAR(20) NULL
 )
 
 GO
@@ -102,14 +102,6 @@ CREATE TABLE TB_USUARIO
 	[data_admissao] VARCHAR(11) NOT NULL,
 )
 
-GO
-
-CREATE TABLE TB_CAMINHOS
-(
-    [nome] VARCHAR(20) NOT NULL, 
-    [caminho] NVARCHAR(200) NULL,
-    [descricao] NVARCHAR(150) NULL 
-)
 
 GO
 
@@ -117,6 +109,7 @@ GO
 INSERT INTO TB_USUARIO (nome,senha,email,data_admissao) VALUES ('admin','admin','kevenbarauna@gmail.com','11/08/2019')
 GO
 INSERT INTO TB_USUARIO (nome,senha,email,data_admissao) VALUES ('keven','123','kevenbarauna@gmail.com','11/08/2019')
+
 
 --INSERT INTO TB_CAMINHOS (nome,caminho,descricao) VALUES ('AAA','BBB','CCC')
 

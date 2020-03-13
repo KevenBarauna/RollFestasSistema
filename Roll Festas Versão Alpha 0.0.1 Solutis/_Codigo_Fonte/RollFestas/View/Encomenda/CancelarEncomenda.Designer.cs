@@ -456,7 +456,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(252, 30);
             this.label5.TabIndex = 284;
-            this.label5.Text = "IMPORTANTE: Ao clicar em apagar o usuário sera deletado do banco de dados";
+            this.label5.Text = "IMPORTANTE: Ao clicar em apagar a encomenda sera deletada do banco de dados";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnApagar

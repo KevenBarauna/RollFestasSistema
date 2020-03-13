@@ -51,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(13, 65);
+            this.label1.Location = new System.Drawing.Point(21, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 16;
@@ -91,7 +91,7 @@
             // LblSolucao1
             // 
             this.LblSolucao1.AutoSize = true;
-            this.LblSolucao1.Location = new System.Drawing.Point(12, 88);
+            this.LblSolucao1.Location = new System.Drawing.Point(20, 202);
             this.LblSolucao1.Name = "LblSolucao1";
             this.LblSolucao1.Size = new System.Drawing.Size(11, 13);
             this.LblSolucao1.TabIndex = 17;
@@ -100,7 +100,7 @@
             // LblSolucao2
             // 
             this.LblSolucao2.AutoSize = true;
-            this.LblSolucao2.Location = new System.Drawing.Point(12, 114);
+            this.LblSolucao2.Location = new System.Drawing.Point(20, 228);
             this.LblSolucao2.Name = "LblSolucao2";
             this.LblSolucao2.Size = new System.Drawing.Size(11, 13);
             this.LblSolucao2.TabIndex = 18;
@@ -109,7 +109,7 @@
             // LblSolucao3
             // 
             this.LblSolucao3.AutoSize = true;
-            this.LblSolucao3.Location = new System.Drawing.Point(12, 140);
+            this.LblSolucao3.Location = new System.Drawing.Point(20, 254);
             this.LblSolucao3.Name = "LblSolucao3";
             this.LblSolucao3.Size = new System.Drawing.Size(11, 13);
             this.LblSolucao3.TabIndex = 19;
@@ -118,9 +118,9 @@
             // LblErro
             // 
             this.LblErro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblErro.Location = new System.Drawing.Point(10, 179);
+            this.LblErro.Location = new System.Drawing.Point(9, 63);
             this.LblErro.Name = "LblErro";
-            this.LblErro.Size = new System.Drawing.Size(557, 71);
+            this.LblErro.Size = new System.Drawing.Size(384, 98);
             this.LblErro.TabIndex = 23;
             this.LblErro.Text = "Erro";
             this.LblErro.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -130,7 +130,7 @@
             this.BtnOk.BackColor = System.Drawing.Color.DarkRed;
             this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnOk.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnOk.Location = new System.Drawing.Point(243, 252);
+            this.BtnOk.Location = new System.Drawing.Point(468, 245);
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Size = new System.Drawing.Size(82, 31);
             this.BtnOk.TabIndex = 49;

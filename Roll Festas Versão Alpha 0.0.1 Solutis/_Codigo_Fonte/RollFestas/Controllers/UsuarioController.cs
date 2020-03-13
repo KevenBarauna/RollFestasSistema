@@ -99,8 +99,6 @@ namespace RollFestas.Controllers
         public bool EditarUsuario(string Nome, string Senha, string ConfSenha ,string Email, string Data_admissao, string NomeOriginal)
         {
 
-            bool UsuarioExiste = DAO.ValidaNomeUsuario(Nome);
-
             if (string.IsNullOrEmpty(Nome) || string.IsNullOrEmpty(Senha) || string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Data_admissao) || string.IsNullOrEmpty(ConfSenha))
             {
                 Erro TelaDeErro = new Erro("Preencha todos os campos");
@@ -110,12 +108,6 @@ namespace RollFestas.Controllers
             if (Senha != ConfSenha)
             {
                 Erro TelaDeErro = new Erro("As senhas são diferentes");
-                TelaDeErro.Show();
-                return false;
-            }
-            if (UsuarioExiste == true)
-            {
-                Erro TelaDeErro = new Erro("Já existe um usuário cadastrado com esse nome, não é possível cadastrar com o mesmo nome, tente novamente com outro usuário.");
                 TelaDeErro.Show();
                 return false;
             }

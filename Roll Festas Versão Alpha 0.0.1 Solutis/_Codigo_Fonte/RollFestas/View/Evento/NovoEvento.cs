@@ -55,7 +55,25 @@ namespace RollFestas.View.Evento
         private void BtnEntrar_Click(object sender, EventArgs e)
         {
             var eventoC = new EventoController();
-            eventoC.NovoEvento(TxtCep.Text,TxtLocal.Text,TxtDescEvento.Text,TxtNome.Text,TxtTel1.Text,TxtTel2.Text,TxtEmail.Text,TipoEvento,TxtData.Text,TxtHora.Text,TxtValorTotal.Text,TxtvalorEntrada.Text,2, TipoPagamento, TxtDinCart.Text, 1, LblTroco.Text);
+            bool Sucesso = eventoC.NovoEvento(TxtCep.Text,TxtLocal.Text,TxtDescEvento.Text,TxtNome.Text,TxtTel1.Text,TxtTel2.Text,TxtEmail.Text,TipoEvento,TxtData.Text,TxtHora.Text,TxtValorTotal.Text,TxtvalorEntrada.Text,2, TipoPagamento, TxtDinCart.Text, 1, LblTroco.Text);
+            if (Sucesso == true)
+            {
+                TxtCep.Text = "";
+                TxtCidade.Text = "";
+                TxtEndereco.Text = "";
+                TxtBairro.Text = "";
+                TxtNome.Text = "";
+                TxtTel1.Text = "";
+                TxtTel2.Text = "";
+                TxtEmail.Text = "";
+                TxtValorTotal.Text = "";
+                TxtvalorEntrada.Text = "";
+                TxtData.Text = "";
+                TxtHora.Text = "";
+                TxtLocal.Text = "";
+                TxtDescEvento.Text = "";
+                LblTroco.Text = "";
+            }
         }
 
         private void RBDinheiro_CheckedChanged(object sender, EventArgs e)

@@ -42,10 +42,8 @@ namespace RollFestas.View.Evento
                 TxtLocal.Text = eventoM.Local;
                 TxtDescEvento.Text = eventoM.Descricao;
                 TxtCep.Text = eventoM.Cep;
-                TxtValorTotal.Text = eventoM.ValorTotal;
-                TxtvalorEntrada.Text = eventoM.ValorPago;
 
-                if (eventoM.Tipo == "Anversário")
+                if (eventoM.Tipo == "Aniversário")
                 {
                     RbAniversaio.Checked = true;
                 }
@@ -104,6 +102,7 @@ namespace RollFestas.View.Evento
                 TxtHora.Text = "";
                 TxtLocal.Text = "";
                 TxtDescEvento.Text = "";
+                TxtCep.Text = "";
                 RbAniversaio.Checked = false;
                 RbMakingof.Checked = false;
                 RbCasamento.Checked = false;
@@ -126,7 +125,19 @@ namespace RollFestas.View.Evento
         private void BtnEntrar_Click(object sender, EventArgs e)
         {
             var eventoC = new EventoController();
-            eventoC.EditarEvento(TxtCep.Text,TxtLocal.Text,TxtDescEvento.Text,TxtNome.Text,TxtTel1.Text,TxtTel2.Text,TxtEmail.Text, TipoEvento, TxtData.Text,TxtHora.Text,TxtValorTotal.Text,TxtvalorEntrada.Text,Entregue,Id.ToString());
+            bool Sucesso = eventoC.EditarEvento(TxtCep.Text,TxtLocal.Text,TxtDescEvento.Text,TxtNome.Text,TxtTel1.Text,TxtTel2.Text,TxtEmail.Text, TipoEvento, TxtData.Text,TxtHora.Text, Entregue,Id.ToString());
+            if (Sucesso == true)
+            {
+                TxtCep.Text = "";
+                TxtNome.Text = "";
+                TxtTel1.Text = "";
+                TxtTel2.Text = "";
+                TxtEmail.Text = "";
+                TxtData.Text = "";
+                TxtHora.Text = "";
+                TxtLocal.Text = "";
+                TxtDescEvento.Text = "";
+            }
         }
 
         private void RbAniversaio_CheckedChanged(object sender, EventArgs e)

@@ -98,14 +98,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.TxtCep = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.TxtvalorEntrada = new System.Windows.Forms.TextBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.TxtValorTotal = new System.Windows.Forms.TextBox();
             this.PanelTipoEvento.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -124,8 +116,6 @@
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtTel2
@@ -148,7 +138,7 @@
             this.PanelTipoEvento.Controls.Add(this.RbBatizado);
             this.PanelTipoEvento.Controls.Add(this.RbCasamento);
             this.PanelTipoEvento.Controls.Add(this.RbBodas);
-            this.PanelTipoEvento.Location = new System.Drawing.Point(244, 362);
+            this.PanelTipoEvento.Location = new System.Drawing.Point(248, 281);
             this.PanelTipoEvento.Name = "PanelTipoEvento";
             this.PanelTipoEvento.Size = new System.Drawing.Size(175, 93);
             this.PanelTipoEvento.TabIndex = 476;
@@ -281,7 +271,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(245, 337);
+            this.label11.Location = new System.Drawing.Point(249, 256);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 13);
             this.label11.TabIndex = 471;
@@ -514,7 +504,7 @@
             this.TxtDescEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDescEvento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TxtDescEvento.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.TxtDescEvento.Location = new System.Drawing.Point(496, 367);
+            this.TxtDescEvento.Location = new System.Drawing.Point(496, 366);
             this.TxtDescEvento.Name = "TxtDescEvento";
             this.TxtDescEvento.ReadOnly = true;
             this.TxtDescEvento.Size = new System.Drawing.Size(140, 14);
@@ -581,7 +571,7 @@
             // panel26
             // 
             this.panel26.BackColor = System.Drawing.Color.Tan;
-            this.panel26.Location = new System.Drawing.Point(244, 353);
+            this.panel26.Location = new System.Drawing.Point(248, 272);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(140, 1);
             this.panel26.TabIndex = 431;
@@ -790,7 +780,7 @@
             this.CbFinalizado.Enabled = false;
             this.CbFinalizado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CbFinalizado.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CbFinalizado.Location = new System.Drawing.Point(180, 461);
+            this.CbFinalizado.Location = new System.Drawing.Point(190, 441);
             this.CbFinalizado.Name = "CbFinalizado";
             this.CbFinalizado.Size = new System.Drawing.Size(300, 17);
             this.CbFinalizado.TabIndex = 485;
@@ -812,7 +802,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(291, 295);
+            this.label2.Location = new System.Drawing.Point(297, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 490;
@@ -821,7 +811,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Orange;
-            this.panel1.Location = new System.Drawing.Point(289, 327);
+            this.panel1.Location = new System.Drawing.Point(295, 227);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(99, 1);
             this.panel1.TabIndex = 489;
@@ -829,7 +819,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(245, 290);
+            this.pictureBox8.Location = new System.Drawing.Point(251, 190);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(40, 40);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -842,88 +832,10 @@
             this.TxtCep.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCep.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.TxtCep.Location = new System.Drawing.Point(289, 310);
+            this.TxtCep.Location = new System.Drawing.Point(295, 210);
             this.TxtCep.Name = "TxtCep";
             this.TxtCep.Size = new System.Drawing.Size(83, 14);
             this.TxtCep.TabIndex = 487;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(287, 244);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 13);
-            this.label10.TabIndex = 498;
-            this.label10.Text = "Valor pago:";
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Orange;
-            this.panel16.Location = new System.Drawing.Point(290, 280);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(140, 1);
-            this.panel16.TabIndex = 497;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(287, 196);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 496;
-            this.label4.Text = "Valor total:";
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.Orange;
-            this.panel18.Location = new System.Drawing.Point(290, 232);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(140, 1);
-            this.panel18.TabIndex = 495;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(244, 244);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox17.TabIndex = 494;
-            this.pictureBox17.TabStop = false;
-            // 
-            // TxtvalorEntrada
-            // 
-            this.TxtvalorEntrada.BackColor = System.Drawing.Color.White;
-            this.TxtvalorEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtvalorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtvalorEntrada.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.TxtvalorEntrada.Location = new System.Drawing.Point(289, 260);
-            this.TxtvalorEntrada.Name = "TxtvalorEntrada";
-            this.TxtvalorEntrada.Size = new System.Drawing.Size(114, 14);
-            this.TxtvalorEntrada.TabIndex = 493;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(244, 194);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox18.TabIndex = 492;
-            this.pictureBox18.TabStop = false;
-            // 
-            // TxtValorTotal
-            // 
-            this.TxtValorTotal.BackColor = System.Drawing.Color.White;
-            this.TxtValorTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.TxtValorTotal.Location = new System.Drawing.Point(289, 213);
-            this.TxtValorTotal.Name = "TxtValorTotal";
-            this.TxtValorTotal.Size = new System.Drawing.Size(114, 14);
-            this.TxtValorTotal.TabIndex = 491;
             // 
             // EditarEvento
             // 
@@ -931,14 +843,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(671, 543);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.panel16);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel18);
-            this.Controls.Add(this.pictureBox17);
-            this.Controls.Add(this.TxtvalorEntrada);
-            this.Controls.Add(this.pictureBox18);
-            this.Controls.Add(this.TxtValorTotal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox8);
@@ -1021,8 +925,6 @@
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1099,13 +1001,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.TextBox TxtCep;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.TextBox TxtvalorEntrada;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.TextBox TxtValorTotal;
     }
 }
