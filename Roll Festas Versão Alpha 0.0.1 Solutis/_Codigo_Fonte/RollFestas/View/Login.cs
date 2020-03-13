@@ -19,7 +19,7 @@ namespace RollFestas
             Program._CaminhoReciboVenda = @"C:\SistemaRollFestas";
             Program._CaminhoPlanilhaPonto = @"C:\SistemaRollFestas";
             Program._CaminhoCacheErro = @"C:\SistemaRollFestas";
-            Program._CaminhoArquivoDuvida = @"C:\Users\keven.barauna\Documents\_Projetos\_Pessoal\_SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\Content\Arquivos";
+            Program._CaminhoArquivoDuvida = @"C:\SistemaRollFestas\Roll Festas Versão Alpha 0.0.1 Solutis\_Codigo_Fonte\RollFestas\Content\Arquivos";
 
             //DEFINIR USUARIO LOGADO
             Program._Usuario = null;
